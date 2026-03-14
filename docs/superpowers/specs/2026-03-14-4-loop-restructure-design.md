@@ -35,7 +35,7 @@ Loop 4: De-risk
   4b. Domain Availability + Pool Recovery
   4c. Variation Generation + Re-screening (old Phases 9-10 merged)
   4d. Trademark Screening
-  4e. Social Handles + Stress Tests + Extended Presence Check (NEW on final 1-3)
+  4e. Social Handles + Optional Stress Tests + Extended Presence Check (NEW on final 1-3)
   4f. Final Presentation
   Cycle-back: → Loop 2 if pool is thin (pool recovery)
 
@@ -78,6 +78,16 @@ For the top 1-3 finalists only, offer to check:
 
 Offered, not automatic. Framed as "Want me to do a deeper digital presence check on your top picks?"
 
+#### 4e. Full Stage Breakdown
+
+Stage 4e bundles three conditional components from old Phase 12:
+
+1. **Social Handle Check** (always-on for Tier 1 names): Twitter/X, Instagram, LinkedIn, TikTok. Same scope as current Phase 12.
+2. **Optional Stress Tests** (offered, not automatic):
+   - **Pre-Mortem Analysis**: Imagine the name has failed 18 months post-launch — why? Preserved from current Phase 12 lines 648-650.
+   - **System 1 / System 2 Testing**: User-driven dual-speed name testing (gut recall vs analytical). Full framework preserved from current Phase 12 lines 651-668. Results recorded in 03-validation.md.
+3. **Extended Presence Check** (offered on final 1-3 only, NEW): App stores, SERP crowding, business registries.
+
 ### Moved Stages
 
 #### Creative Riffing → 2c (was Phase 6)
@@ -102,13 +112,15 @@ Phase 10's content folds into Phase 9 as a "then re-screen" paragraph. Same work
 
 1. **User-driven candidate count replaces 100-name hard minimum.** After each generation push, report running total: "That's [N] candidates so far across [M] categories. Want to keep going, shift direction, or move on?" User decides when they have enough.
 
-2. **Institutional Compounds demoted to sub-pattern of Compounds.** "11 naming categories" becomes "10 naming categories" throughout. The Institutional Compounds generation instructions stay but are reframed as a technique within Compound generation, not a standalone category.
+2. **Institutional Compounds demoted to sub-pattern of Compounds.** "11 naming categories" becomes "10 naming categories" throughout. The Institutional Compounds generation instructions stay but are reframed as a technique within Compound generation, not a standalone category. Explicitly update the generation rule "at least 6 of the 11 naming categories" → "at least 6 of the 10 naming categories."
 
-3. **Gallery Mode added.** Before diving into categories one by one, offer a high-level gallery — top 3-5 names from each category in a single scannable grid. User identifies which categories to expand. Prevents category-by-category fatigue.
+3. **Gallery Mode added as default presentation in Explorer Mode.** Before diving into categories one by one, offer a high-level gallery — top 3-5 names from each category in a single scannable grid. User identifies which categories to expand. Prevents category-by-category fatigue. In Focused Mode, category-by-category remains the default (user is iterating collaboratively). Gallery Mode supplements but does not replace Explorer/Focused — it is the default initial presentation within Explorer Mode.
 
 #### 3a. Convergent Shortlisting — frameworks demoted:
 
-Replace the full 10-technique menu listing with trigger-based recommendations. Analyze the shortlist and recommend 2-3 techniques with specific reasoning. The full library remains in elicitation-techniques.md — referenced only if the user asks "what else is available?"
+Replace the full 10-technique menu listing with trigger-based recommendations. Analyze the shortlist and recommend 2-3 techniques with specific reasoning (reduced from the current 3-5). The full library remains in elicitation-techniques.md — referenced only if the user asks "what else is available?"
+
+The existing "Multi-perspective evaluation" block (strategist/creative/analyst lenses) is preserved as an optional framing tool within 3a.
 
 ### Artifact Chain
 
@@ -134,10 +146,18 @@ competitive_whitespace: "summary"
 - Loop 3 (Select) → reads 01-candidates.md, writes 02-shortlist.md
 - Loop 4 (De-risk) → reads 02-shortlist.md, writes 03-validation.md progressively, then 04-final.md
 - Pool recovery → cycle from De-risk back to Generate, re-validate new names only
+- Deepening techniques → can fire at any point; results modify either 01-candidates.md (new candidates) or 02-shortlist.md (refining shortlist)
+- Validation log → preserved, tracks which checks completed per name to avoid re-running
 
 ### Reference Files
 
-No content changes. Reference file table in SKILL.md updates phase references to loop/stage references.
+No content changes. Reference file table in SKILL.md updates phase references to loop/stage references:
+
+| File | Current Trigger | New Trigger |
+|---|---|---|
+| naming-taxonomies.md | Phase 2, Phase 6 | 2a (generation), 2c (riffing) |
+| brand-psychology.md | Phase 1, Phase 2, Phase 5-6 | 1a-1b (brief + territories), 2a (phonetic recipes), 3a/2c (evaluation) |
+| elicitation-techniques.md | Phase 2 (if convergent), Phase 5, Phase 6, Phase 8, Phase 12 | 2a (if convergent), 3a (deepening), 2c (SCAMPER on riffs), 4b (pool recovery), 4e (Pre-Mortem) |
 
 ### README.md
 
@@ -158,11 +178,17 @@ Updated to reflect 4-loop architecture, 10 categories, new stages, and simplifie
 - Philosophy section (5 principles) — preserved exactly
 - Reference file content — untouched
 - Artifact filenames and purpose (00-04) — preserved
-- Session modes (Explorer/Focused) — preserved
+- Session modes (Explorer/Focused) — preserved (Gallery Mode supplements Explorer, see 2a)
 - Adaptive behavior section — preserved
+- Resume-across-sessions logic — preserved, updated to loop/stage references:
+  - Only 00-brief.md → resume at 2a
+  - 01-candidates.md exists → resume at 3a (or 2c if riffing wasn't done)
+  - 02-shortlist.md exists → resume at 4a
+  - 03-validation.md exists → resume at 4f
 - Cross-model ideation content — preserved
 - All riffing techniques (linguistic, conceptual, structural, homonym, affix, Lexicon three-team) — preserved
-- All validation stage content (competitive, domain, trademark, social) — preserved
+- All validation stage content (competitive, domain, trademark, social, Pre-Mortem, System 1/2) — preserved (frontmatter counts simplified, see Artifact Chain)
+- Technical project screening subsection — preserved within 4a
 - All deepening technique content in elicitation-techniques.md — preserved
 - Inline conflict flagging (philosophy principle #5) — preserved
 - Pool recovery mechanism — preserved
