@@ -256,6 +256,53 @@ Take the user's favorite root words and systematically combine with:
 
 ---
 
+## Personified Names as a Naming Angle
+
+Human names used as brand names. This is a cross-cutting generation angle — applicable within Evocative, Found Word, and Foreign-Root categories depending on why the name was chosen.
+
+**Why it works:** Human names create instant warmth and approachability. They're effortlessly memorable (everyone knows how to say and spell a person's name), naturally conversational ("Ask Claude," "Hey Siri"), and can carry historical resonance that adds depth without explanation. They also age well — a human name never sounds dated the way a tech suffix can.
+
+**Real examples:**
+- **Claude** — Claude Shannon (information theory). Carries intellectual heritage without requiring the user to know the reference.
+- **Alexa** — Evokes the Library of Alexandria. Knowledge + approachability in one name.
+- **Siri** — Norse for "beautiful woman who leads you to victory." Musical, short, globally pronounceable.
+- **Oscar** — Health insurance. Friendly, human-scale in a cold industry. Named to feel like "a friend who helps you navigate healthcare."
+- **Harvey** — Legal AI. Named after Harvey Specter (Suits). Signals legal competence with personality.
+- **Ada** — Health platform. Ada Lovelace. Signals intelligence + pioneering spirit.
+- **Cleo** — Financial assistant. Short, warm, slightly retro. Works as a name you'd text.
+- **Max** — Short, punchy, energetic. Universal across languages. Used by multiple brands.
+- **Rosie** — Robotics/automation. Evokes Rosie the Riveter (capability) and The Jetsons' Rosie (helpful automation).
+
+**Sub-patterns:**
+
+| Pattern | What it does | Examples |
+|---|---|---|
+| **Historical figure** | Borrows credibility and narrative from a real person | Claude (Shannon), Ada (Lovelace), Tesla (Nikola) |
+| **Fictional character** | Borrows personality from a known character | Harvey (Specter), Jarvis (Iron Man), Rosie (Jetsons) |
+| **Pure first name** | Warmth and approachability without specific reference | Oscar, Max, Cleo, Lola, Finn |
+| **Mythological/classical** | Gravitas + storytelling | Athena, Apollo, Minerva, Cassandra |
+| **Surname as brand** | Authority, institutional weight | Watson (IBM), Edison, Turing |
+
+**Generation techniques:**
+- Start with the brand's core quality, then ask: "What historical figure embodies this quality?" (intelligence → Ada, Claude; strength → Atlas, Titan)
+- Browse baby name databases filtered by origin, meaning, and era — Victorian names feel different from modern names
+- Test the "coffee shop test": would someone feel natural saying "I'll ask [name]" or "Have you tried [name]?"
+- For AI/voice products: prioritize 2-syllable names with clear vowels — they work better as wake words and in conversation
+- Cross-reference with mythology databases for names that carry built-in narratives
+- Check that the name doesn't feel condescending or gendered in ways that limit the brand (the BIC-for-Her problem)
+
+**Phonetic tendency:** 1-2 syllables, open vowels, soft or liquid consonants (l, r, m, n) for warmth. Hard consonants (k, t, d) for authority. The name should feel like someone you'd want to talk to.
+
+**When to use:** Particularly strong for AI assistants, health/wellness products, financial tools, education platforms, and any product where trust and approachability matter more than technical precision. Less effective for enterprise infrastructure, developer tools aimed at senior engineers, or products where institutional gravitas outweighs warmth.
+
+**Anti-patterns:**
+- Avoid names so common they're impossible to own (John, Mike, Sarah) unless paired with a distinctive second element
+- Avoid names with strong singular cultural associations that overwhelm brand meaning (Elvis, Oprah, Madonna)
+- Avoid names that feel artificially gendered for the product category
+- Always check: does this name already belong to a well-known AI/tech product? The space is filling up fast.
+
+---
+
 ## Motion & Direction as a Naming Angle
 
 Names that convey movement, direction, or momentum. Particularly effective for products that help users navigate complexity or move faster. This is a cross-cutting generation angle — applicable within Evocative, Found Word, Coined, and Compound categories.

@@ -169,6 +169,7 @@ Let the user decide when they have enough. Some sessions need 40 names, others n
 - **Flag conflicts inline** with ⚠️ during generation (see Philosophy principle #5). Don't wait for the competitive screen stage.
 - Use the **phonesthetic framework** from the reference file to ensure variety in how names sound, not just what they mean.
 - Explicitly explore the **Motion & Direction semantic field** (see `references/naming-taxonomies.md`) — names that convey movement, direction, or momentum are often overlooked but effective.
+- Consider **Personified Names** (see `references/naming-taxonomies.md`) — human names used as brands (Claude, Alexa, Oscar, Ada). Particularly strong for AI, health, finance, and trust-dependent products.
 - If generation feels convergent or safe, read `references/elicitation-techniques.md` and apply **SCAMPER** to your best candidates or **Inversion** to identify what to avoid. If the session is stuck, try **Constraint Removal** to find the user's true preferences.
 
 #### Presentation format
