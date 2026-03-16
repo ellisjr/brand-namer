@@ -68,9 +68,10 @@ Names don't just denote — they connote. Every name occupies a position in emot
 | Fricatives (s, v, f) + back vowels (oh, oo) | Sophistication | Feels flowing, elegant, luxurious |
 | Hard consonants (g, k, d) + short syllables | Ruggedness | Feels tough, grounded, physical |
 | Nasals (m, n, ng) | Calm, human, nurturing | Feels resonant and embodied |
+| Glides (w, y) | Sincerity, Regular Guy | Feels friendly, easy, conversational |
 
 ### Using this in naming:
-During Phase 1 (Brand Brief), identify which personality dimension(s) the brand targets. During Phase 2 (Generation), use the phonetic tendencies as generation constraints. During Phase 5 (Shortlisting), evaluate candidates against the target personality.
+During Loop 1 (Brand Brief, 1a), identify which personality dimension(s) the brand targets. During Loop 2 (Generation, 2a), use the phonetic tendencies as generation constraints. During Loop 3 (Shortlisting, 3a), evaluate candidates against the target personality.
 
 ### The Three Layers of Name Signaling
 Brand names signal personality through three layers working together. Treat these as separate but combinable levers:
@@ -128,8 +129,27 @@ Margaret Mark and Carol Pearson's archetype framework maps to distinct naming st
 | **Creator** | Innovation, expression | Imaginative, crafted, artful | distinct, artful | making, design, imagination | Adobe, Lego, Etsy |
 | **Ruler** | Control, prestige | Commanding, formal, high-status | weighty, formal | authority, command, status | Rolex, Mercedes, BlackRock |
 
+### Archetype → Naming Category Matrix
+
+Use this to identify which naming categories are most compatible with each archetype. The primary categories are the strongest fit; secondary categories can work with careful execution.
+
+| Archetype | Primary naming categories | Secondary | Avoid |
+|---|---|---|---|
+| **Innocent** | Evocative, Found Word | Descriptive | Coined, Sound-Symbolic |
+| **Explorer** | Metaphorical, Motion & Direction | Found Word, Foreign-Root | Acronymic, Descriptive |
+| **Sage** | Found Word, Foreign-Root, Institutional Compound | Coined, Compound | Jester-energy Sound-Symbolic |
+| **Hero** | Evocative, Compound, Sound-Symbolic | Verb-as-Brand, Motion | Soft/warm Found Words |
+| **Outlaw** | Sound-Symbolic, Contrarian, Found Word | Coined | Institutional Compound, Descriptive |
+| **Magician** | Coined, Evocative, Foreign-Root | Metaphorical, Blends | Descriptive, Acronymic |
+| **Regular Guy** | Found Word, Descriptive, Verb-as-Brand | Compound | Foreign-Root, Classical Stems |
+| **Lover** | Evocative, Foreign-Root | Sound-Symbolic, Blends | Institutional Compound, Acronymic |
+| **Jester** | Sound-Symbolic, Blends, Found Word | Compound | Foreign-Root, Institutional |
+| **Caregiver** | Evocative, Personified, Found Word | Descriptive | Sound-Symbolic (hard), Contrarian |
+| **Creator** | Coined, Compound, Metaphorical | Found Word, Tech Branding | Descriptive |
+| **Ruler** | Institutional Compound, Foreign-Root, Found Word | Classical Stems, Evocative | Sound-Symbolic (playful), Blends |
+
 ### Using archetypes in naming:
-Ask the user which archetype resonates (or infer from the brief). Use the archetype to guide both the naming category and the emotional territory. A "Sage" brand should probably not use a playful compound name; a "Jester" brand shouldn't sound clinical.
+Ask the user which archetype resonates (or infer from the brief). Use the archetype to guide both the naming category and the emotional territory. Cross-reference with the matrix above — a "Sage" brand should gravitate toward Found Word, Foreign-Root, or Institutional Compound categories. A "Jester" brand should explore Sound-Symbolic and Blends.
 
 ### Prototype targeting (Rosch)
 For any archetype or personality dimension, there's a *prototypical* name — the name that feels maximally "right" for that personality. Identifying the prototype — even if it's taken — gives you a concrete target to generate toward. "The most [Sage] name I can imagine is Oracle. I can't use Oracle. What's available that's equally Sage?" This is more actionable than abstract personality descriptors because it gives you a specific sound, length, and feel to aim at. Ask the user: "What existing brand name — from any industry — best captures the energy you want?" That name becomes the prototype target.
@@ -165,7 +185,7 @@ The most effective names often occupy a middle ground: they suggest something wi
 - **Swiffer** — Invented, but sounds like the motion of using it. Phonetically light and fast.
 
 ### Strategic Implication:
-The "right" position on this spectrum depends on the brand's competitive context. In a crowded, noisy category, a more meaningful name helps cut through. In a new category where you're defining the space, a blank-canvas name gives you room to grow. Ask the user during Phase 1 which situation they're in.
+The "right" position on this spectrum depends on the brand's competitive context. In a crowded, noisy category, a more meaningful name helps cut through. In a new category where you're defining the space, a blank-canvas name gives you room to grow. Ask the user during Loop 1 (1a Brand Brief) which situation they're in.
 
 ### Availability Heuristic (Tversky & Kahneman, 1973)
 People judge importance and likelihood by how easily examples come to mind. For naming: if a name instantly triggers a vivid association (good or bad), it has high "availability" — it will be easy to recall but is also anchored to that association. Names that trigger no associations have low availability — harder to remember but a true blank canvas. This maps directly to the spectrum above. High-availability names (Amazon, Caterpillar) arrive loaded with imagery. Low-availability names (Xerox, Kodak) require brand investment but accumulate uncontested meaning. During evaluation, ask: "When you hear this name, what's the first thing that comes to mind? If the answer is 'nothing' — is that a feature or a bug for this brand?"
@@ -207,7 +227,30 @@ Concrete, imageable words are remembered better than abstract ones because they 
 Working memory holds ~7±2 "chunks." Names that can be processed as a single chunk (1-2 syllables, familiar phoneme patterns like "Stripe" or "Slack") consume minimal cognitive resources. Names that require multiple chunks (unfamiliar consonant clusters, 4+ syllables, ambiguous stress) tax working memory and feel harder to "hold onto." During evaluation, ask: how many chunks does this name require? A familiar compound like "Benchmark" is two easy chunks. An invented word like "Cognivex" is three uncertain chunks. Fewer chunks = lower cognitive load = easier recall.
 
 ### Semantic Satiation Test
-Say a candidate name aloud 50 times in a row. If it still feels meaningful and connected to its intended associations after repetition, the meaning is robust — it's deeply encoded. If it dissolves into meaningless sound, the semantic content is fragile and depends on novelty. Found words and metaphorical names tend to resist satiation better than coined words, because their meaning is grounded in existing knowledge. Use this as a gut-check on finalists in Phase 12.
+Say a candidate name aloud 50 times in a row. If it still feels meaningful and connected to its intended associations after repetition, the meaning is robust — it's deeply encoded. If it dissolves into meaningless sound, the semantic content is fragile and depends on novelty. Found words and metaphorical names tend to resist satiation better than coined words, because their meaning is grounded in existing knowledge. Use this as a gut-check on finalists in 4e (Stress Tests).
+
+### Primacy and Recency Effects (Serial Position)
+People remember the first and last items in a list better than items in the middle. In naming sessions:
+- **Presentation order matters.** The first name in a batch and the last name get disproportionate attention. Rotate the order across batches to prevent positional bias.
+- **In batch-of-10 presentations:** Names at positions 1, 2, 9, 10 get a memory advantage. Names at positions 4-7 get forgotten. If a name consistently gets picked from mid-list positions, it's genuinely strong — it overcame the positional disadvantage.
+- **In final presentations:** Put your strongest recommendation first (primacy) or last (recency), not in the middle.
+
+### Choice Overload (Iyengar & Lepper, 2000)
+When presented with too many options, people make worse decisions or avoid deciding entirely. The famous "jam study" showed 24 options produced fewer purchases than 6.
+
+In naming sessions:
+- **Galleries of 100+ names can paralyze.** The batch-of-10 presentation format mitigates this — it constrains each decision to a manageable set.
+- **Final shortlists should be 5-9 names, not 15-20.** More than 9 finalists triggers choice overload.
+- **Tier the final presentation.** Tier 1 (3-5 names, clean), Tier 2 (2-4 names, caveats), Tier 3 (reference only). The user's primary decision space is Tier 1.
+- **If the user can't decide between finalists,** reduce the set: "Let's eliminate one at a time. Which name would you cut first?" Subtraction is psychologically easier than selection.
+
+### Phonesthetics Cross-Reference
+For detailed phoneme-to-personality mapping, vowel perception, consonant associations, stress patterns, and sound progression frameworks, see BOTH:
+- This file's "Phoneme → Personality Mapping" table (above) — maps sounds to Aaker's brand personality dimensions
+- `references/naming-taxonomies.md` Section 6 (Phonesthetic Framework) — maps sounds to cognitive associations and has the Bouba-Kiki effect
+- `references/naming-taxonomies.md` Section 24 (Bouba-Kiki Effect) — maps sounds to shape/personality perception
+
+These three sources complement each other: this file focuses on WHY sounds create specific brand perceptions (the psychology), while the taxonomies file focuses on HOW to use sounds during generation (the technique).
 
 ---
 
@@ -261,7 +304,7 @@ Names operate across multiple emotional dimensions simultaneously. Use these axe
 - Question: Does the brand's value come from removing complexity or mastering it?
 
 ### Using the spectrum:
-During Phase 1, ask where the brand should sit on 2-3 of these axes. During shortlisting, evaluate whether each candidate name actually lands where intended. A name that's trying to be "approachable" but sounds "authoritative" has a positioning mismatch.
+During Loop 1 (1a-1b), ask where the brand should sit on 2-3 of these axes. During shortlisting (3a), evaluate whether each candidate name actually lands where intended. A name that's trying to be "approachable" but sounds "authoritative" has a positioning mismatch.
 
 ---
 
@@ -357,7 +400,7 @@ Not every cross-language issue is real. The Chevy Nova "no va" story is widely d
 
 ## Rapid Evaluation Checklist: SMILE and SCRATCH
 
-Adapted from Alexandra Watkins' (Eat My Words) framework. Use as a quick-pass filter during Phase 5 shortlisting — run every candidate through both lists in under 30 seconds.
+Adapted from Alexandra Watkins' (Eat My Words) framework. Use as a quick-pass filter during 3a (Shortlisting) — run every candidate through both lists in under 30 seconds.
 
 ### SMILE (what a good name does)
 | Letter | Quality | Quick test |
@@ -384,6 +427,6 @@ A name that scores 4-5 on SMILE is a strong candidate. A name that scores 1-2 ne
 Any hit on SCRATCH is a yellow flag. Two or more hits is a strong signal to deprioritize unless the name's SMILE scores are exceptional.
 
 ### Using SMILE/SCRATCH in the pipeline:
-- **Phase 5 (shortlisting):** Fast-pass every candidate. Deprioritize high-SCRATCH names, advance high-SMILE names.
-- **Phase 12 (finalist evaluation):** Run formally on the top 3-5. Include scores in `03-validation.md` and reference in the final presentation rationale.
+- **3a (Shortlisting):** Fast-pass every candidate. Deprioritize high-SCRATCH names, advance high-SMILE names.
+- **4e (Stress Tests / Finalist evaluation):** Run formally on the top 3-5. Include scores in `03-validation.md` and reference in the final presentation rationale.
 - **During generation:** Use SMILE as a generation prompt: "Generate names that are high on Imagery and Emotional." Use SCRATCH as a self-check: "Am I generating Tame names? Copycat names?"

@@ -3,9 +3,9 @@
 Read this file when you need to deepen ideation, stress-test candidates, or unstick a session. These techniques are adapted from structured creative methodologies (BMAD Method's Creative Intelligence Suite, de Bono's Six Thinking Hats, and classical brainstorming frameworks) and reframed specifically for brand naming.
 
 Not every technique is needed every time. Use them when:
-- Phase 2 generation feels too safe or convergent → SCAMPER, Constraint Removal
-- Phase 5 shortlisting needs rigor → Six Thinking Hats, Stakeholder Role-Play
-- Phase 8 variation generation is producing weak derivatives → SCAMPER on existing candidates
+- 2a generation feels too safe or convergent → SCAMPER, Constraint Removal
+- Loop 3 shortlisting (3a) needs rigor → Six Thinking Hats, Stakeholder Role-Play
+- Loop 4 variation generation (4c) is producing weak derivatives → SCAMPER on existing candidates
 - The user is stuck or unhappy with all options → Inversion, Constraint Removal
 - The shortlist needs stress-testing before final presentation → Pre-Mortem Analysis
 
@@ -33,8 +33,8 @@ SCAMPER is a structured creativity framework that forces systematic variation. A
 - **Eliminate** a constraint: "What if the name didn't need to hint at the product category at all?"
 
 ### When to use:
-- Phase 2 when a naming category is producing bland results — run SCAMPER on the best candidate from that category
-- Phase 8 (Variation Generation) as a systematic alternative to the prefix/suffix approach
+- 2a when a naming category is producing bland results — run SCAMPER on the best candidate from that category
+- 4c (Variation Generation) as a systematic alternative to the prefix/suffix approach
 - Anytime the user likes a name's "direction" but not the name itself
 
 ---
@@ -57,7 +57,7 @@ Instead of asking "what's a good name?", ask "how would we guarantee this is a t
 ### When to use:
 - When the user can articulate what they DON'T like but can't say what they DO like
 - When early generation rounds are all producing similar-feeling names
-- As a sharpening exercise before convergent shortlisting (Phase 5)
+- As a sharpening exercise before convergent shortlisting (3a)
 
 ---
 
@@ -78,7 +78,7 @@ A pre-mortem assumes the brand name has already been chosen and has caused probl
 4. For any medium/high risks, decide: can this be mitigated, or should the name be downgraded?
 
 ### When to use:
-- After Phase 10 (Trademark Screening), before final presentation
+- After 4d (Trademark Screening), before final presentation
 - When the user is emotionally attached to a name but you've spotted potential issues
 - As a final gut-check: "Before I present these as the final shortlist, let me stress-test them"
 
@@ -127,7 +127,7 @@ Evaluate each finalist name from six distinct perspectives. This prevents the co
 - What's the decision framework: majority of hats positive = proceed?
 
 ### When to use:
-- Phase 5 (Convergent Shortlisting) when the user is torn between multiple strong candidates
+- 3a (Convergent Shortlisting) when the user is torn between multiple strong candidates
 - Any time evaluation feels superficial or purely vibes-based
 - When presenting to the user: organize your rationale by hat to show you've considered all angles
 
@@ -190,7 +190,7 @@ Evaluate names by adopting specific personas and experiencing the name through t
 - "Does this name carry any unintended connotations in major world languages?"
 
 ### When to use:
-- Phase 5 when narrowing from 15 to 5 candidates
+- 3a (Shortlisting) when narrowing from 15 to 5 candidates
 - When the user is in a specific industry where one persona matters much more than others (e.g., healthcare → the patient persona is critical)
 - When the user hasn't considered how the name will function in real-world contexts beyond a screen
 
@@ -215,8 +215,8 @@ Strip away every assumption about what "a name for X should sound like" and rebu
 ### When to use:
 - When all generated names feel like they belong to the same category template
 - When the user says "these all sound like [competitor]"
-- Early in Phase 2 as a category-breaking exercise before conventional generation
-- During pool recovery (Phase 8) when validation killed conventional names and you need fresh territory
+- Early in 2a as a category-breaking exercise before conventional generation
+- During pool recovery (4b) when validation killed conventional names and you need fresh territory
 
 ---
 
@@ -238,7 +238,7 @@ More adversarial than Pre-Mortem. Instead of imagining failure scenarios, active
 3. **Score the exchange:** Which names survived the attack with their core value intact? Which crumbled? A name that's easy to attack AND easy to defend is mediocre. A name that's hard to attack is strong. A name that's easy to attack but has devastating defenses is interesting.
 
 ### When to use:
-- Phase 5 when the user is torn between 2-3 strong finalists
+- 3a (Shortlisting) when the user is torn between 2-3 strong finalists
 - When the team needs to justify the name choice to skeptical stakeholders
 - When Pre-Mortem feels too abstract and the user wants a more confrontational stress test
 - After pool recovery, to pressure-test resurrected candidates
@@ -266,9 +266,9 @@ Find naming successes in parallel domains and extract the structural pattern tha
 - Applied candidates: Spark, Parse, Sift, Distill, Forge
 
 ### When to use:
-- Phase 2 when you need to break out of obvious category naming patterns
+- 2a when you need to break out of obvious category naming patterns
 - When the user can articulate a brand they admire in another industry and wants "that energy"
-- During creative riffing (Phase 6) to find unexpected directions from proven naming structures
+- During creative riffing (2c) to find unexpected directions from proven naming structures
 - When conventional generation is producing names that all feel like they belong to the same competitive set
 
 ---
@@ -294,8 +294,8 @@ TRIZ (Theory of Inventive Problem Solving) is an engineering framework for resol
    - **Transcendence:** Find a concept that is inherently BOTH X and Y without needing to split (Oracle: both authoritative AND wise, no contradiction)
 
 ### When to use:
-- Phase 1 when the brand brief contains competing personality requirements
-- Phase 5 when the user keeps rejecting names for being "too X" or "not enough Y"
+- 1a when the brand brief contains competing personality requirements
+- 3a (Shortlisting) when the user keeps rejecting names for being "too X" or "not enough Y"
 - When the shortlist keeps splitting into two camps and nothing bridges them
 - As a targeted generation technique when the user can articulate the specific tension they're trying to resolve
 
@@ -321,4 +321,4 @@ First Principles (strip conventions) → Analogical Reasoning (import from adjac
 TRIZ (identify the contradiction) → First Principles (question whether the contradiction is real) → generate candidates that resolve rather than compromise
 
 **For a deep session with time:**
-Run First Principles early (Phase 2) to establish ground truth → generate broadly → use Analogical Reasoning and TRIZ during riffing (Phase 6) → stress-test with Red Team/Blue Team and Pre-Mortem → final evaluation with Six Thinking Hats and Stakeholder Role-Play
+Run First Principles early (2a) to establish ground truth → generate broadly → use Analogical Reasoning and TRIZ during riffing (2c) → stress-test with Red Team/Blue Team and Pre-Mortem → final evaluation with Six Thinking Hats and Stakeholder Role-Play
