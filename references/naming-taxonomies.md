@@ -8,8 +8,9 @@ Read this file when generating names in Loop 2 (Divergent Generation, stage 2a).
 1. [The Eleven Naming Categories](#the-eleven-naming-categories)
 2. [Personified Names](#personified-names-as-a-naming-angle)
 3. [Motion & Direction](#motion--direction-as-a-naming-angle)
-4. [Verb-as-Brand Pattern](#verb-as-brand-pattern)
-5. [Obscure Real Word Mining](#obscure-real-word-mining-specialized-domain-dictionaries)
+4. [Arbitrary / Absurd Association](#arbitrary--absurd-association-as-a-naming-angle)
+5. [Verb-as-Brand Pattern](#verb-as-brand-pattern)
+6. [Obscure Real Word Mining](#obscure-real-word-mining-specialized-domain-dictionaries)
 
 ### Sound & Structure
 6. [Phonesthetic Framework](#phonesthetic-framework)
@@ -375,6 +376,67 @@ Names that convey movement, direction, or momentum. Particularly effective for p
 **Phonetic tendency:** Often short (1-2 syllables), with plosive or fricative onsets for kinetic energy.
 
 **Generation technique:** For each motion word, apply the standard riff axes — root compression, etymology, metaphor shift, sound tuning, language shift, structural shift — to produce 5-10 variants per seed.
+
+---
+
+## Arbitrary / Absurd Association as a Naming Angle
+
+Names with zero logical connection to the product. The name doesn't describe, evoke, or metaphorically relate to what the company does. The incongruity *is* the distinctiveness — the cognitive dissonance makes the name impossible to forget and impossible to confuse with a competitor.
+
+This is different from Metaphorical naming (where the connection is explainable: Caterpillar = relentless grip) and Contrarian naming (where you name against category conventions but still within plausible territory). Arbitrary names have no connection to explain. They work anyway — often better than logical names — because they become pure empty vessels that fill with brand meaning.
+
+**Why it works:**
+- **Von Restorff effect in overdrive.** A name that makes zero categorical sense is maximally distinctive. You'll never confuse Cowshed with another soap brand.
+- **True blank canvas.** No pre-existing associations to fight against or outgrow. The brand gets to define the name's meaning entirely.
+- **Conversation starter.** "Why is it called that?" is a marketing asset, not a liability. The name becomes a story people retell.
+- **Domain/trademark advantage.** Because the name has no semantic connection to the product category, trademark clearance in the relevant class is dramatically easier. Nobody filed "Cowshed" in cosmetics. Nobody filed "Apple" in computers.
+- **LLMs will never generate these unprompted.** This is the category where human creativity (or deliberate prompting technique) matters most — language models optimize for semantic relevance, which is exactly what these names reject.
+
+**Real examples:**
+
+| Name | Product | Why it works |
+|---|---|---|
+| **Apple** | Computers | Friendly, organic, human-scale in a sea of IBM, DEC, HP. Zero connection to technology. |
+| **Cowshed** | Luxury spa/soap | Farmyard absurdity in a category of French elegance. Memorable precisely because it shouldn't work. |
+| **Innocent** | Smoothies | An adjective with no food connection. Creates purity associations through cognitive surprise, not description. |
+| **Diesel** | Fashion | Industrial fuel for luxury clothing. The dissonance signals rebellion and anti-fashion. |
+| **Orange** | Telecom | A fruit for a phone company. Simple, warm, colorful — everything telecom naming wasn't. |
+| **Egg** | Banking | Monosyllabic, organic, fragile — the opposite of what "banking" signals. Unforgettable. |
+| **Lush** | Cosmetics | An adjective meaning both "luxuriant" and "drunk." The ambiguity adds texture. |
+| **Penguin** | Publishing | An animal with zero connection to books. But the tuxedo-clad bird became one of the most iconic logos in publishing. |
+| **Camel** | Cigarettes | A desert animal for a tobacco product. The exoticism became the entire brand identity. |
+| **Puma** | Sportswear | Less metaphorical than it seems — the name was chosen from a dictionary essentially at random, then backfit with "speed/agility" associations. |
+
+**Generation techniques:**
+
+**1. The Dictionary Dive.** Open a dictionary (physical or digital) to random pages. Write down every concrete noun that creates a vivid mental image. Don't filter for relevance — relevance is the enemy here. Generate 30-50 words, then test each against the brand brief purely on: phonetic quality, memorability, visual distinctiveness, and domain availability. *Not* on "does it relate to the product."
+
+**2. The Room Scan.** Look around the physical space you're in. Every object is a candidate: Kettle, Hinge, Curtain, Easel, Mantel, Bracket, Plinth, Spool. Everyday objects carry warmth and concreteness that coined names can't match.
+
+**3. The Category Collision.** Pick 3-4 domains completely unrelated to the product: farming, cooking, geology, textiles, carpentry, astronomy, botany, maritime. Generate 10 words from each domain. Test them against the brief on phonetic feel alone. "Awning" for a fintech app? "Kiln" for a SaaS platform? "Bramble" for a security company? The wronger it feels, the more distinctive it probably is.
+
+**4. The Children's Word Test.** Generate names a 5-year-old would know: Puddle, Pebble, Acorn, Marble, Crayon, Mitten, Cobweb, Blanket, Sparrow. These words are universally pronounceable, concretely imageable, and emotionally warm. They also tend to have excellent phonetic properties (simple syllable structures, familiar stress patterns).
+
+**5. The Adjective Lift.** Pull adjectives that describe a *feeling*, not the product: Honest, Tender, Brave, Gentle, Vivid, Idle, Jolly, Humble, Fierce, Lush. Adjectives-as-brand-names carry immediate emotional tone while saying nothing about the category.
+
+**When to use:**
+- When the category's naming conventions are so strong that any "logical" name sounds like a competitor
+- When domain/trademark availability has killed every semantically connected name
+- When the brand's personality is more important than immediate product comprehension
+- When the user has a strong visual identity or brand-building budget (arbitrary names need more brand investment to establish initial comprehension)
+- As a deliberate contrast round: "We've generated 50 names that make logical sense. Now here are 10 that make no sense at all."
+
+**When NOT to use:**
+- When the product is in a new category that requires explanation (a descriptive or suggestive name does more work)
+- When the brand has zero marketing budget (arbitrary names need investment to establish meaning)
+- When the name must perform immediate SEO duty for category terms
+
+**Anti-patterns:**
+- Don't pick an arbitrary name and then force-fit a rationale. "We chose Penguin because penguins huddle together, which represents community" — no. If the name is arbitrary, own it. Backfit narratives sound desperate.
+- Don't use words with strong negative valence (Disease, Coffin, Scab) unless you're deliberately going for Outlaw archetype energy.
+- Don't confuse arbitrary with random. A good arbitrary name still has excellent phonetic properties, is easy to spell and pronounce, creates a vivid mental image, and passes the SMILE test. It just doesn't relate to the product.
+
+**Phonetic tendency:** Arbitrary names work best when the word itself is phonetically strong — concrete nouns with 1-2 syllables, clear vowels, and satisfying consonant patterns. The name has to carry itself entirely on sound and imagery since it gets no semantic lift from the product connection.
 
 ---
 
