@@ -313,7 +313,7 @@ Lexicon Branding (Placek), Aaker Brand Personality, Mark & Pearson 12 Archetypes
 
 ## Sidecar Support
 
-If [claude-sidecar](https://github.com/jrenaldi79/sidecar) is installed, the skill spawns parallel naming sessions with GPT, Gemini, and Grok automatically. Without sidecar, it generates a paste-ready prompt for manual cross-model ideation.
+If [sidecar](https://github.com/jrenaldi79/sidecar) is installed, the skill spawns parallel naming sessions with GPT, Gemini, and Grok automatically. Without sidecar, it generates a paste-ready prompt for manual cross-model ideation.
 
 ## License
 
