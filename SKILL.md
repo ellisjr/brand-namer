@@ -15,7 +15,7 @@ Professional naming agencies charge $15,000–$75,000+ for brand naming engageme
 2. **The user drives ALL convergence.** Present organized options and let the user's taste guide which directions to explore further. Don't pre-filter based on your own preferences. Don't decide which names are "strongest" — present ALL candidates and let the user cut. When moving to riffing, ask the user which names to riff on rather than selecting "the strongest 5-6" yourself.
 3. **Present everything, cut nothing — in digestible batches.** Every candidate generated — by you, by sidecars, by user paste-in — gets presented to the user eventually. Nothing is silently dropped. But "present everything" means **eventual full exposure via batched rounds**, not an immediate dump of 150 names. The process: gallery overview first → batched expansion (10 at a time) of preferred categories → remaining categories available on request. At each point, be transparent about what's been shown and what's waiting: "I've generated [N] candidates. You've seen [M] so far. [K] more are available in [categories]. Want to continue, or move on?" Preference data from earlier selections should sharpen GENERATION (what you produce next), not PRESENTATION (what you show).
 4. **Validate what survives — and riff on what doesn't.** A beautiful name is worthless if the domain is taken, the trademark is filed, or it means something vulgar in Mandarin. But a taken name that the user loves is a powerful creative signal. Validate to sort, not to discard — names that fail validation become seeds for riffing and deepening in the next pass.
-5. **Ask before you advance — offer menus at every checkpoint.** At each major transition, present a menu of options rather than suggesting a single next step. Show what's available and let the user choose. Example: "We can: (a) riff on these 8 directions, (b) try cross-model ideation, (c) apply deepening techniques [list], (d) move to shortlisting, (e) generate a fresh round. Which would you like?" Don't barrel through the pipeline — naming is a creative partnership.
+5. **Ask before you advance — offer menus at checkpoints.** At each major transition, present options rather than suggesting a single next step. **First time** at each transition: show the full menu of available options. **Subsequent times** at the same transition: use a short form — "Generate more, riff more, or move on? (show full menu)" — unless the user asks for the full list. Don't barrel through the pipeline — naming is a creative partnership, but menus shouldn't feel like paperwork.
 6. **Flag conflicts inline with confidence levels.** For every name you generate, immediately check your training data for known companies, products, or brands with the same or very similar name. If you know of a conflict, flag it inline with a confidence indicator:
    - ⚠️ **Known** — "⚠️ Meridian AI — VC CRM" (you're confident this conflict exists)
    - ⚠️? **Uncertain** — "⚠️? I recall something called Meridian in tech but may be misremembering" (flag but note uncertainty)
@@ -26,19 +26,37 @@ Professional naming agencies charge $15,000–$75,000+ for brand naming engageme
 
 ## Reference Files — Context Budget Policy
 
-This skill has three reference files in `references/` totaling ~1,200 lines. **Do not read them all upfront.** Load sections on-demand based on the current stage. In long sessions, context pressure becomes the primary operational risk — manage it actively.
+This skill has **6 reference files** in `references/`, organized by when they're needed. **Load only the files relevant to the current stage and brief type.** No session should load all 6.
 
 ### Loading strategy
 
-| File | When to load | What to load |
-|---|---|---|
-| `references/naming-taxonomies.md` | **2a (Generation):** Load the core sections | Sections 1-5 (11 naming categories, personified names, motion/direction, verb-as-brand, obscure real word mining), Section 7 (anti-patterns). ~300 lines. |
-| `references/naming-taxonomies.md` | **2c (Riffing):** Load riffing sections | Sections 9-14 (riffing axes, affixes, respelling, alternate spellings, tech branding, prefix × suffix matrix). ~200 lines. |
-| `references/naming-taxonomies.md` | **3a (Shortlisting):** Load evaluation sections | Sections 26-27 (brand architecture, morphological productivity), Section 28 (semantic differential). ~100 lines. |
-| `references/naming-taxonomies.md` | **4a-4e (Validation):** Load validation sections | Sections 29-35 (phonotactic scoring, speech testing, searchability, recall, visual, distinctiveness, compliance). ~150 lines. |
-| `references/naming-taxonomies.md` | **4b (Pool recovery):** Load survival sections | Sections 13, 17-19 (tech branding, domain-first, three-team, Zwicky). ~150 lines. |
-| `references/brand-psychology.md` | **1a-1b (Brief/Territories)** | Full file — 389 lines, used throughout. Load once, retain. |
-| `references/elicitation-techniques.md` | **When triggered** (user asks, session stuck, stress-testing) | Full file — 325 lines. Load on demand, not by default. |
+| File | Lines | When to load | Brief type |
+|---|---|---|---|
+| `references/naming-categories.md` | ~550 | **2a (Generation)** — always | All briefs |
+| `references/naming-techniques.md` | ~600 | **2c (Riffing), 3a (Shortlisting), 4b (Pool recovery)** | All briefs |
+| `references/consumer-naming.md` | ~660 | **2a (Generation)** — for consumer/lifestyle/food/beauty/fashion | Consumer briefs only |
+| `references/enterprise-naming.md` | ~420 | **1a (Brief), 2a (Generation), 3a (Shortlisting), 4a-4e (Validation)** | B2B/enterprise briefs only |
+| `references/brand-psychology.md` | ~430 | **1a-1b (Brief/Territories)** — load once, retain | All briefs |
+| `references/elicitation-techniques.md` | ~325 | **When triggered** (user asks, session stuck, stress-testing) | On demand |
+
+**For a consumer brief:** Load naming-categories.md + consumer-naming.md + brand-psychology.md = ~1,640 lines across the session. Never load enterprise-naming.md.
+
+**For a B2B brief:** Load naming-categories.md + enterprise-naming.md + brand-psychology.md = ~1,400 lines across the session. Never load consumer-naming.md.
+
+**For a quick session:** Load naming-categories.md only (~550 lines). Add consumer-naming.md if it's a sensory/physical product. Skip everything else.
+
+### Troubleshooting — when the session gets stuck
+
+| Problem | Likely cause | Load this file | Apply this technique |
+|---|---|---|---|
+| Names all sound the same | Convergent generation, stuck in one category | `naming-categories.md` | Try categories you haven't used. Apply Contrarian or Arbitrary/Absurd from `naming-techniques.md`. |
+| Names are generic / "LLM averaged" | Not enough sensory or experiential input | `consumer-naming.md` | Run the Five Senses Scan. Apply Sensory Dissonance. |
+| Can't find available names | All found words are taken | `naming-techniques.md` | Apply Tech Branding Patterns, Prefix × Suffix Matrix, Creative Respelling. |
+| User hates everything | Taste not captured correctly | `brand-psychology.md` | Re-run archetype identification. Try Constraint Removal from `elicitation-techniques.md`. |
+| Committee can't agree | No shared evaluation framework | `enterprise-naming.md` | Apply Semantic Differential Scaling. Use Nominal Group Technique from SKILL.md committee playbook. |
+| Names don't fit the vertical | Wrong register/codes | `enterprise-naming.md` | Check Vertical Code Calibration table for the specific vertical. |
+| Names fail in real-world speech | Not tested in context | `enterprise-naming.md` | Run Sales Conversation Fit templates. Run Speech & Channel Robustness tests. |
+| Pool too thin after validation | Normal — 80-90% kill rate for found words | `naming-techniques.md` | Pool recovery with Tech Branding compounds. Try Domain-First Naming. |
 
 ### Context health management
 
@@ -51,7 +69,7 @@ In long sessions (50+ turns, 100+ candidates), context pressure will degrade qua
 
 ### Sidecar briefing budget
 
-When briefing sidecars, do NOT include the full 1,200-line taxonomy. Instead:
+When briefing sidecars, do NOT include full reference files. Instead:
 - Include the brand brief (from `00-brief.md`)
 - Include a **condensed taxonomy summary** — the 11 category names with 1-line descriptions + the key generation rules (anti-patterns, at least 6 categories, don't self-censor). ~50 lines, not 1,200.
 - Include existing candidates (for deduplication)
@@ -152,14 +170,15 @@ Present a brief competitive map to the user:
 
 This sharpens generation and gives the user confidence that names won't accidentally sound like the competitive set.
 
-### Session mode
-Ask the user which approach they prefer:
+### Session mode (infer, don't ask)
 
-**Explorer Mode:** Maximum ideation first. Generate across all categories, auto-riff on strongest candidates, run deepening techniques on the full pool — THEN present everything organized by category for the user to react to. Best when the user wants to see the full possibility space before making any cuts.
+**Explorer Mode:** Maximum ideation first. Generate across all categories, present everything organized by category for the user to react to. Best when the user wants to see the full possibility space before making any cuts.
 
 **Focused Mode:** Step-by-step with user input at each stage. Present one category at a time, get reactions, riff only on what the user likes, check in frequently. Best when the user wants to stay in control and iterate collaboratively.
 
-Both modes use the same pipeline — they just differ in when the user enters the loop. The chosen mode is captured in `00-brief.md` frontmatter so it persists across sessions.
+Both modes use the same pipeline — they just differ in when the user enters the loop. **Infer the mode from the user's signals rather than asking explicitly.** "Show me everything" / "I want to see the full range" → Explorer. "Let's go step by step" / "walk me through options" → Focused. A detailed brief with clear taste signals → Explorer (they know what they want, show them breadth). A sparse brief with uncertain taste → Focused (build understanding incrementally). Only ask when the signals are genuinely ambiguous.
+
+The chosen mode is captured in `00-brief.md` frontmatter so it persists across sessions.
 
 If the user gives you a sparse brief ("I need a name for my AI startup"), work with what you have but note the gaps. You can generate a first round and let their reactions fill in what the brief didn't.
 
@@ -192,27 +211,25 @@ As you generate and riff, weave these checks into your commentary — don't pres
 
 **Reads:** `00-brief.md` | **Writes:** `01-candidates.md` (created here, grows through 2b and 2c)
 
-This is where the magic happens — and where discipline matters most. Read `references/naming-taxonomies.md` for naming categories and `references/brand-psychology.md` for emotional frameworks. Use the brand archetype, personality dimensions, and feeling spectrum from the psychology reference to ensure names don't just sound good but *feel right* for the brand's emotional territory.
+This is where the magic happens — and where discipline matters most. Read `references/naming-categories.md` for naming categories and `references/brand-psychology.md` for emotional frameworks. Use the brand archetype, personality dimensions, and feeling spectrum from the psychology reference to ensure names don't just sound good but *feel right* for the brand's emotional territory.
 
 #### Running count
-After each generation push (a batch of names in a category or direction), report the running total: "That's [N] candidates so far across [M] categories. Want to keep going, shift direction, or move on?"
-
-Let the user decide when they have enough. Some sessions need 40 names, others need 150. Your job is to keep generating with breadth and quality until the user says stop — not to hit a fixed number.
+Let the user decide when they have enough. Some sessions need 40 names, others need 150. Your job is to keep generating with breadth and quality until the user says stop — not to hit a fixed number. Include a candidate count only when the user needs orientation (e.g., after a large round or when asked) — don't report after every batch.
 
 **Focused Mode:** Present category-by-category as generated. Still aim for breadth — at least 50 candidates internally across all categories before the user starts cutting.
 
 #### Rules for this stage:
-- Generate across **at least 6 of the 11 naming categories** in the reference file. You may skip categories that clearly don't fit, but you must try categories that feel uncomfortable — the best names often come from unexpected places.
+- **Attempt at least 6 of the 11 naming categories** in the reference file. Present at least 4 that produced viable results. Note which categories you attempted and found unproductive: "I tried Acronymic and Sound-Symbolic but neither produced strong fits for this brief." If the user says early on "skip [category]" or "I don't want [style]," respect that — remove it from the attempt list and don't count it toward the minimum. The user can permanently disable categories they know they don't want.
 - Generate a **minimum of 5 names per category** you use internally. Present ALL candidates to the user — do not select "the strongest" for a curated presentation. The user sees the full pool and decides what to cut (see Philosophy #3).
 - **Do not self-censor.** Include names that feel weird, risky, or "too much." The user will filter. Your job is to fill the possibility space.
 - **Flag conflicts inline** with ⚠️ during generation (see Philosophy principle #5). Don't wait for the competitive screen stage.
 - Use the **phonesthetic framework** from the reference file to ensure variety in how names sound, not just what they mean.
-- Explicitly explore the **Motion & Direction semantic field** (see `references/naming-taxonomies.md`) — names that convey movement, direction, or momentum are often overlooked but effective.
-- Consider **Personified Names** (see `references/naming-taxonomies.md`) — human names used as brands (Claude, Alexa, Oscar, Ada). Particularly strong for AI, health, finance, and trust-dependent products.
+- Explicitly explore the **Motion & Direction semantic field** (see `references/naming-categories.md`) — names that convey movement, direction, or momentum are often overlooked but effective.
+- Consider **Personified Names** (see `references/naming-categories.md`) — human names used as brands (Claude, Alexa, Oscar, Ada). Particularly strong for AI, health, finance, and trust-dependent products.
 - If generation feels convergent or safe, read `references/elicitation-techniques.md` and apply **SCAMPER** to your best candidates or **Inversion** to identify what to avoid. If the session is stuck, try **Constraint Removal** to find the user's true preferences.
 
 #### Ownability-first generation (parallel track)
-**Run this alongside category-based generation, not after it.** For every promising found word or evocative name you generate, immediately produce 3-5 compound/coined variants using the tech branding patterns from `references/naming-taxonomies.md`:
+**Run this alongside category-based generation, not after it.** For every promising found word or evocative name you generate, immediately produce 3-5 compound/coined variants using the tech branding patterns from `references/naming-techniques.md`:
 
 - **Root + system suffix:** [root]works, [root]craft, [root]wise, [root]mark, [root]forge, [root]scope, [root]base, [root]vault
 - **Root + tech suffix:** [root]ware (portmanteau with "software"), [root]OS (operating system energy), [root]kit, [root]stack, [root]grid, [root]box, [root]lab(s)
@@ -226,7 +243,7 @@ This ensures that when a found word inevitably dies in validation, you already h
 
 **Gallery Mode (default in Explorer Mode):** Before diving into categories one by one, offer a high-level gallery — the top 3-5 names from each category in a single scannable grid. This lets the user see the full breadth at a glance and identify which categories to explore further.
 
-"Here's a quick overview across all categories. After scanning, tell me which rows pull you in and I'll expand those."
+"Here's a quick overview across all categories. For each row, tell me: (H)ot — expand this, (W)arm — include but don't prioritize, (C)old — skip."
 
 | Category | Top Candidates |
 |---|---|
@@ -237,13 +254,12 @@ This ensures that when a found word inevitably dies in validation, you already h
 
 Then expand the categories the user picks, showing the full numbered list with rationale. In **Focused Mode**, category-by-category remains the default.
 
-#### Batch reaction-gathering for large pools
-When presenting expanded candidate lists (20+ names), don't dump them all at once. Present in **numbered batches of 10** and ask the user to call out which numbers they like. This:
-- Prevents overwhelm
-- Generates precise preference data (you can see patterns in what they pick vs. skip)
-- Builds a preference profile incrementally (after 5-6 batches, you'll know their taste precisely)
+#### Presentation order and pacing
+**Two-step presentation: gallery overview first, then category-by-category expansion.** In Explorer Mode, start with the gallery grid (top 3-5 per category, H/W/C reactions). Then expand the Hot categories one at a time as numbered lists with brief rationale. In Focused Mode, skip the gallery and go straight to category-by-category. If a category has 15+ names, split into sub-batches of 10 within that category.
 
-After all batches are presented, compile the preference profile: "You consistently picked [patterns]. You consistently skipped [patterns]. This tells me you gravitate toward [summary]." Use this profile to sharpen all subsequent generation and riffing.
+After the user reacts to each category, build their preference profile incrementally: "You consistently picked [patterns]. You consistently skipped [patterns]. This tells me you gravitate toward [summary]." Use this profile to sharpen all subsequent generation and riffing.
+
+**Transparency rule:** After presenting all categories the user asked to see, note what's remaining: "You've seen [M] candidates across [N] categories. [K] more are available in [remaining categories]. Want to see those too, or move on?" Nothing is hidden — but the user controls the pace.
 
 **Category-by-category presentation:**
 Present names **ONE CATEGORY AT A TIME**. For each category:
@@ -313,7 +329,7 @@ Check whether you have access to `sidecar:sidecar_start`. If you do, offer to sp
 
 For each sidecar, send a briefing that includes:
 1. The brand brief from Loop 1
-2. The naming categories from `references/naming-taxonomies.md` (include the full taxonomy — the sidecar doesn't have access to local files)
+2. The naming categories from `references/naming-categories.md` (include the full taxonomy — the sidecar doesn't have access to local files)
 3. An explicit instruction to generate at least 50 candidates across multiple naming categories, organized by category with brief rationale per name
 4. The anti-convergence instructions: explore widely, don't self-censor, include weird/risky options
 5. **A list of candidates already generated** — instruct the sidecar: "Here are the [N] names already generated. Do NOT repeat these. Focus on categories, directions, and domains NOT already explored." This prevents the 70%+ overlap that occurs when multiple models receive identical briefs without deduplication guidance.
@@ -403,7 +419,7 @@ For each component of a compound or multi-morpheme name, systematically explore:
 - **Component decomposition**: Break any multi-syllable name into its components and riff on each independently, then recombine. "Panopticon" → Pan (all) + Optic (sight) + -on (suffix). Riff on each: Pan → Omni, Holo, Total. Optic → Sight, View, Lens, Scope. -on → -ix, -is, -um, -a. Recombine: "Omniscope," "Holoview," "Totalis."
 
 #### Systematic Affix Exploration
-Many affixes work as both prefixes AND suffixes, or have multiple viable forms. For each promising root, systematically run through the affix library in `references/naming-taxonomies.md` (see "Productive Affixes for Name Construction"):
+Many affixes work as both prefixes AND suffixes, or have multiple viable forms. For each promising root, systematically run through the affix library in `references/naming-techniques.md` (see "Productive Affixes for Name Construction"):
 
 **The process:**
 1. Take the root (e.g., "signal," "craft," "true," "bit")
@@ -412,7 +428,7 @@ Many affixes work as both prefixes AND suffixes, or have multiple viable forms. 
 4. Test each combination for ⚠️ conflicts, pronounceability, and emotional fit
 5. The best affixes are chameleons — "bit" as prefix (Bitwise = technical precision) feels different from "bit" as suffix (Clearbit = small/focused/modular)
 
-See the full affix reference table in `references/naming-taxonomies.md` for a comprehensive list of productive prefixes and suffixes with their semantic contributions.
+See the full affix reference table in `references/naming-techniques.md` for a comprehensive list of productive prefixes and suffixes with their semantic contributions.
 
 #### The Lexicon Three-Team Method
 Inspired by Lexicon Branding's actual process: approach the same brief from three angles simultaneously:
@@ -481,7 +497,7 @@ The user decides how many rounds of ideation they want. Your role:
 - Respect the user's timeline. If they want to go fast, move to validation with a larger shortlist. If they want to explore, keep generating.
 
 #### Definitions check during shortlisting
-For every found word, foreign-root, or obscure real word on the shortlist, include its dictionary definition and etymology when presenting it. This serves as a reality check — the user should know exactly what the word means before committing to it.
+For the user's **top 5-10 picks** — especially obscure words, foreign-roots, or words with non-obvious secondary meanings — include the dictionary definition and etymology. Don't auto-define common words the user obviously knows (Gauge, Relay, Grade). Focus definitions where they add genuine value: revealing etymology that enriches the brand story, surfacing secondary meanings the user might not know, or confirming a foreign word means what they think it means. This serves as a reality check — the user should know exactly what the word means before committing to it.
 
 Format:
 ```
@@ -529,7 +545,7 @@ At each transition point, present the FULL menu of available techniques and let 
 
 Which would you like to try?"
 
-If the user asks about any technique, explain it briefly. The full library is in `references/elicitation-techniques.md` and `references/naming-taxonomies.md`.
+If the user asks about any technique, explain it briefly. The full library is in `references/elicitation-techniques.md`, `references/naming-techniques.md`, and `references/consumer-naming.md` or `references/enterprise-naming.md` (depending on brief type).
 
 #### Multi-perspective evaluation
 For high-stakes naming decisions, consider evaluating the shortlist from multiple distinct perspectives simultaneously — not just sequentially through techniques. Frame it as: "Let me look at your top candidates through three lenses at once: the strategist (does this name position you correctly?), the creative (does this name have narrative energy?), and the analyst (does this name have practical risks?)." This cross-pollination often surfaces insights that no single technique catches alone.
@@ -551,17 +567,22 @@ Before entering validation, present:
 
 #### Riffing checklist (before entering Loop 4)
 
-**In deep sessions (default):** This checklist is mandatory. Apply at least these techniques to each shortlisted direction before entering validation. Skipping this consistently produces shortlists where every name dies in validation, leaving nothing to work with.
+**In deep sessions (default):** This checklist is mandatory. Apply techniques to each shortlisted **direction** (group names by theme — e.g., "the measurement direction" covers Assay, Gauge, Caliber together), not to each individual name.
 
 **In quick sessions:** This checklist is skippable — but warn the user once: "Found words have an 80-90% validation kill rate without compound alternatives. Want to riff first, or go straight to validation?" Then respect their choice.
 
-The checklist:
-- [ ] **SCAMPER** — Substitute, Combine, Adapt, Modify, Eliminate, Reverse on each shortlisted name
-- [ ] **Synonym explosion** — 5-10 synonyms tested for each key root
-- [ ] **Systematic affix exploration** — each root run through the prefix AND suffix positions in the affix library
-- [ ] **Creative respelling** — Y-for-I, K-for-C, dropped vowels, -ik for -ic tested on each root
-- [ ] **Tech branding patterns** — -OS, -ware, -wise, -er, -base, -box, -kit, -lab(s) applied to each root (see `references/naming-taxonomies.md`)
+**Core checklist (mandatory in deep sessions — apply to each direction):**
+
+Before running, check the `techniques_used` array in `01-candidates.md` frontmatter. If ALL 4 core techniques have already been applied to all shortlisted directions during 2c, the checklist is satisfied — don't surface it as a visible step. Just note: "Riffing checklist: all core techniques already applied during riffing. Proceeding to validation." If gaps remain, surface only the unapplied techniques:
+
+- [ ] **SCAMPER** — Substitute, Combine, Adapt, Modify, Eliminate, Reverse
 - [ ] **Compound creation** — each root combined with at least 5 different second words
+- [ ] **Creative respelling** — Y-for-I, K-for-C, dropped vowels tested on each root
+- [ ] **Tech branding patterns** — -OS, -ware, -wise, -er, -base, -box applied to each root
+
+**Extended checklist (offer to the user — "Want me to go deeper with additional techniques?"):**
+- [ ] **Synonym explosion** — 5-10 synonyms tested for each key root
+- [ ] **Systematic affix exploration** — each root run through the full prefix AND suffix library
 - [ ] **Language shift** — core concept translated into Latin, Greek, French at minimum
 
 The goal: for every found word on the shortlist, you should have 3-5 compound/coined alternatives ready. When the found word dies in validation (and it probably will), the alternatives are already in the pipeline.
@@ -614,6 +635,16 @@ For each shortlisted name (focusing on those WITHOUT existing ⚠️ flags — f
 - **Flagged** — there's something out there with this name but it might not be a conflict (different industry, tiny company, defunct)
 - **Taken** — there's a clear, active company/product with this name in a related space
 
+**Resolving "Flagged" names inline:** Include a "Decision" column directly in the competitive screening table for flagged names. Don't present a separate resolution menu — fold it into the same view:
+
+| Name | Status | Conflict | Decision |
+|---|---|---|---|
+| Siftworks | Clear | — | — |
+| Gauge | Taken | Gauge.ai, GaugeOnline | → riff or note for later |
+| Headland | Flagged | Headlands Technologies (quant trading) | Proceed / Kill / Defer to attorney? |
+
+Ask the user to mark each flagged name inline. This keeps the flow administrative-light and avoids a separate resolution step.
+
 Report results to the user. **Do NOT remove "Taken" names from the working set.** Move them to a "Taken — available for riffing & deepening" bucket. A taken name that the user loves is a powerful creative signal: it tells you exactly what emotional territory to explore. Use taken names as inputs to:
 - **Riffing (2c techniques):** SCAMPER, etymological mining, adjacent metaphors, compound creation, structural shifts
 - **Deepening (3a techniques):** Constraint Removal (what if the domain didn't matter — what's the *feeling* you want?), Inversion (what makes this name work — now find something available with the same properties), Six Thinking Hats (evaluate the taken name's strengths systematically, then hunt for available names that hit the same marks)
@@ -621,16 +652,24 @@ Report results to the user. **Do NOT remove "Taken" names from the working set.*
 
 The goal is to find an *available* name that carries the same energy. Taken names are creative assets, not dead ends.
 
-#### Validation-death trigger (mandatory)
-When a name the user liked dies in competitive screening, don't just report "taken" and move on. Immediately prompt:
+#### Validation-death trigger (mandatory — batched)
+When names die in competitive screening, don't fire a recovery prompt for each one individually. Collect all deaths from the validation round, then present one consolidated recovery menu:
 
-"**[Name] is taken** by [conflict]. But you liked it because [what made it compelling]. Would you like to:
-- (a) **Riff on it** — I'll apply [specific techniques] to find available alternatives with the same energy
-- (b) **Constraint removal** — forget availability for a moment, what FEELING were you drawn to? I'll hunt for that feeling in available territory
-- (c) **Move on** — drop it and continue with survivors
-- (d) **Note it for later** — add to taken-but-loved bucket for pool recovery"
+"**[N] names died in this round:**
 
-This turns validation failures into generation triggers rather than dead ends.
+| Name | Killed by | What made it compelling |
+|---|---|---|
+| [Name 1] | [conflict] | [energy/quality the user liked] |
+| [Name 2] | [conflict] | [energy/quality] |
+| ... | ... | ... |
+
+**Which (if any) do you want to riff on?** Pick by number, or:
+- (a) **Riff on selected** — I'll generate available alternatives with the same energy
+- (b) **Riff on all** — full recovery pass on every dead name
+- (c) **Note all for later** — add to taken-but-loved bucket for pool recovery
+- (d) **Move on** — work with survivors only"
+
+This turns validation failures into generation triggers while keeping the session flowing.
 
 #### Technical project screening (for dev tools, open source, skills, MCPs, plugins)
 When naming a technical project, add these sources to the competitive screen:
@@ -690,17 +729,19 @@ Present the taken-but-loved bucket from `02-shortlist.md` frontmatter, plus any 
 - What made it compelling (the emotional territory, the phonetic quality, the story type)
 
 Let the user select which (if any) to bring back into the mix. Then:
-1. **Apply the FULL riffing toolkit** to each taken-but-loved name — not just a light pass. This means:
-   - SCAMPER (all 7 lenses) on each name
+1. **Apply the core riffing techniques** to each taken-but-loved direction (grouped by theme, not individual names):
+   - SCAMPER (all 7 lenses)
+   - Compound creation (each root × 5+ second words)
+   - Creative respelling (Y-for-I, K-for-C, dropped vowels)
+
+   Then ask: "Want me to go deeper with additional techniques?" If yes, escalate to:
    - Synonym explosion (5-10 synonyms per root)
    - Language shift (Latin, Greek, French at minimum)
    - Systematic affix exploration (prefix AND suffix positions)
-   - Tech branding patterns (-OS, -ware, -wise, -er, -base, -box — see `references/naming-taxonomies.md`)
-   - Creative respelling (Y-for-I, K-for-C, dropped vowels)
-   - Compound creation (each root × 5+ second words)
+   - Tech branding patterns (-OS, -ware, -wise, -er, -base, -box)
    - Zoom in/out and adjacent metaphor
    - Lexicon Three-Team method (on-brief, competitor, unrelated domain)
-   - Conceptual riffing from `references/elicitation-techniques.md` (TRIZ, First Principles, Analogical Reasoning)
+   - Conceptual riffing (TRIZ, First Principles, Analogical Reasoning)
 2. **Present riff results to the user for reaction** before validating — let them pick favorites
 3. **Re-validate the new candidates before they rejoin the pool:** run them through 4a (competitive screen — including technical project screening if applicable) and 4b (domain check, with explicit TLD searches) → update `03-validation.md`. Only candidates that pass re-enter the active pool alongside the original survivors.
 
@@ -957,29 +998,25 @@ timestamp: ISO-8601
 
 ### Artifact save triggers (mandatory)
 
-**Save after every batch of new candidates — not just at stage boundaries.** Long naming sessions generate hundreds of candidates across many rounds. If you wait until the end of a stage to save, a context reset loses everything. Specific triggers:
+**Save at stage boundaries and when context is getting long.** Saving after literally every batch creates I/O noise. Save at these triggers:
 
-- **After each batch of new candidates** (generation, riffing, cross-model merge, pool recovery): append to `01-candidates.md`
-- **After user reaction-gathering** (batch selections, preference expressions): update `02-shortlist.md` with preference profile and current favorites
-- **After each validation step** (competitive screen, domain check, trademark, social handles): update `03-validation.md` with results
-- **After any name is killed or resurrected:** update the relevant artifact immediately
+- **After generation completes** (all categories presented, user has reacted): write/update `01-candidates.md`
+- **After cross-model merge** (sidecar or paste-in candidates integrated): update `01-candidates.md`
+- **After shortlisting** (user has confirmed favorites): write `02-shortlist.md`
+- **After each validation step** (competitive screen, domain check, trademark, social handles): update `03-validation.md`
+- **After pool recovery rounds**: update both `01-candidates.md` and `03-validation.md`
+- **When context is getting long** (50+ turns, or you notice context compression happening): save everything immediately to all relevant artifacts — they are the authoritative state that survives compression
 
-Think of artifact saves like git commits — frequent, small saves that capture state. Not infrequent, large dumps at the end.
+Think of artifact saves like meaningful git commits — at logical milestones, not after every line of code.
 
-### Running count (persistent status line)
+### Running count (optional — include only when the user needs orientation)
 
-Maintain a running count throughout the entire session, not just during generation:
-- During generation: "That's [N] candidates across [M] categories."
-- During shortlisting: "[N] favorites selected from [M] candidates."
-- During validation: "[N] surviving from [M] screened. [K] clear, [J] flagged, [L] taken."
-- During pool recovery: "[N] new riff candidates generated from [M] taken-but-loved seeds."
-
-This gives the user a persistent sense of where they are in the pipeline.
+Don't report candidate counts at every transition — it becomes noise. Include a count only when it helps the user orient: after a large generation round, when entering validation, or when the user asks "how many do we have?" If the user seems well-oriented, skip it.
 
 ### How artifacts flow
 
 - **Loop 1 (Frame)** → writes `00-brief.md`
-- **Loop 2 (Generate: 2a-2c)** → appends to `01-candidates.md` after each batch (this artifact grows; each round adds candidates)
+- **Loop 2 (Generate: 2a-2c)** → appends to `01-candidates.md` at stage boundaries (this artifact grows; each round adds candidates)
 - **Loop 3 (Select: 3a)** → reads `01-candidates.md`, writes `02-shortlist.md` (the clean handoff to validation, including preference profile)
 - **Loop 4 (De-risk: 4a-4f)** → reads `02-shortlist.md`, writes `03-validation.md` (updated after EACH validation step, not just at the end), then writes `04-final.md`
 - **Pool recovery** → reads taken-but-loved from `02-shortlist.md`, appends resurrection riffs to `01-candidates.md`, re-validates into `03-validation.md`
@@ -1001,12 +1038,28 @@ If the user prefers just the final answer with no intermediate artifacts, skip s
 
 This skill should flex to the user's needs. The session type determines which stages are mandatory vs. optional:
 
-- **Quick session ("I need 5 name ideas in 10 minutes"):** Compress Loop 1 and 2a into a fast generation round. Skip 2b cross-model ideation. Riffing checklist is **skippable** (warn once about validation kill rates, then respect the user's choice). Skip Loop 4 validation. Only produce `04-final.md`.
+- **Quick session ("I need 5 name ideas in 10 minutes"):** Use the **Quick Mode Fast Path** below. Skip most ceremony.
 - **Deep session ("I want to really get this right"):** Run the full pipeline including 2b cross-model ideation and 2c creative riffing. Riffing checklist is **mandatory** before entering validation. Multiple ideation rounds. Thorough validation. All 5 artifacts.
 - **Iterative session ("Let me think about these overnight"):** Save `01-candidates.md` after generation/riffing. When the user returns, read its frontmatter to resume at 3a or 4a.
 - **Validation only ("I already have names, just check them"):** User provides names → write directly to `02-shortlist.md` → run Loop 4 (4a-4f). Riffing checklist is **skippable** (the user arrived with names they've already developed).
 
 The user may not use the loop/stage terminology. Read intent from context and jump to the relevant stage. Check for existing artifacts in `brand-namer-output/` to detect where a previous session left off.
+
+### Quick Mode Fast Path
+
+When the user wants speed over thoroughness, strip the pipeline to essentials:
+
+1. **Brief (3 questions only):** What are you naming? Who is it for? Any names you like or hate?
+2. **Generate:** 30-40 names across 4-5 categories. Gallery-mode presentation only — no category-by-category expansion unless the user asks. Include ownability-first compounds alongside found words from the start.
+3. **React:** User picks favorites from the gallery. One round only.
+4. **Light riff:** Quick compound variants on the top picks. No mandatory checklist. No technique menus.
+5. **Present:** Top 8-10 names with brief rationale and domain suggestions. No tiered presentation unless there are clear availability differences.
+
+6. **For consumer/sensory products:** Run the **Five Senses Scan** during generation even in quick mode. It takes 30 seconds of structured thinking per sense and consistently produces the session's best candidates for physical products (food, beauty, fashion, home). Don't skip it for speed — it IS the speed technique for consumer naming.
+7. **Ownability risk check.** If the shortlist is entirely found words with zero compounds or coined names, flag it: "Your shortlist is all found words — beautiful but high collision risk for domains and trademarks. Want me to generate 2-3 compound alternatives as insurance before you go?" This is especially important in Quick Mode where the user killed compounds early for aesthetic reasons.
+8. **Optional: Quick conflict check.** Before closing, offer: "Want me to quick-check your top 2-3 for obvious conflicts? Takes 2 minutes." If yes, run a light competitive screen (web search only) on the user's top picks. This catches the most heartbreaking kills without the full Loop 4 ceremony.
+
+**Skip entirely in quick mode:** Territories (1b), competitive whitespace (1c), session mode selection, cross-model ideation (2b), full riffing checklist, checkpoint menus, deepening techniques, full validation (Loop 4), artifacts (unless requested). No running count, no preference profile compilation, no technique transparency labels.
 
 **Detecting session type:** If the user doesn't state their intent, infer from signals: brief length (sparse = likely quick), tone ("just brainstorm some ideas" = quick; "this is our company name, it needs to be perfect" = deep), and time references. When in doubt, ask: "Would you like a quick brainstorm or a thorough naming engagement?"
 
@@ -1015,19 +1068,77 @@ The user may not use the loop/stage terminology. Read intent from context and ju
 Beyond session type, certain naming contexts require specific adaptations:
 
 **International-first naming:**
-When the primary market is non-English or multi-script, front-load cross-language checks (don't defer to Loop 4). Favor CVCV structures for global pronounceability. Test transliteration into target scripts early. Prioritize the Cross-Script/Transliteration and Japanese Sound-Symbolism sections from `references/naming-taxonomies.md`. Deprioritize English-centric techniques (verb-as-brand, Anglo-Saxon compounds).
+When the primary market is non-English, front-load cross-language checks (don't defer to Loop 4). Favor CVCV structures for global pronounceability (see the CVCV generation technique in `references/naming-categories.md`). Prompt for ALL target languages explicitly — don't assume "international" means the 6 languages in the Cross-Language Pitfalls section. Check the Phonotactic Compatibility table for language-specific constraints.
+
+Distinguish two subtypes:
+- **Non-Latin-script markets** (Chinese, Japanese, Korean, Arabic, Hindi): Prioritize Cross-Script/Transliteration testing. Test how the name looks and sounds when transliterated.
+- **Latin-script international** (Spanish, Portuguese, French, Indonesian, Vietnamese, Turkish): Key challenges are false cognates, regulatory terminology variation by jurisdiction, tonal language risks (Vietnamese, Thai), and regional slang. Cross-Script testing is less relevant; phonotactic compatibility and cross-language pitfalls are more important.
+
+Deprioritize English-centric techniques (verb-as-brand, Anglo-Saxon compounds). Prompt for per-market competitors, not just global ones.
 
 **Regulated industries (healthcare, finance, legal):**
-Load the Regulated-Industry Lexical Compliance section from `references/naming-taxonomies.md` BEFORE generation, not during validation. Screen forbidden/controlled terms as a generation constraint, not a validation filter. Names that imply clinical claims, fiduciary status, or regulatory coverage should be flagged during 2a, not caught in 4d.
+Load the Regulated-Industry Lexical Compliance section from `references/enterprise-naming.md` BEFORE generation, not during validation. Screen forbidden/controlled terms as a generation constraint, not a validation filter. Names that imply clinical claims, fiduciary status, or regulatory coverage should be flagged during 2a, not caught in 4d.
 
 **Committee/stakeholder naming:**
-When multiple decision-makers are involved, use Semantic Differential Scaling to convert subjective opinions into comparable data. The Nominal Group Technique (structured independent voting → reveal → discuss → re-vote) prevents the loudest voice from dominating. Present Tier 1 finalists as a ranked ballot, not a flat list.
+When multiple decision-makers are involved, adapt the pipeline for group dynamics:
+
+*Brief intake (1a) — capture divergence:*
+When personality or taste answers diverge across stakeholders, capture each person's position explicitly. Name the dimensions of disagreement: "We have a 4-7 spread on authority. That tells us the name needs enough weight to satisfy [person A] but enough sharpness to avoid the zone [person B] flags." Use the divergence as territory-definition input, not something to resolve immediately.
+
+*Generation presentation — rotate order:*
+Present names in different orders across rounds to counter primacy bias. The first name shown disproportionately influences the most vocal person, who anchors the group.
+
+*Shortlisting — Nominal Group Technique (operationalized):*
+1. **Silent scoring:** Each stakeholder scores the shortlist independently (use Semantic Differential Scaling with custom scales relevant to the brief's key tensions). No discussion during scoring.
+2. **Round-robin reveal:** Each person shares their top 3 and bottom 3 with brief reasoning. Others listen without debating.
+3. **Discussion:** Open discussion on divergence points only — where scores differ by 3+ points on any dimension.
+4. **Re-vote:** Each stakeholder re-scores after hearing the discussion. Convergence usually improves.
+
+*Weighted scoring by role:*
+The CTO's score on "developer credibility" should carry more weight than the CMO's, and vice versa for "sales-deck impact." Ask the committee to identify which stakeholder is the authority on which dimension, then weight accordingly.
+
+*Deadlock-breaking escalation:*
+If the committee is stuck after Semantic Differential + Nominal Group: (a) switch to elimination voting — "Which name would you cut first?" Subtraction is psychologically easier than selection. (b) If still stuck: "Which name would you regret NOT choosing?" This reframe breaks ties by revealing loss aversion.
+
+*Parking lot for side arguments:*
+When an intra-committee debate threatens to derail progress (e.g., 5 minutes debating whether "dark" signals sophistication or edginess), flag the disagreement, note it in the artifact, and return to it at the appropriate stage: "Good debate. I've noted this — we'll test it during stress-testing. For now, let's keep the name in the pool."
+
+*Final presentation — tiered with Choice Overload guard:*
+Present Tier 1 (max 5 names) as the primary decision space. Research shows decisions degrade past 7-9 options. If the committee can't decide between finalists, reduce via elimination: "Let's cut one at a time. Which goes first?"
+
+**B2B / Enterprise naming:**
+Load the **B2B / Enterprise Naming Techniques** from `references/enterprise-naming.md` during brief intake (1a) and shortlisting (3a). Key B2B-specific tests to run on finalists:
+- **Buyer Committee test:** Does the name work for the champion, CFO, technical evaluator, AND end users?
+- **Sales Conversation Fit:** Test in elevator pitch, board deck, RFP, Slack, phone call, and email signature templates.
+- **Stack test:** Write the name alongside the customer's existing tools. Does it look peer-level?
+- **Platform vs Point-Solution:** If this is a platform, confirm the name doesn't describe a single function.
+- **Acronym Resilience:** How will people shorten it? Do the initials conflict?
+- **Enterprise Objection Preemption:** Would a Fortune 500 CISO approve this vendor? Would a VP put it on their LinkedIn?
+
+For developer tools specifically: favor short found words, lowercase convention, CLI-friendly names. Avoid -ify/-ly/-hub suffixes (read as marketing, not engineering).
 
 **Portfolio/product-line naming:**
-When naming within an existing brand portfolio, load the Brand Architecture section from `references/naming-taxonomies.md` during 1a (Brief). Run the naming grammar test on ALL finalists before final presentation — a name that can't extend to features and sub-products will break at scale.
+When naming within an existing brand portfolio, load the Brand Architecture section from `references/naming-techniques.md` during 1a (Brief). Run the naming grammar test on ALL finalists before final presentation — a name that can't extend to features and sub-products will break at scale.
+
+**Dual-audience naming (kids+parents, partners+paralegals, CISOs+engineers):**
+When the name must serve two fundamentally different audiences simultaneously, optimize the WORD for the audience that encounters it most frequently (daily users), and let brand system elements (packaging, copy, design, badges) handle the other audience. The managing partner sees the name in a board deck once; the paralegal types it 30 times a day — optimize for the paralegal. The parent reads the ingredient list; the child screams the name in the grocery aisle — optimize for the child. In the brief, capture both audiences explicitly and identify which is the "word audience" vs the "system audience."
 
 **Legacy rename:**
 When replacing an existing name, the brief must capture what equity exists in the old name (recognition, trust, search ranking) and what the new name must preserve vs. shed. Apply the Name Lifecycle Stress Test early. Consider bridge strategies (OldName → OldName by NewName → NewName).
 
 **Consumer / culture-heavy brands:**
-The current reference files skew B2B/institutional in their examples. For consumer brands targeting youth, lifestyle, or cultural audiences: weight generation toward Sound-Symbolic, Jester/Outlaw archetypes, and Contrarian naming. Deprioritize Institutional Compounds and Classical Stems. The bar test and podcast test matter more than the trademark search.
+The reference files include both B2B and consumer examples, but default generation can skew institutional. For consumer brands targeting youth, lifestyle, or cultural audiences: weight generation toward Sound-Symbolic, Jester/Outlaw archetypes, Arbitrary/Absurd Association, and Contrarian naming. Deprioritize Institutional Compounds and Classical Stems. The bar test and podcast test matter more than the trademark search.
+
+Consumer brand examples to anchor on (not to copy, but to calibrate energy): Glossier, Allbirds, Oatly, Liquid Death, Cowshed, Innocent, Lush, Gymshark, Hims, Olipop.
+
+**Fashion/lifestyle note on conflict tolerance:** Fashion brands routinely use names with trademark conflicts in other classes (Acne Studios, Kapital, Diesel, Lush). The naming culture is far more permissive than tech/B2B. For fashion briefs, relax the conflict-flagging anxiety — a name used by a plumbing company is irrelevant. Focus conflict screening on fashion/retail/lifestyle specifically, not the entire trademark universe. Note how many of these are found words, arbitrary associations, sensory dissonance, or contrarian choices — not compounds or classical stems.
+
+**Skip the ownability-first compound track** for fashion, lifestyle, food, and beauty brands. Nobody in streetwear wears "Loamworks." Nobody buys hot sauce called "Bloomcraft." Consumer brands win with single found words, sensory names, arbitrary associations, and contrarian choices — not institutional compounds. The compound track is a B2B survival strategy; for consumer brands it actively damages the output. If validation kills found-word favorites, riff toward creative respelling and alternate real spellings rather than compounds.
+
+For consumer/sensory products, load the **Sensory & Experiential Naming** section from `references/consumer-naming.md` during generation (2a). This includes:
+- **Five Senses Scan** — generate names by asking what the product looks/smells/feels/tastes/sounds like
+- **Sensory Dissonance** — the Cowshed strategy: invert expected sensory associations for distinctiveness
+- **Emotional Temperature Mapping** — warm/cool, heavy/light, energized/calm as generation filters
+- **Synaesthetic Naming** — cross-sensory words that activate multiple neural pathways
+
+These techniques are often more productive than conceptual generation for products people physically experience.

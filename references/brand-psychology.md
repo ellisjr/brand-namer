@@ -247,8 +247,8 @@ In naming sessions:
 ### Phonesthetics Cross-Reference
 For detailed phoneme-to-personality mapping, vowel perception, consonant associations, stress patterns, and sound progression frameworks, see BOTH:
 - This file's "Phoneme → Personality Mapping" table (above) — maps sounds to Aaker's brand personality dimensions
-- `references/naming-taxonomies.md` Section 6 (Phonesthetic Framework) — maps sounds to cognitive associations and has the Bouba-Kiki effect
-- `references/naming-taxonomies.md` Section 24 (Bouba-Kiki Effect) — maps sounds to shape/personality perception
+- `references/naming-categories.md` (Phonesthetic Framework section) — maps sounds to cognitive associations and has the Bouba-Kiki effect
+- `references/naming-techniques.md` (Bouba-Kiki Effect section) — maps sounds to shape/personality perception
 
 These three sources complement each other: this file focuses on WHY sounds create specific brand perceptions (the psychology), while the taxonomies file focuses on HOW to use sounds during generation (the technique).
 
@@ -343,7 +343,7 @@ For each candidate, ask:
 - **Guide story** (Pharos, Beacon, Northstar) — trust, direction, competence
 - **Maker story** (Forge, Craft, Foundry) — agency, skill, builders
 - **Clarity story** (Lucent, Luma, Clearbit) — insight, simplification, intelligence
-- **Motion story** (Linear, Drift, Vector, Stride, Surge, Arc) — speed, progress, flow. Motion names suggest the user is going somewhere and the product accelerates the journey. They work especially well for tools that help users navigate complexity, reach decisions faster, or transform inputs into outputs. Strong sub-types: forward motion (Stride, Advance, Propel), directional (Vector, Bearing, Course), convergence (Converge, Nexus, Confluence), and transformation (Shift, Pivot, Flux, Phase). See the Motion & Direction semantic field in naming-taxonomies.md for full generation guidance.
+- **Motion story** (Linear, Drift, Vector, Stride, Surge, Arc) — speed, progress, flow. Motion names suggest the user is going somewhere and the product accelerates the journey. They work especially well for tools that help users navigate complexity, reach decisions faster, or transform inputs into outputs. Strong sub-types: forward motion (Stride, Advance, Propel), directional (Vector, Bearing, Course), convergence (Converge, Nexus, Confluence), and transformation (Shift, Pivot, Flux, Phase). See the Motion & Direction semantic field in naming-categories.md for full generation guidance.
 - **Mythic story** (Nike, Atlas, Oracle) — stature, symbolism, larger-than-function meaning
 
 ### Name Evaluation Label

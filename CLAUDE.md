@@ -12,9 +12,13 @@ Designed to defeat "LLM averaging" — where AI defaults to safe, generic names 
 SKILL.md                          — The main skill (4-loop pipeline + artifact chain)
 README.md                         — Overview, installation, usage examples
 references/
-  naming-taxonomies.md            — 10 naming categories, phonesthetics, riff axes, affix library
+  naming-categories.md            — 11 naming categories, phonesthetics, anti-patterns, cross-language (always loaded)
+  naming-techniques.md            — Riffing axes, affixes, tech branding, ownability, advanced generation (loaded during riffing)
+  consumer-naming.md              — Sensory, experiential, consumer strategy, Japanese sound-symbolism (consumer briefs only)
+  enterprise-naming.md            — B2B techniques, evaluation/testing, compliance (enterprise briefs only)
   brand-psychology.md             — Aaker dimensions, archetypes, cognitive science, SMILE/SCRATCH
   elicitation-techniques.md       — 10 deepening techniques (SCAMPER, Inversion, Pre-Mortem, etc.)
+  naming-taxonomies.md            — [ARCHIVE] Original monolithic file, superseded by the 4 split files above
 ```
 
 ## Key conventions

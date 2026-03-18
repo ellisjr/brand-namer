@@ -1,0 +1,16 @@
+# Test output artifacts
+brand-namer-output/
+
+# Sidecar sessions
+.claude/sidecar_sessions/
+
+# Archived monolithic file (superseded by split files)
+references/.naming-taxonomies.md
+
+# OS files
+.DS_Store
+
+# Workspace/temp/development artifacts
+v2-workspace/
+v2/
+docs/
