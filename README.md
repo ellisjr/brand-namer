@@ -270,15 +270,31 @@ Total: ~4,150 lines across 7 files. Reference files are loaded on-demand based o
 
 ## Installation
 
-```bash
-# User skills (available in all projects)
-cp -r brand-namer/ ~/.claude/skills/brand-namer/
+### Option 1: Clone from GitHub (recommended)
 
-# Or project-level skills
-cp -r brand-namer/ .claude/skills/brand-namer/
+```bash
+# User-level (available in all projects)
+git clone https://github.com/ellisjr/brand-namer.git ~/.claude/skills/brand-namer
+
+# Or project-level (available in this project only)
+git clone https://github.com/ellisjr/brand-namer.git .claude/skills/brand-namer
 ```
 
-Claude auto-detects and triggers the skill when you mention naming, brand names, company names, product names, or "what should I call this."
+### Option 2: Copy manually
+
+```bash
+# Download and copy the brand-namer/ folder into either:
+~/.claude/skills/brand-namer/     # user-level
+.claude/skills/brand-namer/       # project-level
+```
+
+### Verify installation
+
+Claude Code auto-detects skills by their YAML frontmatter. Once installed, the skill triggers when you mention naming, brand names, company names, product names, or "what should I call this." You can also invoke it directly:
+
+```
+/brand-namer
+```
 
 ## Usage Examples
 
