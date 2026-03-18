@@ -1,116 +1,268 @@
 # brand-namer
 
-A Claude Code skill for professional-grade brand naming. Runs a 4-loop cyclable architecture (Frame → Generate → Select → De-risk) from creative divergence through competitive validation to a ranked shortlist — designed to defeat the "LLM averaging" problem where AI defaults to safe, generic, indistinguishable names.
+A Claude Code skill for professional-grade brand naming. Runs a 4-loop cyclable architecture (Frame → Generate → Select → De-risk) with specialized pipelines for consumer and B2B brands — designed to defeat the "LLM averaging" problem where AI defaults to safe, generic, indistinguishable names.
 
-## What it does
+Tested across 27 simulated naming engagements (consumer, B2B, international, regulated, committee) averaging A-/B+ grades across Claude, Gemini, and GPT evaluations.
 
-Guides Claude through a structured naming engagement modeled on how agencies like Lexicon Branding ($15K–$75K+ per project) actually work:
-
-1. **Frame** — brand brief intake with context-aware elicitation, naming architecture (standalone vs. sub-brand vs. portfolio), Jobs-to-be-Done priority, Aaker dimensions and brand archetypes, naming territories definition (3-5 strategic creative directions), competitive whitespace mapping
-2. **Generate** — divergent generation across 10 naming categories with user-driven candidate counts, gallery mode presentation, morphological analysis, inline phonetic quality checks and ⚠️ conflict flagging; cross-model ideation via sidecar (GPT/Gemini/Grok); creative riffing with 8 riff axes, Lexicon three-team method, homonym/synonym riffing, systematic affix exploration, bisociation and conceptual blending
-3. **Select** — user-directed convergent shortlisting with AI-recommended deepening techniques (SCAMPER, Inversion, Pre-Mortem, Six Hats, Constraint Removal, Role-Play, First Principles, Red Team/Blue Team, Analogical Reasoning, TRIZ) plus SMILE/SCRATCH rapid evaluation
-4. **De-risk** — competitive screening (web search + GitHub/npm/PyPI/MCP registries for technical projects), domain availability (.com, .ai, .co, .io) with pool recovery for resurrecting killed favorites, variation generation + re-screening, trademark screening (USPTO, EUIPO, phonetic similarity), social handle checks (Twitter/X, Instagram, LinkedIn, TikTok), optional Pre-Mortem and System 1/System 2 stress tests, extended presence checks on final 1-3 (app stores, SERP, business registries), Tier 1/2/3 final presentation with top 3 recommendation
-
-Loops are cyclable — if De-risk kills too many names, cycle back to Generate with dead names as seeds.
-
-## Artifact chain
-
-The pipeline produces 5 structured markdown artifacts with YAML frontmatter, enabling session resumption, clean loop handoffs, and a full decision trail:
+## How It Works
 
 ```
-brand-namer-output/
-├── 00-brief.md          # Session config, naming architecture, JTBD priority, personality targets, territories, whitespace
-├── 01-candidates.md     # ALL candidates (grows: generation + cross-model + riffs)
-├── 02-shortlist.md      # Favorites entering validation + preference profile + taken-but-loved bucket
-├── 03-validation.md     # Competitive + domain + variation + trademark + social results
-└── 04-final.md          # Tier 1/2/3 presentation + top 3 recommendation
+Frame → Generate → Select → De-risk
+  ↑                            |
+  └────── (if pool is thin) ───┘
 ```
 
-Each artifact's frontmatter carries the state needed by downstream stages. If a session is interrupted, the skill reads existing artifacts and resumes from where it left off.
+### Loop 1: Frame
+Understand what you're naming. Define the strategic space before generating anything.
 
-## Key design decisions
+- **Brand brief intake** — extract context from existing docs, fill gaps conversationally, confirm the naming target ("we're naming the platform, not the fund")
+- **Naming territories** — 3-5 distinct creative directions (e.g., "Quiet Command," "Precision Instrument," "Dealcraft") to prevent "100 names in the same vibe"
+- **Competitive whitespace** — map how competitors name themselves, identify the empty territory
 
-- **Anti-convergence philosophy** — enforces broad exploration before any filtering with user-driven candidate counts and running totals
-- **Naming territories** — 3-5 strategic creative directions defined before generation, ensuring intentional diversity
-- **Competitive whitespace mapping** — map the competitive naming landscape before ideation to avoid sounding like existing players
-- **Gallery mode** — scannable grid presentation in Explorer Mode before diving into categories one by one
-- **Explorer vs Focused mode** — user chooses at start whether to see the full possibility space before reacting or iterate category-by-category
-- **Inline conflict flagging** — ⚠️ flags from training data during generation, not as a separate late-stage phase
-- **Validate to sort, not to discard** — taken names become riffing and deepening seeds, not dead ends
-- **Pool recovery loop** — after domain checks, if the survivor pool is thin, resurrect killed favorites through riffing + deepening → re-validate cycle
-- **Trigger-based technique recommendations** — instead of listing all 10 deepening techniques, Claude analyzes the shortlist and recommends 2-3 with situation-specific reasoning
-- **Structured artifact handoffs** — 5 artifacts with YAML frontmatter enable cross-session resumption and clean loop transitions
-- **Technical project screening** — GitHub, npm, PyPI, VS Code Marketplace, MCP registries, Docker Hub, Homebrew
+### Loop 2: Generate
+Produce candidates across many naming categories. Breadth before depth.
 
-## Installation
+- **Divergent generation** across 11 naming categories with ownability-first compound generation in parallel
+- **Cross-model ideation** via sidecar (GPT/Gemini/Grok) for creative diversity
+- **Creative riffing** with labeled techniques — the user sees WHY each name was generated
+- **Gallery mode** — scannable H/W/C grid before diving into category-by-category expansion
 
-Copy the `brand-namer/` folder into your Claude Code skills directory:
+### Loop 3: Select
+User-directed convergence. The user makes all cuts.
 
-```bash
-# Option 1: User skills (available in all projects)
-cp -r brand-namer/ ~/.claude/skills/brand-namer/
+- **Batch-of-10 reaction gathering** builds a preference profile incrementally
+- **Definitions check** on shortlisted words — etymology as brand story
+- **Menu of deepening techniques** — SCAMPER, TRIZ, Constraint Removal, Red Team/Blue Team, etc.
+- **Mandatory riffing checklist** (deep sessions) ensures compound alternatives exist before validation
 
-# Option 2: Project-level skills
-cp -r brand-namer/ .claude/skills/brand-namer/
-```
+### Loop 4: De-risk
+Validate what survives. Riff on what doesn't.
 
-Claude will automatically detect and trigger the skill when you mention naming, brand names, company names, product names, or brainstorming what to call something.
+- **Competitive screening** — web search + technical registries (GitHub, npm, PyPI, MCP)
+- **Domain availability** — explicit TLD checks (.com, .ai, .co, .io)
+- **Batched death trigger** — when names die, present them in one table and offer riffing options
+- **Pool recovery** — killed names become creative seeds, not dead ends
+- **Trademark screening, social handles, stress tests** — tiered by available tooling
+- **Final presentation** — Tier 1 (clear), Tier 2 (caveats), Tier 3 (reference)
 
-## File structure
+---
+
+## Consumer vs Enterprise
+
+The skill auto-detects the brief type and loads only relevant reference files.
+
+### Consumer Brands (food, beauty, fashion, lifestyle, DTC)
+
+**Loaded:** `naming-categories.md` + `consumer-naming.md` + `brand-psychology.md`
+
+Optimized for products people physically experience. Emphasizes sensory naming, emotional resonance, shelf presence, and social shareability. Suppresses the B2B compound-generation track (nobody in streetwear wears "Loamworks").
+
+### Enterprise Brands (SaaS, dev tools, platforms, vertical software)
+
+**Loaded:** `naming-categories.md` + `enterprise-naming.md` + `brand-psychology.md`
+
+Optimized for multi-stakeholder procurement. Emphasizes buyer-committee consensus, sales conversation fit, analyst headline readiness, and platform expansion ceiling.
+
+### Both Types
+
+**Loaded additionally for riffing:** `naming-techniques.md` (riffing axes, affixes, respelling, advanced generation)
+**Loaded on demand:** `elicitation-techniques.md` (deepening when stuck or stress-testing finalists)
+
+---
+
+## Consumer Naming Techniques (30)
+
+### Sensory & Experiential
+| Technique | What it does |
+|---|---|
+| **Five Senses Scan** | Generate names by asking what the product looks/smells/feels/tastes/sounds like. The #1 technique for consumer naming. |
+| **Sensory Dissonance** | Invert expected sensory associations (Cowshed = barnyard for luxury spa). Calibrated gradient: light/medium/heavy. |
+| **Emotional Temperature Mapping** | Map names to bodily feelings: warm/cool, heavy/light, energized/calm, rough/smooth. |
+| **Synaesthetic Naming** | Cross-sensory words (touch-word for a sound brand, visual-word for a flavor). Activates broader cortical networks. |
+
+### Consumer Elicitation
+| Technique | What it does |
+|---|---|
+| **Mood Board → Name** | Start with visual inputs (images, textures, colors), derive naming direction from the imagery. |
+| **Color → Name Mapping** | "What color IS this brand?" — mine color vocabulary for names that carry emotional weight. |
+| **Ingredient/Process Mining** | Walk through how you make the product. The maker's vocabulary often contains the best names. |
+| **Origin Story Mining** | Mine the founder's personal narrative for names (Patagonia, Warby Parker, Glossier). |
+| **Cultural Tension Naming** | Name from the argument the brand enters, not the product it sells (Liquid Death, Oatly). |
+| **Ritual / Usage Moment Mapping** | Map when/where/how the customer uses the product. Mine the ritual vocabulary. |
+| **Place / Environment Evocation** | "Where does this brand spiritually live?" Mine the vocabulary of that place. |
+| **Social-Native Testing** | Hashtag test, handle test, caption test, screenshot-DM test. |
+| **Shelf Test** | Imagine the name between competitors on a physical shelf. Which creates the most curiosity gap? |
+| **Gift Test** | "Would you feel proud giving this as a gift?" Tests a quality no other test catches. |
+
+### Consumer Strategy
+| Technique | What it does |
+|---|---|
+| **Desired-Self Naming** | Name from the identity the buyer wants to project. "What kind of person buys this?" |
+| **Need-State / After-State** | Name the emotional state the buyer wants to enter (Calm, Relief, Glow). |
+| **Price-Signal Calibration** | Tune the name's register to match the price point (luxury vs masstige vs value). |
+| **Front-of-Pack Hierarchy Fit** | Test the name inside the full packaging stack (name + descriptor + benefit + variant). |
+| **Thumbnail / Commerce-Tile Testing** | How does it look in 80-pixel mobile contexts? Amazon tiles, Instacart, TikTok Shop. |
+| **Badgeability / Wearability** | Would a customer proudly display this name on a tote bag, hat, or water bottle? |
+| **Adjacent-Category Code Borrowing** | Borrow naming codes from a more desirable category (fragrance for skincare, spirits for non-alc). |
+| **Subculture Code-Switch** | Mine vocabulary from specific scenes (sneaker, natural wine, wellness, skate). |
+| **Trend-Cycle Audit** | Will this name still work in 5 years, or is it trend-dependent? |
+| **Semantic Polysemy** | Design names that mean different things to different audiences ("Culture" = bacterial + good taste). |
+| **Relational / Cousin Naming** | Product family names that share DNA without being identical (Bumble → Bizz, BFF). |
+| **Memetic / Viral Engineering** | Names designed to be inherently shareable/screenshot-worthy. Kids/family variant included. |
+| **Co-Created Naming** | Community votes on or contributes to naming (flavors, limited editions, seasonal drops). |
+| **Consumer Portfolio Grammar** | SKU naming rules for flavors, scents, drops, collabs (Le Labo's Santal 33 system). |
+| **Story-World / Lore-Seeding** | Can the name spawn campaigns, characters, rituals, limited editions, in-jokes? |
+| **Distinctive-Asset Seeding** | Can the name generate icons, mascots, monograms beyond the wordmark? |
+
+### Specialized
+| Technique | What it does |
+|---|---|
+| **Japanese Sound-Symbolism** | Gitaigo vocabulary by sensory domain, half-form naming, CVCV filtering, authenticity calibration. |
+| **Age-Gated Pronounceability** | Stricter phonetic constraints for products targeting children under 8. |
+
+---
+
+## B2B / Enterprise Naming Techniques (15)
+
+| Technique | What it does |
+|---|---|
+| **Buyer Committee Naming** | Score names across champion, economic buyer, technical evaluator, and end users. One veto kills the name. |
+| **Category Creation Naming** | When defining a new space, the name must be distinctive enough to anchor the category. |
+| **Sales Conversation Fit** | Test in elevator pitch, board deck, RFP, Slack, phone call, and email signature templates. |
+| **Integration / Ecosystem Naming** | Stack test: does the name look peer-level alongside Snowflake + Databricks + AWS? |
+| **Analyst / Press Headline Testing** | "Gartner names [Name] a Leader in..." — does it carry authority? |
+| **Enterprise Objection Preemption** | The CISO test: would a Fortune 500 CISO approve this vendor? The resume test: would a VP put it on LinkedIn? |
+| **Platform vs Point-Solution** | If you add a completely different product in 2 years, does the name still work? |
+| **Developer / Technical Credibility** | CLI-friendly, lowercase-OK, no -ify/-ly suffixes. Stripe/Vercel energy vs Accenture energy. |
+| **Acronym Resilience** | What initials does the name produce? Do they conflict with generic acronyms? |
+| **Partner / Channel Grammar** | "[Name] Certified Partner," "[Name] for Healthcare," "Built on [Name]" — does it compound well? |
+| **Internal-Champion Forwardability** | Would a champion feel smart forwarding this name in Slack to their VP? |
+| **Integration Topology Naming** | Mine connection vocabulary (mesh, relay, conduit, splice) when the product IS interoperability. |
+| **Trust-Without-Claims Lexicon** | Signal trust without over-claiming (attest, verify, clear — not guarantee, secure, shield). |
+| **Governance / Audit Vocabulary Mining** | Mine controls, attestation, evidence, lineage, policy for GRC and compliance products. |
+| **Vertical Code Calibration** | Each vertical (fintech, healthtech, legaltech, cybersecurity, proptech, HR, devtools) has distinct naming norms. |
+
+---
+
+## Core Generation Techniques (11 Categories + More)
+
+| Category | What it is | Examples |
+|---|---|---|
+| **Evocative** | Suggests feeling/quality without describing the product | Nike, Amazon, Patagonia |
+| **Invented / Coined** | New words from Latin/Greek/morphemic roots | Xerox, Kodak, Verizon |
+| **Lexical Blends** | Two words fused with overlapping sounds | Pinterest, Instagram, Shopify |
+| **Metaphorical** | Borrowed from an entirely different domain | Jaguar, Caterpillar, Slack |
+| **Descriptive** | Directly communicates what it does | PayPal, Booking.com |
+| **Found Word** | Real dictionary words repurposed | Stripe, Notion, Bench |
+| **Foreign-Root** | Non-English words carrying meaning | Audi, Volvo, Lego |
+| **Acronymic** | Initials or abbreviated phrases | IKEA, BMW, ASICS |
+| **Compound** | Two complete words joined | Salesforce, Dropbox, Mailchimp |
+| **Sound-Symbolic** | Engineered for phonetic feel | Google, TikTok, Zoom |
+| **Institutional Compound** | Finance/enterprise compound pattern | BlackRock, Benchmark, Cornerstone |
+
+**Plus:** Personified Names, Motion & Direction, Arbitrary/Absurd Association, Verb-as-Brand, Obscure Real Word Mining (metallurgy, watchmaking, maritime, textiles, architecture, cartography, geology, optics, chemistry, astronomy + 8 more domains).
+
+---
+
+## Riffing & Transformation Techniques
+
+| Technique | What it does |
+|---|---|
+| **8 Riffing Axes** | Root compression, etymology, metaphor shift, outcome shift, sensory shift, sound tuning, language shift, structural shift |
+| **Productive Affixes** | 11 prefixes, 16 suffixes, 9 bidirectional affixes systematically tested in both positions |
+| **Creative Respelling** | K-for-C, Y-for-I, dropped vowels, Ph-for-F, double letters |
+| **Alternate Real Spellings** | Dictionary-valid variants (Gauge → Gage) |
+| **Tech Branding Patterns** | -OS, -ware, -wise, -er, -base, -box, -kit, -lab, -stack, -grid, domain hacks |
+| **Prefix × Suffix Matrix** | Systematic crossing of 6+ prefixes with 10+ suffixes |
+| **Classical Stem Engineering** | Systematic Greek/Latin root construction with cliché detection |
+| **Semiotic Territory Mapping** | Map meaning-system quadrants before generation |
+| **Conceptual Blending** | Blend mental models, not just syllables (Fauconnier & Turner) |
+| **Morphological Analysis (Zwicky)** | Systematic combinatorial generation across dimensions |
+| **Lexicon Three-Team Method** | On-brief, competitor, unrelated-domain teams generating simultaneously |
+
+---
+
+## Evaluation & Testing
+
+| Technique | What it does |
+|---|---|
+| **SMILE / SCRATCH** | Rapid pass/fail on Suggestive, Memorable, Imagery, Legs, Emotional / Spelling, Copycat, Restrictive, Annoying, Tame, Curse, Hard-to-pronounce |
+| **Semantic Differential Scaling** | Score on bipolar attribute pairs (modern↔traditional, precise↔creative) |
+| **Phonotactic Probability Scoring** | Friction score for pronounceability across languages |
+| **Speech & Channel Robustness** | Voicemail, podcast, phone support, voice assistant, homophone tests |
+| **Searchability & AI Retrieval** | Google branded search, app stores, LLM retrieval, voice resolution |
+| **Bouba-Kiki Effect** | Sound-shape-personality mapping for phonetic engineering |
+| **Distinctiveness Distance Modeling** | Levenshtein/Soundex/embedding similarity to competitors |
+| **Implicit Association Testing** | Fast reaction-time tasks reveal subconscious name associations |
+| **Recall & Recognition Protocols** | 24h delayed recall, aided recognition, confusion checks |
+| **Visual Wordform Analysis** | Letter silhouette, ascender/descender rhythm, favicon potential |
+
+---
+
+## Session Modes
+
+| Mode | What happens | When to use |
+|---|---|---|
+| **Quick** | 3-question brief → gallery → react → light riff → present top 8-10. Skip ceremony. | "Just give me good names" |
+| **Deep** | Full 4-loop pipeline with riffing checklist, cross-model ideation, thorough validation. | "This is our company name, get it right" |
+| **Committee** | Semantic Differential Scaling, Nominal Group Technique, weighted scoring by role. | Multiple stakeholders who disagree |
+| **Validation only** | User provides names → straight to Loop 4 screening. | "I already have names, just check them" |
+| **Iterative** | Save artifacts, sleep on it, resume next session. | "Let me think about these overnight" |
+
+## Scenario Playbooks
+
+Built-in adaptations for: **International-first** (CVCV, cross-language, transliteration), **Regulated industries** (controlled terms pre-screened before generation), **Committee/stakeholder**, **Portfolio/product-line**, **Legacy rename**, **Consumer/lifestyle**, **B2B/enterprise**, **Dual-audience** (kids+parents, partners+paralegals).
+
+---
+
+## File Structure
 
 ```
 brand-namer/
-├── SKILL.md                              (761 lines — the main 4-loop pipeline + artifact chain)
-├── README.md                             (this file)
+├── SKILL.md                               (1,144 lines — main 4-loop pipeline + playbooks)
+├── README.md                              (this file)
+├── CLAUDE.md                              (project conventions)
 └── references/
-    ├── naming-taxonomies.md              (457 lines — 10 categories + phonesthetics + riff axes + affix library)
-    ├── brand-psychology.md               (388 lines — Aaker, archetypes, cognitive science, SMILE/SCRATCH, failure patterns)
-    └── elicitation-techniques.md         (324 lines — 10 deepening techniques)
+    ├── naming-categories.md               (554 lines — 11 categories, phonesthetics, anti-patterns, cross-language)
+    ├── naming-techniques.md               (602 lines — riffing, affixes, respelling, ownability, advanced generation)
+    ├── consumer-naming.md                 (671 lines — sensory, experiential, consumer strategy, Japanese sound-symbolism)
+    ├── enterprise-naming.md               (427 lines — B2B techniques, evaluation/testing, compliance)
+    ├── brand-psychology.md                (431 lines — archetypes, personality, cognitive science, SMILE/SCRATCH)
+    └── elicitation-techniques.md          (324 lines — 10 deepening techniques)
 ```
 
-Total: ~1,930 lines across 4 skill files. Reference files are loaded on demand as each stage calls for them.
+Total: ~4,150 lines across 7 files. Reference files are loaded on-demand based on brief type — no session loads all 6.
 
-## Usage examples
+## Installation
+
+```bash
+# User skills (available in all projects)
+cp -r brand-namer/ ~/.claude/skills/brand-namer/
+
+# Or project-level skills
+cp -r brand-namer/ .claude/skills/brand-namer/
+```
+
+Claude auto-detects and triggers the skill when you mention naming, brand names, company names, product names, or "what should I call this."
+
+## Usage Examples
 
 ```
 "I need a name for my AI startup"
-"Help me rename our internal platform"
-"I have 5 name candidates — just validate them"
+"Help me name this craft hot sauce brand"
+"We need a name for our enterprise security platform"
+"I have 5 names — just validate them"
 "What should I call this open source tool?"
-"I need a name for my fund's new product, something like Vestry or Pansight"
+"We're 3 co-founders who can't agree on a name"
 ```
 
-The skill adapts to session depth:
-- **Quick session** — compressed Frame + Generate in ~10 minutes, only produces `04-final.md`
-- **Deep session** — full 4-loop pipeline with cross-model ideation and creative riffing, all 5 artifacts
-- **Validation only** — user provides names → writes `02-shortlist.md` → runs Loop 4 (De-risk)
-- **Iterative** — pause after ideation, resume at validation in a later session using artifact frontmatter
+## Research & Frameworks Integrated
 
-## Frameworks and research integrated
+Lexicon Branding (Placek), Aaker Brand Personality, Mark & Pearson 12 Archetypes, Sound Symbolism (Köhler, Ramachandran, Sapir), Bouba-Kiki Effect, Processing Fluency (Alter & Oppenheimer), Von Restorff Distinctiveness, Mere Exposure (Zajonc), Dual Coding (Paivio), Cognitive Chunking (Miller), Kahneman System 1/2, Fauconnier & Turner Conceptual Blending, Zwicky Morphological Analysis, Rosch Prototype Theory, Iyengar Choice Overload, Osgood Semantic Differential, TRIZ Contradiction Resolution, Christensen Jobs-to-be-Done, Watkins SMILE/SCRATCH.
 
-The skill's reference files encode research and methodologies from:
+## Sidecar Support
 
-- **Lexicon Branding** (David Placek) — three-team methodology, letter personalities, "great names make you uncomfortable"
-- **Aaker's Brand Personality Framework** — 5 dimensions mapped to phonetic recipes
-- **Mark & Pearson's 12 Brand Archetypes** — each mapped to sound bias, semantic bias, and naming strategy
-- **Sound symbolism research** (Köhler, Ramachandran, Sapir) — bouba/kiki, vowel-size mapping, cross-modal associations
-- **Open/Closed Door framework** — narrative potential evaluation with 5 story types
-- **Naming failure patterns** — 7 categories from real naming disasters
-- **TRIZ** — contradiction resolution applied to naming (institutional AND approachable, technical AND human)
-- **Eat My Words (Alexandra Watkins)** — SMILE/SCRATCH rapid evaluation checklists
-- **Kahneman's System 1/System 2** — dual-speed name testing for finalists (user-driven)
-- **Koestler's Bisociation / Fauconnier & Turner's Conceptual Blending** — frameworks for metaphorical and blend name generation
-- **Zwicky's Morphological Analysis** — systematic combinatorial generation across naming dimensions
-- **Rosch's Prototype Theory** — identify the prototypical name for a target personality, then generate toward it
-- **Miller's Cognitive Chunking** — fewer chunks = lower cognitive load = easier recall
-- **Tversky & Kahneman's Availability Heuristic** — high-availability names arrive loaded; low-availability names are blank canvases
-- **Semantic Satiation** — robustness test: say it 50 times, does the meaning hold?
-- **Christensen's Jobs-to-be-Done** — what's the #1 job this name needs to do?
-- **Productive affix library** — 11 prefixes, 16 suffixes, 9 bidirectional affixes, 8 creative respelling patterns
-
-## Sidecar support
-
-If running with [Sidecar](https://github.com/jrenaldi79/sidecar) (or a comparable skill/tool) installed, the skill can spawn parallel naming sessions with other LLMs automatically. Without sidecar, it generates a self-contained paste-ready prompt for manual cross-model ideation.
+If [claude-sidecar](https://github.com/jrenaldi79/sidecar) is installed, the skill spawns parallel naming sessions with GPT, Gemini, and Grok automatically. Without sidecar, it generates a paste-ready prompt for manual cross-model ideation.
 
 ## License
 
