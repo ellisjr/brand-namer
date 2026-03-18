@@ -15,8 +15,8 @@ Frame → Generate → Select → De-risk
 ### Loop 1: Frame
 Understand what you're naming. Define the strategic space before generating anything.
 
-- **Brand brief intake** — extract context from existing docs, fill gaps conversationally, confirm the naming target ("we're naming the platform, not the fund")
-- **Naming territories** — 3-5 distinct creative directions (e.g., "Quiet Command," "Precision Instrument," "Dealcraft") to prevent "100 names in the same vibe"
+- **Brand brief intake** — extract context from existing docs, fill gaps conversationally, confirm exactly what's being named
+- **Naming territories** — 3-5 distinct creative directions to prevent "100 names in the same vibe"
 - **Competitive whitespace** — map how competitors name themselves, identify the empty territory
 
 ### Loop 2: Generate
