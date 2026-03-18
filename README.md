@@ -23,7 +23,7 @@ Understand what you're naming. Define the strategic space before generating anyt
 Produce candidates across many naming categories. Breadth before depth.
 
 - **Divergent generation** across 11 naming categories with ownability-first compound generation in parallel
-- **Cross-model ideation** via sidecar (GPT/Gemini/Grok) for creative diversity
+- **Cross-model ideation** — via [sidecar](https://github.com/jrenaldi79/sidecar) if installed (auto-spawns GPT/Gemini/Grok sessions), or via paste-ready prompts the user can run in any LLM manually
 - **Creative riffing** with labeled techniques — the user sees WHY each name was generated
 - **Gallery mode** — scannable H/W/C grid before diving into category-by-category expansion
 
@@ -144,7 +144,9 @@ Optimized for multi-stakeholder procurement. Emphasizes buyer-committee consensu
 
 ---
 
-## Core Generation Techniques (11 Categories + More)
+## Core Generation Techniques
+
+### The 11 Naming Categories
 
 | Category | What it is | Examples |
 |---|---|---|
@@ -160,7 +162,40 @@ Optimized for multi-stakeholder procurement. Emphasizes buyer-committee consensu
 | **Sound-Symbolic** | Engineered for phonetic feel | Google, TikTok, Zoom |
 | **Institutional Compound** | Finance/enterprise compound pattern | BlackRock, Benchmark, Cornerstone |
 
-**Plus:** Personified Names, Motion & Direction, Arbitrary/Absurd Association, Verb-as-Brand, Obscure Real Word Mining (metallurgy, watchmaking, maritime, textiles, architecture, cartography, geology, optics, chemistry, astronomy + 8 more domains).
+### Additional Generation Angles
+
+| Angle | What it does | Examples |
+|---|---|---|
+| **Personified Names** | Human names as brands — instant warmth, conversational | Claude, Alexa, Oscar, Ada, Harvey |
+| **Motion & Direction** | Movement, navigation, momentum — forward-looking energy | Stride, Vector, Bearing, Surge, Arc |
+| **Arbitrary / Absurd Association** | Zero logical connection to the product — maximum distinctiveness | Apple, Cowshed, Diesel, Penguin, Egg |
+| **Verb-as-Brand** | Action verbs as names — the brand is something you DO | Slack, Kindle, Bolt, Drift, Zoom |
+| **Contrarian / Anti-Category** | Name deliberately against category conventions — strategic plainness | Bench, Basecamp, Linear, Notion |
+
+### Obscure Real Word Mining
+
+Mine specialized vocabularies where nobody in tech is looking. 18 domains covered:
+
+| Domain | Example words |
+|---|---|
+| **Metallurgy** | Cupel, Anneal, Smelt, Temper, Crucible |
+| **Watchmaking** | Escapement, Mainspring, Calibre, Complication |
+| **Maritime** | Sounder, Keelson, Leadline, Bollard, Capstan |
+| **Textiles** | Selvedge, Warp, Weft, Nap, Bobbin |
+| **Architecture** | Lintel, Quoin, Plinth, Cupola, Spandrel |
+| **Cartography** | Azimuth, Meridian, Isoline, Northing, Benchmark |
+| **Geology** | Stratum, Basalt, Skarn, Moraine, Alluvium |
+| **Optics** | Darkfield, Aperture, Parallax |
+| **Chemistry** | Alembic, Retort, Calcine, Assay |
+| **Astronomy** | Fornax, Zenith, Transit, Apogee |
+| **Culinary** | Umami, Zest, Ferment, Proof, Cask |
+| **Biology** | Mycelium, Spore, Biome, Rhizome |
+| **Audio** | Chorus, Reverb, Tempo, Timbre, Cadence |
+| **Printing** | Colophon, Imprint, Folio, Quarto |
+| **Forestry** | Heartwood, Cambium, Coppice, Canopy |
+| **Glassmaking** | Cullet, Anneal, Flux, Gather, Pontil |
+| **Locksmithing** | Ward, Tumbler, Lever, Escutcheon |
+| **Geophysics** | Torrent, Vortex, Kinetic, Tectonic |
 
 ---
 
