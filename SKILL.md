@@ -75,6 +75,17 @@ When briefing sidecars, do NOT include full reference files. Instead:
 - Include existing candidates (for deduplication)
 - Include specific technique instructions if you want the sidecar to try a particular approach
 
+**Sidecar model selection by task:**
+
+| Task | Recommended model | Thinking level | Why |
+|---|---|---|---|
+| Cross-model name ideation | `gemini` or `gpt` | `--thinking medium` | Creative breadth. High thinking adds latency without better naming. |
+| Taxonomy/skill review | `gemini` or `gpt` | `--thinking high` | Analytical depth needed for structural critique. |
+| Quick conflict screening | `gemini` | No `--thinking` flag | Fast factual lookups, no creative reasoning needed. |
+| Consumer naming ideation | `gpt` | `--thinking medium` | GPT tends toward punchier consumer names. |
+| Systematic/foreign-root exploration | `gemini` | `--thinking medium` | Gemini is more thorough at systematic exploration. |
+| Irreverent/unconventional names | `grok` | Default | Grok breaks patterns other models won't. |
+
 ---
 
 ## Loop 1: Frame
@@ -614,6 +625,33 @@ If the user wants more candidates after reviewing the shortlist, loop back to Lo
 ---
 
 ## Loop 4: De-risk
+
+### Model optimization for validation
+
+Validation is factual and parallelizable — it doesn't need the creative reasoning that generation requires. Use smaller/faster models to save tokens and time:
+
+**Subagent spawning for validation (recommended):**
+When validating 10+ names, spawn parallel subagents at Haiku tier rather than doing sequential searches with the main model. Each subagent handles one name:
+
+```
+For each shortlisted name, spawn a Haiku subagent:
+"Search for '[name]' as a company, brand, or software product.
+ Classify: Clear (no conflicts) / Flagged (something exists, different industry) / Taken (active conflict in related space).
+ Check domains: [name].com, [name].ai, [name].co, [name].io — search site:[name].[tld] for each.
+ Return: name, competitive_status, conflicts_found, domain_status_per_tld"
+```
+
+This turns 20 minutes of sequential main-model searches into 2-3 minutes of parallel Haiku work. The main model then consolidates results and presents the batched screening table.
+
+**Sidecar model optimization:**
+- **Cross-model ideation (2b):** Use `gemini --thinking medium` for creative breadth (high thinking adds latency without proportionally better naming output)
+- **Quick conflict checks:** Use `gemini` without `--thinking` flag for fast factual screening
+- **Deep review/evaluation:** Use `gemini --thinking high` or `gpt --thinking high` only when analyzing or critiquing
+
+**Session-level model recommendations:**
+- **Quick Mode:** Sonnet is sufficient and significantly cheaper than Opus. The compressed pipeline doesn't benefit from Opus's deeper reasoning.
+- **Deep Mode:** Opus recommended for best creative output, especially during generation branching and riffing.
+- **Validation-heavy sessions:** Run the main session on Sonnet/Opus, spawn Haiku subagents for all screening tasks.
 
 ### Validation tools and limitations
 
