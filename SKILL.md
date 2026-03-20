@@ -23,6 +23,8 @@ Professional naming agencies charge $15,000–$75,000+ for brand naming engageme
    Flagged names should be deprioritized in presentation but NOT removed — the user decides whether to pursue them. This prevents the heartbreak of falling in love with a name only to discover it's taken during validation. Do this during generation, riffing, AND variation stages — not as a separate step.
 7. **Isolate context — name ONLY what's being named.** When the user provides background documents (PRDs, pitch decks, business plans), extract information about the NAMING TARGET only. Do not let surrounding context bleed into the naming brief. If the user is naming a platform built for a fund called "InnovateHealth Ventures," you are naming the PLATFORM, not the fund. If the user is naming a feature within an app, you are naming the FEATURE, not the app. Confirm the naming target explicitly before generating: "Just to confirm — we're naming [the platform/the feature/the company], correct?"
 8. **Show your work — technique transparency.** When applying riffing or generation techniques, label which technique produced each candidate. Don't just show outputs — show the technique name alongside each result. This lets the user understand WHY a name was generated and request more of a specific technique if it's working. Format: `**Name** | technique used | rationale`
+9. **Narrate before you act.** Before any multi-step operation (validation runs, sidecar spawning, batch generation, pool recovery), tell the user what you're about to do, how many steps it involves, and what to expect. "I'm going to screen your 12 shortlisted names — web search for each, then domain checks. I'll present results in a single table when done." This prevents the user from sitting in silence wondering what's happening during long operations.
+10. **Recommend at every checkpoint.** Every checkpoint menu (a/b/c/d options) MUST include your recommendation with brief rationale based on the current session state — pool size, technique coverage, user energy. The user may override, but the guidance helps. "I'd lean toward (a) — your pool is thin after validation and riffing on the dead names usually produces the strongest survivors."
 
 ## Reference Files — Context Budget Policy
 
@@ -156,7 +158,8 @@ Don't generate territories sequentially. Instead, explore broadly and prune:
    - **Brief alignment** — does the territory's emotional promise match the user's stated personality, archetype, and #1 job?
    - **Generative potential** — will this territory produce a rich pool of diverse candidates, or will it run dry after 5-6 obvious names?
 3. **Prune:** Select the 3-5 territories that score strongest across all three criteria. Drop territories that overlap with each other or with the competitive set.
-4. **Present:** Show only the pruned territories to the user. Note which territories you explored and dropped, and why — this transparency builds trust and lets the user rescue a dropped territory if they disagree.
+4. **Default territory check:** Before finalizing, check if the brief describes a **daily-use tool, OS, or assistant** — something the user will talk to or about every day. If so, always include **"Personified / Domain Figures"** as one of the 3-5 territories. This territory mines: historical figures from the product's domain (e.g., Benjamin Graham for VC, Florence Nightingale for healthcare), clean first/last names with the right phonetic energy, and names that pass the "coffee shop test" ("Let me check [name]"). Prompt the user: "Who are the famous figures in [domain] that you admire?" Their answers become generation seeds. The user can still drop this territory during alignment, but it should be presented by default — personified names are consistently strong for daily-use products and often emerge as the user's preferred direction.
+5. **Present:** Show only the pruned territories to the user. Note which territories you explored and dropped, and why — this transparency builds trust and lets the user rescue a dropped territory if they disagree.
 
 For each surviving territory, define:
 - **Territory name** (e.g., "Calm Precision," "Maker Energy," "Institutional Trust")
@@ -268,7 +271,13 @@ This branching approach **structurally defeats convergence** — the core proble
 - **Creative respelling:** Y-for-I, K-for-C, dropped vowels, -ik for -ic (see Tech Branding Patterns in taxonomies reference)
 - **Prefix + root:** True[root], Clear[root], Deep[root], Iron[root], Signal[root]
 
-This ensures that when a found word inevitably dies in validation, you already have compound alternatives that carry the same energy. Present both the found word AND its compounds to the user — let them react to both tracks simultaneously.
+**Beyond formulaic patterns — dynamic compound generation:**
+The suffix/prefix patterns above are a starting point, not the entire strategy. Also generate:
+- **Conceptual compounds (unexpected pairings):** Combine the root concept with a word from a completely unrelated semantic field — not [root]+works, but [emotion]+[animal], [action]+[object], [domain]+[surprise]. Think Datadog, Snowflake, Cloudbees energy. The pairing should create a spark of cognitive dissonance that makes the name memorable. Mine the brief's domain for the "expected" word, then pair it with something from nature, animals, tools, geography, or everyday objects.
+- **Blended meaning compounds:** Words where both halves contribute meaning and the combination creates a third meaning greater than the sum. Not just [root]+[suffix] but [concept A]+[concept B] where the combination tells a story. Salesforce (sales + force = power behind sales), Workday (work + day = the daily work experience).
+- **Three-team compound outputs:** Apply the Lexicon Three-Team Method to compound generation too — one team generates on-brief compounds, one generates as-if-competitor compounds, one generates compounds as if the product were in a completely different category. This structurally prevents all compounds from following the same [root]+[tech suffix] formula.
+
+This ensures that when a found word inevitably dies in validation, you already have compound alternatives that carry the same energy — and that the compounds themselves are creative, not just mechanical suffix-swaps. Present both the found word AND its compounds to the user — let them react to both tracks simultaneously.
 
 #### Presentation format
 
@@ -285,8 +294,12 @@ This ensures that when a found word inevitably dies in validation, you already h
 
 Then expand the categories the user picks, showing the full numbered list with rationale. In **Focused Mode**, category-by-category remains the default.
 
+#### Presentation rules (hard constraints)
+- **Max 15 candidates per batch.** Never present more than 15 candidates in a single message or table. If a category or round has more, split into sub-batches of 10-15 with a reaction checkpoint after each.
+- **Number everything selectable.** All tables and lists where the user might need to refer to specific items MUST include reference numbers. This applies to gallery tables, category expansions, riff presentations, checkpoint menus, validation tables — any display with selectable options. Never present a selectable list without numbering.
+
 #### Presentation order and pacing
-**Two-step presentation: gallery overview first, then category-by-category expansion.** In Explorer Mode, start with the gallery grid (top 3-5 per category, H/W/C reactions). Then expand the Hot categories one at a time as numbered lists with brief rationale. In Focused Mode, skip the gallery and go straight to category-by-category. If a category has 15+ names, split into sub-batches of 10 within that category.
+**Two-step presentation: gallery overview first, then category-by-category expansion.** In Explorer Mode, start with the gallery grid (top 3-5 per category, H/W/C reactions). Then expand the Hot categories one at a time as numbered lists with brief rationale. In Focused Mode, skip the gallery and go straight to category-by-category.
 
 After the user reacts to each category, build their preference profile incrementally: "You consistently picked [patterns]. You consistently skipped [patterns]. This tells me you gravitate toward [summary]." Use this profile to sharpen all subsequent generation and riffing.
 
@@ -315,6 +328,9 @@ After the user reacts to Round 1 categories, heavily weight subsequent generatio
 - Generate 2-3x more candidates in preferred categories
 - Generate riffs primarily on candidates from preferred categories
 - Still include 2-3 "surprise" candidates from non-preferred categories per round (the best names sometimes come from unexpected places)
+
+#### Adaptive territories
+When user reactions during generation or triage reveal a strong pull toward a direction not captured by the original territories (e.g., the user keeps starring personified names even though no "Personified" territory was defined, or gravitates toward chess metaphors), **formally add it as a new territory immediately.** Announce it: "Your reactions are showing a clear pattern toward [direction]. I'm adding this as a formal territory and generating deeply in it now." Then run a focused generation round in that territory (minimum 10 candidates) before continuing the original flow. Update `00-brief.md` frontmatter with the new territory. This prevents the common failure mode where the user's actual taste diverges from the initial brief but the skill keeps generating in the original directions.
 
 #### Institutional compound patterns (within Compound generation)
 When generating compounds, also explore institutional compound patterns. For each promising root word from the user's preferred candidates, systematically generate combinations:
@@ -366,6 +382,9 @@ For each sidecar, send a briefing that includes:
 5. **A list of candidates already generated** — instruct the sidecar: "Here are the [N] names already generated. Do NOT repeat these. Focus on categories, directions, and domains NOT already explored." This prevents the 70%+ overlap that occurs when multiple models receive identical briefs without deduplication guidance.
 
 When sidecar results come back, **immediately append ALL external candidates to `01-candidates.md`** with the source model noted. Deduplicate against existing candidates — mark duplicates as "independently generated by [model]" (this is validation signal, not waste). Present all NEW unique candidates to the user in the same numbered-batch format used for your own candidates. Do not silently absorb external candidates into your pool — the user should see exactly what each model contributed.
+
+#### Sidecar failure detection
+If a sidecar completes in under 10 seconds or returns empty/near-empty results (fewer than 5 candidates), treat it as failed — the model likely didn't execute the prompt. Do not present empty results to the user. Instead: (1) Note the failure transparently: "The [model] sidecar didn't return usable results — likely a connection issue." (2) Fallback: run a **domain-specific vocabulary mining** round as a substitute — mine specialized vocabulary from the brief's domain (industry terminology, historical figures, tools of the trade, specialized measurement instruments) and use those as generation seeds. This replaces the creative breadth the sidecar was supposed to provide. (3) Offer to retry the sidecar or continue without it.
 
 #### User paste-in handling
 When the user pastes results from another LLM, apply the same process: append to `01-candidates.md` with source noted, deduplicate, present new unique candidates to the user for reaction. Ask which model generated them so you can track the source.
@@ -514,7 +533,9 @@ Before entering shortlisting, present a status summary and full menu:
 - (c) **Apply riffing techniques** — [list available: SCAMPER, synonym explosion, affix exploration, respelling, tech branding, language shift, compound creation, classical stems, conceptual blending]
 - (d) **Apply deepening techniques** — [list: Inversion, Constraint Removal, Six Hats, First Principles, TRIZ, Analogical Reasoning, Three-Team Method]
 - (e) **Move to shortlisting** — review all candidates, pick favorites for validation
-- (f) **Something else** — tell me what you need"
+- (f) **Something else** — tell me what you need
+
+**My recommendation:** [Always include a specific recommendation with rationale based on the current session state. E.g., "I'd lean toward (e) — you have 40+ candidates with a clear preference profile, and more generation is unlikely to change your direction. But if your pool feels thin in any area, (a) or (c) can fill the gaps."]"
 
 ### 3a. Convergent Shortlisting (User-Directed)
 
@@ -594,7 +615,9 @@ Before entering validation, present:
 - (b) **Generate compound/coined alternatives** for each found word on the shortlist (ownability insurance)
 - (c) **Run the mandatory riffing checklist** to ensure coverage, then proceed to validation
 - (d) **Skip straight to validation** — take the shortlist as-is into competitive screening
-- (e) **Go back** — generate more candidates first"
+- (e) **Go back** — generate more candidates first
+
+**My recommendation:** [Always include a specific recommendation with rationale. E.g., "I'd lean toward (b) — your shortlist is mostly found words, which have an 80-90% kill rate in validation. Generating compound alternatives now gives you survivable backups before the bloodbath."]"
 
 #### Riffing checklist (before entering Loop 4)
 
@@ -631,7 +654,7 @@ If the user wants more candidates after reviewing the shortlist, loop back to Lo
 Validation is factual and parallelizable — it doesn't need the creative reasoning that generation requires. Use smaller/faster models to save tokens and time:
 
 **Subagent spawning for validation (recommended):**
-When validating 10+ names, spawn parallel subagents at Haiku tier rather than doing sequential searches with the main model. Each subagent handles one name:
+When validating 5+ names, spawn parallel subagents at Haiku tier rather than doing sequential searches with the main model. Each subagent handles one name:
 
 ```
 For each shortlisted name, spawn a Haiku subagent:
@@ -687,6 +710,8 @@ For each shortlisted name (focusing on those WITHOUT existing ⚠️ flags — f
 
 - Search: `"[name]"` — is there a well-known company or product with this exact name?
 - Search: `"[name]" + [industry/category]` — is there a direct competitor using it?
+
+**Consistent search templates:** Define query templates BEFORE starting and apply the same set to every name in the batch. For example: Template A: `"[name]" software company platform`, Template B: `"[name]" [industry] AI`. Do NOT improvise different search variations for different names — inconsistent queries produce inconsistent signal, making results incomparable. If a name warrants deeper investigation after the standard pass, run additional searches, but the baseline must be consistent.
 
 **Categorize each name after this pass:**
 - **Clear** — no obvious conflicts found
@@ -1056,16 +1081,16 @@ timestamp: ISO-8601
 
 ### Artifact save triggers (mandatory)
 
-**Save at stage boundaries and when context is getting long.** Saving after literally every batch creates I/O noise. Save at these triggers:
+**Save often enough that a context reset at any point loses at most one round of work.** The artifacts are the session's memory — save aggressively so the user can always pick up where they left off.
 
-- **After generation completes** (all categories presented, user has reacted): write/update `01-candidates.md`
+- **After each generation batch** (each category presented to the user): update `01-candidates.md`
+- **After each user triage/reaction round** (user provides H/W/C or picks favorites): update `01-candidates.md` with preference data
+- **After each riff round** (riffs on a direction presented and reacted to): update `01-candidates.md`
 - **After cross-model merge** (sidecar or paste-in candidates integrated): update `01-candidates.md`
 - **After shortlisting** (user has confirmed favorites): write `02-shortlist.md`
 - **After each validation step** (competitive screen, domain check, trademark, social handles): update `03-validation.md`
 - **After pool recovery rounds**: update both `01-candidates.md` and `03-validation.md`
 - **When context is getting long** (50+ turns, or you notice context compression happening): save everything immediately to all relevant artifacts — they are the authoritative state that survives compression
-
-Think of artifact saves like meaningful git commits — at logical milestones, not after every line of code.
 
 ### Running count (optional — include only when the user needs orientation)
 
