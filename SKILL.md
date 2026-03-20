@@ -135,22 +135,26 @@ If the user says yes (or doesn't object), maintain the artifact chain described 
 
 Before generating names, define 3-5 naming territories — distinct creative directions that each represent a coherent brand world. This prevents generation from being "many names in the same vibe" and ensures intentional diversity.
 
-For each territory, define:
+#### Tree of Thought: Territory exploration
+
+Don't generate territories sequentially. Instead, explore broadly and prune:
+
+1. **Branch:** Generate 8-10 candidate territories internally — cast a wide net across different emotional registers, semantic domains, and phonetic textures. Include at least 2 territories that feel unexpected or uncomfortable for the brief.
+2. **Evaluate:** Score each territory against three criteria simultaneously:
+   - **Differentiation from competitors** — does this territory occupy whitespace, or overlap with how competitors already name themselves?
+   - **Brief alignment** — does the territory's emotional promise match the user's stated personality, archetype, and #1 job?
+   - **Generative potential** — will this territory produce a rich pool of diverse candidates, or will it run dry after 5-6 obvious names?
+3. **Prune:** Select the 3-5 territories that score strongest across all three criteria. Drop territories that overlap with each other or with the competitive set.
+4. **Present:** Show only the pruned territories to the user. Note which territories you explored and dropped, and why — this transparency builds trust and lets the user rescue a dropped territory if they disagree.
+
+For each surviving territory, define:
 - **Territory name** (e.g., "Calm Precision," "Maker Energy," "Institutional Trust")
 - **Emotional promise** — what the user feels encountering this brand
 - **Semantic field** — the word families and metaphor domains to mine
 - **Phonetic profile** — sound texture that fits (reference `references/brand-psychology.md`)
 - **Anti-patterns** — what this territory should NOT sound like
 
-Example for a VC ops platform:
-
-| Territory | Emotional Promise | Semantic Field | Phonetic Profile | Anti-patterns |
-|---|---|---|---|---|
-| Precision Instrument | "This tool is exact" | measurement, optics, calibration | crisp consonants, front vowels | no soft/warm sounds |
-| Trusted Guide | "You're in good hands" | navigation, cartography, light | balanced, trochaic | no clinical/cold |
-| Maker's Workshop | "Built by craftspeople" | forge, craft, materials | hard onsets, Anglo-Saxon roots | no corporate jargon |
-
-Present the territories to the user for alignment before proceeding. They may adjust, merge, or add territories. Each territory becomes a generation lane in Loop 2.
+Present the territories to the user for alignment before proceeding. They may adjust, merge, add territories, or rescue dropped ones. Each territory becomes a generation lane in Loop 2.
 
 Save territories in `00-brief.md` frontmatter.
 
@@ -218,6 +222,22 @@ Let the user decide when they have enough. Some sessions need 40 names, others n
 
 **Focused Mode:** Present category-by-category as generated. Still aim for breadth — at least 50 candidates internally across all categories before the user starts cutting.
 
+#### Tree of Thought: Generation branching
+
+For each naming category you attempt, don't generate a single linear list. Instead, explore multiple creative branches and expand the most productive:
+
+1. **Branch:** For each category, generate 3 parallel mini-batches of 3-5 names, each from a deliberately different semantic domain or creative approach. For example, when generating Found Words:
+   - Branch A: mine textile/craft vocabulary (Weft, Nap, Selvage)
+   - Branch B: mine geological/material vocabulary (Basalt, Silt, Loam)
+   - Branch C: mine governance/measurement vocabulary (Assay, Gauge, Triage)
+2. **Evaluate internally:** Which branch produced the most distinctive, on-brief candidates? Which branch converged on the same energy as names already in the pool? Which branch opened genuinely new territory?
+3. **Expand the winners:** Go deeper on the 1-2 strongest branches (generate 5-10 more names in that semantic domain). Abandon the weakest branch — don't show the user dead-end work.
+4. **Present all survivors:** Show the user everything from the winning branches. Note which semantic domains were most productive: "Geological vocabulary was the richest vein for this brief."
+
+This branching approach **structurally defeats convergence** — the core problem the skill is designed to solve. Instead of generating 10 names that all come from the same mental neighborhood, you explore 3 neighborhoods simultaneously and go deep on the one with the most untapped potential.
+
+**When to skip branching:** In Quick Mode, skip this — just generate a single strong batch per category. Branching is for deep sessions where generation quality matters more than speed.
+
 #### Rules for this stage:
 - **Attempt at least 6 of the 11 naming categories** in the reference file. Present at least 4 that produced viable results. Note which categories you attempted and found unproductive: "I tried Acronymic and Sound-Symbolic but neither produced strong fits for this brief." If the user says early on "skip [category]" or "I don't want [style]," respect that — remove it from the attempt list and don't count it toward the minimum. The user can permanently disable categories they know they don't want.
 - Generate a **minimum of 5 names per category** you use internally. Present ALL candidates to the user — do not select "the strongest" for a curated presentation. The user sees the full pool and decides what to cut (see Philosophy #3).
@@ -226,7 +246,7 @@ Let the user decide when they have enough. Some sessions need 40 names, others n
 - Use the **phonesthetic framework** from the reference file to ensure variety in how names sound, not just what they mean.
 - Explicitly explore the **Motion & Direction semantic field** (see `references/naming-categories.md`) — names that convey movement, direction, or momentum are often overlooked but effective.
 - Consider **Personified Names** (see `references/naming-categories.md`) — human names used as brands (Claude, Alexa, Oscar, Ada). Particularly strong for AI, health, finance, and trust-dependent products.
-- If generation feels convergent or safe, read `references/elicitation-techniques.md` and apply **SCAMPER** to your best candidates or **Inversion** to identify what to avoid. If the session is stuck, try **Constraint Removal** to find the user's true preferences.
+- If generation feels convergent or safe despite branching, read `references/elicitation-techniques.md` and apply **SCAMPER** to your best candidates or **Inversion** to identify what to avoid. If the session is stuck, try **Constraint Removal** to find the user's true preferences.
 
 #### Ownability-first generation (parallel track)
 **Run this alongside category-based generation, not after it.** For every promising found word or evocative name you generate, immediately produce 3-5 compound/coined variants using the tech branding patterns from `references/naming-techniques.md`:
