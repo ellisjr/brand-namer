@@ -158,7 +158,11 @@ Don't generate territories sequentially. Instead, explore broadly and prune:
    - **Brief alignment** — does the territory's emotional promise match the user's stated personality, archetype, and #1 job?
    - **Generative potential** — will this territory produce a rich pool of diverse candidates, or will it run dry after 5-6 obvious names?
 3. **Prune:** Select the 3-5 territories that score strongest across all three criteria. Drop territories that overlap with each other or with the competitive set.
-4. **Default territory check:** Before finalizing, check if the brief describes a **daily-use tool, OS, or assistant** — something the user will talk to or about every day. If so, always include **"Personified / Domain Figures"** as one of the 3-5 territories. This territory mines: historical figures from the product's domain (e.g., Benjamin Graham for VC, Florence Nightingale for healthcare), clean first/last names with the right phonetic energy, and names that pass the "coffee shop test" ("Let me check [name]"). Prompt the user: "Who are the famous figures in [domain] that you admire?" Their answers become generation seeds. The user can still drop this territory during alignment, but it should be presented by default — personified names are consistently strong for daily-use products and often emerge as the user's preferred direction.
+4. **Default territory checks:** Before finalizing, apply these brief-type-specific checks:
+
+   **For daily-use tools, OS, or assistants** — something the user will talk to or about every day — always include **"Personified / Domain Figures"** as one of the 3-5 territories. This territory mines: historical figures from the product's domain (e.g., Benjamin Graham for VC, Florence Nightingale for healthcare), clean first/last names with the right phonetic energy, and names that pass the "coffee shop test" ("Let me check [name]"). Prompt the user: "Who are the famous figures in [domain] that you admire?" Their answers become generation seeds. The user can still drop this territory during alignment, but it should be presented by default — personified names are consistently strong for daily-use products and often emerge as the user's preferred direction.
+
+   **For consumer/physical product/fashion/lifestyle briefs** — always include **"Animal / Nature Curator"** as one of the 3-5 territories. This territory mines: creatures that embody the brand's core action (magpies collect shiny objects, moths are drawn to light, kestrels hover with precision before striking), plants and trees with relevant symbolism (rowan for protection, briar for resilience, sloe for dark sophistication), and natural phenomena that mirror the product experience. Prompt the user: "What creature or natural thing does what your brand does?" Session testing shows animal/nature names consistently emerge as a dominant direction for consumer brands — they carry rich metaphorical depth, are instantly imageable, and pass the badge test effortlessly. The user can still drop this territory during alignment.
 5. **Present:** Show only the pruned territories to the user. Note which territories you explored and dropped, and why — this transparency builds trust and lets the user rescue a dropped territory if they disagree.
 
 For each surviving territory, define:
@@ -262,20 +266,38 @@ This branching approach **structurally defeats convergence** — the core proble
 - Consider **Personified Names** (see `references/naming-categories.md`) — human names used as brands (Claude, Alexa, Oscar, Ada). Particularly strong for AI, health, finance, and trust-dependent products.
 - If generation feels convergent or safe despite branching, read `references/elicitation-techniques.md` and apply **SCAMPER** to your best candidates or **Inversion** to identify what to avoid. If the session is stuck, try **Constraint Removal** to find the user's true preferences.
 
+#### Five Senses Scan as formal generation round (consumer/physical product briefs)
+**For consumer, fashion, lifestyle, food, beauty, and physical product briefs, run the Five Senses Scan as a dedicated generation pass — not inline commentary.** For each sense (sight, smell, touch, taste, sound), generate 5-10 candidate words grounded in the actual physical product experience, then test each as a standalone name. Cross-pollinate across senses (a visual word for a tactile experience, a sound word for a visual quality). Present the results as their own category in the gallery: **"Sensory (Five Senses Scan)"** alongside Evocative, Found Word, Personified, etc. Session testing shows the Five Senses Scan consistently produces strong consumer name candidates (Glint, Mica, Sloe all emerged from sensory mining) — it deserves category-level visibility, not technique-level footnoting. See `references/consumer-naming.md` for the full scan methodology.
+
 #### Ownability-first generation (parallel track)
-**Run this alongside category-based generation, not after it.** For every promising found word or evocative name you generate, immediately produce 3-5 compound/coined variants using the tech branding patterns from `references/naming-techniques.md`:
+**Run this alongside category-based generation, not after it.** For every promising found word or evocative name you generate, immediately produce 3-5 compound/coined variants. But do NOT default to a static suffix list — **generate the compound vocabulary dynamically from the brief.**
 
-- **Root + system suffix:** [root]works, [root]craft, [root]wise, [root]mark, [root]forge, [root]scope, [root]base, [root]vault
-- **Root + tech suffix:** [root]ware (portmanteau with "software"), [root]OS (operating system energy), [root]kit, [root]stack, [root]grid, [root]box, [root]lab(s)
-- **Verb + -er:** [root]er (the tool that does the action)
-- **Creative respelling:** Y-for-I, K-for-C, dropped vowels, -ik for -ic (see Tech Branding Patterns in taxonomies reference)
-- **Prefix + root:** True[root], Clear[root], Deep[root], Iron[root], Signal[root]
+**The dynamic compound process:**
 
-**Beyond formulaic patterns — dynamic compound generation:**
-The suffix/prefix patterns above are a starting point, not the entire strategy. Also generate:
-- **Conceptual compounds (unexpected pairings):** Combine the root concept with a word from a completely unrelated semantic field — not [root]+works, but [emotion]+[animal], [action]+[object], [domain]+[surprise]. Think Datadog, Snowflake, Cloudbees energy. The pairing should create a spark of cognitive dissonance that makes the name memorable. Mine the brief's domain for the "expected" word, then pair it with something from nature, animals, tools, geography, or everyday objects.
-- **Blended meaning compounds:** Words where both halves contribute meaning and the combination creates a third meaning greater than the sum. Not just [root]+[suffix] but [concept A]+[concept B] where the combination tells a story. Salesforce (sales + force = power behind sales), Workday (work + day = the daily work experience).
-- **Three-team compound outputs:** Apply the Lexicon Three-Team Method to compound generation too — one team generates on-brief compounds, one generates as-if-competitor compounds, one generates compounds as if the product were in a completely different category. This structurally prevents all compounds from following the same [root]+[tech suffix] formula.
+1. **Identify the brief's industry, personality, and competitive naming patterns.** What compound structures are natural and credible in this specific space? A fashion brand, a dev tool, and a healthcare company each have completely different compound vocabularies.
+
+2. **Generate 8-12 industry-native compound elements.** Ask: "What suffixes, prefixes, and structural patterns would feel at home next to this brand's competitors?" Examples of how this varies:
+
+   | Brief type | Natural compound elements | Example outputs |
+   |---|---|---|
+   | **Fashion/accessories** | Studio, & Co, House, Atelier, Edit, Supply, Goods, Society, Collection | Crow Studio, Sloe & Co, Moth House |
+   | **Dev tools** | Labs, CLI, Protocol, Engine, Hub, Codex, .dev, SDK | Signal Labs, Forge Protocol, Sift Engine |
+   | **Healthcare** | Health, Therapeutics, Bio, Sciences, Medical, Care, Rx | Meridian Health, Lumen Therapeutics |
+   | **Finance/VC** | Capital, Partners, Ventures, Group, Advisory, Holdings | Benchmark Capital, Greylock Partners |
+   | **Food/beverage** | Co, Kitchen, Provisions, Pantry, Brewing, Goods | Sloe Provisions, Bramble Goods |
+   | **Consumer DTC** | Co, Supply, Goods, Club, Shop, Studio, Home | Crow Supply, Moth Club |
+
+   These are illustrative — generate fresh for each brief. The point is that a fashion brand's compound vocabulary (Studio, House, Atelier) is completely different from a SaaS brand's (-works, -craft, -OS) and a static list will always be incomplete or wrong for most briefs.
+
+3. **Generate 4-6 cross-industry compound elements.** The most distinctive compounds borrow from OUTSIDE the brand's industry. "Codex" for a dev tool borrows from medieval manuscripts. "Protocol" for a fashion brand borrows from diplomacy. Ask: "What adjacent or aspirational industry would lend this brand unexpected credibility?" Then mine that industry's vocabulary for compound elements.
+
+4. **Also generate conceptual compounds (unexpected pairings):** Combine the root concept with a word from a completely unrelated semantic field — not [root]+[suffix], but [emotion]+[animal], [action]+[object], [domain]+[surprise]. Think Datadog, Snowflake, Cloudbees energy. The pairing should create a spark of cognitive dissonance that makes the name memorable.
+
+5. **Blended meaning compounds:** Words where both halves contribute meaning and the combination creates a third meaning greater than the sum. Salesforce (sales + force = power behind sales), Workday (work + day = the daily work experience).
+
+6. **Three-team compound outputs:** Apply the Lexicon Three-Team Method to compound generation too — one team generates on-brief compounds, one generates as-if-competitor compounds, one generates compounds as if the product were in a completely different category.
+
+See `references/naming-techniques.md` for tech/SaaS-specific affix tables (useful when the brief IS tech), creative respelling patterns, and the Prefix × Suffix Matrix methodology. But treat those tables as examples of what dynamic generation produces for one specific context, not as the universal compound toolkit.
 
 This ensures that when a found word inevitably dies in validation, you already have compound alternatives that carry the same energy — and that the compounds themselves are creative, not just mechanical suffix-swaps. Present both the found word AND its compounds to the user — let them react to both tracks simultaneously.
 
@@ -333,16 +355,16 @@ After the user reacts to Round 1 categories, heavily weight subsequent generatio
 When user reactions during generation or triage reveal a strong pull toward a direction not captured by the original territories (e.g., the user keeps starring personified names even though no "Personified" territory was defined, or gravitates toward chess metaphors), **formally add it as a new territory immediately.** Announce it: "Your reactions are showing a clear pattern toward [direction]. I'm adding this as a formal territory and generating deeply in it now." Then run a focused generation round in that territory (minimum 10 candidates) before continuing the original flow. Update `00-brief.md` frontmatter with the new territory. This prevents the common failure mode where the user's actual taste diverges from the initial brief but the skill keeps generating in the original directions.
 
 #### Institutional compound patterns (within Compound generation)
-When generating compounds, also explore institutional compound patterns. For each promising root word from the user's preferred candidates, systematically generate combinations:
+When the brief calls for institutional weight (finance, VC, enterprise, professional services), generate compound combinations dynamically from the brief's semantic territory. The classic pattern is two grounded words that create institutional gravitas:
 
-- **Color + Root:** Black[root], Grey[root], Red[root], Blue[root], Green[root], Silver[root]
-- **Adjective + Root:** True[root], Clear[root], Deep[root], First[root], Bright[root], High[root]
-- **Root + Suffix:** [root]mark, [root]point, [root]line, [root]view, [root]gate, [root]stone, [root]craft, [root]works, [root]well, [root]field
-- **Direction + Root:** North[root], Cross[root], Over[root], Trans[root]
-- **Material + Root:** Iron[root], Stone[root], Steel[root], Copper[root]
-- **Root + Root (noun compounds):** Combine the user's favorite roots with each other
+**Common structural patterns** (generate elements appropriate to the specific brief, not from a static list):
+- **Color + Noun:** The BlackRock/Blackstone/Greylock pattern — mine colors that match the brand's emotional territory
+- **Quality + Noun:** The TrueVentures/BrightEdge pattern — mine adjectives the brief's personality calls for
+- **Material + Feature:** The Irongate/Stonebridge pattern — mine materials relevant to the brand's domain
+- **Direction + Feature:** The Northstar/Crosspoint pattern — mine directional words that match the brand's motion
+- **Noun + Noun:** The Benchmark/Cornerstone pattern — combine the user's favorite roots with each other
 
-This is particularly strong for finance/VC/institutional naming where the BlackRock/Blackstone/Benchmark pattern is established and credible.
+**The key principle:** Generate the elements FROM the brief's vocabulary, not from a fixed list. A craft-focused brand generates different adjectives (True, Fine, Hand, Master) than a tech-focused brand (Deep, Clear, Open, Full). A fashion brand generates different nouns (House, Row, Lane, Mark) than a finance brand (Rock, Gate, Point, Capital). The structural patterns are reusable; the vocabulary must be fresh each time.
 
 #### Morphological analysis (Zwicky) — systematic combinatorial generation
 When intuitive generation plateaus, use morphological analysis to ensure coverage of the full possibility space. Define the dimensions of the naming problem, list options for each, and systematically combine across dimensions:
@@ -366,6 +388,8 @@ After presenting the initial pool, check in: "Here's the first round. Before we 
 Different LLMs have different creative biases. GPT-4o trends toward punchy consumer brands, Gemini toward technical/precise names, Grok toward irreverent options. Using multiple models dramatically widens the possibility space and helps break out of any single model's convergence patterns.
 
 **Timing:** In Explorer Mode, offer to spawn cross-model sessions *during* 2a generation — generate your own candidates while sidecars run in parallel, then merge before presenting. In Focused Mode, offer cross-model after the first round of user reactions. Cross-model input is also valuable during 2c (riffing) and 4b (pool recovery) — offer it at any point where fresh perspectives would help.
+
+**For consumer/lifestyle/fashion/food briefs, strongly recommend cross-model ideation.** Session testing shows cross-model rounds consistently produce the highest hit rate for consumer names (46% vs 8% for riffing in one tested session). Consumer naming rewards lateral creativity, sensory vocabulary, and cultural reference that different models approach from genuinely different angles — GPT tends toward punchy, emotionally resonant consumer names; Gemini toward systematic foreign-root and nature exploration; Grok toward irreverent breaks. For consumer briefs, frame this as a near-default rather than an optional add-on: "For consumer brands, I'd strongly recommend getting ideas from other models — it's consistently the highest-yield stage."
 
 #### If sidecar tools are available (preferred):
 Check whether you have access to `sidecar:sidecar_start`. If you do, offer to spawn parallel naming sessions with other models automatically. Recommended models for creative naming work:
@@ -560,6 +584,15 @@ Format:
 
 This also reveals hidden meanings, alternate definitions, and etymological connections that enrich the brand story.
 
+#### Batch elimination (for large pools)
+When the candidate pool is large (30+ favorites remaining after gallery reactions), offer batch elimination as a rapid convergence technique. Present remaining candidates in numbered batches of 10 and ask the user to make quick keep/cut decisions for each batch:
+
+"Here are candidates 1–10. Which do you want to keep?"
+
+This approach prevents decision fatigue from seeing the full pool at once, generates clear preference signal quickly (the user's cut patterns reveal taste), and works well as a complement to the H/W/C gallery reactions from 2a. Session testing showed this was the fastest convergence moment — the user suggested it naturally and cut from 30 to 15 in three quick passes.
+
+After batch elimination, compile the Keeps into the working shortlist. If the pool is thin (<8), offer a second pass on the cuts to rescue any the user regrets dropping.
+
 #### Deepening techniques — present the full menu
 
 At each transition point, present the FULL menu of available techniques and let the user choose. Don't pre-select 2-3 techniques — show everything and let the user decide what's relevant.
@@ -627,19 +660,30 @@ Before entering validation, present:
 
 **Core checklist (mandatory in deep sessions — apply to each direction):**
 
-Before running, check the `techniques_used` array in `01-candidates.md` frontmatter. If ALL 4 core techniques have already been applied to all shortlisted directions during 2c, the checklist is satisfied — don't surface it as a visible step. Just note: "Riffing checklist: all core techniques already applied during riffing. Proceeding to validation." If gaps remain, surface only the unapplied techniques:
+Before running, check the `techniques_used` array in `01-candidates.md` frontmatter. If ALL core techniques for the relevant brief type have already been applied to all shortlisted directions during 2c, the checklist is satisfied — don't surface it as a visible step. Just note: "Riffing checklist: all core techniques already applied during riffing. Proceeding to validation." If gaps remain, surface only the unapplied techniques.
 
+**For B2B/enterprise/tech briefs — core checklist:**
 - [ ] **SCAMPER** — Substitute, Combine, Adapt, Modify, Eliminate, Reverse
 - [ ] **Compound creation** — each root combined with at least 5 different second words
 - [ ] **Creative respelling** — Y-for-I, K-for-C, dropped vowels tested on each root
 - [ ] **Tech branding patterns** — -OS, -ware, -wise, -er, -base, -box applied to each root
 
+The B2B goal: for every found word on the shortlist, you should have 3-5 compound/coined alternatives ready. When the found word dies in validation (and it probably will), the alternatives are already in the pipeline.
+
+**For consumer/fashion/lifestyle briefs — core checklist:**
+Session testing shows the B2B riffing toolkit (compounds, affixes, tech patterns) produces the wrong kind of names for consumer brands and has very low hit rates (~8%). Replace with consumer-appropriate techniques:
+- [ ] **Adjacent metaphor** — each shortlisted direction explored via neighboring metaphorical domains (e.g., "collector" → which animals collect? which natural processes gather?)
+- [ ] **Sensory expansion** — Five Senses Scan applied to shortlisted directions not yet explored sensorially
+- [ ] **Nature mining** — creatures, plants, natural phenomena, geological features explored for each direction
+- [ ] **French naturalized vocabulary** — naturalized French words tested across shortlisted directions (see `references/consumer-naming.md`)
+
+The consumer goal: for every shortlisted direction, you should have 3-5 alternatives from adjacent metaphorical or sensory territory. Consumer names survive validation through distinctiveness and cultural resonance, not through compound construction.
+
 **Extended checklist (offer to the user — "Want me to go deeper with additional techniques?"):**
 - [ ] **Synonym explosion** — 5-10 synonyms tested for each key root
-- [ ] **Systematic affix exploration** — each root run through the full prefix AND suffix library
+- [ ] **Systematic affix exploration** — each root run through the full prefix AND suffix library (B2B only)
 - [ ] **Language shift** — core concept translated into Latin, Greek, French at minimum
-
-The goal: for every found word on the shortlist, you should have 3-5 compound/coined alternatives ready. When the found word dies in validation (and it probably will), the alternatives are already in the pipeline.
+- [ ] **Cross-model ideation** — if not already done, get names from other LLMs (especially productive for consumer briefs)
 
 #### Cycle-back
 

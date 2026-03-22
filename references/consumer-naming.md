@@ -29,6 +29,7 @@ Sensory, experiential, and strategic naming techniques for consumer, lifestyle, 
   - [Social-Native Testing](#social-native-testing)
   - [The Shelf Test](#the-shelf-test)
   - [The Gift Test](#the-gift-test)
+  - [French Naturalized Vocabulary Mining](#french-naturalized-vocabulary-mining)
 - [Consumer Brand Strategy Techniques](#consumer-brand-strategy-techniques)
   - [Desired-Self Naming](#desired-self-naming)
   - [Need-State / After-State Naming](#need-state--after-state-naming)
@@ -336,6 +337,28 @@ Gift-ability drives a massive share of DTC revenue. A name that's embarrassing t
 
 **Names that gift well:** Cowshed (story-starter), Aesop (intellectual cachet), Le Labo (exclusive feel), Glossier (aspirational), Drunk Elephant (conversation piece)
 **Names that gift awkwardly:** Crud (receiver might not get the joke), Ugly Drinks (the name IS the product's problem), Death Wish (depends heavily on recipient)
+
+### French Naturalized Vocabulary Mining
+
+Mine French words that have been fully naturalized into English — words English speakers already use and understand but that carry an elevated precision and sophistication. These words read as sophisticated English, not as "foreign borrowing." This distinction matters: the user who rejects "Cartouche" as pretentious may love "Cachet" because it feels English.
+
+**Productive vocabulary by semantic domain:**
+
+| Domain | Words | Brand energy |
+|---|---|---|
+| **Quality/Status** | cachet, prestige, calibre, finesse, élan, panache, aplomb, allure | Premium, assured, status-signaling |
+| **Design/Craft** | motif, trait, contour, silhouette, relief, rapport, nuance, detail | Precise, considered, design-forward |
+| **Energy/Character** | verve, pique, flair, coup, brio, savant, vogue | Dynamic, spirited, culturally fluent |
+| **Form/Arrangement** | ensemble, tableau, montage, collage, genre, niche | Curated, editorial, collected |
+| **Occasion/Entry** | debut, soirée, entrée, encore, premiere | Event-driven, momentous |
+
+**When to use:** Consumer, fashion, lifestyle, premium/masstige brands — especially when the Price-Signal Calibration target is luxury or masstige (see Price-Signal Calibration below). Session testing showed French naturalized words had a consistently high hit rate when the user's taste ran toward "elevated but approachable."
+
+**The calibration test:** Would an English speaker use this word in a normal sentence without feeling like they're "speaking French"? "That restaurant has a certain cachet" — yes. "That's a recurring motif" — yes. "She wore a beautiful cartouche" — no. If the word passes this test, it's naturalized enough to work as a brand name in English-speaking markets.
+
+**Anti-pattern:** Avoid words that still feel "pointedly French" to an English speaker — je ne sais quoi, hors d'oeuvres, au courant. The technique works because the words feel like elevated English, not borrowed French. Also avoid the same word with a French accent mark if the unaccented version exists in English (détail vs detail) — the accent adds pretension without adding meaning.
+
+**Real examples:** Vogue (magazine), Allure (magazine), Cachet (has been used in fashion), Montage (hotels), Tableau (software), Encore (events).
 
 ---
 

@@ -113,7 +113,9 @@ What changed: combined the strongest roots with affixes and blends. Some are com
 
 ## Productive Affixes for Name Construction
 
-A reference table of prefixes and suffixes that consistently produce viable brand names. Many work in BOTH positions — "bit" as prefix (Bitwise) feels different from "bit" as suffix (Clearbit). For each promising root, systematically test it in both positions.
+**Important: The tables below are examples of what dynamic compound generation looks like for tech/SaaS brands.** They are NOT a universal suffix list to mechanically apply to every brief. For non-tech briefs (fashion, consumer, healthcare, finance, etc.), generate compound elements dynamically from the brief's industry, personality, and competitive context — see SKILL.md section 2a "Ownability-first generation" for the dynamic process. Use these tables only when the brief IS tech/SaaS, or as structural inspiration for how to build industry-specific tables for other domains.
+
+For each promising root, systematically test it in both prefix and suffix positions — "bit" as prefix (Bitwise) feels different from "bit" as suffix (Clearbit).
 
 ### High-Frequency Prefixes
 | Prefix | Semantic contribution | Examples |
@@ -178,9 +180,11 @@ When a conventional spelling is taken, these respelling patterns create ownable 
 
 ## Tech Branding Patterns
 
-Common tech/SaaS naming patterns that consistently produce ownable compound names. These are the highest-survival-rate patterns during validation — compounds built from these suffixes are far more likely to clear competitive screening than single found words.
+**These patterns are specific to tech/SaaS naming.** For other industries, generate equivalent patterns dynamically from the brief — see SKILL.md section 2a. A fashion brand's "-Studio" / "-House" / "-& Co" patterns are the equivalent of tech's "-works" / "-craft" / "-OS" patterns. The structural approach (root + industry-credible element) transfers; the specific vocabulary does not.
 
-**Use these as a parallel generation track alongside found-word generation.** For every promising found word, immediately generate 3-5 compound variants using these patterns. This ensures you have ownable alternatives ready when the found word dies in validation.
+Common tech/SaaS naming patterns that consistently produce ownable compound names. Compounds built from these suffixes are far more likely to clear competitive screening than single found words.
+
+**For tech briefs, use these as a parallel generation track alongside found-word generation.** For every promising found word, immediately generate 3-5 compound variants using these patterns.
 
 ### System/Infrastructure Suffixes
 Names that position the product as a system, engine, or operational layer.
@@ -247,7 +251,7 @@ One respelling is the right amount. Two (e.g., "Syftwyre") looks try-hard. The Y
 
 ## Prefix × Suffix Matrix (Systematic Combinatorial Generation)
 
-A formalized methodology for producing ownable compound names by systematically crossing promising prefixes with productive suffixes. This is the single highest-yield technique for producing names that survive validation.
+A formalized methodology for producing ownable compound names by systematically crossing promising prefixes with productive suffixes. **The matrix structure is universal; the elements you put into it must be generated dynamically from each brief.** The tech/SaaS example below shows the process — for other industries, replace both the prefix column and suffix row with elements appropriate to that brief's domain.
 
 **The process:**
 1. From the user's preferences, identify 5-8 productive prefixes (e.g., True-, Clear-, Deep-, Iron-, Signal-, Dark-)
