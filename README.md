@@ -2,7 +2,7 @@
 
 A Claude Code skill for professional-grade brand naming. Runs a 4-loop cyclable architecture (Frame → Generate → Select → De-risk) with specialized pipelines for consumer and B2B brands — designed to defeat the "LLM averaging" problem where AI defaults to safe, generic, indistinguishable names.
 
-Tested across 27 simulated naming engagements (consumer, B2B, international, regulated, committee) averaging A-/B+ grades across Claude, Gemini, and GPT evaluations.
+The skill operates from a **senior brand strategist** persona — not a list generator. Creative ambition, structural discipline, and ownability instinct are baked in. The professional standard: if the user walks away saying "these are fine," the session failed.
 
 ## How It Works
 
@@ -16,24 +16,26 @@ Frame → Generate → Select → De-risk
 Understand what you're naming. Define the strategic space before generating anything.
 
 - **Brand brief intake** — extract context from existing docs, fill gaps conversationally, confirm exactly what's being named
-- **Naming territories** — 3-5 distinct creative directions to prevent "100 names in the same vibe"
+- **Naming territories** — 3-5 distinct creative directions (Tree of Thought pruning) to prevent "100 names in the same vibe"
 - **Competitive whitespace** — map how competitors name themselves, identify the empty territory
 
 ### Loop 2: Generate
 Produce candidates across many naming categories. Breadth before depth.
 
-- **Divergent generation** across 11 naming categories with ownability-first compound generation in parallel
-- **Cross-pollination** — generates paste-ready prompts for ChatGPT/Gemini/Grok, merges results back into the candidate pool
+- **Divergent generation** across 11 naming categories with **mandatory** ownability-first compound generation in parallel (30% compound minimum before gallery presentation)
+- **Hard generation gates** — minimum 60 candidates, 6+ categories, 3+ structural types, technique cycling check. These are blocking — the skill won't proceed to shortlisting until met or explicitly waived.
+- **Cross-pollination** — generates paste-ready prompts for ChatGPT/Gemini/Grok, merges results back into the candidate pool. Mandatory offer (user can decline).
 - **Creative riffing** with labeled techniques — the user sees WHY each name was generated
 - **Gallery mode** — scannable H/W/C grid before diving into category-by-category expansion
 
 ### Loop 3: Select
 User-directed convergence. The user makes all cuts.
 
-- **Batch-of-10 reaction gathering** builds a preference profile incrementally
+- **Batch elimination** builds a preference profile incrementally
 - **Definitions check** on shortlisted words — etymology as brand story
-- **Menu of deepening techniques** — SCAMPER, TRIZ, Constraint Removal, Red Team/Blue Team, etc.
-- **Mandatory riffing checklist** (deep sessions) ensures compound alternatives exist before validation
+- **Menu of deepening techniques** — SCAMPER, TRIZ, Constraint Removal, Red Team/Blue Team, Three-Team Method, etc.
+- **Blocking riffing checklist** (deep sessions) — displayed with visible status, must be completed or explicitly waived before validation
+- **Structural diversity gate** — if shortlist is >80% one type, flagged before validation proceeds
 
 ### Loop 4: De-risk
 Validate what survives. Riff on what doesn't.
@@ -43,7 +45,26 @@ Validate what survives. Riff on what doesn't.
 - **Batched death trigger** — when names die, present them in one table and offer riffing options
 - **Pool recovery** — killed names become creative seeds, not dead ends
 - **Trademark screening, social handles, stress tests** — tiered by available tooling
+- **Session quality self-assessment** — transparent stats on candidates generated, categories attempted, techniques applied, structural mix
 - **Final presentation** — Tier 1 (clear), Tier 2 (caveats), Tier 3 (reference)
+
+---
+
+## Enforcement Gates
+
+The skill includes hard gates to prevent common session failures (thin pools, structural homogeneity, technique tunnel vision):
+
+| Gate | When | Blocks if |
+|---|---|---|
+| **Candidate count** | Loop 2 → 3 transition | < 60 candidates (deep) or < 40 (focused) |
+| **Category coverage** | Loop 2 → 3 transition | < 6 of 11 naming categories attempted |
+| **Structural diversity** | Loop 2 → 3 AND 3 → 4 | > 80% of candidates/shortlist is one structural type |
+| **Technique cycling** | Loop 2 → 3 transition | > 8 creative techniques unused |
+| **Compound minimum** | Before gallery presentation | < 30% of candidates are compounds/coined/alternatives |
+| **Shortlist size** | Loop 3 → 4 transition | < 15 names entering validation |
+| **Riffing checklist** | Before Loop 4 | Core riffing techniques not applied to shortlisted directions |
+
+All gates can be waived by the user after being warned — the skill surfaces the risk, the user decides.
 
 ---
 
@@ -239,7 +260,7 @@ Mine specialized vocabularies where nobody in tech is looking. 18 domains covere
 | Mode | What happens | When to use |
 |---|---|---|
 | **Quick** | 3-question brief → gallery → react → light riff → present top 8-10. Skip ceremony. | "Just give me good names" |
-| **Deep** | Full 4-loop pipeline with riffing checklist, cross-model ideation, thorough validation. | "This is our company name, get it right" |
+| **Deep** | Full 4-loop pipeline with enforcement gates, riffing checklist, cross-pollination, thorough validation. | "This is our company name, get it right" |
 | **Committee** | Semantic Differential Scaling, Nominal Group Technique, weighted scoring by role. | Multiple stakeholders who disagree |
 | **Validation only** | User provides names → straight to Loop 4 screening. | "I already have names, just check them" |
 | **Iterative** | Save artifacts, sleep on it, resume next session. | "Let me think about these overnight" |
@@ -254,19 +275,19 @@ Built-in adaptations for: **International-first** (CVCV, cross-language, transli
 
 ```
 brand-namer/
-├── SKILL.md                               (1,144 lines — main 4-loop pipeline + playbooks)
+├── SKILL.md                               (1,351 lines — main 4-loop pipeline + enforcement gates + playbooks)
 ├── README.md                              (this file)
 ├── CLAUDE.md                              (project conventions)
 └── references/
     ├── naming-categories.md               (554 lines — 11 categories, phonesthetics, anti-patterns, cross-language)
-    ├── naming-techniques.md               (602 lines — riffing, affixes, respelling, ownability, advanced generation)
-    ├── consumer-naming.md                 (671 lines — sensory, experiential, consumer strategy, Japanese sound-symbolism)
+    ├── naming-techniques.md               (606 lines — riffing, affixes, respelling, ownability, advanced generation)
+    ├── consumer-naming.md                 (694 lines — sensory, experiential, consumer strategy, Japanese sound-symbolism)
     ├── enterprise-naming.md               (427 lines — B2B techniques, evaluation/testing, compliance)
     ├── brand-psychology.md                (431 lines — archetypes, personality, cognitive science, SMILE/SCRATCH)
     └── elicitation-techniques.md          (324 lines — 10 deepening techniques)
 ```
 
-Total: ~4,150 lines across 7 files. Reference files are loaded on-demand based on brief type — no session loads all 6.
+Total: ~4,387 lines across 7 files. Reference files are loaded on-demand based on brief type — no session loads all 6.
 
 ## Installation
 
@@ -313,7 +334,7 @@ Lexicon Branding (Placek), Aaker Brand Personality, Mark & Pearson 12 Archetypes
 
 ## Cross-Pollination
 
-The skill generates paste-ready prompts for ChatGPT, Gemini, and Grok to get naming candidates from different creative perspectives. The user pastes results back and the skill deduplicates, classifies, and merges them into the candidate pool. Each model has different biases — ChatGPT trends toward punchy consumer names, Gemini toward systematic foreign-root exploration, Grok toward irreverent breaks.
+The skill generates paste-ready prompts for ChatGPT, Gemini, and Grok to get naming candidates from different creative perspectives. The user pastes results back and the skill deduplicates, classifies, and merges them into the candidate pool. Each model has different biases — ChatGPT trends toward punchy consumer names, Gemini toward systematic foreign-root exploration, Grok toward irreverent breaks. Cross-pollination is offered at least once per deep session (mandatory offer, optional execution).
 
 ## License
 
