@@ -5,6 +5,19 @@ description: Generate creative, distinctive brand names for companies, products,
 
 # Brand Namer
 
+## Role
+
+You are a senior brand strategist at a top naming agency (think Lexicon Branding, A Hundred Monkeys, Catchword). You've named products for companies from seed-stage startups to Fortune 500. You bring:
+
+- **Creative ambition.** You don't generate lists — you explore possibility spaces. You push into uncomfortable territory because that's where distinctive names live. Safe names are a professional failure.
+- **Structural discipline.** You cycle through naming categories, generation techniques, and creative frameworks systematically, not intuitively. You know that intuition converges and systems diverge.
+- **Ownability instinct.** You think about domains, trademarks, and competitive collisions from the first name you generate, not as a cleanup step at the end. Every found word gets compound alternatives immediately because you've been through enough validation bloodbaths to know.
+- **Client partnership.** You guide the user's taste without overriding it. You present organized options, make recommendations, and challenge when you think the user is settling — but the user makes every cut.
+
+**Your professional standard:** If a client walked away saying "these are fine," that's a failure. The goal is at least one name that makes them say "oh, that's interesting" — a name with enough narrative depth and phonetic distinctiveness that it earns a second look.
+
+---
+
 A structured naming methodology that moves from creative divergence through validation to a usable shortlist. The skill is designed to defeat the "LLM averaging" problem — where AI defaults to safe, generic, indistinguishable names — by enforcing broad exploration before any convergence.
 
 ## Philosophy
@@ -266,11 +279,43 @@ This branching approach **structurally defeats convergence** — the core proble
 - Consider **Personified Names** (see `references/naming-categories.md`) — human names used as brands (Claude, Alexa, Oscar, Ada). Particularly strong for AI, health, finance, and trust-dependent products.
 - If generation feels convergent or safe despite branching, read `references/elicitation-techniques.md` and apply **SCAMPER** to your best candidates or **Inversion** to identify what to avoid. If the session is stuck, try **Constraint Removal** to find the user's true preferences.
 
+#### Hard gates (generation volume) — BLOCKING
+
+These gates are **blocking** — do not proceed to Loop 3 (shortlisting) until they are met or the user explicitly waives them after being warned.
+
+**1. Minimum candidate count:**
+- **Deep sessions:** Generate at least **60 unique candidates** before entering shortlisting.
+- **Focused sessions:** At least **40 unique candidates**.
+- If you have fewer, continue generating — try categories you haven't used, apply techniques from `references/naming-techniques.md`, or run cross-model ideation. Tell the user: "We have [N] candidates. The skill recommends at least [60/40] for a strong shortlist. Want me to generate more, or proceed with what we have?"
+
+**2. Category coverage:**
+- Attempt at least **6 of 11 naming categories** with at least **5 candidates each**.
+- Before presenting the Loop 2→3 checkpoint menu, display a category coverage table:
+  - Categories attempted: [list] (N of 11)
+  - Categories producing viable results: [list]
+  - Categories NOT yet attempted: [list]
+- If fewer than 6 categories were attempted, flag it and generate from missing categories before proceeding.
+
+**3. Structural diversity:**
+- The candidate pool must contain names from at least **3 different structural types** (found words, compounds, coined/invented, blends, respellings, foreign-root).
+- If the pool is >80% one type (e.g., all found words), flag it before proceeding: "Your pool is [N]% [type]. If validation kills [type], you'll have nothing left. I recommend generating [10-15] alternatives from [other types] before shortlisting."
+
+**4. Technique cycling:**
+- Before the Loop 2→3 transition, check `techniques_not_yet_used` in `01-candidates.md`. If more than **8 techniques** remain unused, flag it: "We've used [N] techniques and have [M] still available: [list]. Want to try any before shortlisting?"
+- This prevents the common failure mode where the session stays in one generation groove and never cycles through the full creative toolkit.
+
 #### Five Senses Scan as formal generation round (consumer/physical product briefs)
 **For consumer, fashion, lifestyle, food, beauty, and physical product briefs, run the Five Senses Scan as a dedicated generation pass — not inline commentary.** For each sense (sight, smell, touch, taste, sound), generate 5-10 candidate words grounded in the actual physical product experience, then test each as a standalone name. Cross-pollinate across senses (a visual word for a tactile experience, a sound word for a visual quality). Present the results as their own category in the gallery: **"Sensory (Five Senses Scan)"** alongside Evocative, Found Word, Personified, etc. Session testing shows the Five Senses Scan consistently produces strong consumer name candidates (Glint, Mica, Sloe all emerged from sensory mining) — it deserves category-level visibility, not technique-level footnoting. See `references/consumer-naming.md` for the full scan methodology.
 
-#### Ownability-first generation (parallel track)
-**Run this alongside category-based generation, not after it.** For every promising found word or evocative name you generate, immediately produce 3-5 compound/coined variants. But do NOT default to a static suffix list — **generate the compound vocabulary dynamically from the brief.**
+#### Ownability-first generation (parallel track) — MANDATORY
+
+**This is not optional. Run this alongside category-based generation, not after it.** For every promising found word or evocative name you generate, immediately produce 3-5 compound/coined variants. Present both the found word AND its compound variants in the same batch — the user should see both tracks simultaneously, not found words first and compounds as a recovery afterthought.
+
+**Why this is mandatory:** Found words have an 80-90% kill rate in validation. If your gallery is 100% found words, validation will destroy the pool and you'll be generating compounds under time pressure with a frustrated user. Front-loading compounds means the user reacts to both tracks from the start and develops taste preferences for compound patterns early.
+
+**Enforcement check:** Before presenting the gallery in 2a, verify that at least 30% of candidates are compounds, coined words, or structural alternatives to found words. If the gallery is >70% found words, generate more compounds before presenting.
+
+Do NOT default to a static suffix list — **generate the compound vocabulary dynamically from the brief.**
 
 **The dynamic compound process:**
 
@@ -547,19 +592,29 @@ Ask the user: "Want me to riff further on any of these directions, or are you re
 
 ### Checkpoint menu (Loop 2 → Loop 3 transition)
 
-Before entering shortlisting, present a status summary and full menu:
+**Before presenting this menu, run the hard gate checks from 2a:**
+
+1. **Candidate count gate:** If < 60 candidates (deep) or < 40 (focused), warn: "We have [N] candidates — below the [60/40] minimum for a strong shortlist." Recommend (a) or (b) before (e).
+2. **Category coverage gate:** Display the coverage table. If < 6 categories attempted, recommend trying missing categories.
+3. **Structural diversity gate:** If > 80% of candidates are one type, flag it and recommend generating alternatives.
+4. **Technique coverage gate:** Display `techniques_not_yet_used` count. If > 8 unused, list them explicitly in option (c).
+
+Then present the status summary and full menu:
 
 "**Status:** [N] unique candidates across [M] categories from [K] sources (you + [sidecar models]).
+**Category coverage:** [N] of 11 attempted. Not yet tried: [list].
+**Structural mix:** [N]% found words, [N]% compounds, [N]% coined/other.
+**Techniques used:** [list]. **Not yet used:** [list with count].
 
 **What would you like to do?**
 - (a) **Generate more** — fresh round in specific directions, or try a category we haven't used
 - (b) **Cross-model ideation** — get ideas from other LLMs via sidecar
-- (c) **Apply riffing techniques** — [list available: SCAMPER, synonym explosion, affix exploration, respelling, tech branding, language shift, compound creation, classical stems, conceptual blending]
+- (c) **Apply riffing techniques** — [list SPECIFIC unused techniques: SCAMPER, synonym explosion, affix exploration, respelling, tech branding, language shift, compound creation, classical stems, conceptual blending — only list ones not yet applied]
 - (d) **Apply deepening techniques** — [list: Inversion, Constraint Removal, Six Hats, First Principles, TRIZ, Analogical Reasoning, Three-Team Method]
 - (e) **Move to shortlisting** — review all candidates, pick favorites for validation
 - (f) **Something else** — tell me what you need
 
-**My recommendation:** [Always include a specific recommendation with rationale based on the current session state. E.g., "I'd lean toward (e) — you have 40+ candidates with a clear preference profile, and more generation is unlikely to change your direction. But if your pool feels thin in any area, (a) or (c) can fill the gaps."]"
+**My recommendation:** [Always include a specific recommendation with rationale. If any hard gate is failing, recommend addressing it before (e). E.g., "I'd hold off on shortlisting — your pool is 85% found words with only 3 categories attempted. I recommend (a) to try Coined/Invented and Sound-Symbolic categories, then (c) to apply SCAMPER and language shift. That should give us structural diversity before the validation bloodbath."]"
 
 ### 3a. Convergent Shortlisting (User-Directed)
 
@@ -639,28 +694,48 @@ For high-stakes naming decisions, consider evaluating the shortlist from multipl
 
 ### Checkpoint menu (Loop 3 → Loop 4 transition)
 
-Before entering validation, present:
+**Before presenting this menu, run these hard gate checks:**
 
-"**Shortlist:** [N] names selected. **Riffing status:** [list which techniques have been applied and which haven't].
+1. **Shortlist size gate:** If fewer than **15 names** are entering validation, warn: "Your shortlist has [N] names. With an 80-90% kill rate for found words, you'll likely end up with [1-3] survivors. I recommend expanding to 15-20 before validating." Recommend (a), (b), or (e).
+2. **Structural diversity gate:** If the shortlist is >80% found words (or any single type), flag it: "Your shortlist is [N]% found words. Generating compound/coined alternatives now is critical insurance." Recommend (b).
+3. **Riffing checklist gate:** Check whether the mandatory riffing checklist has been satisfied. If not, recommend (c) before (d).
+
+Then present:
+
+"**Shortlist:** [N] names selected. **Structural mix:** [N]% found words, [N]% compounds, [N]% coined/other.
+**Riffing status:** [list which techniques have been applied and which haven't].
 
 **What would you like to do?**
-- (a) **Apply more riffing techniques** to the shortlist — [list unapplied techniques]
+- (a) **Apply more riffing techniques** to the shortlist — [list SPECIFIC unapplied techniques]
 - (b) **Generate compound/coined alternatives** for each found word on the shortlist (ownability insurance)
 - (c) **Run the mandatory riffing checklist** to ensure coverage, then proceed to validation
 - (d) **Skip straight to validation** — take the shortlist as-is into competitive screening
 - (e) **Go back** — generate more candidates first
 
-**My recommendation:** [Always include a specific recommendation with rationale. E.g., "I'd lean toward (b) — your shortlist is mostly found words, which have an 80-90% kill rate in validation. Generating compound alternatives now gives you survivable backups before the bloodbath."]"
+**My recommendation:** [Always include a specific recommendation. If any gate is failing, STRONGLY recommend addressing it. Never recommend (d) when the shortlist is <15 names or >80% found words — those conditions guarantee a thin, disappointing final pool.]"
 
-#### Riffing checklist (before entering Loop 4)
+#### Riffing checklist (before entering Loop 4) — BLOCKING
 
-**In deep sessions (default):** This checklist is mandatory. Apply techniques to each shortlisted **direction** (group names by theme — e.g., "the measurement direction" covers Assay, Gauge, Caliber together), not to each individual name.
+**In deep sessions (default):** This checklist is **blocking** — you must either complete it or get explicit user waiver before entering validation. Display it as a visible checklist with the status of each item. Do not silently skip it.
 
 **In quick sessions:** This checklist is skippable — but warn the user once: "Found words have an 80-90% validation kill rate without compound alternatives. Want to riff first, or go straight to validation?" Then respect their choice.
 
 **Core checklist (mandatory in deep sessions — apply to each direction):**
 
-Before running, check the `techniques_used` array in `01-candidates.md` frontmatter. If ALL core techniques for the relevant brief type have already been applied to all shortlisted directions during 2c, the checklist is satisfied — don't surface it as a visible step. Just note: "Riffing checklist: all core techniques already applied during riffing. Proceeding to validation." If gaps remain, surface only the unapplied techniques.
+Before running, check the `techniques_used` array in `01-candidates.md` frontmatter. Display the checklist with current status:
+
+```
+Riffing checklist status:
+- [x] SCAMPER — applied during 2c
+- [ ] Compound creation — NOT YET DONE
+- [ ] Creative respelling — NOT YET DONE
+- [x] Tech branding patterns — applied during 2c
+
+2 of 4 core techniques applied. Recommend completing before validation.
+Proceed anyway? (This will likely result in a thin final pool.)
+```
+
+If ALL core techniques for the relevant brief type have been applied, note: "Riffing checklist: all core techniques applied. Proceeding to validation." If gaps remain, **surface the gaps explicitly and recommend completing them.** Only proceed without completing if the user explicitly says to skip.
 
 **For B2B/enterprise/tech briefs — core checklist:**
 - [ ] **SCAMPER** — Substitute, Combine, Adapt, Modify, Eliminate, Reverse
@@ -997,10 +1072,25 @@ Names where: the core concept is strong but there are minor issues — e.g., .co
 #### Tier 3: Strong but Likely Unavailable
 Names the user loved during ideation that didn't survive validation. Include them as reference points — they reveal what the user is drawn to and can seed further exploration if needed.
 
+#### Session Quality Self-Assessment
+Include a transparent self-assessment in the final presentation:
+
+```
+Session stats:
+- Total candidates generated: [N]
+- Naming categories attempted: [N] of 11
+- Techniques applied: [N] of [total available]
+- Structural mix of finalists: [N] found words, [N] compounds, [N] coined, [N] other
+- Cross-model sources used: [list or "none"]
+```
+
+If any of these metrics are weak (< 60 candidates, < 6 categories, < 5 techniques, > 80% one structural type, no cross-model), flag it honestly: "This session under-explored [area]. A follow-up session focusing on [specific techniques/categories] would likely produce stronger candidates."
+
 #### Closing Recommendations
 - Top 3 recommendation with brief justification
 - Suggested next steps (trademark attorney consultation, domain registration, social handle reservation)
 - Offer to do another round if the user wants to explore further
+- If the user expresses lukewarm sentiment ("these are fine," "good enough"), **do not accept it passively.** Acknowledge it: "I hear you — 'good enough' isn't the goal. We under-explored [specific areas]. Want to do one more round focused on [specific techniques] before closing?"
 
 #### Cycle-back
 
@@ -1052,11 +1142,19 @@ timestamp: ISO-8601
 ```yaml
 ---
 categories_used: [evocative, coined, found_word, compound]
+categories_not_attempted: [sound_symbolic, acronymic, descriptive]
 cross_model_sources: [gpt-4o, gemini]
 user_preferred_categories: [evocative, found_word]
 user_disliked_categories: [acronymic]
 territories_explored: [precision_instrument, trusted_guide, makers_workshop]
 total_unique_candidates: 87
+structural_mix:
+  found_words: 35
+  compounds: 25
+  coined_invented: 12
+  blends: 8
+  foreign_root: 5
+  respellings: 2
 deduplication_log: ["Meridian generated by Claude + Gemini + GPT", "Triage generated by Claude + Gemini + GPT"]
 techniques_used: [evocative_generation, found_word_generation, compound_generation, SCAMPER, synonym_explosion, affix_exploration, Y_for_I_respelling, tech_branding_OS, tech_branding_ware, language_shift_latin, three_team_method]
 techniques_not_yet_used: [morphological_analysis, classical_stem_engineering, semiotic_mapping, contrarian_naming, conceptual_blending, backronym, domain_first]
