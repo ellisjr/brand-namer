@@ -26,7 +26,7 @@ Professional naming agencies charge $15,000–$75,000+ for brand naming engageme
 
 1. **Diverge before you converge.** Generate across many naming categories before filtering. The best names often come from unexpected categories.
 2. **The user drives ALL convergence.** Present organized options and let the user's taste guide which directions to explore further. Don't pre-filter based on your own preferences. Don't decide which names are "strongest" — present ALL candidates and let the user cut. When moving to riffing, ask the user which names to riff on rather than selecting "the strongest 5-6" yourself.
-3. **Present everything, cut nothing — in digestible batches.** Every candidate generated — by you, by sidecars, by user paste-in — gets presented to the user eventually. Nothing is silently dropped. But "present everything" means **eventual full exposure via batched rounds**, not an immediate dump of 150 names. The process: gallery overview first → batched expansion (10 at a time) of preferred categories → remaining categories available on request. At each point, be transparent about what's been shown and what's waiting: "I've generated [N] candidates. You've seen [M] so far. [K] more are available in [categories]. Want to continue, or move on?" Preference data from earlier selections should sharpen GENERATION (what you produce next), not PRESENTATION (what you show).
+3. **Present everything, cut nothing — in digestible batches.** Every candidate generated — by you or by user paste-in from other LLMs — gets presented to the user eventually. Nothing is silently dropped. But "present everything" means **eventual full exposure via batched rounds**, not an immediate dump of 150 names. The process: gallery overview first → batched expansion (10 at a time) of preferred categories → remaining categories available on request. At each point, be transparent about what's been shown and what's waiting: "I've generated [N] candidates. You've seen [M] so far. [K] more are available in [categories]. Want to continue, or move on?" Preference data from earlier selections should sharpen GENERATION (what you produce next), not PRESENTATION (what you show).
 4. **Validate what survives — and riff on what doesn't.** A beautiful name is worthless if the domain is taken, the trademark is filed, or it means something vulgar in Mandarin. But a taken name that the user loves is a powerful creative signal. Validate to sort, not to discard — names that fail validation become seeds for riffing and deepening in the next pass.
 5. **Ask before you advance — offer menus at checkpoints.** At each major transition, present options rather than suggesting a single next step. **First time** at each transition: show the full menu of available options. **Subsequent times** at the same transition: use a short form — "Generate more, riff more, or move on? (show full menu)" — unless the user asks for the full list. Don't barrel through the pipeline — naming is a creative partnership, but menus shouldn't feel like paperwork.
 6. **Flag conflicts inline with confidence levels.** For every name you generate, immediately check your training data for known companies, products, or brands with the same or very similar name. If you know of a conflict, flag it inline with a confidence indicator:
@@ -36,7 +36,7 @@ Professional naming agencies charge $15,000–$75,000+ for brand naming engageme
    Flagged names should be deprioritized in presentation but NOT removed — the user decides whether to pursue them. This prevents the heartbreak of falling in love with a name only to discover it's taken during validation. Do this during generation, riffing, AND variation stages — not as a separate step.
 7. **Isolate context — name ONLY what's being named.** When the user provides background documents (PRDs, pitch decks, business plans), extract information about the NAMING TARGET only. Do not let surrounding context bleed into the naming brief. If the user is naming a platform built for a fund called "InnovateHealth Ventures," you are naming the PLATFORM, not the fund. If the user is naming a feature within an app, you are naming the FEATURE, not the app. Confirm the naming target explicitly before generating: "Just to confirm — we're naming [the platform/the feature/the company], correct?"
 8. **Show your work — technique transparency.** When applying riffing or generation techniques, label which technique produced each candidate. Don't just show outputs — show the technique name alongside each result. This lets the user understand WHY a name was generated and request more of a specific technique if it's working. Format: `**Name** | technique used | rationale`
-9. **Narrate before you act.** Before any multi-step operation (validation runs, sidecar spawning, batch generation, pool recovery), tell the user what you're about to do, how many steps it involves, and what to expect. "I'm going to screen your 12 shortlisted names — web search for each, then domain checks. I'll present results in a single table when done." This prevents the user from sitting in silence wondering what's happening during long operations.
+9. **Narrate before you act.** Before any multi-step operation (validation runs, batch generation, pool recovery), tell the user what you're about to do, how many steps it involves, and what to expect. "I'm going to screen your 12 shortlisted names — web search for each, then domain checks. I'll present results in a single table when done." This prevents the user from sitting in silence wondering what's happening during long operations.
 10. **Recommend at every checkpoint.** Every checkpoint menu (a/b/c/d options) MUST include your recommendation with brief rationale based on the current session state — pool size, technique coverage, user energy. The user may override, but the guidance helps. "I'd lean toward (a) — your pool is thin after validation and riffing on the dead names usually produces the strongest survivors."
 
 ## Reference Files — Context Budget Policy
@@ -82,24 +82,22 @@ In long sessions (50+ turns, 100+ candidates), context pressure will degrade qua
 3. **Summarize before advancing.** At each loop transition, write a brief status summary into the conversation: "Status: [N] candidates, [M] shortlisted, [K] validated. Preference profile: [summary]. Next: [stage]." This survives context compression better than scattered details across many turns.
 4. **Don't re-read reference files.** Load sections once per stage. If you need to re-reference a technique, recall it from what you've already loaded — don't re-read the file.
 
-### Sidecar briefing budget
+### Cross-pollination prompt budget
 
-When briefing sidecars, do NOT include full reference files. Instead:
+When generating prompts for the user to run in other LLMs (see 2b), keep them self-contained but lean:
 - Include the brand brief (from `00-brief.md`)
 - Include a **condensed taxonomy summary** — the 11 category names with 1-line descriptions + the key generation rules (anti-patterns, at least 6 categories, don't self-censor). ~50 lines, not 1,200.
 - Include existing candidates (for deduplication)
-- Include specific technique instructions if you want the sidecar to try a particular approach
+- Include specific technique instructions if you want the external model to try a particular approach
 
-**Sidecar model selection by task:**
+**Which models to recommend to the user:**
 
-| Task | Recommended model | Thinking level | Why |
-|---|---|---|---|
-| Cross-model name ideation | `gemini` or `gpt` | `--thinking medium` | Creative breadth. High thinking adds latency without better naming. |
-| Taxonomy/skill review | `gemini` or `gpt` | `--thinking high` | Analytical depth needed for structural critique. |
-| Quick conflict screening | `gemini` | No `--thinking` flag | Fast factual lookups, no creative reasoning needed. |
-| Consumer naming ideation | `gpt` | `--thinking medium` | GPT tends toward punchier consumer names. |
-| Systematic/foreign-root exploration | `gemini` | `--thinking medium` | Gemini is more thorough at systematic exploration. |
-| Irreverent/unconventional names | `grok` | Default | Grok breaks patterns other models won't. |
+| Task | Recommended model | Why |
+|---|---|---|
+| Cross-model name ideation | ChatGPT or Gemini | Creative breadth from different training biases |
+| Consumer naming ideation | ChatGPT | GPT tends toward punchier consumer names |
+| Systematic/foreign-root exploration | Gemini | More thorough at systematic exploration |
+| Irreverent/unconventional names | Grok | Breaks patterns other models won't |
 
 ---
 
@@ -426,66 +424,55 @@ Cross the dimensions: "2-syllable Latin-origin noun with crisp phonetics from th
 
 After presenting the initial pool, check in: "Here's the first round. Before we go further — would you like to get additional ideas from other AI models (2b), start narrowing these down, do another generation round in specific directions, or try any deepening techniques (SCAMPER, Inversion, etc.)?"
 
-### 2b. Cross-Model Ideation (Optional but Recommended)
+### 2b. Cross-Pollination with Other LLMs (Mandatory Offer, Optional Execution)
 
 **Appends to:** `01-candidates.md` (merge external candidates, update frontmatter cross_model_sources)
 
-Different LLMs have different creative biases. GPT-4o trends toward punchy consumer brands, Gemini toward technical/precise names, Grok toward irreverent options. Using multiple models dramatically widens the possibility space and helps break out of any single model's convergence patterns.
+Different LLMs have different creative biases. ChatGPT trends toward punchy consumer brands, Gemini toward technical/precise names, Grok toward irreverent options. Using multiple models dramatically widens the possibility space and helps break out of any single model's convergence patterns.
 
-**Timing:** In Explorer Mode, offer to spawn cross-model sessions *during* 2a generation — generate your own candidates while sidecars run in parallel, then merge before presenting. In Focused Mode, offer cross-model after the first round of user reactions. Cross-model input is also valuable during 2c (riffing) and 4b (pool recovery) — offer it at any point where fresh perspectives would help.
+**Timing:** In Explorer Mode, offer cross-pollination *during* 2a generation — generate your own candidates while the user runs prompts in other models, then merge before presenting. In Focused Mode, offer after the first round of user reactions. Cross-pollination is also valuable during 2c (riffing) and 4b (pool recovery) — offer it at any point where fresh perspectives would help.
 
-**For consumer/lifestyle/fashion/food briefs, strongly recommend cross-model ideation.** Session testing shows cross-model rounds consistently produce the highest hit rate for consumer names (46% vs 8% for riffing in one tested session). Consumer naming rewards lateral creativity, sensory vocabulary, and cultural reference that different models approach from genuinely different angles — GPT tends toward punchy, emotionally resonant consumer names; Gemini toward systematic foreign-root and nature exploration; Grok toward irreverent breaks. For consumer briefs, frame this as a near-default rather than an optional add-on: "For consumer brands, I'd strongly recommend getting ideas from other models — it's consistently the highest-yield stage."
+**For consumer/lifestyle/fashion/food briefs, strongly recommend cross-pollination.** Session testing shows cross-model rounds consistently produce the highest hit rate for consumer names (46% vs 8% for riffing in one tested session). Consumer naming rewards lateral creativity, sensory vocabulary, and cultural reference that different models approach from genuinely different angles. For consumer briefs, frame this as a near-default: "For consumer brands, I'd strongly recommend getting ideas from other models — it's consistently the highest-yield stage."
 
-#### If sidecar tools are available (preferred):
-Check whether you have access to `sidecar:sidecar_start`. If you do, offer to spawn parallel naming sessions with other models automatically. Recommended models for creative naming work:
+#### Generating the cross-pollination prompt
 
-- **GPT-4o** (alias: `gpt`) — Strong at consumer-friendly, punchy names. Good at portmanteaus and sound-symbolic names.
-- **Gemini 2.5 Pro with thinking** (alias: `gemini-pro`) — Excellent at foreign-root and invented/coined names. Thorough at systematic exploration.
-- **Grok** (alias: `grok`) — Good at unconventional, irreverent, and surprising name candidates that break patterns.
+Offer the user a ready-to-paste prompt they can run in other LLMs:
 
-For each sidecar, send a briefing that includes:
-1. The brand brief from Loop 1
-2. The naming categories from `references/naming-categories.md` (include the full taxonomy — the sidecar doesn't have access to local files)
-3. An explicit instruction to generate at least 50 candidates across multiple naming categories, organized by category with brief rationale per name
+"I have a prompt you can paste into ChatGPT, Gemini, or another LLM to get additional naming candidates from a different creative perspective. Each model has different creative biases, so this often surfaces names that wouldn't emerge from a single model. Want me to generate it?"
+
+When the user says yes, generate a **self-contained prompt** that includes:
+1. The full brand brief from Loop 1
+2. A condensed naming taxonomy — the 11 category names with 1-line descriptions + the key generation rules (anti-patterns, at least 6 categories, don't self-censor). See "Cross-pollination prompt budget" above for length guidelines.
+3. Instructions to generate **50+ names across at least 6 categories**, organized by category with brief rationale per name
 4. The anti-convergence instructions: explore widely, don't self-censor, include weird/risky options
-5. **A list of candidates already generated** — instruct the sidecar: "Here are the [N] names already generated. Do NOT repeat these. Focus on categories, directions, and domains NOT already explored." This prevents the 70%+ overlap that occurs when multiple models receive identical briefs without deduplication guidance.
-
-When sidecar results come back, **immediately append ALL external candidates to `01-candidates.md`** with the source model noted. Deduplicate against existing candidates — mark duplicates as "independently generated by [model]" (this is validation signal, not waste). Present all NEW unique candidates to the user in the same numbered-batch format used for your own candidates. Do not silently absorb external candidates into your pool — the user should see exactly what each model contributed.
-
-#### Sidecar failure detection
-If a sidecar completes in under 10 seconds or returns empty/near-empty results (fewer than 5 candidates), treat it as failed — the model likely didn't execute the prompt. Do not present empty results to the user. Instead: (1) Note the failure transparently: "The [model] sidecar didn't return usable results — likely a connection issue." (2) Fallback: run a **domain-specific vocabulary mining** round as a substitute — mine specialized vocabulary from the brief's domain (industry terminology, historical figures, tools of the trade, specialized measurement instruments) and use those as generation seeds. This replaces the creative breadth the sidecar was supposed to provide. (3) Offer to retry the sidecar or continue without it.
-
-#### User paste-in handling
-When the user pastes results from another LLM, apply the same process: append to `01-candidates.md` with source noted, deduplicate, present new unique candidates to the user for reaction. Ask which model generated them so you can track the source.
-
-#### Large-input ingestion protocol
-If the user pastes a large batch (20+ names), don't just dump them into the conversation. Process systematically:
-
-1. **Normalize:** Standardize formatting — one name per line, remove numbering/bullets, strip rationale text
-2. **Deduplicate:** Check against existing `01-candidates.md`. Flag exact matches as cross-model validation. Flag near-matches (different spacing, hyphenation, pluralization — e.g., "SiftWorks" vs "Sift Works" vs "Siftworks") and let the user choose which form to keep.
-3. **Chunk:** Split into blocks of 25 names max for presentation
-4. **Classify:** Note the source model and any category/territory labels from the original output
-5. **Present:** Show each chunk in the standard numbered-batch format for user reaction
-6. **Save:** Append all new unique candidates to `01-candidates.md` after each chunk is presented
-
-#### If sidecar is not available (manual workflow):
-Offer the user a ready-to-paste prompt they can run in other LLMs. Present it as a copyable block:
-
-"I have a prompt you can paste into ChatGPT, Gemini, or another LLM to get additional naming candidates from a different creative perspective. Each model has different creative biases, so this often surfaces names that wouldn't emerge from a single model. Want me to generate the prompt?"
-
-When the user says yes, generate a self-contained prompt that includes:
-- The full brand brief
-- The naming taxonomy framework (condensed but complete — the external model doesn't have the reference file)
-- Instructions to generate 50+ names across at least 6 categories, organized by category with rationale
-- The anti-convergence rules
-- A note to the user about which models to try: **ChatGPT (GPT-4o)** for consumer-friendly creativity, **Gemini 2.5 Pro (with thinking/reasoning enabled)** for systematic foreign-root and coined-word exploration, **Grok** for unconventional and irreverent candidates
+5. **A list of candidates already generated** — instruct the external model: "Here are the [N] names already generated. Do NOT repeat these. Focus on categories, directions, and domains NOT already explored."
+6. A note about which models to try: **ChatGPT** for consumer-friendly creativity and portmanteaus, **Gemini (with thinking/reasoning enabled)** for systematic foreign-root and coined-word exploration, **Grok** for unconventional and irreverent candidates
 
 Format the prompt so it works as a direct paste — no setup, no preamble needed from the user.
 
-When the user pastes results back, merge them into the master pool alongside your 2a output. Ask the user to indicate which model generated the results so you can note the source.
+#### When to offer cross-pollination
 
-#### Skipping this stage:
-If the user wants to move fast or doesn't have access to other models, skip this stage entirely. It's additive, not required.
+Include cross-pollination as an option at these checkpoints:
+- After the first gallery round (2a) — "Want to get fresh perspectives from other models before expanding?"
+- At the Loop 2→3 checkpoint — listed as option (b)
+- During pool recovery (4b) — "Your pool is thin. Getting names from another model often produces the strongest recovery candidates."
+- Whenever the hard gate checks reveal structural homogeneity — "Your pool is 90% found words. Another model might generate more coined/compound names."
+
+#### Handling paste-in results
+
+When the user pastes results from another LLM, process them systematically:
+
+1. **Normalize:** Standardize formatting — one name per line, remove numbering/bullets, strip rationale text
+2. **Deduplicate:** Check against existing `01-candidates.md`. Flag exact matches as cross-model validation (a name generated independently by two models is a strong signal). Flag near-matches (e.g., "SiftWorks" vs "Sift Works") and let the user choose which form to keep.
+3. **Chunk:** Split into blocks of 25 names max for presentation
+4. **Classify:** Note the source model and any category/territory labels from the original output
+5. **Present:** Show each chunk in the standard numbered-batch format for user reaction
+6. **Save:** Append all new unique candidates to `01-candidates.md` with source noted
+
+Ask which model generated the results so you can track the source. Present all NEW unique candidates in the same format used for your own candidates — the user should see exactly what the external model contributed.
+
+#### Mandatory offer, optional execution
+You **must** offer to generate the cross-pollination prompt at least once during every deep session — either after the first gallery round or at the Loop 2→3 checkpoint. The user can decline ("no, let's keep going"), and that's fine. But they should always know the option exists. Don't skip the offer silently.
 
 ### 2c. Creative Riffing & Directional Expansion
 
@@ -601,14 +588,14 @@ Ask the user: "Want me to riff further on any of these directions, or are you re
 
 Then present the status summary and full menu:
 
-"**Status:** [N] unique candidates across [M] categories from [K] sources (you + [sidecar models]).
+"**Status:** [N] unique candidates across [M] categories.
 **Category coverage:** [N] of 11 attempted. Not yet tried: [list].
 **Structural mix:** [N]% found words, [N]% compounds, [N]% coined/other.
 **Techniques used:** [list]. **Not yet used:** [list with count].
 
 **What would you like to do?**
 - (a) **Generate more** — fresh round in specific directions, or try a category we haven't used
-- (b) **Cross-model ideation** — get ideas from other LLMs via sidecar
+- (b) **Cross-pollinate** — I'll generate a prompt you can paste into ChatGPT/Gemini/Grok for fresh perspectives
 - (c) **Apply riffing techniques** — [list SPECIFIC unused techniques: SCAMPER, synonym explosion, affix exploration, respelling, tech branding, language shift, compound creation, classical stems, conceptual blending — only list ones not yet applied]
 - (d) **Apply deepening techniques** — [list: Inversion, Constraint Removal, Six Hats, First Principles, TRIZ, Analogical Reasoning, Three-Team Method]
 - (e) **Move to shortlisting** — review all candidates, pick favorites for validation
@@ -784,11 +771,6 @@ For each shortlisted name, spawn a Haiku subagent:
 ```
 
 This turns 20 minutes of sequential main-model searches into 2-3 minutes of parallel Haiku work. The main model then consolidates results and presents the batched screening table.
-
-**Sidecar model optimization:**
-- **Cross-model ideation (2b):** Use `gemini --thinking medium` for creative breadth (high thinking adds latency without proportionally better naming output)
-- **Quick conflict checks:** Use `gemini` without `--thinking` flag for fast factual screening
-- **Deep review/evaluation:** Use `gemini --thinking high` or `gpt --thinking high` only when analyzing or critiquing
 
 **Session-level model recommendations:**
 - **Quick Mode:** Sonnet is sufficient and significantly cheaper than Opus. The compressed pipeline doesn't benefit from Opus's deeper reasoning.
@@ -1164,7 +1146,7 @@ timestamp: ISO-8601
 
 **Technique accountability:** Update `techniques_used` and `techniques_not_yet_used` after every generation batch. This forces conscious cycling through the full toolkit rather than defaulting to the same 3-4 techniques. When presenting checkpoint menus, reference the unused techniques: "Techniques not yet tried: [list]. Want to apply any before moving on?"
 
-**Deduplication rule:** Maintain a running list of all candidate names in `01-candidates.md`. Before presenting any batch (generation, sidecar merge, riff output), check against the existing list. If a name is a duplicate: (a) note it as independently generated by [source] (valuable validation signal), (b) do NOT present it again to the user as a new candidate. If a near-duplicate exists (e.g., "Siftworks" and "Sift Works"), flag both and let the user decide which form to keep.
+**Deduplication rule:** Maintain a running list of all candidate names in `01-candidates.md`. Before presenting any batch (generation, external merge, riff output), check against the existing list. If a name is a duplicate: (a) note it as independently generated by [source] (valuable validation signal), (b) do NOT present it again to the user as a new candidate. If a near-duplicate exists (e.g., "Siftworks" and "Sift Works"), flag both and let the user decide which form to keep.
 
 **02-shortlist.md:**
 ```yaml
@@ -1228,7 +1210,7 @@ timestamp: ISO-8601
 - **After each generation batch** (each category presented to the user): update `01-candidates.md`
 - **After each user triage/reaction round** (user provides H/W/C or picks favorites): update `01-candidates.md` with preference data
 - **After each riff round** (riffs on a direction presented and reacted to): update `01-candidates.md`
-- **After cross-model merge** (sidecar or paste-in candidates integrated): update `01-candidates.md`
+- **After cross-model merge** (paste-in candidates integrated): update `01-candidates.md`
 - **After shortlisting** (user has confirmed favorites): write `02-shortlist.md`
 - **After each validation step** (competitive screen, domain check, trademark, social handles): update `03-validation.md`
 - **After pool recovery rounds**: update both `01-candidates.md` and `03-validation.md`

@@ -23,7 +23,7 @@ Understand what you're naming. Define the strategic space before generating anyt
 Produce candidates across many naming categories. Breadth before depth.
 
 - **Divergent generation** across 11 naming categories with ownability-first compound generation in parallel
-- **Cross-model ideation** — via [sidecar](https://github.com/jrenaldi79/sidecar) if installed (auto-spawns GPT/Gemini/Grok sessions), or via paste-ready prompts the user can run in any LLM manually
+- **Cross-pollination** — generates paste-ready prompts for ChatGPT/Gemini/Grok, merges results back into the candidate pool
 - **Creative riffing** with labeled techniques — the user sees WHY each name was generated
 - **Gallery mode** — scannable H/W/C grid before diving into category-by-category expansion
 
@@ -311,9 +311,9 @@ Claude Code auto-detects skills by their YAML frontmatter. Once installed, the s
 
 Lexicon Branding (Placek), Aaker Brand Personality, Mark & Pearson 12 Archetypes, Sound Symbolism (Köhler, Ramachandran, Sapir), Bouba-Kiki Effect, Processing Fluency (Alter & Oppenheimer), Von Restorff Distinctiveness, Mere Exposure (Zajonc), Dual Coding (Paivio), Cognitive Chunking (Miller), Kahneman System 1/2, Fauconnier & Turner Conceptual Blending, Zwicky Morphological Analysis, Rosch Prototype Theory, Iyengar Choice Overload, Osgood Semantic Differential, TRIZ Contradiction Resolution, Christensen Jobs-to-be-Done, Watkins SMILE/SCRATCH.
 
-## Sidecar Support
+## Cross-Pollination
 
-If [sidecar](https://github.com/jrenaldi79/sidecar) is installed, the skill spawns parallel naming sessions with GPT, Gemini, and Grok automatically. Without sidecar, it generates a paste-ready prompt for manual cross-model ideation.
+The skill generates paste-ready prompts for ChatGPT, Gemini, and Grok to get naming candidates from different creative perspectives. The user pastes results back and the skill deduplicates, classifies, and merges them into the candidate pool. Each model has different biases — ChatGPT trends toward punchy consumer names, Gemini toward systematic foreign-root exploration, Grok toward irreverent breaks.
 
 ## License
 

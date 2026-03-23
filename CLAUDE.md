@@ -26,7 +26,7 @@ references/
 - **SKILL.md is the skill definition.** It has YAML frontmatter (`name`, `description`) that Claude Code uses for skill detection and triggering.
 - **Reference files are loaded on-demand**, not all upfront. Each stage in SKILL.md specifies which reference file to read and when.
 - **Artifacts** are output to `brand-namer-output/` (00-brief.md through 04-final.md) with YAML frontmatter for session resumption.
-- The skill supports **sidecar** integration for cross-model ideation (GPT/Gemini/Grok).
+- The skill supports **cross-pollination** with other LLMs (ChatGPT/Gemini/Grok) via generated prompts the user can paste into other models.
 
 ## Working on this project
 
