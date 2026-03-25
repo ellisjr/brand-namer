@@ -15,7 +15,7 @@ Riffing, transformation, ownability, and advanced generation techniques. Load th
 
 1. [Systematic Riffing Axes](#systematic-riffing-axes)
 2. [Productive Affixes for Name Construction](#productive-affixes-for-name-construction)
-3. [Tech Branding Patterns](#tech-branding-patterns)
+3. [Industry-Native Compound Patterns (Tech/SaaS Example)](#industry-native-compound-patterns-techsaas-example)
 4. [Prefix x Suffix Matrix (Systematic Combinatorial Generation)](#prefix--suffix-matrix-systematic-combinatorial-generation)
 5. [AI-Embedded Naming](#ai-embedded-naming)
 6. [Backronym Generation](#backronym-generation)
@@ -178,9 +178,29 @@ When a conventional spelling is taken, these respelling patterns create ownable 
 
 ---
 
-## Tech Branding Patterns
+## Industry-Native Compound Patterns (Tech/SaaS Example)
 
-**These patterns are specific to tech/SaaS naming.** For other industries, generate equivalent patterns dynamically from the brief — see SKILL.md section 2a. A fashion brand's "-Studio" / "-House" / "-& Co" patterns are the equivalent of tech's "-works" / "-craft" / "-OS" patterns. The structural approach (root + industry-credible element) transfers; the specific vocabulary does not.
+**The technique is universal; the vocabulary below is tech/SaaS-specific.** Every industry has its own compound vocabulary — the structural patterns that feel credible and natural alongside existing brands in that vertical. The process is always the same:
+
+1. **Study 10+ successful brands in the target vertical.** What compound structures do they use?
+2. **Extract 8-12 industry-native compound elements** — suffixes, prefixes, and structural patterns that would feel at home next to the competitive set.
+3. **Systematically cross each shortlisted root** with these elements. Not every combination works — scan for natural-sounding ones and discard awkward ones.
+4. **Also generate 4-6 cross-industry elements** — the most distinctive compounds borrow from OUTSIDE the industry. "Protocol" for a fashion brand, "Codex" for a dev tool.
+
+**Industry compound examples (generate fresh for each brief — don't reuse these):**
+
+| Industry | Natural compound elements | Example outputs |
+|---|---|---|
+| **Tech/SaaS** | -works, -craft, -wise, -OS, -ware, -kit, -base, -lab, -stack, -grid | Siftworks, DeepKit, SignalOS |
+| **Fashion/lifestyle** | Studio, House, Atelier, & Co, Supply, Goods, Society, Edit | Crow Studio, Moth & Co |
+| **Finance/VC** | Capital, Partners, Ventures, Group, Advisory, Holdings | Benchmark Capital |
+| **Healthcare** | Health, Therapeutics, Bio, Sciences, Medical, Care, Rx | Lumen Therapeutics |
+| **Food/beverage** | Co, Kitchen, Provisions, Pantry, Brewing, Goods | Sloe Provisions |
+| **Legal/GRC** | Logic, Systems, Analytics, Intelligence, Protocol | LogicGate, Relativity |
+| **Real estate/proptech** | Properties, Spaces, Dwellings, Built, Grid, Field | Fieldwire |
+| **Education** | Academy, Institute, Learning, Prep, Labs | Lambda School |
+
+The tables below show the tech/SaaS compound vocabulary in detail — use them when the brief IS tech/SaaS. For all other industries, generate equivalent tables dynamically using the 4-step process above.
 
 Common tech/SaaS naming patterns that consistently produce ownable compound names. Compounds built from these suffixes are far more likely to clear competitive screening than single found words.
 

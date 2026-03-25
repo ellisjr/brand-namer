@@ -58,6 +58,8 @@ This branching approach **structurally defeats convergence** — the core proble
 
 **When to skip branching:** In Quick Mode, skip this — just generate a single strong batch per category. Branching is for deep sessions where generation quality matters more than speed.
 
+**Branching is MANDATORY in deep and focused sessions.** Every category you attempt must go through the branch → evaluate → expand cycle. A linear list of 10 names in a category means you explored one semantic neighborhood and stopped. Three branches of 3-5 names each, with the weakest pruned and the strongest expanded, means you explored three neighborhoods and went deep on the richest one. The output looks similar but the quality is structurally different — branching defeats convergence, linear lists enable it. If you catch yourself generating a flat list without branching, stop and restructure into 3 branches before presenting.
+
 ### Rules for this stage
 
 - **Attempt at least 6 of the 11 naming categories** in the reference file. Present at least 4 that produced viable results. Note which categories you attempted and found unproductive: "I tried Acronymic and Sound-Symbolic but neither produced strong fits for this brief." If the user says early on "skip [category]" or "I don't want [style]," respect that — remove it from the attempt list and don't count it toward the minimum. The user can permanently disable categories they know they don't want.
@@ -93,6 +95,7 @@ These gates are **blocking** — do not proceed to Loop 3 (shortlisting) until t
 **4. Technique cycling:**
 - Before the Loop 2 to 3 transition, check `techniques_not_yet_used` in `01-candidates.md`. If more than **8 techniques** remain unused, flag it: "We've used [N] techniques and have [M] still available: [list]. Want to try any before shortlisting?"
 - This prevents the common failure mode where the session stays in one generation groove and never cycles through the full creative toolkit.
+- **Technique saturation:** When 25+ techniques have been applied and fewer than 8 remain unused, the technique cycling gate is satisfied. At this depth, the remaining unused techniques (typically backronym, domain-first, semiotic mapping, morphological analysis) have diminishing returns. Note: "25+ techniques applied. Remaining [N] techniques are available but optional at this depth." This does NOT exempt techniques on the riffing checklist — those are enforced separately at step-03a regardless of total technique count.
 
 ### Five Senses Scan as formal generation round (consumer/physical product briefs)
 

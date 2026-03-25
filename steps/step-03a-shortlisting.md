@@ -58,7 +58,7 @@ Display the full status summary, then present the menu:
 **What would you like to do?**
 - **(a) Generate more** — fresh round in specific directions, or try a category we haven't used
 - **(b) Cross-pollinate** — I'll generate a prompt you can paste into ChatGPT/Gemini/Grok for fresh perspectives
-- **(c) Apply riffing techniques** — [list SPECIFIC unused techniques: SCAMPER, synonym explosion, affix exploration, respelling, tech branding, language shift, compound creation, classical stems, conceptual blending — only list ones not yet applied]
+- **(c) Apply riffing techniques** — [list SPECIFIC unused techniques: SCAMPER, synonym explosion, affix exploration, respelling, industry-native compound patterns, language shift, compound creation, classical stems, conceptual blending — only list ones not yet applied]
 - **(d) Apply deepening techniques** — [list: Inversion, Constraint Removal, Six Hats, First Principles, TRIZ, Analogical Reasoning, Three-Team Method]
 - **(e) Move to shortlisting** — review all candidates, pick favorites for validation
 - **(f) Something else** — tell me what you need
@@ -122,7 +122,7 @@ At each transition point, present the FULL menu of available techniques and let 
 - Synonym explosion (5-10 synonyms per root)
 - Affix exploration (prefix/suffix library crossing)
 - Creative respelling (Y-for-I, K-for-C, dropped vowels, etc.)
-- Tech branding patterns (-OS, -ware, -wise, -er, -base, -box)
+- Industry-native compound patterns (generate compound elements from the brief's vertical, then cross with roots)
 - Language shift (Latin, Greek, French translations)
 - Compound creation (root x 5+ second words)
 - Classical stem engineering (Greek/Latin root construction)
@@ -225,10 +225,10 @@ Proceed anyway? (This will likely result in a thin final pool.)
 If ALL core techniques for the relevant brief type have been applied, note: "Riffing checklist: all core techniques applied. Proceeding to validation." If gaps remain, **surface the gaps explicitly and recommend completing them.** Only proceed without completing if the user explicitly says to skip.
 
 **For B2B/enterprise/tech briefs — core checklist:**
-- [ ] **SCAMPER** — Substitute, Combine, Adapt, Modify, Eliminate, Reverse
+- [ ] **SCAMPER** — Substitute, Combine, Adapt, Modify, Eliminate, Reverse. Apply the full framework systematically to your top 3-5 shortlisted names — don't skip this even when the technique count is already high. SCAMPER catches transformations that other riffing techniques miss because it forces you through all 7 operations rather than letting you gravitate toward your preferred 2-3.
 - [ ] **Compound creation** — each root combined with at least 5 different second words
 - [ ] **Creative respelling** — Y-for-I, K-for-C, dropped vowels tested on each root
-- [ ] **Tech branding patterns** — -OS, -ware, -wise, -er, -base, -box applied to each root
+- [ ] **Industry-native compound patterns** — generate 8-12 compound elements (suffixes, prefixes, structural patterns) native to the brief's specific industry, then systematically cross each shortlisted root with them. For tech/SaaS this might be -works, -craft, -OS, -ware, -kit, -base. For finance it might be Capital, Partners, Group, Advisors. For healthcare it might be Health, Therapeutics, Sciences, Bio. For legal it might be Counsel-adjacent governance vocabulary. The point is NOT to apply a fixed list — it's to identify what compound structures are credible and natural in this specific vertical, then systematically test your roots against them. See `references/naming-techniques.md` for tech/SaaS examples and the dynamic generation process in SKILL.md step-02a. Adapt or skip if the user has explicitly rejected compound patterns for their brief — note the adaptation in the checklist status.
 
 The B2B goal: for every found word on the shortlist, you should have 3-5 compound/coined alternatives ready. When the found word dies in validation (and it probably will), the alternatives are already in the pipeline.
 
@@ -238,6 +238,7 @@ Session testing shows the B2B riffing toolkit (compounds, affixes, tech patterns
 - [ ] **Sensory expansion** — Five Senses Scan applied to shortlisted directions not yet explored sensorially
 - [ ] **Nature mining** — creatures, plants, natural phenomena, geological features explored for each direction
 - [ ] **French naturalized vocabulary** — naturalized French words tested across shortlisted directions (see `references/consumer-naming.md`)
+- [ ] **Shelf / Gift / Social-native tests** — run on all shortlisted names: Shelf Test (visualize between competitors on a physical shelf), Gift Test (would someone feel proud giving this?), Social-Native Test (hashtag clean? handle available? caption-ready? verbal sharing test?). These are evaluation tests, not generation techniques — but they must be completed before entering validation because they frequently kill names that look good on paper. If the brief mentions retail placement, DTC, or social media, these tests are non-negotiable.
 
 The consumer goal: for every shortlisted direction, you should have 3-5 alternatives from adjacent metaphorical or sensory territory. Consumer names survive validation through distinctiveness and cultural resonance, not through compound construction.
 

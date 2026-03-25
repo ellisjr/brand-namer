@@ -145,7 +145,7 @@ Use this to identify which naming categories are most compatible with each arche
 | **Lover** | Evocative, Foreign-Root | Sound-Symbolic, Blends | Institutional Compound, Acronymic |
 | **Jester** | Sound-Symbolic, Blends, Found Word | Compound | Foreign-Root, Institutional |
 | **Caregiver** | Evocative, Personified, Found Word | Descriptive | Sound-Symbolic (hard), Contrarian |
-| **Creator** | Coined, Compound, Metaphorical | Found Word, Tech Branding | Descriptive |
+| **Creator** | Coined, Compound, Metaphorical | Found Word, Industry Compounds | Descriptive |
 | **Ruler** | Institutional Compound, Foreign-Root, Found Word | Classical Stems, Evocative | Sound-Symbolic (playful), Blends |
 
 ### Using archetypes in naming:
