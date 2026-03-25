@@ -4,18 +4,164 @@ A Claude Code skill for professional-grade brand naming. Runs a 4-loop cyclable 
 
 The skill operates from a **senior brand strategist** persona — not a list generator. Creative ambition, structural discipline, and ownability instinct are baked in. The professional standard: if the user walks away saying "these are fine," the session failed.
 
+## Architecture
+
+The skill uses a **BMAD-METHOD-style step-file architecture** — the execution pipeline is split into 13 self-contained step files, each with its own enforcement rules, success metrics, and failure definitions. This prevents the LLM from "peeking ahead" and optimizing away steps.
+
+```
+SKILL.md              ← Entry point: Role, Philosophy, Reference Loading, Artifacts, Playbooks
+workflow.md           ← Enforcement router: MANDATORY RULES, SYSTEM FAILURE defs, step routing
+steps/
+  step-00 → step-04f  ← 13 step files, loaded one at a time (just-in-time)
+```
+
+**At runtime:** Claude reads SKILL.md (global context) → workflow.md (routing + enforcement) → current step file only. Previous step files fall out of context. State is carried by artifacts on disk, not conversation memory.
+
 ## How It Works
 
 ```
-Frame → Generate → Select → De-risk
-  ↑                            |
-  └────── (if pool is thin) ───┘
+                           ┌─────────────────────────────────┐
+                           │     BRAND NAMER WORKFLOW         │
+                           │                                  │
+                           │  SKILL.md (global context)       │
+                           │  → Role, Philosophy, Artifacts   │
+                           │  → Reference Loading, Playbooks  │
+                           │                                  │
+                           │  workflow.md (enforcement)        │
+                           │  → 10 SYSTEM FAILURE definitions │
+                           │  → HALT / Waiver / Redisplay     │
+                           └──────────────┬───────────────────┘
+                                          │
+                                          ▼
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  LOOP 1: FRAME                                                          ║
+║                                                                         ║
+║  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐   ║
+║  │  Step 00          │    │  Step 01a         │    │  Step 01b         │  ║
+║  │  SESSION START    │───▶│  BRAND BRIEF      │───▶│  TERRITORIES      │  ║
+║  │                   │[C] │                   │[C] │  & WHITESPACE     │  ║
+║  │  • Detect session │    │  • Naming target   │    │  • 3-5 territories│  ║
+║  │  • Resume/Fresh   │    │  • Audience, JTBD  │    │  • Whitespace map │  ║
+║  │  • Session type   │    │  • Seeds, taste    │    │  • Explorer/Focus │  ║
+║  │  [R] [F] [V] [C]  │    │  [E] [C]           │    │  [A] [D] [R] [C]  │  ║
+║  └──────────────────┘    └──────────────────┘    └────────┬─────────┘   ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+                                                            │ [C]
+                                                            ▼
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  LOOP 2: GENERATE                                                       ║
+║                                                                         ║
+║  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐   ║
+║  │  Step 02a         │    │  Step 02b         │    │  Step 02c         │  ║
+║  │  DIVERGENT        │───▶│  CROSS-           │───▶│  CREATIVE         │  ║
+║  │  GENERATION       │[X] │  POLLINATION      │[C] │  RIFFING          │  ║
+║  │                   │    │                   │    │                   │  ║
+║  │  • 6+ categories  │    │  • Prompt for GPT/ │    │  • Linguistic     │  ║
+║  │  • 60+ candidates │    │    Gemini/Grok     │    │  • Conceptual     │  ║
+║  │  • Tree of Thought│    │  • Merge paste-ins │    │  • Structural     │  ║
+║  │  • Gallery Mode   │    │  • Deduplicate     │    │  • Affix/3-Team   │  ║
+║  │  • Ownability ≥30%│    │                   │    │  • 10-20+ per dir │  ║
+║  │                   │    │  [P] [M] [C]       │    │                   │  ║
+║  │  ══ HARD GATES ══ │    └──────────────────┘    │  [R] [G] [X] [C]   │  ║
+║  │  □ 60+ candidates │                           └────────┬─────────┘   ║
+║  │  □ 6+ categories  │◀──────────── [G] loop back ────────┘             ║
+║  │  □ 3+ struct types│                                                   ║
+║  │  □ technique cycle │                                                  ║
+║  │                   │                                                   ║
+║  │ [G][X][R][S][O]   │                                                   ║
+║  └──────────────────┘                                                    ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+                           │ [S] or [C]
+                           ▼
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  LOOP 3: SELECT                                                         ║
+║                                                                         ║
+║  ┌─────────────────────────────────────────────────────────────────┐     ║
+║  │  Step 03a: CONVERGENT SHORTLISTING                              │    ║
+║  │                                                                 │    ║
+║  │  ┌─ PHASE 1: Entry Checkpoint ──────────────────────────────┐   │    ║
+║  │  │  4 hard gate checks → status summary → menu              │   │    ║
+║  │  │  [A] Generate  [B] Cross-poll  [C] Riff  [D] Deepen     │   │    ║
+║  │  │  [E] ▶ Enter shortlisting   [F] Other                   │   │    ║
+║  │  └──────────────────────────────────────────────────────────┘   │    ║
+║  │                          │ [E]                                  │    ║
+║  │                          ▼                                      │    ║
+║  │  ┌─ PHASE 2: Shortlisting Process ─────────────────────────┐   │    ║
+║  │  │  • Batch elimination (10 at a time, keep/cut)            │   │    ║
+║  │  │  • Definitions check (top 5-10 picks)                    │   │    ║
+║  │  │  • Preference profile built incrementally                │   │    ║
+║  │  │  • Full technique menus offered                          │   │    ║
+║  │  └──────────────────────────────────────────────────────────┘   │    ║
+║  │                          │                                      │    ║
+║  │                          ▼                                      │    ║
+║  │  ┌─ PHASE 3: Exit Checkpoint ──────────────────────────────┐   │    ║
+║  │  │  3 hard gate checks → riffing checklist status → menu    │   │    ║
+║  │  │                                                          │   │    ║
+║  │  │  ══ RIFFING CHECKLIST (BLOCKING) ══                      │   │    ║
+║  │  │  B2B: □ SCAMPER □ Compounds □ Respelling □ Tech patterns │   │    ║
+║  │  │  Consumer: □ Adjacent metaphor □ Sensory □ Nature □ French│   │    ║
+║  │  │                                                          │   │    ║
+║  │  │  [A] More riffing  [B] Compound alts  [C] Run checklist  │   │    ║
+║  │  │  [D] ▶ Proceed to validation   [E] Go back              │   │    ║
+║  │  └──────────────────────────────────────────────────────────┘   │    ║
+║  └─────────────────────────────────────────────────────────────────┘     ║
+║          │ [A]-[C] loop within │ [E] loops to Loop 2                    ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+                           │ [D]
+                           ▼
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  LOOP 4: DE-RISK                                                        ║
+║                                                                         ║
+║  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐   ║
+║  │  Step 04a         │    │  Step 04b         │    │  Step 04c         │  ║
+║  │  COMPETITIVE      │───▶│  DOMAINS &        │───▶│  VARIATION        │  ║
+║  │  SCREENING        │[C] │  POOL RECOVERY    │[C] │  GENERATION       │  ║
+║  │                   │    │                   │    │                   │  ║
+║  │  • Tier detection │    │  • .com .ai .co   │    │  • Prefix/suffix  │  ║
+║  │  • Web search     │    │    .io checks     │    │  • Respelling     │  ║
+║  │  • Clear/Flag/Take│    │  • Recovery ≤3    │    │  • SCAMPER        │  ║
+║  │  • Death trigger   │    │    rounds max     │    │  • Re-screen      │  ║
+║  │                   │    │                   │    │                   │  ║
+║  │  [A][B][C][D]     │    │  [G] [R] [C]      │    │  [C]              │  ║
+║  │  (dead names)     │    │  ↑ loops to L2    │    │                   │  ║
+║  └──────────────────┘    └──────────────────┘    └────────┬─────────┘   ║
+║                                                           │ [C]         ║
+║  ┌──────────────────┐    ┌──────────────────┐    ┌───────▼──────────┐   ║
+║  │  Step 04f         │    │  Step 04e         │    │  Step 04d         │  ║
+║  │  FINAL            │◀───│  SOCIAL &         │◀───│  TRADEMARK        │  ║
+║  │  PRESENTATION     │[C] │  STRESS TESTS     │[C] │  SCREENING        │  ║
+║  │                   │    │                   │    │                   │  ║
+║  │  • Tier 1/2/3     │    │  • Handle check   │    │  • USPTO/EUIPO    │  ║
+║  │  • Quality stats  │    │  • Pre-Mortem     │    │  • Phonetic match │  ║
+║  │  • Top 3 recs     │    │  • System 1/2     │    │  • Lo/Med/Hi risk │  ║
+║  │  • Challenge if   │    │  • Extended check │    │  • Not legal adv. │  ║
+║  │    "fine"         │    │                   │    │                   │  ║
+║  │                   │    │  [P][T][X][G][C]  │    │  [G] [C]          │  ║
+║  │  [A] [R] [D]      │    └──────────────────┘    └──────────────────┘   ║
+║  └────────┬─────────┘                                                    ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+            │
+            ├── [A] Another round ──────▶ Loop back to Loop 2
+            ├── [R] Revise brief ───────▶ Loop back to Loop 1
+            └── [D] Done ──────────────▶ Save 04-final.md ✓
+
+
+═══════════════════════════════════════════════════════════════
+ EVERY STEP ENFORCES:
+ ┌─────────────────────────────────────────────────────────┐
+ │  📖 MANDATORY EXECUTION RULES    ✅ SUCCESS METRICS     │
+ │  🚫 FAILURE MODES                🛑 HALT at every menu  │
+ │  🔄 Chat-then-redisplay          📊 Progress: N of 13   │
+ │  ⚖️  Master Rule                  💡 Recommendation req'd│
+ └─────────────────────────────────────────────────────────┘
+═══════════════════════════════════════════════════════════════
 ```
 
 ### Loop 1: Frame
 Understand what you're naming. Define the strategic space before generating anything.
 
-- **Brand brief intake** — extract context from existing docs, fill gaps conversationally, confirm exactly what's being named
+- **Session start** — detect existing artifacts, offer resume or fresh start, determine session type (quick/deep/iterative/validation-only)
+- **Brand brief intake** — extract context from existing docs, fill gaps conversationally, confirm exactly what's being named, capture seed words and taste signals
 - **Naming territories** — 3-5 distinct creative directions (Tree of Thought pruning) to prevent "100 names in the same vibe"
 - **Competitive whitespace** — map how competitors name themselves, identify the empty territory
 
@@ -31,10 +177,11 @@ Produce candidates across many naming categories. Breadth before depth.
 ### Loop 3: Select
 User-directed convergence. The user makes all cuts.
 
+- **Entry checkpoint** with 4 hard gate checks displayed before shortlisting begins
 - **Batch elimination** builds a preference profile incrementally
 - **Definitions check** on shortlisted words — etymology as brand story
 - **Menu of deepening techniques** — SCAMPER, TRIZ, Constraint Removal, Red Team/Blue Team, Three-Team Method, etc.
-- **Blocking riffing checklist** (deep sessions) — displayed with visible status, must be completed or explicitly waived before validation
+- **Exit checkpoint** with 3 hard gate checks + **blocking riffing checklist** (deep sessions) — displayed with visible `[x]`/`[ ]` status, must be completed or explicitly waived before validation
 - **Structural diversity gate** — if shortlist is >80% one type, flagged before validation proceeds
 
 ### Loop 4: De-risk
@@ -43,16 +190,43 @@ Validate what survives. Riff on what doesn't.
 - **Competitive screening** — web search + technical registries (GitHub, npm, PyPI, MCP)
 - **Domain availability** — explicit TLD checks (.com, .ai, .co, .io)
 - **Batched death trigger** — when names die, present them in one table and offer riffing options
-- **Pool recovery** — killed names become creative seeds, not dead ends
+- **Pool recovery** — killed names become creative seeds, not dead ends (max 3 recovery rounds)
 - **Trademark screening, social handles, stress tests** — tiered by available tooling
 - **Session quality self-assessment** — transparent stats on candidates generated, categories attempted, techniques applied, structural mix
-- **Final presentation** — Tier 1 (clear), Tier 2 (caveats), Tier 3 (reference)
+- **Final presentation** — Tier 1 (clear), Tier 2 (caveats), Tier 3 (reference). Lukewarm sentiment challenged proactively.
 
 ---
 
-## Enforcement Gates
+## Enforcement Infrastructure
 
-The skill includes hard gates to prevent common session failures (thin pools, structural homogeneity, technique tunnel vision):
+### Per-Step Enforcement (BMAD Pattern)
+
+Every step file contains its own:
+- **MANDATORY EXECUTION RULES** — with emoji severity markers (📖 must do, 🚫 forbidden)
+- **SUCCESS METRICS** — what "done" looks like for that step
+- **FAILURE MODES** — explicit anti-patterns marked CRITICAL
+- **HALT instruction** — after every menu: "HALT — wait for user selection before proceeding."
+- **Chat-then-redisplay** — if the user asks a question mid-menu, answer it, then re-display the menu
+- **Master Rule** — repeated at the bottom of every step file
+
+### System Failure Definitions (workflow.md)
+
+10 explicit definitions of what constitutes a system failure:
+
+| # | Failure |
+|---|---------|
+| 1 | Auto-advancing past menus without user selection |
+| 2 | Loading next step without user selecting [C] Continue |
+| 3 | Silently dropping or pre-filtering candidates |
+| 4 | Entering shortlisting with <40 candidates without explicit waiver |
+| 5 | Generating names without reading the referenced technique file |
+| 6 | Presenting more than 15 candidates in a single batch |
+| 7 | Presenting a selectable list without reference numbers |
+| 8 | Skipping the cross-pollination offer in deep sessions |
+| 9 | Presenting a checkpoint menu without a recommendation |
+| 10 | Treating "let's move on" as a menu selection instead of re-displaying |
+
+### Hard Gates
 
 | Gate | When | Blocks if |
 |---|---|---|
@@ -64,7 +238,7 @@ The skill includes hard gates to prevent common session failures (thin pools, st
 | **Shortlist size** | Loop 3 → 4 transition | < 15 names entering validation |
 | **Riffing checklist** | Before Loop 4 | Core riffing techniques not applied to shortlisted directions |
 
-All gates can be waived by the user after being warned — the skill surfaces the risk, the user decides.
+All gates can be waived by the user after being warned — but the skill requires explicit confirmation ("proceed anyway"), not casual language ("let's move on").
 
 ---
 
@@ -230,7 +404,7 @@ Mine specialized vocabularies where nobody in tech is looking. 18 domains covere
 | **Alternate Real Spellings** | Dictionary-valid variants (Gauge → Gage) |
 | **Tech Branding Patterns** | -OS, -ware, -wise, -er, -base, -box, -kit, -lab, -stack, -grid, domain hacks |
 | **Prefix × Suffix Matrix** | Systematic crossing of 6+ prefixes with 10+ suffixes |
-| **Classical Stem Engineering** | Systematic Greek/Latin root construction with cliché detection |
+| **Classical Stem Engineering** | Systematic Greek/Latin root construction with cliche detection |
 | **Semiotic Territory Mapping** | Map meaning-system quadrants before generation |
 | **Conceptual Blending** | Blend mental models, not just syllables (Fauconnier & Turner) |
 | **Morphological Analysis (Zwicky)** | Systematic combinatorial generation across dimensions |
@@ -260,7 +434,7 @@ Mine specialized vocabularies where nobody in tech is looking. 18 domains covere
 | Mode | What happens | When to use |
 |---|---|---|
 | **Quick** | 3-question brief → gallery → react → light riff → present top 8-10. Skip ceremony. | "Just give me good names" |
-| **Deep** | Full 4-loop pipeline with enforcement gates, riffing checklist, cross-pollination, thorough validation. | "This is our company name, get it right" |
+| **Deep** | Full 13-step pipeline with enforcement gates, riffing checklist, cross-pollination, thorough validation. | "This is our company name, get it right" |
 | **Committee** | Semantic Differential Scaling, Nominal Group Technique, weighted scoring by role. | Multiple stakeholders who disagree |
 | **Validation only** | User provides names → straight to Loop 4 screening. | "I already have names, just check them" |
 | **Iterative** | Save artifacts, sleep on it, resume next session. | "Let me think about these overnight" |
@@ -271,23 +445,55 @@ Built-in adaptations for: **International-first** (CVCV, cross-language, transli
 
 ---
 
+## Artifact Chain
+
+5 structured artifacts with YAML frontmatter carry state across steps and sessions:
+
+```
+brand-namer-output/
+├── 00-brief.md          # Brand brief + territories + whitespace + session config
+├── 01-candidates.md     # ALL candidates (grows through generation, cross-model, riffs)
+├── 02-shortlist.md      # Favorites entering validation + preference profile
+├── 03-validation.md     # Competitive + domain + trademark + social results
+└── 04-final.md          # Tier 1/2/3 presentation + recommendations
+```
+
+Each artifact's frontmatter includes `stepsCompleted` for session resumption. Step 00 detects existing artifacts and offers to resume from the last completed step.
+
+---
+
 ## File Structure
 
 ```
 brand-namer/
-├── SKILL.md                               (1,351 lines — main 4-loop pipeline + enforcement gates + playbooks)
-├── README.md                              (this file)
-├── CLAUDE.md                              (project conventions)
+├── SKILL.md                                (425 lines — role, philosophy, reference loading, artifacts, playbooks)
+├── workflow.md                             (124 lines — enforcement rules, system failures, step routing)
+├── steps/
+│   ├── step-00-session-start.md            (134 lines — session detection, resume handler)
+│   ├── step-01a-brief.md                   (139 lines — brand brief intake)
+│   ├── step-01b-territories.md             (123 lines — territories, whitespace, session mode)
+│   ├── step-02a-generation.md              (256 lines — divergent generation, hard gates, gallery mode)
+│   ├── step-02b-cross-pollination.md       (97 lines — cross-model ideation)
+│   ├── step-02c-riffing.md                 (159 lines — creative riffing, technique library)
+│   ├── step-03a-shortlisting.md            (267 lines — shortlisting, two checkpoints, riffing checklist)
+│   ├── step-04a-screening.md               (163 lines — competitive screening, validation setup)
+│   ├── step-04b-domains.md                 (124 lines — domain availability, pool recovery)
+│   ├── step-04c-variations.md              (69 lines — variation generation)
+│   ├── step-04d-trademark.md               (70 lines — trademark screening)
+│   ├── step-04e-social.md                  (106 lines — social handles, stress tests)
+│   └── step-04f-final.md                   (101 lines — final tiered presentation)
+├── README.md                               (this file)
+├── CLAUDE.md                               (project conventions)
 └── references/
-    ├── naming-categories.md               (554 lines — 11 categories, phonesthetics, anti-patterns, cross-language)
-    ├── naming-techniques.md               (606 lines — riffing, affixes, respelling, ownability, advanced generation)
-    ├── consumer-naming.md                 (694 lines — sensory, experiential, consumer strategy, Japanese sound-symbolism)
-    ├── enterprise-naming.md               (427 lines — B2B techniques, evaluation/testing, compliance)
-    ├── brand-psychology.md                (431 lines — archetypes, personality, cognitive science, SMILE/SCRATCH)
-    └── elicitation-techniques.md          (324 lines — 10 deepening techniques)
+    ├── naming-categories.md                (554 lines — 11 categories, phonesthetics, cross-language)
+    ├── naming-techniques.md                (606 lines — riffing, affixes, respelling, advanced generation)
+    ├── consumer-naming.md                  (694 lines — sensory, experiential, consumer strategy)
+    ├── enterprise-naming.md                (427 lines — B2B techniques, evaluation, compliance)
+    ├── brand-psychology.md                 (431 lines — archetypes, personality, cognitive science)
+    └── elicitation-techniques.md           (324 lines — 10 deepening techniques)
 ```
 
-Total: ~4,387 lines across 7 files. Reference files are loaded on-demand based on brief type — no session loads all 6.
+Total: ~4,788 lines across 21 files. Step files are loaded one at a time. Reference files are loaded on-demand based on brief type.
 
 ## Installation
 
@@ -330,7 +536,7 @@ Claude Code auto-detects skills by their YAML frontmatter. Once installed, the s
 
 ## Research & Frameworks Integrated
 
-Lexicon Branding (Placek), Aaker Brand Personality, Mark & Pearson 12 Archetypes, Sound Symbolism (Köhler, Ramachandran, Sapir), Bouba-Kiki Effect, Processing Fluency (Alter & Oppenheimer), Von Restorff Distinctiveness, Mere Exposure (Zajonc), Dual Coding (Paivio), Cognitive Chunking (Miller), Kahneman System 1/2, Fauconnier & Turner Conceptual Blending, Zwicky Morphological Analysis, Rosch Prototype Theory, Iyengar Choice Overload, Osgood Semantic Differential, TRIZ Contradiction Resolution, Christensen Jobs-to-be-Done, Watkins SMILE/SCRATCH.
+Lexicon Branding (Placek), Aaker Brand Personality, Mark & Pearson 12 Archetypes, Sound Symbolism (Kohler, Ramachandran, Sapir), Bouba-Kiki Effect, Processing Fluency (Alter & Oppenheimer), Von Restorff Distinctiveness, Mere Exposure (Zajonc), Dual Coding (Paivio), Cognitive Chunking (Miller), Kahneman System 1/2, Fauconnier & Turner Conceptual Blending, Zwicky Morphological Analysis, Rosch Prototype Theory, Iyengar Choice Overload, Osgood Semantic Differential, TRIZ Contradiction Resolution, Christensen Jobs-to-be-Done, Watkins SMILE/SCRATCH.
 
 ## Cross-Pollination
 
