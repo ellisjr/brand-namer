@@ -98,8 +98,9 @@ steps/
 ║  │  │  3 hard gate checks → riffing checklist status → menu    │   │    ║
 ║  │  │                                                          │   │    ║
 ║  │  │  ══ RIFFING CHECKLIST (BLOCKING) ══                      │   │    ║
-║  │  │  B2B: □ SCAMPER □ Compounds □ Respelling □ Tech patterns │   │    ║
-║  │  │  Consumer: □ Adjacent metaphor □ Sensory □ Nature □ French│   │    ║
+║  │  │  B2B: □ SCAMPER □ Compounds □ Respelling □ Industry cpds │   │    ║
+║  │  │  Consumer: □ Adj metaphor □ Sensory □ Nature □ French    │   │    ║
+║  │  │           □ Shelf / Gift / Social-native tests           │   │    ║
 ║  │  │                                                          │   │    ║
 ║  │  │  [A] More riffing  [B] Compound alts  [C] Run checklist  │   │    ║
 ║  │  │  [D] ▶ Proceed to validation   [E] Go back              │   │    ║
@@ -169,7 +170,8 @@ Understand what you're naming. Define the strategic space before generating anyt
 Produce candidates across many naming categories. Breadth before depth.
 
 - **Divergent generation** across 11 naming categories with **mandatory** ownability-first compound generation in parallel (30% compound minimum before gallery presentation)
-- **Hard generation gates** — minimum 60 candidates, 6+ categories, 3+ structural types, technique cycling check. These are blocking — the skill won't proceed to shortlisting until met or explicitly waived.
+- **Tree of Thought branching** — mandatory in deep/focused sessions. Every category generates 3 parallel branches from different semantic domains, evaluates internally, expands the strongest, and prunes the weakest. Prevents the convergence trap where all names come from the same mental neighborhood.
+- **Hard generation gates** — minimum 60 candidates, 6+ categories, 3+ structural types, technique cycling check. These are blocking — the skill won't proceed to shortlisting until met or explicitly waived. Technique saturation threshold at 25+ techniques applied.
 - **Cross-pollination** — generates paste-ready prompts for ChatGPT/Gemini/Grok, merges results back into the candidate pool. Mandatory offer (user can decline).
 - **Creative riffing** with labeled techniques — the user sees WHY each name was generated
 - **Gallery mode** — scannable H/W/C grid before diving into category-by-category expansion
@@ -181,7 +183,7 @@ User-directed convergence. The user makes all cuts.
 - **Batch elimination** builds a preference profile incrementally
 - **Definitions check** on shortlisted words — etymology as brand story
 - **Menu of deepening techniques** — SCAMPER, TRIZ, Constraint Removal, Red Team/Blue Team, Three-Team Method, etc.
-- **Exit checkpoint** with 3 hard gate checks + **blocking riffing checklist** (deep sessions) — displayed with visible `[x]`/`[ ]` status, must be completed or explicitly waived before validation
+- **Exit checkpoint** with 3 hard gate checks + **blocking riffing checklist** (deep sessions) — displayed with visible `[x]`/`[ ]` status, must be completed or explicitly waived before validation. B2B checklist: SCAMPER (enforced even at high technique counts), compound creation, creative respelling, industry-native compound patterns. Consumer checklist: adjacent metaphor, sensory expansion, nature mining, French naturalized vocabulary, shelf/gift/social-native tests.
 - **Structural diversity gate** — if shortlist is >80% one type, flagged before validation proceeds
 
 ### Loop 4: De-risk
@@ -233,7 +235,7 @@ Every step file contains its own:
 | **Candidate count** | Loop 2 → 3 transition | < 60 candidates (deep) or < 40 (focused) |
 | **Category coverage** | Loop 2 → 3 transition | < 6 of 11 naming categories attempted |
 | **Structural diversity** | Loop 2 → 3 AND 3 → 4 | > 80% of candidates/shortlist is one structural type |
-| **Technique cycling** | Loop 2 → 3 transition | > 8 creative techniques unused |
+| **Technique cycling** | Loop 2 → 3 transition | > 8 creative techniques unused (saturation: 25+ applied = gate satisfied) |
 | **Compound minimum** | Before gallery presentation | < 30% of candidates are compounds/coined/alternatives |
 | **Shortlist size** | Loop 3 → 4 transition | < 15 names entering validation |
 | **Riffing checklist** | Before Loop 4 | Core riffing techniques not applied to shortlisted directions |
@@ -402,7 +404,7 @@ Mine specialized vocabularies where nobody in tech is looking. 18 domains covere
 | **Productive Affixes** | 11 prefixes, 16 suffixes, 9 bidirectional affixes systematically tested in both positions |
 | **Creative Respelling** | K-for-C, Y-for-I, dropped vowels, Ph-for-F, double letters |
 | **Alternate Real Spellings** | Dictionary-valid variants (Gauge → Gage) |
-| **Tech Branding Patterns** | -OS, -ware, -wise, -er, -base, -box, -kit, -lab, -stack, -grid, domain hacks |
+| **Industry-Native Compound Patterns** | Dynamic generation of compound elements from the brief's vertical (tech: -OS, -ware, -kit; fashion: Studio, House, Atelier; finance: Capital, Partners; etc.) |
 | **Prefix × Suffix Matrix** | Systematic crossing of 6+ prefixes with 10+ suffixes |
 | **Classical Stem Engineering** | Systematic Greek/Latin root construction with cliche detection |
 | **Semiotic Territory Mapping** | Map meaning-system quadrants before generation |
