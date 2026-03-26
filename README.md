@@ -193,7 +193,7 @@ User-directed convergence. The user makes all cuts.
 Validate what survives. Riff on what doesn't.
 
 - **Competitive screening** — web search + technical registries (GitHub, npm, PyPI, MCP)
-- **Domain availability** — explicit TLD checks (.com, .ai, .co, .io) + ccTLD domain hacks (.ly, .is, .us, .me, .al, .it, .to, etc.)
+- **Domain availability** — definitive registration checks via WHOIS CLI (14-TLD server map, pre-installed on macOS, zero setup) with RDAP fallback for .app/.dev. Catches registered-but-parked domains that web searches miss. Parallel batch checking for 20-50 domains in under 2 seconds. Three-tier status: Available / Registered (parked/for-sale) / Active (live website).
 - **Batched death trigger** — when names die, present them in one table and offer riffing options
 - **Pool recovery** — killed names become creative seeds, not dead ends (max 3 recovery rounds)
 - **Trademark screening, social handles, stress tests** — tiered by available tooling
@@ -489,8 +489,8 @@ brand-namer/
 │   ├── step-02b-cross-pollination.md       (97 lines — cross-model ideation)
 │   ├── step-02c-riffing.md                 (211 lines — creative riffing, technique library, riff verification, user idea capture)
 │   ├── step-03a-shortlisting.md            (331 lines — shortlisting, checkpoints, riffing checklist, enterprise evaluation)
-│   ├── step-04a-screening.md               (163 lines — competitive screening, validation setup)
-│   ├── step-04b-domains.md                 (124 lines — domain availability, pool recovery)
+│   ├── step-04a-screening.md               (164 lines — competitive screening, validation setup)
+│   ├── step-04b-domains.md                 (180 lines — domain availability via WHOIS/RDAP, pool recovery)
 │   ├── step-04c-variations.md              (69 lines — variation generation)
 │   ├── step-04d-trademark.md               (70 lines — trademark screening)
 │   ├── step-04e-social.md                  (106 lines — social handles, stress tests)
@@ -506,7 +506,7 @@ brand-namer/
     └── elicitation-techniques.md           (324 lines — 10 deepening techniques)
 ```
 
-Total: ~5,970 lines across 21 files (excluding README). Step files are loaded one at a time. Reference files are loaded on-demand based on brief type.
+Total: ~6,030 lines across 21 files (excluding README). Step files are loaded one at a time. Reference files are loaded on-demand based on brief type.
 
 ## Installation
 
