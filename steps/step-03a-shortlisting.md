@@ -189,7 +189,25 @@ Test each shortlisted name in at least 3 of these templates and show the results
 **Buyer Committee scoring** (mandatory):
 Show explicit per-name scoring across roles (Champion, CFO, Technical Evaluator, End User).
 
-These visible outputs prevent the common failure mode where enterprise techniques are listed as "applied" in metadata but never actually demonstrated.
+**Acronym Resilience** (mandatory):
+For each shortlisted name, show what acronym/abbreviation people will naturally use and whether it conflicts:
+```
+| Name | Natural shortening | Conflict? |
+|---|---|---|
+| Caliber | Cal | Clean ✓ |
+| Steelthread | ST | May conflict with internal abbreviation |
+```
+
+**Enterprise Objection Preemption** (mandatory):
+Test each shortlisted name: "Would a Fortune 500 CISO approve this vendor name? Would a VP put this on their LinkedIn?" Show pass/fail per name.
+
+**Name Lifecycle Stress Test** (mandatory):
+For top 5-10 shortlisted names, test: "What if the company expands beyond [current product]? Does the name still work?" Show results.
+
+**Internal-Champion Forwardability** (mandatory):
+Test: "Can an internal champion easily explain and forward this name via email/Slack?" Show which names are easy vs. hard to forward.
+
+These visible outputs prevent the common failure mode where enterprise techniques are listed as "applied" in metadata but never actually demonstrated. Record each technique in `techniques_used` using its canonical name exactly as shown above.
 
 Which would you like to try?"
 

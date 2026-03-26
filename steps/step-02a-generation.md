@@ -246,18 +246,25 @@ After hard gates, display the technique toolkit showing which techniques have be
 
 GENERATION TECHNIQUES
 [x] Tree of Thought branching ✓
-[x] Five Senses Scan ✓ (consumer brief)
 [ ] Prefix × Suffix Matrix — systematic combinatorial grid
 [ ] Morphological Analysis (Zwicky) — dimensional decomposition
 [ ] Domain-First Naming — start from available .com domains
 [ ] Contrarian/Anti-Category — name from the opposite direction
 
-BRIEF-SPECIFIC TECHNIQUES ({consumer|enterprise})
+CONSUMER-SPECIFIC (show for consumer/fashion/food/beauty briefs)
+[x] Five Senses Scan ✓
 [x] Sensory Dissonance ✓
+[ ] Emotional Temperature Mapping — warm/cool, heavy/light, energized/calm as generation filters
+[ ] Price-Signal Calibration — match name register to price tier (luxury/masstige/value)
 [ ] Desired-Self Naming — what identity does buying this project?
 [ ] Trend-Cycle Audit — will this name feel dated in 5 years?
 [ ] Memetic/Viral Engineering — shareability and meme potential
 [ ] Cultural Tension Naming — name from the tension the brand resolves
+
+ENTERPRISE-SPECIFIC (show for B2B/enterprise/tech briefs)
+[ ] Vertical Code Calibration — match naming register to the specific vertical
+[ ] Category Creation Naming — is this joining or creating a category?
+[ ] Enterprise Objection Preemption — would a Fortune 500 CISO/VP approve this vendor?
 
 DEEPENING TECHNIQUES
 [ ] SCAMPER — 7 systematic transformations on each name
@@ -268,6 +275,8 @@ DEEPENING TECHNIQUES
 
 Select with numbers (e.g., "3, 5, 8") or [A] all remaining, then [C] to skip
 ```
+
+**Critical: use canonical technique names.** When applying any technique from this toolkit, record it in `techniques_used` using the EXACT name shown here (e.g., "Emotional Temperature Mapping", "Price-Signal Calibration", "Enterprise Objection Preemption", "Category Creation Naming", "Morphological Analysis (Zwicky)"). The technique tracking system depends on name consistency between the toolkit, the output labels, and the YAML frontmatter.
 
 **Adapt the list to the current session:**
 - Show only brief-type-relevant techniques (consumer techniques for consumer briefs, enterprise for enterprise)

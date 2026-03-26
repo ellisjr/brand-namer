@@ -161,10 +161,19 @@ RIFFING TECHNIQUES
 [ ] Homonym/Synonym/Sound-Alike — systematic sound-alike exploration
 [ ] Systematic Affix Exploration — roots in prefix AND suffix positions
 
-BRIEF-SPECIFIC ({consumer|enterprise})
+CONSUMER-SPECIFIC (show for consumer briefs)
+[ ] Emotional Temperature Mapping — warm/cool, heavy/light as generation filters
+[ ] Price-Signal Calibration — match name register to price tier
 [ ] Desired-Self Naming — what identity does buying this project?
 [ ] Trend-Cycle Audit — will this name feel dated in 5 years?
 [ ] Memetic/Viral Engineering — shareability and meme potential
+
+ENTERPRISE-SPECIFIC (show for B2B briefs)
+[ ] Category Creation Naming — is this joining or creating a category?
+[ ] Enterprise Objection Preemption — Fortune 500 CISO/VP approval test
+[ ] Name Lifecycle Stress Test — what if they expand beyond current product?
+[ ] Acronym Resilience — what will people shorten this to?
+[ ] Internal-Champion Forwardability — can a champion easily share this name?
 
 GENERATION (carried forward from step-02a)
 [ ] Prefix × Suffix Matrix — systematic combinatorial grid
@@ -172,6 +181,8 @@ GENERATION (carried forward from step-02a)
 
 Select with numbers, [A] all remaining, or [C] to skip
 ```
+
+Use the EXACT canonical technique names shown above when recording in `techniques_used`.
 
 ---
 
