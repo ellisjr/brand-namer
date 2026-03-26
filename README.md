@@ -173,16 +173,18 @@ Produce candidates across many naming categories. Breadth before depth.
 - **Tree of Thought branching** — mandatory in deep/focused sessions. Every category generates 3 parallel branches from different semantic domains, evaluates internally, expands the strongest, and prunes the weakest. Prevents the convergence trap where all names come from the same mental neighborhood.
 - **Hard generation gates** — minimum 60 candidates, 6+ categories, 3+ structural types, technique cycling check. These are blocking — the skill won't proceed to shortlisting until met or explicitly waived. Technique saturation threshold at 25+ techniques applied.
 - **Cross-pollination** — generates paste-ready prompts for ChatGPT/Gemini/Grok, merges results back into the candidate pool. Mandatory offer (user can decline).
-- **Creative riffing** with labeled techniques — the user sees WHY each name was generated
+- **Creative riffing** with labeled techniques — the user sees WHY each name was generated. Every riff must have a SPECIFIC technique tag ("language shift: Latin", not just "riff"). Riff counts verify 10+ NEW UNIQUE riffs per direction (duplicates of existing candidates don't count).
+- **Technique Toolkit** — at every checkpoint (generation, riffing, shortlisting), the skill displays all available techniques with applied/unapplied status. Users can select individual techniques by number, [A] all remaining, or [C] skip. Unapplied techniques resurface at every subsequent checkpoint until used or skipped. This ensures techniques like Desired-Self Naming, Trend-Cycle Audit, and Morphological Analysis don't get silently skipped.
 - **Gallery mode** — scannable H/W/C grid before diving into category-by-category expansion
 
 ### Loop 3: Select
 User-directed convergence. The user makes all cuts.
 
-- **Entry checkpoint** with 4 hard gate checks displayed before shortlisting begins
+- **Entry checkpoint** with 4 hard gate checks displayed before shortlisting begins + technique toolkit resurfacing unapplied techniques
 - **Batch elimination** builds a preference profile incrementally
 - **Definitions check** on shortlisted words — etymology as brand story
-- **Menu of deepening techniques** — SCAMPER, TRIZ, Constraint Removal, Red Team/Blue Team, Three-Team Method, etc.
+- **Technique toolkit** carried forward from earlier steps — any unapplied techniques offered again
+- **Enterprise evaluation with visible output** (B2B briefs) — Stack Test, Sales Conversation Fit, Buyer Committee scoring, Acronym Resilience, Enterprise Objection Preemption, Name Lifecycle Stress Test, and Internal-Champion Forwardability must all produce per-name tables/results, not just metadata claims
 - **Exit checkpoint** with 3 hard gate checks + **blocking riffing checklist** (deep sessions) — displayed with visible `[x]`/`[ ]` status, must be completed or explicitly waived before validation. B2B checklist: SCAMPER (enforced even at high technique counts), compound creation, creative respelling, industry-native compound patterns. Consumer checklist: adjacent metaphor, sensory expansion, nature mining, French naturalized vocabulary, shelf/gift/social-native tests.
 - **Structural diversity gate** — if shortlist is >80% one type, flagged before validation proceeds
 
@@ -252,7 +254,7 @@ The skill auto-detects the brief type and loads only relevant reference files.
 
 **Loaded:** `naming-categories.md` + `consumer-naming.md` + `brand-psychology.md`
 
-Optimized for products people physically experience. Emphasizes sensory naming, emotional resonance, shelf presence, and social shareability. Suppresses the B2B compound-generation track (nobody in streetwear wears "Loamworks").
+Optimized for products people physically experience. Emphasizes sensory naming, emotional resonance, shelf presence, and social shareability. Suppresses the B2B compound-generation track — this applies to ALL compound techniques including Prefix × Suffix Matrix and systematic affix exploration, which produce consumer-appropriate combinations (nature+nature, sensory pairings) rather than institutional compounds. Fashion/lifestyle conflict flagging is relaxed for cross-industry conflicts but still flags same-industry conflicts.
 
 ### Enterprise Brands (SaaS, dev tools, platforms, vertical software)
 
@@ -474,10 +476,10 @@ brand-namer/
 │   ├── step-00-session-start.md            (134 lines — session detection, resume handler)
 │   ├── step-01a-brief.md                   (139 lines — brand brief intake)
 │   ├── step-01b-territories.md             (123 lines — territories, whitespace, session mode)
-│   ├── step-02a-generation.md              (256 lines — divergent generation, hard gates, gallery mode)
+│   ├── step-02a-generation.md              (312 lines — divergent generation, hard gates, technique toolkit, gallery mode)
 │   ├── step-02b-cross-pollination.md       (97 lines — cross-model ideation)
-│   ├── step-02c-riffing.md                 (159 lines — creative riffing, technique library)
-│   ├── step-03a-shortlisting.md            (267 lines — shortlisting, two checkpoints, riffing checklist)
+│   ├── step-02c-riffing.md                 (209 lines — creative riffing, technique library, riff verification)
+│   ├── step-03a-shortlisting.md            (331 lines — shortlisting, checkpoints, riffing checklist, enterprise evaluation)
 │   ├── step-04a-screening.md               (163 lines — competitive screening, validation setup)
 │   ├── step-04b-domains.md                 (124 lines — domain availability, pool recovery)
 │   ├── step-04c-variations.md              (69 lines — variation generation)
@@ -495,7 +497,7 @@ brand-namer/
     └── elicitation-techniques.md           (324 lines — 10 deepening techniques)
 ```
 
-Total: ~4,788 lines across 21 files. Step files are loaded one at a time. Reference files are loaded on-demand based on brief type.
+Total: ~5,100 lines across 21 files (excluding README). Step files are loaded one at a time. Reference files are loaded on-demand based on brief type.
 
 ## Installation
 
@@ -543,6 +545,27 @@ Lexicon Branding (Placek), Aaker Brand Personality, Mark & Pearson 12 Archetypes
 ## Cross-Pollination
 
 The skill generates paste-ready prompts for ChatGPT, Gemini, and Grok to get naming candidates from different creative perspectives. The user pastes results back and the skill deduplicates, classifies, and merges them into the candidate pool. Each model has different biases — ChatGPT trends toward punchy consumer names, Gemini toward systematic foreign-root exploration, Grok toward irreverent breaks. Cross-pollination is offered at least once per deep session (mandatory offer, optional execution).
+
+## Eval Results
+
+Tested across 6 diverse briefs (3 consumer: hot sauce, streetwear, men's skincare; 3 enterprise: cybersecurity, data integration, legaltech) with 135+ assertions per iteration. 4 iterations of eval-driven improvement:
+
+| Iteration | Pass Rate | Key Change |
+|---|---|---|
+| **Iter-1** (baseline) | 97.7% (127/130) | Initial eval — 3 minor failures (Shelf Test tracking, SCAMPER application) |
+| **Iter-2** (first full eval) | 83.8% (109/130) | Added baselines + stricter assertions. Exposed technique coverage gaps + eval design issues |
+| **Iter-3** (technique toolkit) | 93.3% (126/135) | Added technique toolkit with [A] all option. Legaltech: 52% → 100%. Streetwear: 85% → 95% |
+| **Iter-4** (naming precision) | 91.2% (124/136) | Fixed compound leakage, conflict flagging, visible enterprise output. Remaining failures are technique naming precision |
+
+**What the skill produces** (average across iter-3/4 with-skill runs):
+- ~230 unique candidate names per session
+- 9-11 of 11 naming categories attempted
+- 30-44 techniques applied per session
+- 60-70 riffs across 6-8 directions with specific technique labels
+- 15-30 shortlisted names with evaluation scoring
+- Full YAML-frontmatter artifacts for session resumption
+
+**Baseline comparison** (no skill): ~111 names in ~142s using ~16k tokens. With skill: ~230 names in ~750s using ~140k tokens. The skill adds 2x name volume but the real value is methodology depth — technique diversity, structural tracking, domain-specific evaluation, consumer/enterprise pathway selection, and artifacts.
 
 ## License
 
