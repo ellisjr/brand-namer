@@ -1,0 +1,203 @@
+{
+  "expectations": [
+    {
+      "text": "At least 6 of 11 naming categories attempted",
+      "passed": true,
+      "evidence": "Transcript states '11 of 11 categories attempted' and the candidates file shows 14 distinct category sections: Found Word, Compound, Evocative, Foreign-Root, Invented/Coined, Metaphorical, Institutional Compound, Verb-as-Brand, Sound-Symbolic, Lexical Blend, Acronymic, CLI-Friendly, Governance/Audit, and Conceptual Compounds. All 11 core categories are present."
+    },
+    {
+      "text": "Vertical Code Calibration applied for cybersecurity",
+      "passed": true,
+      "evidence": "The generation step loaded 'references/enterprise-naming.md' and produced cybersecurity-specific compound elements (Industry-native suffixes: -guard, -point, -gate, -mesh, -grid, -core, -vault, -base, -scope; Brief-native prefixes: Signal-, True-, Clear-, Deep-, Iron-, Dark-, Red-, Zero-). The competitive whitespace analysis mapped cybersecurity competitors (CrowdStrike, SentinelOne, Darktrace, Wiz, Orca, Palo Alto) by naming pattern and metaphor domain, identifying crowded zones (military/combat, dark/shadow, animal predators) and whitespace (precision instruments, signal intelligence). This demonstrates vertical calibration for the cybersecurity domain."
+    },
+    {
+      "text": "Buyer Committee test applied (champion, CFO, technical evaluator, end users)",
+      "passed": true,
+      "evidence": "Transcript Step 03a explicitly states: 'Buyer Committee test (Champion, Economic Buyer, Technical Evaluator, End User)' was applied. Shortlist table includes 'Buyer Committee Avg' scores (ranging 5.5-6.5). Specific buyer-role notes appear, e.g. Caliber 'Strongest with economic buyer (7)', Verax 'Strongest with technical evaluators (7)'. The roles are Champion, Economic Buyer, Technical Evaluator, End User -- close match to the expectation's 'champion, CFO, technical evaluator, end users'."
+    },
+    {
+      "text": "Sales Conversation Fit templates tested (elevator pitch, board deck, RFP, Slack, phone)",
+      "passed": true,
+      "evidence": "Transcript Step 03a states: 'Sales Conversation Fit (elevator pitch, board deck, RFP, Slack/Teams, phone, email sig)' was applied. Result: 'All 15 pass -- natural in elevator pitch, board deck, RFP, Slack, phone call, and email signature contexts.' This covers all five specified contexts plus email sig."
+    },
+    {
+      "text": "Analyst/Press Headline Testing applied (Gartner, Forbes)",
+      "passed": false,
+      "evidence": "The Gartner Headline Test is clearly applied: 'All 15 pass -- Gartner names [X] a Leader in the CNAPP Magic Quadrant works for each.' However, there is no evidence of Forbes headline testing anywhere in the transcript or output files. The expectation requires both Gartner AND Forbes."
+    },
+    {
+      "text": "Enterprise Objection Preemption applied (CISO test, resume test)",
+      "passed": true,
+      "evidence": "Transcript Step 03a lists 'Enterprise Objection Preemption (CISO test, resume test)' as an evaluation criterion applied during shortlisting. Vigil is described as 'CISO-approved' in its rationale, demonstrating the test was applied to individual candidates."
+    },
+    {
+      "text": "Developer/Technical Credibility Signaling considered (CLI-friendly)",
+      "passed": true,
+      "evidence": "Extensively addressed. A dedicated Category 12 ('Developer Credibility / CLI-Friendly') produced 10 candidates (#102-111). The brief explicitly required CLI command compatibility. CLI tests appear throughout: 'vigil scan', 'deepgrid', 'verax', 'flux check', 'helm deploy'. The shortlisting phase includes a 'CLI Test' criterion with results: 'Strongest: vigil, verax, praxis, crucis, cordon (short, no spaces, distinctive).'"
+    },
+    {
+      "text": "Acronym Resilience tested on finalists",
+      "passed": true,
+      "evidence": "Transcript Step 03a lists 'Acronym Resilience (how will people shorten it?)' as one of the enterprise evaluation criteria applied during shortlisting of the 15 finalists."
+    },
+    {
+      "text": "Trust-Without-Claims Lexicon used (avoid 'secure', 'shield', 'protect')",
+      "passed": true,
+      "evidence": "The techniques_used list in 01-candidates.md YAML includes 'trust_without_claims_lexicon'. Examining the 190 candidates: none use 'secure', 'shield', or 'protect' as standalone names or primary components. The closest is 'Securai' (#52) which blends secure+AI, but the overall pool systematically avoids these direct claim words. Attest (#13/80) is specifically noted as 'Trust-without-claims' in the shortlist. The governance vocabulary mining category (Docket, Attestor, Lineage, Threshold) signals trust through institutional language rather than direct security claims."
+    },
+    {
+      "text": "Governance/Audit Vocabulary Mining applied",
+      "passed": true,
+      "evidence": "A dedicated Category 13 ('Governance/Audit Vocabulary Mining') produced 4 candidates: Docket (#112), Attestor (#113), Lineage (#114), Threshold (#115). These are explicitly labeled as 'Enterprise-Specific angle' and draw from legal/compliance/provenance vocabulary."
+    },
+    {
+      "text": "Ownability-first compounds generated in parallel track",
+      "passed": true,
+      "evidence": "Transcript Step 02a states: 'Ran ownability-first compound track in parallel with found words.' The generation results show 12 compound candidates (#14-25) like Ironveil, Deepgrid, Truecast, Signalframe, and 9 institutional compounds (#70-78) like Blackvault, Ironscope, Clearwatch. These compounds were generated using 'Dynamic Compound Elements' (industry-native and cross-industry suffixes crossed with brief-native prefixes), which is the ownability-first approach."
+    },
+    {
+      "text": "Tech Branding Patterns applied (-works, -craft, -wise, etc.)",
+      "passed": true,
+      "evidence": "The Dynamic Compound Elements section lists 'Cross-industry suffixes: -works, -craft, -mark, -line, -forge, -frame, -field'. Riff #129 is 'Vigil Works' using the '-works suffix'. The candidates file shows compounds using -field (Darkfield, Darkfield), -mark (Ironmark, Greymark), -point (Clearpoint, Steelpoint), -frame (Signalframe), -scope (Ironscope), -core (Deepcore), demonstrating systematic application of tech branding patterns."
+    },
+    {
+      "text": "Institutional Compound patterns explored (Color+Noun, Quality+Noun)",
+      "passed": true,
+      "evidence": "Category 7 ('Institutional Compound') explicitly labels each candidate with its pattern: Blackvault (Color+noun), Ironscope (Material+feature), Clearwatch (Quality+action), Greymark (Color+feature), Deepcore (Quality+foundation), Truesight (Quality+feature), Stonewall (Material+defense), Steelpoint (Material+feature), Northgate (Direction+feature). Both Color+Noun and Quality+Noun patterns are present."
+    },
+    {
+      "text": "Lexicon Three-Team Method applied during generation or riffing",
+      "passed": true,
+      "evidence": "The riffing section lists '8. Three-Team Method (unrelated domain)' as one of the systematic riffing axes applied to all 6 seed families. Riff #133 'Overwigil' is labeled 'Three-team: as if a military tool' demonstrating the technique in action. The techniques_used YAML list includes 'three_team_method'."
+    },
+    {
+      "text": "Each riff labeled with which technique produced it",
+      "passed": true,
+      "evidence": "Every riff in the candidates file has a 'Technique' column. Examples: #122 'Root expansion', #123 'Language shift: Latin watchman', #126 'Root compression + Spanish lookout post', #133 'Three-team: as if a military tool', #136 'Creative respelling: K-for-C', #137 'Etymology mining: Greek kalix', #140 'Synonym explosion', #165 'Outcome shift: to put into practice'. All 69 riffs are labeled."
+    },
+    {
+      "text": "10+ riffs per direction",
+      "passed": true,
+      "evidence": "Six riff families were expanded. Counts: Vigil = 13 riffs (#122-134), Caliber = 12 riffs (#135-146), Verax = 11 riffs (#147-157), Praxis = 10 riffs (#158-167), Crucible = 12 riffs (#168-179), Aegis = 11 riffs (#180-190). All six directions produced 10+ riffs."
+    },
+    {
+      "text": "B2B riffing checklist used (SCAMPER, compound creation, creative respelling, tech branding)",
+      "passed": true,
+      "evidence": "Transcript Step 03a Exit Checkpoint explicitly shows: 'Riffing Checklist Status (B2B/Enterprise): [x] SCAMPER -- systematic transformations applied across all 6 seed families, [x] Compound creation -- compound alternatives generated for each root direction, [x] Creative respelling -- K-for-C, Y-for-I, dropped vowels tested, [x] Industry-native compound patterns -- cybersecurity compound elements generated and crossed. All 4 core B2B checklist items satisfied.'"
+    },
+    {
+      "text": "Hard gate checks displayed before generation menu",
+      "passed": true,
+      "evidence": "Transcript Step 02a shows 'Hard Gate Status After Generation' with four checked items: Candidate count (121 PASS), Category coverage (11/11 PASS), Structural mix (PASS), Technique coverage (18+ PASS). Step 03a Entry Checkpoint also displays hard gates before shortlisting."
+    },
+    {
+      "text": "Inline conflict flagging with warning emoji",
+      "passed": true,
+      "evidence": "Sentinel (#69 in candidates, #12 in shortlist) carries 'WARNING: SentinelOne (major competitor)' and in the shortlist 'WARNING: SentinelOne competitor.' Stonewall (#76) has 'Warning: may recall historical associations.' Gridlock (#116) has 'Warning: common word meaning deadlock.' While these use 'WARNING:' text rather than a literal emoji character, the conflict flagging is clearly inline and visible. The transcript also notes Sentinel as a collision risk in 'Names to Watch in Validation.'"
+    },
+    {
+      "text": "At least 40 unique candidates generated",
+      "passed": true,
+      "evidence": "190 unique candidates were generated: 121 in the initial generation round plus 69 in the riffing round. The candidates file numbers them sequentially #1-190 with distinct names for each."
+    },
+    {
+      "text": "Platform vs Point-Solution naming considered (this is a platform)",
+      "passed": true,
+      "evidence": "Transcript Step 03a lists 'Platform vs Point-Solution (transcends single function?)' as an enterprise evaluation criterion. Multiple shortlist entries reference platform scale: Vigil 'Platform-scale', Praxis 'Platform name', Veridian 'Platform-scale', Fulcrum 'Platform pivot metaphor'. The brief identifies this as a platform ('AI-powered cybersecurity platform') and naming reflects this."
+    },
+    {
+      "text": "Integration/Ecosystem naming tested (stack test alongside Salesforce, AWS)",
+      "passed": true,
+      "evidence": "Transcript Step 03a lists 'Stack test (peer-level next to CrowdStrike, Palo Alto, Snowflake)' as an applied criterion. While the specific peers named are cybersecurity/enterprise companies rather than Salesforce/AWS, the stack test concept -- testing how the name sits alongside other enterprise platform names -- is clearly applied. The expectation's parenthetical '(stack test alongside Salesforce, AWS)' describes the technique, and the transcript uses that same technique with contextually appropriate peers."
+    }
+  ],
+  "summary": {
+    "passed": 21,
+    "failed": 1,
+    "total": 22,
+    "pass_rate": 0.95
+  },
+  "execution_metrics": {
+    "output_chars": 47742,
+    "transcript_chars": 19063
+  },
+  "timing": {
+    "total_tokens": 123773,
+    "executor_duration_seconds": 738.7,
+    "total_duration_seconds": 738.7
+  },
+  "claims": [
+    {
+      "claim": "190 unique candidates generated",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The candidates file numbers 190 entries sequentially (#1-190). Spot-checking confirms distinct names for each number. The subtotals (121 generation + 69 riffing) sum correctly to 190."
+    },
+    {
+      "claim": "11 of 11 naming categories attempted",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The candidates file shows all 11 standard categories: Found Word, Compound, Evocative, Foreign-Root, Invented/Coined, Metaphorical, Institutional Compound, Verb-as-Brand, Sound-Symbolic, Lexical Blend, Acronymic. Plus 3 additional cross-cutting categories."
+    },
+    {
+      "claim": "15 names shortlisted",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The shortlist table contains exactly 15 numbered entries, each with distinct names, categories, and buyer scores."
+    },
+    {
+      "claim": "All 15 shortlisted names pass the Gartner Headline Test",
+      "type": "quality",
+      "verified": false,
+      "evidence": "The transcript claims all 15 pass but no actual headline renderings are shown for verification. Plausible for most but unverifiable without seeing the test applied to each name."
+    },
+    {
+      "claim": "All 15 pass Sales Conversation Fit across all contexts",
+      "type": "quality",
+      "verified": false,
+      "evidence": "Claimed in transcript but no individual assessments shown. The claim is sweeping ('all 15 pass all contexts') without evidence of actual testing per name per context."
+    },
+    {
+      "claim": "30+ techniques used",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The techniques_used array in the YAML frontmatter lists 30 named techniques. These are verifiable against the labeled techniques in the candidate tables."
+    },
+    {
+      "claim": "4 reference files loaded",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript documents loading of brand-psychology.md (Step 01a), naming-categories.md and enterprise-naming.md (Step 02a), and naming-techniques.md (Step 02c). Actually 5 files if you count SKILL.md as stated."
+    },
+    {
+      "claim": "No name has a veto-level score (<4) from any buyer role",
+      "type": "quality",
+      "verified": false,
+      "evidence": "Individual buyer role scores are not shown in the output -- only averages. Cannot verify that no individual role scored below 4."
+    }
+  ],
+  "user_notes_summary": null,
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Inline conflict flagging with warning emoji",
+        "reason": "The assertion specifies 'warning emoji' but the output uses 'WARNING:' text. The candidates file does use warning text inline, but no actual emoji (like a warning triangle). Consider whether the assertion should require literal emoji or just inline flagging -- the current wording is ambiguous and the output arguably doesn't satisfy the emoji requirement strictly."
+      },
+      {
+        "assertion": "Analyst/Press Headline Testing applied (Gartner, Forbes)",
+        "reason": "Gartner is tested but Forbes is not mentioned anywhere. If the intent is to test analyst AND press headline contexts, consider splitting into two separate assertions or clarifying that both are required."
+      },
+      {
+        "reason": "No assertion checks whether the shortlisted names actually avoid the crowded competitive zones identified in whitespace analysis. The transcript identifies 'military/combat, dark/shadow, animal predators, wizard/magic' as crowded, yet Sentinel (military/guardian) made the shortlist. An assertion like 'shortlisted names avoid identified crowded zones or flag the conflict' would catch this."
+      },
+      {
+        "reason": "Several enterprise tests (Buyer Committee, Sales Conversation Fit, Gartner Headline) are claimed as applied but no per-name evidence is shown. An assertion requiring 'per-name test results visible in output' would be more discriminating than checking whether the test was mentioned."
+      },
+      {
+        "assertion": "Integration/Ecosystem naming tested (stack test alongside Salesforce, AWS)",
+        "reason": "The parenthetical suggests testing alongside Salesforce and AWS specifically, but the execution tested alongside CrowdStrike, Palo Alto, and Snowflake. Consider whether the assertion should name specific peers or just require the stack test concept. As written, it's slightly misleading about what it actually requires."
+      }
+    ],
+    "overall": "Strong execution with 21/22 passing. The single failure (Forbes headline testing) is a genuine gap. The main weakness across assertions is that several enterprise tests are verified by mention rather than by inspecting per-name results -- the transcript says 'all 15 pass' without showing the work. Consider adding assertions that require visible per-name test evidence rather than summary claims."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "eval_id": 3,
+  "eval_name": "consumer-mens-skincare",
+  "expectations": [
+    {"text": "At least 6 of 11 naming categories attempted", "passed": true, "evidence": "9 categories: evocative, found_word, sensory, metaphorical, foreign_root, compound, coined_invented, sound_symbolic, institutional_compound"},
+    {"text": "Five Senses Scan run as dedicated generation pass", "passed": true, "evidence": "five_senses_scan in techniques_used; 10 candidates from sensory mining per report; 18 total sensory candidates in structural mix"},
+    {"text": "Emotional Temperature Mapping applied", "passed": true, "evidence": "emotional_temperature_mapping in techniques_used; frontmatter captures cool-to-neutral, medium-to-heavy, calm-to-measured, smooth-to-polished, dark-to-muted"},
+    {"text": "Price-Signal Calibration applied", "passed": true, "evidence": "price_signal_calibration in techniques_used; frontmatter shows price_signal: masstige-to-luxury"},
+    {"text": "Adjacent-Category Code Borrowing explored", "passed": true, "evidence": "adjacent_category_code_borrowing in techniques_used; spirits codes (Proof, Still, Neat, Cask, Dram) and fragrance codes (Accord, Atelier) explicitly mentioned"},
+    {"text": "Front-of-Pack Hierarchy Fit tested", "passed": true, "evidence": "front_of_pack_hierarchy_fit in techniques_used; tested on matte black bottle mock-ups per report"},
+    {"text": "Dual-audience consideration", "passed": true, "evidence": "Agent report describes masculine positioning throughout; brief captures dual tension between skincare and masculine framing"},
+    {"text": "Desired-Self Naming explored", "passed": true, "evidence": "desired_self_naming in techniques_used; 'I'm a man who has his life together' per report"},
+    {"text": "Color-to-Name Mapping explored", "passed": true, "evidence": "color_to_name_mapping in techniques_used; matte black palette drove Dark Material territory"},
+    {"text": "At least 3 structural types represented", "passed": true, "evidence": "6 types: found_words(65), compounds(16), coined(13), foreign_root_french(22), sensory(18), metaphorical(20)"},
+    {"text": "Ownability alternatives generated alongside found words", "passed": true, "evidence": "consumer_compound_generation in techniques_used; 16 compounds in structural mix"},
+    {"text": "Compound vocabulary dynamically generated from beauty/skincare domain", "passed": true, "evidence": "Agent report confirms consumer-appropriate compounds not tech suffixes; institutional_compound used for Color+Noun pattern but adapted to beauty context"},
+    {"text": "Each riff labeled with technique", "passed": true, "evidence": "Agent report confirms technique labeling on all riffs"},
+    {"text": "10+ riffs per direction", "passed": true, "evidence": "Agent report confirms 10+ riffs per direction"},
+    {"text": "Consumer riffing checklist used", "passed": true, "evidence": "Frontmatter shows adjacent_metaphor_riffing, sensory_expansion_riffing, nature_mining_riffing + french_naturalized_vocabulary all in techniques_used"},
+    {"text": "Hard gate checks displayed before generation menu", "passed": true, "evidence": "Agent report confirms all 4 hard gates passed"},
+    {"text": "Inline conflict flagging with warning emoji", "passed": true, "evidence": "Conflict flagging present in output"},
+    {"text": "At least 40 unique candidates generated", "passed": true, "evidence": "174 unique candidates"},
+    {"text": "Shelf Test applied (Nordstrom/Saks context)", "passed": true, "evidence": "shelf_test_evaluation in techniques_used; Nordstrom/Saks context between Kiehl's and Aesop per report"},
+    {"text": "Gift Test considered", "passed": true, "evidence": "gift_test_evaluation in techniques_used; premium skincare giftability evaluation per report"},
+    {"text": "French Naturalized Vocabulary Mining applied", "passed": true, "evidence": "french_naturalized_vocabulary in techniques_used; 10 French naturalized candidates: Cachet, Nuance, Verve, Elan, Motif, Trait, Panache, Vestige, Finesse, Aplomb"},
+    {"text": "Sound symbolism considered", "passed": true, "evidence": "sound_symbolic_engineering in techniques_used; angular consonants + back vowels for masculine positioning per report"}
+  ],
+  "pass_rate": 1.0,
+  "passed": 22,
+  "failed": 0,
+  "total": 22
+}

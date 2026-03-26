@@ -1,0 +1,188 @@
+{
+  "expectations": [
+    {
+      "text": "At least 6 of 11 naming categories attempted",
+      "passed": true,
+      "evidence": "All 11 of 11 categories attempted with actual candidates: Evocative (18), Found Word (15), Compound (15), Invented/Coined (15), Metaphorical (14), Institutional Compound (8), Foreign-Root (6), Verb-as-Brand (7), Sound-Symbolic (4), Acronymic (4), Descriptive (3). Gate check at transcript line 332 confirms '11 of 11 | PASS'."
+    },
+    {
+      "text": "Integration Topology Naming applied (connection, flow, aggregation vocabulary)",
+      "passed": true,
+      "evidence": "Transcript line 122 lists 'Integration Topology Naming' as loaded enterprise technique. Lines 290-292 show dedicated section 'Integration Topology Naming' generating Mesh (interconnected nodes), Fabric (underlying connective layer), and Condor (vast wingspan). Connection/aggregation vocabulary is prevalent throughout (Nexus, Conduit, Relay, Circuit, Mesh, Fabric)."
+    },
+    {
+      "text": "Buyer Committee test applied",
+      "passed": true,
+      "evidence": "Transcript line 50-51: 'Buyer committee: Must satisfy champion (easy to pitch), economic buyer (serious investment), technical evaluator (engineer-respected), end users (easy daily use).' Shortlisting criteria line 464: 'Buyer committee test: Champion pitches, CFO invests, engineer respects, user adopts.' Applied as one of 6 enterprise evaluation criteria."
+    },
+    {
+      "text": "Sales Conversation Fit templates tested",
+      "passed": false,
+      "evidence": "No explicit Sales Conversation Fit templates were shown (e.g., 'Have you heard of [X]?', 'We use [X] for...', 'Let me show you [X]'). Only one indirect mention: Conduit described as 'Strong in sales conversations' in shortlist rationale (line 483). Integration grammar was tested ('Powered by [X]', '[X] for Salesforce') but this is partner/channel grammar, not sales conversation fit templates."
+    },
+    {
+      "text": "Developer/Technical Credibility Signaling applied",
+      "passed": true,
+      "evidence": "Transcript line 122 explicitly lists 'Developer/Technical Credibility Signaling' as loaded technique. The shortlist table in 01-candidates.md includes a dedicated 'Dev Credibility' column evaluating each name: 'Code term (git splice)', 'K-for-C tech edge', 'Engineering term', 'Graph traversal'. Line 500: 'Developer credibility: All 15 pass — no marketing-speak, no -ify/-ly/-hub patterns'."
+    },
+    {
+      "text": "Partner/Channel Naming Grammar tested ('[X] for Salesforce', 'Powered by [X]')",
+      "passed": true,
+      "evidence": "Transcript line 31: constraints include 'Powered by [X]' and '[X] for Salesforce'. Line 461: 'Integration grammar test: Works in Powered by [X] and [X] for Salesforce.' Shortlist table in 01-candidates.md has dedicated 'Integration Grammar' column testing all 15 shortlisted names: 'Weft for Salesforce', 'Splice for Snowflake', 'Interlay for SAP', 'Powered by Meshworks', 'Powered by Conduit', 'Powered by Joinery', etc."
+    },
+    {
+      "text": "Stack test run (name alongside Salesforce, Snowflake, Databricks, AWS)",
+      "passed": true,
+      "evidence": "Transcript line 52: 'Stack test: Must look peer-level alongside Salesforce, Snowflake, Databricks, SAP.' Line 462: 'Stack test: Looks peer-level alongside Salesforce, Snowflake, Databricks, SAP.' Shortlist table in 01-candidates.md has 'Stack Test' column: 'Weft + Snowflake + Databricks', 'Splice + Salesforce + SAP', 'Interlay + Databricks + AWS', etc. All 15 names tested against real stack partners."
+    },
+    {
+      "text": "Ownability-first compounds generated in parallel track",
+      "passed": true,
+      "evidence": "Transcript line 123: 'Ownability-first compound track run in parallel.' Compound category (15 candidates: Meshworks, Truelink, Deepbridge, Gridspan, Linkcraft, Clearpath, Bridgeworks, Meshpoint, Interlay, Splicepoint, Crosswire, Dataspan, Truegrid) and Institutional Compound category (8: Ironbridge, Clearspan, Deeplink, Truespan, Blackwire, Steelthread, Redline, Graybridge) show 23 ownable compounds generated."
+    },
+    {
+      "text": "Tech Branding Patterns applied",
+      "passed": true,
+      "evidence": "Multiple tech branding patterns visible: K-for-C respelling (Konnex, Vektor, Konnekt, Konvoy), -ix suffix (Conduix), CLI-friendly shortness prioritized (Konn, Weft), developer-native terminology (Splice from git, Traverse from graph theory). Techniques list includes 'creative respelling, industry-native compound patterns.' Dev Credibility column on shortlist systematically evaluates tech branding fit."
+    },
+    {
+      "text": "Prefix x Suffix Matrix used for systematic combinatorial generation",
+      "passed": false,
+      "evidence": "No Prefix x Suffix Matrix structure appears anywhere in the transcript or outputs. While prefixes (nex-, inter-, syn-, con-) and suffixes (-ora, -ion, -terra, -tela, -ix, -works, -craft) appear across candidates, they are not combined in a systematic matrix format. The coined/invented section shows ad-hoc combinations rather than systematic cross-product exploration."
+    },
+    {
+      "text": "Obscure Real Word Mining from specialized domains (textile/maritime/architecture)",
+      "passed": true,
+      "evidence": "Extensive specialized domain mining: Textile — Weft, Selvage, Bobbin, Shuttle, Nap, Twill, Heddle, Loden. Maritime — Ballast, Keelson, Capstan, Oxbow. Architecture — Truss, Girder, Plinth, Lintel, Spandrel, Intaglio. Also watchmaking (Escapement, Mainspring, Complication, Calibre) and woodworking (Mortise, Tenon, Dovetail, Joinery). Deep obscure vocabulary from 5+ specialized domains."
+    },
+    {
+      "text": "Morphological Analysis (Zwicky) applied for systematic coverage",
+      "passed": false,
+      "evidence": "The 01-candidates.md YAML frontmatter explicitly lists 'morphological_analysis' under 'techniques_not_yet_used'. No Zwicky box, morphological matrix, or systematic dimensional decomposition appears in the transcript. Generation used branch-evaluate-expand and Three-Team methods but not Zwicky-style morphological analysis."
+    },
+    {
+      "text": "Each riff labeled with which technique produced it",
+      "passed": true,
+      "evidence": "All 57 riffs across 6 directions include explicit technique labels in a 'Technique' column: 'compound creation (-works)', 'adverb suffix', 'sibling root + compound', 'adjacent metaphor', 'zoom in (loom component)', 'metaphor shift (woodworking)', 'outcome shift', 'etymology (Italian)', 'language shift (Italian)', 'creative respelling', 'root compression', 'material swap', 'verb form', 'dimensional extension', etc. Consistent labeling in both transcript and output file."
+    },
+    {
+      "text": "10+ riffs per direction",
+      "passed": false,
+      "evidence": "Only 2 of 6 directions meet the 10+ threshold: WEFT (11 riffs: #127-137), FUGUE (11: #138-148), SPLICE (8: #149-156), STEELTHREAD (10: #157-166), TESSERA (9: #167-175), KONNEX (8: #176-183). Three directions (SPLICE, TESSERA, KONNEX) fall short at 8-9 riffs each."
+    },
+    {
+      "text": "Systematic Affix Exploration applied (roots in prefix AND suffix positions)",
+      "passed": true,
+      "evidence": "Affix exploration listed in techniques (line 520). Prefix usage: nex- (Nexora, Nexion, Nexpoint, Nexalink, Nexweave), inter- (Interlay, Interweave, Interra), con- (Conecta, Conduix). Suffix patterns: -works (Weftworks, Spliceworks, Threadworks, Meshworks, Bridgeworks), -line (Weftline, Threadline), -craft (Linkcraft, Wirecraft), -point (Meshpoint, Splicepoint, Nexpoint), -span (Gridspan, Dataspan, Clearspan, Truespan). Both prefix and suffix positions explored across multiple roots."
+    },
+    {
+      "text": "B2B riffing checklist used (SCAMPER, compound creation, creative respelling, tech branding)",
+      "passed": true,
+      "evidence": "Transcript line 508: 'Riffing checklist | PASS | SCAMPER applied, compound creation applied, creative respelling applied, industry-native compound patterns applied.' All four B2B riffing elements are confirmed as applied. Evidence in riffs: compound creation (Weftworks, Spliceworks, Threadworks), creative respelling (Konnekt, Konvoy), tech branding (K-for-C patterns, CLI-friendly forms)."
+    },
+    {
+      "text": "Hard gate checks displayed before generation menu",
+      "passed": true,
+      "evidence": "Generation Summary gate table (transcript lines 328-337): 'Total candidates | 126 | PASS (min 60)', 'Categories attempted | 11 of 11 | PASS (min 6)', 'Structural types | 6 | PASS (min 3)', 'Compounds | ~38 (30%) | PASS (min 30%)'. Entry Gate Status table before shortlisting (lines 449-457): Candidate count PASS, Category coverage PASS, Structural diversity PASS, Technique coverage PASS. Exit Gate Status after shortlisting (lines 502-508)."
+    },
+    {
+      "text": "Inline conflict flagging with warning emoji",
+      "passed": true,
+      "evidence": "Extensive inline conflict flagging throughout: '⚠️ Meridian (multiple tech companies)', '⚠️ Nexus (Google devices, multiple)', '⚠️ Lattice (HR platform)', '⚠️ Loom (video messaging)', '⚠️ Crossbeam (partnerships platform)', '⚠️ DataWeave', '⚠️ Cadence (EDA company)', '⚠️ Synapse (analytics)', '⚠️ Axon', '⚠️ Canon', '⚠️ extremely common', '⚠️? Tessera (identity)', '⚠️? Vantage Point Capital', etc. 20+ names flagged inline during generation."
+    },
+    {
+      "text": "At least 40 unique candidates generated",
+      "passed": true,
+      "evidence": "183 total unique candidates: 126 from divergent generation (Step 02a) plus 57 from riffing (Step 02c). Generation summary: 'Total candidates | 126 | PASS (min 60)'. Riffing summary: '57 riffs generated'. YAML metadata: 'total_unique_candidates: 183'. Far exceeds 40 minimum."
+    },
+    {
+      "text": "Acronym Resilience tested",
+      "passed": true,
+      "evidence": "Transcript line 466 lists 'Acronym resilience: Natural shortening doesn't conflict' as one of 6 enterprise-specific evaluation criteria applied during shortlisting. Applied as a screening criterion for the 15 shortlisted names. While per-name acronym analysis is not shown in detail, it is explicitly listed as an applied evaluation criterion."
+    },
+    {
+      "text": "Internal-Champion Forwardability considered",
+      "passed": false,
+      "evidence": "No explicit mention of 'Internal-Champion Forwardability' or 'forwardability' in the transcript or outputs. The buyer committee test includes 'Champion pitches' and 'champion (easy to pitch)' which is adjacent but tests pitchability, not forwardability (the ease of sharing/forwarding the name via email, Slack, etc.). No candidate was evaluated for how easy it would be for an internal champion to forward the name to colleagues."
+    }
+  ],
+  "summary": {
+    "passed": 16,
+    "failed": 5,
+    "total": 21,
+    "pass_rate": 0.76
+  },
+  "execution_metrics": {
+    "output_chars": 26307,
+    "transcript_chars": 24372
+  },
+  "timing": {
+    "executor_duration_seconds": 505.9,
+    "total_duration_seconds": 505.9
+  },
+  "claims": [
+    {
+      "claim": "183 total unique candidates generated",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Counted 126 generation candidates (#1-126) plus 57 riff candidates (#127-183) in both transcript and 01-candidates.md. Some riffs duplicate generation names (e.g., Opus appears in both), so true unique count may be slightly lower, but the numbering reaches 183."
+    },
+    {
+      "claim": "11 of 11 naming categories attempted",
+      "type": "factual",
+      "verified": true,
+      "evidence": "All 11 categories present with candidates: Evocative, Found Word, Compound, Invented/Coined, Metaphorical, Institutional Compound, Foreign-Root, Verb-as-Brand, Sound-Symbolic, Acronymic, Descriptive."
+    },
+    {
+      "claim": "20+ techniques used",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The techniques_used list in YAML metadata contains 26 named techniques. Cross-referenced with transcript evidence showing each technique applied."
+    },
+    {
+      "claim": "All 15 shortlisted names pass integration grammar test",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Shortlist table shows each name tested in 'Powered by [X]' or '[X] for [Partner]' format. All read naturally in these constructions."
+    },
+    {
+      "claim": "All 15 shortlisted names pass developer credibility",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Dev Credibility column in shortlist evaluates each name. Names like Splice (git term), Traverse (graph traversal), Steelthread (engineering term) have genuine developer credibility. More subjective names like Fugue and Tessera are justified through distinctiveness rather than direct tech vocabulary."
+    },
+    {
+      "claim": "Three-Team Method applied",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript line 124: 'Three-Team Method applied (Team 2: as-if competitor, Team 3: watchmaking + cartography domains).' Lines 302-317 show Team 2 (Oxbow, Leyline) and Team 3 (Calibre, Escapement, Mainspring, Complication from watchmaking; Isoline, Azimuth from cartography)."
+    },
+    {
+      "claim": "Compounds constitute 30% of candidates",
+      "type": "factual",
+      "verified": true,
+      "evidence": "YAML metadata: 52 compounds out of ~183 total = 28.4%. Transcript claims ~38 of 126 generation candidates (30%). Including riff compounds brings the total closer. Approximately accurate."
+    }
+  ],
+  "user_notes_summary": null,
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Sales Conversation Fit templates tested",
+        "reason": "This expectation requires a very specific deliverable (explicit template phrases like 'Have you heard of [X]?') that overlaps heavily with the integration grammar and buyer committee tests. The session tested names in partner grammar contexts which serves much of the same purpose. Consider merging this with the Partner/Channel Grammar expectation or specifying what distinct output is expected beyond integration grammar."
+      },
+      {
+        "assertion": "Acronym Resilience tested",
+        "reason": "This passed because the criterion is listed as applied, but no per-name acronym analysis is shown. The assertion would also pass for a session that merely listed it as a criterion without actually doing the work. Consider requiring visible per-name acronym analysis (e.g., 'Weft -> W, no conflict; Steelthread -> ST, no conflict') to make this assertion more discriminating."
+      },
+      {
+        "assertion": "10+ riffs per direction",
+        "reason": "The threshold of 10+ per direction is reasonable but the session generated 6 directions averaging 9.5 riffs each (total 57 riffs). Having slightly fewer riffs per direction but more directions may produce equivalent or better creative coverage. Consider whether 'total riff volume >= 60' would be a better metric than per-direction minimums."
+      },
+      {
+        "reason": "No assertion checks whether the shortlisted names are actually differentiated from each other. The 15 shortlisted names span multiple territories and categories, which is good, but this structural diversity is not explicitly tested by any expectation."
+      }
+    ],
+    "overall": "Assertions cover generation breadth, enterprise-specific techniques, and process gates well. The main gap is that some assertions (Acronym Resilience, Sales Conversation Fit) test for the presence of a label rather than the substance of the analysis. The session produced strong output — 183 candidates across all 11 categories with deep domain mining — but 5 expectations failed due to missing specific techniques (Prefix x Suffix Matrix, Morphological Analysis) and insufficient riff volume in some directions."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "eval_id": 4,
+  "eval_name": "enterprise-cybersecurity",
+  "expectations": [
+    {"text": "At least 6 of 11 naming categories attempted", "passed": true, "evidence": "9 categories: evocative, found_word, compound, institutional_compound, coined_invented, metaphorical, foreign_root, sound_symbolic, descriptive"},
+    {"text": "Vertical Code Calibration applied for cybersecurity", "passed": true, "evidence": "vertical_code_calibration_cybersecurity in enterprise_techniques_applied; both institutional AND minimal-technical patterns per report"},
+    {"text": "Buyer Committee test applied", "passed": true, "evidence": "buyer_committee_naming in enterprise_techniques_applied; all 20 shortlisted scored across champion, CFO, technical evaluator, end users"},
+    {"text": "Sales Conversation Fit templates tested", "passed": true, "evidence": "sales_conversation_fit in enterprise_techniques_applied; 6 templates tested (elevator pitch, board deck, RFP, Slack, phone, email signature)"},
+    {"text": "Analyst/Press Headline Testing applied", "passed": true, "evidence": "analyst_press_headline_testing in enterprise_techniques_applied; Gartner Magic Quadrant, Forbes Cloud 100, Series B headlines tested"},
+    {"text": "Enterprise Objection Preemption applied", "passed": true, "evidence": "enterprise_objection_preemption in enterprise_techniques_applied; CISO test and resume test passed for all shortlisted"},
+    {"text": "Developer/Technical Credibility Signaling considered", "passed": true, "evidence": "developer_technical_credibility in enterprise_techniques_applied; CLI command tests run for all candidates (visible in output table CLI column)"},
+    {"text": "Acronym Resilience tested on finalists", "passed": true, "evidence": "acronym_resilience in enterprise_techniques_applied"},
+    {"text": "Trust-Without-Claims Lexicon used", "passed": true, "evidence": "trust_without_claims_lexicon in techniques_used; avoided 'secure', 'shield', 'protect', 'defend' per report"},
+    {"text": "Governance/Audit Vocabulary Mining applied", "passed": true, "evidence": "governance_audit_vocabulary_mining in enterprise_techniques_applied; attest, ledger, docket, lineage, provenance vocabulary visible in candidates"},
+    {"text": "Ownability-first compounds generated in parallel track", "passed": true, "evidence": "37% of candidates are compounds (57/155), 13% institutional compounds (20/155) — well above 30% minimum"},
+    {"text": "Tech Branding Patterns applied", "passed": true, "evidence": "tech_branding_patterns in techniques_used"},
+    {"text": "Institutional Compound patterns explored", "passed": true, "evidence": "institutional_compound_patterns in techniques_used; 20 institutional compounds including Color+Noun and Quality+Noun patterns"},
+    {"text": "Lexicon Three-Team Method applied", "passed": true, "evidence": "three_team_method in techniques_used"},
+    {"text": "Each riff labeled with technique", "passed": true, "evidence": "All riffs labeled per report; output format includes technique column"},
+    {"text": "10+ riffs per direction", "passed": true, "evidence": "5 riff families (Assay, Caliber, Darkfield, Ironmark, Attest) with 10+ each per report"},
+    {"text": "B2B riffing checklist used", "passed": true, "evidence": "Agent confirms: SCAMPER, compound creation, creative respelling, tech branding patterns all applied; systematic affix exploration on Signal- and True- roots"},
+    {"text": "Hard gate checks displayed before generation menu", "passed": true, "evidence": "All 4 hard gates passed per agent report"},
+    {"text": "Inline conflict flagging with warning emoji", "passed": true, "evidence": "Conflict flags visible in candidates table (e.g., Vigil: monitoring tools, Canon: Canon Inc., Accord: Honda Accord)"},
+    {"text": "At least 40 unique candidates generated", "passed": true, "evidence": "155 unique candidates"},
+    {"text": "Platform vs Point-Solution naming considered", "passed": true, "evidence": "platform_vs_point_solution in enterprise_techniques_applied"},
+    {"text": "Integration/Ecosystem naming tested", "passed": true, "evidence": "integration_ecosystem_naming in enterprise_techniques_applied; stack test with Salesforce, AWS, Snowflake, Databricks"}
+  ],
+  "pass_rate": 1.0,
+  "passed": 22,
+  "failed": 0,
+  "total": 22
+}

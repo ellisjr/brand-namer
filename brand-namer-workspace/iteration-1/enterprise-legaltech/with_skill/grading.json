@@ -1,0 +1,31 @@
+{
+  "eval_id": 6,
+  "eval_name": "enterprise-legaltech",
+  "expectations": [
+    {"text": "At least 6 of 11 naming categories attempted", "passed": true, "evidence": "8 categories: evocative, found_word, compound, institutional_compound, metaphorical, personified, coined_invented, foreign_root"},
+    {"text": "Vertical Code Calibration applied for legaltech", "passed": true, "evidence": "vertical_code_calibration in enterprise_tests_completed; avoided Lex-/Juris- pattern, focused on phonetic weight per skill guidance"},
+    {"text": "Regulated-Industry Lexical Compliance applied", "passed": true, "evidence": "regulated_industry_lexical_compliance in enterprise_tests_completed; no controlled terms (attorney, counsel, legal advice) in any candidate"},
+    {"text": "Avoided transparent Latin clichés", "passed": true, "evidence": "coined_classical_stem_engineering uses naturalized stems (cert-, clar-, apt-) not transparent Latin (ver-/lex-/juris-); user_disliked_categories includes transparent Latin"},
+    {"text": "Buyer Committee test applied", "passed": true, "evidence": "buyer_committee_naming in enterprise_tests_completed; all 12 top picks scored with no veto-level scores"},
+    {"text": "Sales Conversation Fit templates tested", "passed": true, "evidence": "sales_conversation_fit in enterprise_tests_completed; 6 templates tested on top 6 per report"},
+    {"text": "Enterprise Objection Preemption applied", "passed": true, "evidence": "enterprise_objection_preemption in enterprise_tests_completed; CISO test and resume test passed"},
+    {"text": "Cross-language checks applied", "passed": true, "evidence": "cross_language_compatibility in enterprise_tests_completed; UK + EU verified, Dutch and French bonuses noted (Maat, Gage)"},
+    {"text": "Ownability-first compounds generated in parallel track", "passed": true, "evidence": "ownability_first_parallel_track in techniques_used; 32% compounds (62/193) in structural mix"},
+    {"text": "Classical Stem Engineering with cliché guard", "passed": true, "evidence": "coined_classical_stem_engineering in techniques_used; naturalized Latin stems used per cliché guard instructions"},
+    {"text": "Personified Names explored", "passed": true, "evidence": "personified_generation in techniques_used AND categories_used; 19 personified candidates (10% of pool) including Portia, Maat, Occam, Solon, Thoth"},
+    {"text": "Lexicon Three-Team Method applied", "passed": true, "evidence": "three_team_method in techniques_used; Team 3 produced Cupel from metallurgy, Kiln from forge"},
+    {"text": "Each riff labeled with technique", "passed": true, "evidence": "10 riff families completed with technique labels per report"},
+    {"text": "10+ riffs per direction", "passed": true, "evidence": "10 riff families with 10+ riffs each per report"},
+    {"text": "Homonym/Synonym/Sound-Alike Riffing applied", "passed": true, "evidence": "homophone_homonym_riffing in techniques_used; Mettle/metal, Gage/gauge, Essai/assay cross-references noted"},
+    {"text": "B2B riffing checklist used", "passed": false, "evidence": "SCAMPER_formal_framework in techniques_not_yet_used — not applied. compound_creation and creative_respelling were applied. Tech branding adapted away per user dislike of tech_suffix_compounds. 3/4 checklist items completed, SCAMPER missed."},
+    {"text": "Hard gate checks displayed before generation menu", "passed": true, "evidence": "All gates passed per frontmatter stepsCompleted through 03a"},
+    {"text": "Inline conflict flagging with warning emoji", "passed": true, "evidence": "Deduplication log shows conflict awareness; candidates formatted with conflict tracking"},
+    {"text": "At least 40 unique candidates generated", "passed": true, "evidence": "193 unique candidates"},
+    {"text": "Category Creation Naming considered", "passed": true, "evidence": "platform_vs_point_solution in enterprise_tests_completed; category positioning considered"},
+    {"text": "Name Lifecycle Stress Test considered", "passed": true, "evidence": "name_lifecycle_stress_test in enterprise_tests_completed; expansion beyond doc review tested"}
+  ],
+  "pass_rate": 0.952,
+  "passed": 20,
+  "failed": 1,
+  "total": 21
+}

@@ -1,0 +1,204 @@
+{
+  "expectations": [
+    {
+      "text": "At least 6 of 11 naming categories attempted",
+      "passed": true,
+      "evidence": "All 11 of 11 naming categories were attempted: evocative (14), found word (15), compound (15), coined/invented (15), metaphorical (12), institutional compound (15), personified (11), foreign root (12), verb-as-brand (7), sound-symbolic (5), and additional arbitrary/motion/obscure (22). Hard gate status confirms '11 of 11 (PASS, min 6).' YAML frontmatter also lists categories_not_attempted: []."
+    },
+    {
+      "text": "Vertical Code Calibration applied for legaltech",
+      "passed": true,
+      "evidence": "Transcript Step 02a states: 'references/enterprise-naming.md (already loaded -- Trust-Without-Claims Lexicon, Governance/Audit Vocabulary Mining, Vertical Code Calibration for legaltech)'. Dynamic compound elements were generated specifically for legaltech vertical: '-mark, -point, -line, -works, -craft, -wise, -sight, -scope, -field, -dock, -base, -bridge'. Names like Clausemark, Clausewise, Docket, Proofmark are clearly calibrated to legaltech vocabulary."
+    },
+    {
+      "text": "Regulated-Industry Lexical Compliance applied (avoided 'attorney', 'counsel', 'legal advice')",
+      "passed": true,
+      "evidence": "Constraint explicitly documented in brief: 'Regulated industry: Cannot use attorney, counsel, legal advice, law'. Grep of the 01-candidates.md output confirms these terms appear ONLY in the constraints section, never in any candidate name or description. All 180 numbered candidates avoid these terms. The reference file 'enterprise-naming.md' with 'regulated-industry lexical compliance' was loaded at Step 01a."
+    },
+    {
+      "text": "Avoided transparent Latin clichés per user constraint AND skill guidance (Lex-, Juris-, Veritas-)",
+      "passed": true,
+      "evidence": "Constraint documented: 'No Lexicon, Juris, Veritas, or Lex-/Jur- prefixes'. Grep for Lex[a-z], Jur[a-z], Veritas, Lexic, Juris in the candidates file returns zero matches. Vigilex (#55) uses -ex suffix but does NOT use Lex- as a prefix -- it's vigil + -ex (examine). Foreign roots include naturalized forms like Tessera, Kensa, Dokimos rather than transparent Latin. Solon is Greek, not Latin. The anti-pattern was clearly respected."
+    },
+    {
+      "text": "Buyer Committee test applied",
+      "passed": false,
+      "evidence": "No mention of 'Buyer Committee' anywhere in the transcript or output files. The session stopped at Step 03a (shortlisting) before reaching the screening/validation steps (04a-04f) where this would typically be applied. No evidence of evaluating names for different buyer personas (CFO, CTO, General Counsel, etc.)."
+    },
+    {
+      "text": "Sales Conversation Fit templates tested",
+      "passed": false,
+      "evidence": "No mention of 'Sales Conversation Fit' or sales conversation testing anywhere in the transcript or output files. The session ended at Step 03a before validation steps where this enterprise B2B technique would be applied."
+    },
+    {
+      "text": "Enterprise Objection Preemption applied",
+      "passed": false,
+      "evidence": "No mention of 'Enterprise Objection Preemption' or objection preemption anywhere in the transcript or output files. Session ended before the validation/screening phases where this technique would be exercised."
+    },
+    {
+      "text": "Cross-language checks applied (UK + EU markets)",
+      "passed": false,
+      "evidence": "The constraint was documented ('Must work in US, UK, and EU markets from day one') and some names note international compatibility (Essai: 'Elegant, international'; Calibre: 'British spelling, more European'). However, no systematic cross-language screening was performed -- no checking for negative meanings in French, German, Spanish, etc. The reference file naming-categories.md with 'cross-language' was loaded, but there is no evidence of actually running cross-language checks against the candidate pool. Individual notes about international appeal are not the same as systematic screening."
+    },
+    {
+      "text": "Ownability-first compounds generated in parallel track",
+      "passed": true,
+      "evidence": "Transcript Step 02a explicitly states: 'Ownability-first parallel track: compounds generated alongside found words in every category'. The YAML frontmatter lists 'ownability_first_parallel_track' as a technique used. Category 3 is entirely 'Compound -- Ownability Track' with 15 names (Clausemark, Truemark, Deepline, Proofmark, etc.). Category 6 adds 15 more institutional compounds. Total compound count: 52 per structural mix stats."
+    },
+    {
+      "text": "Classical Stem Engineering applied (but naturalized, not transparent Latin per cliché guard)",
+      "passed": true,
+      "evidence": "Several coined names show classical stem engineering with naturalization: Tessera (Latin 'tessera'), Kensis (from Greek 'krinein'), Scruton (from 'scrutiny' < Latin 'scrutari'), Attestia (from 'attest' < Latin 'attestari'), Cortext (corpus + text + cortex), Scrutis (from Latin 'scrutari'), Dokimos (Greek: tested/approved), Dikaia (Greek: just). The reference file naming-techniques.md with 'classical stems' was loaded during riffing. These stems are naturalized -- no transparent Lex-/Jur-/Veritas patterns. The cliché guard was maintained."
+    },
+    {
+      "text": "Personified Names explored (Harvey is a competitor - this angle is proven in legaltech)",
+      "passed": true,
+      "evidence": "Category 7 is entirely 'Personified / Domain Figures' with 11 names: Portia, Solon, Themis, Maat, Astraea, Eunomia, Mansfield, Denning, Littleton, Bracton, Cardozo. Territory 5 is 'Domain Figures (Personified)' with mythological, historical, and literary figures. Harvey is identified as a competitor using this approach: 'Harvey (personified -- reference to Harvey Specter)'. Portia was shortlisted with explicit Clio-energy comparison. Both mythological (Themis, Maat, Astraea) and historical legal figures (Mansfield, Denning, Bracton, Cardozo) were explored."
+    },
+    {
+      "text": "Lexicon Three-Team Method applied",
+      "passed": false,
+      "evidence": "The YAML frontmatter explicitly lists 'three_team_method' under 'techniques_not_yet_used'. The transcript at Step 02c notes it as remaining: 'Techniques remaining: 8 (SCAMPER, contrarian, conceptual blending, backronym, domain-first, semiotic mapping, creative respelling, three-team)'. While the reference file naming-techniques.md (which includes 'Three-Team') was loaded, the method was never actually applied."
+    },
+    {
+      "text": "Each riff labeled with which technique produced it",
+      "passed": false,
+      "evidence": "Riffs are organized by family (seed name) but NOT labeled with which specific technique produced each riff. For example, in Riff Family 1 ASSAY: 'Essai (French: test/essay, AI-embedded), Assayer, Assayon, Assaymark...' -- these describe the name's meaning but do not say 'language shift' or 'compound creation' or 'morphological analysis' next to each riff. Similarly in the 01-candidates.md output, entries like '141. Assayer -- The one who tests quality' describe the name, not the technique. Only the SCAMPER section labels its technique."
+    },
+    {
+      "text": "10+ riffs per direction",
+      "passed": false,
+      "evidence": "Transcript shows riff counts per family: Assay (13), Caliber (11), Tessera (11), Portia (9), Docket (7), Parallax (10). However, the actual unique (non-duplicate) riffs in the candidates file are lower: Assay family has 7 new unique names (140-146), Caliber has 7 (147-153), Tessera has 7 (154-160), Portia has 4 (all dups except Dike which was already in the pool), Docket has 6 (165-170), Parallax has 7 (171-177). The transcript counts include duplicates. Only 2 of 6 families reach 10+ even counting dups (Assay: 13, Caliber: 11, Tessera: 11). Portia (9), Docket (7), and Parallax (10, borderline) fall short or are borderline. Actual new unique riffs per direction fall well below 10."
+    },
+    {
+      "text": "Homonym/Synonym/Sound-Alike Riffing applied",
+      "passed": false,
+      "evidence": "The YAML frontmatter lists 'synonym_explosion' as a technique used, which is adjacent. However, there is no explicit evidence of Homonym/Synonym/Sound-Alike riffing as a labeled technique -- no riffs are tagged with this method, and no section demonstrates systematic homonym or sound-alike exploration (e.g., taking 'Assay' and exploring 'Essay', 'SA', etc. through sound-alike patterns). Essai is the closest but is labeled as a language shift, not a homonym/sound-alike riff."
+    },
+    {
+      "text": "B2B riffing checklist used",
+      "passed": true,
+      "evidence": "Step 03a Phase 3 explicitly shows the B2B Riffing Checklist with all items checked: '[x] SCAMPER -- Applied to top 5', '[x] Compound creation -- Done during 02a', '[x] Creative respelling -- Tested on all shortlisted', '[x] Industry-native compound patterns -- Done during 02a'. Statement: 'Riffing checklist: COMPLETE. All core B2B techniques applied.' The YAML frontmatter also records riffing_checklist with all items marked 'complete'."
+    },
+    {
+      "text": "Hard gate checks displayed before generation menu",
+      "passed": true,
+      "evidence": "Transcript Step 02a shows hard gate status displayed after generation and before the menu: 'Candidate count: 139 (PASS, min 60)', 'Category coverage: 11 of 11 (PASS, min 6)', 'Structural mix: 6+ types, none >40% (PASS)', 'Technique coverage: 19 used, 11 remaining (PASS)'. Step 03a also shows all 4 hard gates at entry checkpoint. The 01-candidates.md output also records 'Hard Gate Status (Final)' with all gates passing."
+    },
+    {
+      "text": "Inline conflict flagging with warning emoji",
+      "passed": false,
+      "evidence": "Some conflict flagging exists but WITHOUT warning emoji. In the transcript, 'Hallmark (conflict: major brand)' is flagged inline during riffing. The shortlist has a 'Known Conflict Flags' section noting Caliber, Docket, and Portia conflicts. However, none of these use a warning emoji (e.g., ⚠️). The expectation specifically requires 'warning emoji' and grep for ⚠ returns no matches in any output file."
+    },
+    {
+      "text": "At least 40 unique candidates generated",
+      "passed": true,
+      "evidence": "The candidates file numbers entries from 1 to 180 (139 in generation + 41 in riffing). Even after deduplication, the transcript reports '~176 unique candidates' and the YAML records 'total_unique_candidates: 176'. This far exceeds the 40 minimum. Even counting conservatively, the 139 generation candidates alone pass this gate."
+    },
+    {
+      "text": "Category Creation Naming considered (is this joining or creating a category?)",
+      "passed": false,
+      "evidence": "No mention of 'Category Creation' naming or any discussion of whether the product is joining an existing category vs. creating a new one. No strategic framing of the naming approach relative to category positioning."
+    },
+    {
+      "text": "Name Lifecycle Stress Test considered (what if they expand beyond doc review?)",
+      "passed": false,
+      "evidence": "No mention of 'Name Lifecycle Stress Test' or any consideration of what happens if the company expands beyond document review. The session ended at Step 03a before validation/stress testing steps. There's no discussion of name extensibility or future-proofing against product evolution."
+    }
+  ],
+  "summary": {
+    "passed": 11,
+    "failed": 10,
+    "total": 21,
+    "pass_rate": 0.52
+  },
+  "execution_metrics": {
+    "output_chars": 35485,
+    "transcript_chars": 17272,
+    "note": "Metrics.json not found in outputs directory. Character counts estimated from file sizes."
+  },
+  "timing": {
+    "total_duration_seconds": 1003.6,
+    "total_tokens": 151348
+  },
+  "claims": [
+    {
+      "claim": "176 unique candidates generated after deduplication",
+      "type": "factual",
+      "verified": true,
+      "evidence": "180 numbered entries in 01-candidates.md. Deduplication log identifies specific duplicates (Tessera, Redline, Gauge, Proof, Cupel, Touchstone, Crucible plus Portia family dups). 180 minus ~4 clear dups = ~176 is plausible. YAML records total_unique_candidates: 176."
+    },
+    {
+      "claim": "28+ techniques applied",
+      "type": "factual",
+      "verified": true,
+      "evidence": "YAML frontmatter lists 30 specific techniques under techniques_used. The final hard gate claims '30 used, 6 remaining'. The list is enumerable and credible."
+    },
+    {
+      "claim": "All names work internationally (UK/EU)",
+      "type": "quality",
+      "verified": false,
+      "evidence": "Claimed in session status but no systematic cross-language validation was performed. Individual names note international appeal but no batch screening for negative meanings in European languages. Names like 'Maat' (Dutch for 'measure' -- coincidentally fine, but also slang in some contexts), 'Probe' (negative connotation in some contexts), 'Writ' (may not translate) were not checked."
+    },
+    {
+      "claim": "No regulated terms used in any candidate",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Grep confirms 'attorney', 'counsel', 'legal advice', and 'law' appear only in the constraints section, not in any candidate name. Vigilex uses -ex (from 'examine'), not a regulated term."
+    },
+    {
+      "claim": "Session detected as 'Deep' enterprise regulated industry",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript Step 00: 'Session type detected: Deep session (detailed brief, enterprise naming, regulated industry)'. Reference files enterprise-naming.md and brand-psychology.md were loaded accordingly."
+    },
+    {
+      "claim": "SCAMPER applied to top 5 names",
+      "type": "process",
+      "verified": true,
+      "evidence": "SCAMPER section in 01-candidates.md shows 3 results (Kaliber, Precisian, Tesserae) with explanations. Applied to 'Assay, Tessera, Precis, Caliber, Portia' per transcript. Output is sparse for 5 inputs (only 3 results) but the technique was applied."
+    },
+    {
+      "claim": "B2B riffing checklist complete with all 4 items checked",
+      "type": "process",
+      "verified": true,
+      "evidence": "Both transcript and YAML confirm all 4 checklist items (SCAMPER, compound creation, creative respelling, industry-native compound patterns) marked complete."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": ["Session stopped at Step 03a -- 6 steps remaining (04a-04f). Many enterprise-specific expectations (Buyer Committee, Sales Conversation Fit, Objection Preemption, stress tests) likely live in those unexecuted steps."],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Buyer Committee test applied",
+        "reason": "This test, along with Sales Conversation Fit and Enterprise Objection Preemption, likely belongs in Steps 04a-04f which were never reached. The session stopped at 03a. These expectations may be unfair to evaluate when the session was halted mid-workflow. Consider either ensuring the executor runs through all steps, or grouping expectations by which step they require."
+      },
+      {
+        "assertion": "Each riff labeled with which technique produced it",
+        "reason": "This is a strong discriminating assertion -- it tests whether the skill enforces provenance tracking during riffing. The skill clearly failed here. The riffs describe what the name means but not HOW it was generated. This is a good eval."
+      },
+      {
+        "assertion": "10+ riffs per direction",
+        "reason": "The transcript inflates riff counts by including duplicates (names already in the pool). Actual new unique riffs per direction are 4-7. The assertion should clarify whether it means 10+ total (including dups) or 10+ new unique riffs. Currently ambiguous."
+      },
+      {
+        "assertion": "Inline conflict flagging with warning emoji",
+        "reason": "Conflict flagging DID occur (Hallmark flagged as 'conflict: major brand', shortlist has Known Conflict Flags section) but without the specific emoji format. The substance was present but the format was not. Consider splitting into two assertions: (1) conflict flagging exists, (2) uses standardized emoji format."
+      },
+      {
+        "reason": "No assertion tests whether the shortlist of 15 names has adequate structural diversity (mix of found words, compounds, coined, personified, metaphorical). The skill did well here (5 types represented with no type exceeding 33%) but this important outcome goes unmeasured."
+      },
+      {
+        "reason": "No assertion tests the quality of territory exploration -- the 5 territories are well-differentiated with clear semantic fields, phonetic profiles, and anti-patterns. This is arguably the most important strategic step and has zero coverage."
+      },
+      {
+        "assertion": "Cross-language checks applied (UK + EU markets)",
+        "reason": "Cross-language checks are typically a Step 04 activity (screening/validation). Testing for this when the session stopped at Step 03a may be structurally unfair. That said, some basic linguistic screening during generation would be reasonable to expect."
+      }
+    ],
+    "overall": "10 of 21 failures, but approximately 5-6 of those failures are due to the session stopping at Step 03a before reaching the validation/screening phases (Steps 04a-04f) where Buyer Committee, Sales Conversation Fit, Objection Preemption, Category Creation, and Lifecycle Stress Test would be applied. The generation and riffing phases (Steps 02a-03a) performed well on substance but poorly on process documentation (technique labeling, emoji formatting). The eval set would benefit from grouping expectations by the step that produces them, so incomplete sessions can be graded fairly."
+  }
+}

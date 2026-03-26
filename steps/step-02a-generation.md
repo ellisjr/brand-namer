@@ -234,17 +234,58 @@ After presenting the initial pool, run the 4 hard gate checks and display the st
 - **Structural mix:** [breakdown by type] ([pass/fail] — minimum 3 types, no type >80%)
 - **Technique coverage:** [N] techniques used, [M] remaining ([pass/fail] — fewer than 8 unused)
 
+### Technique toolkit — offer remaining techniques
+
+After hard gates, display the technique toolkit showing which techniques have been applied and which are still available. Group by type and filter by brief type. The user can select any combination to run before moving on. **Keep offering this toolkit at every subsequent checkpoint** — techniques that remain unapplied resurface until used or explicitly skipped.
+
+```
+**Technique Toolkit** (select any to apply, or skip to menu below):
+
+GENERATION TECHNIQUES
+[x] Tree of Thought branching ✓
+[x] Five Senses Scan ✓ (consumer brief)
+[ ] Prefix × Suffix Matrix — systematic combinatorial grid
+[ ] Morphological Analysis (Zwicky) — dimensional decomposition
+[ ] Domain-First Naming — start from available .com domains
+[ ] Contrarian/Anti-Category — name from the opposite direction
+
+BRIEF-SPECIFIC TECHNIQUES ({consumer|enterprise})
+[x] Sensory Dissonance ✓
+[ ] Desired-Self Naming — what identity does buying this project?
+[ ] Trend-Cycle Audit — will this name feel dated in 5 years?
+[ ] Memetic/Viral Engineering — shareability and meme potential
+[ ] Cultural Tension Naming — name from the tension the brand resolves
+
+DEEPENING TECHNIQUES
+[ ] SCAMPER — 7 systematic transformations on each name
+[ ] Constraint Removal — "what if there were no rules?"
+[ ] Pre-Mortem — "imagine this name failed, why?"
+[ ] Inversion — name from the opposite direction
+[ ] Three-Team Method — on-brief, competitor, unrelated domain
+
+Select with numbers (e.g., "3, 5, 8") or [A] all remaining, then [C] to skip
+```
+
+**Adapt the list to the current session:**
+- Show only brief-type-relevant techniques (consumer techniques for consumer briefs, enterprise for enterprise)
+- Check off techniques already applied (from `techniques_used` in `01-candidates.md`)
+- If a technique was applied, show ✓ and skip it in the selectable list
+- If the user selects techniques, run them immediately (generate a batch for each), then re-display this checkpoint with updated status
+- If the user selects [A], run ALL remaining techniques in sequence
+- If the user selects [C] or goes to the main menu, move on — but resurface unapplied techniques at the next checkpoint (step-02c or step-03a)
+
 ---
 
 ## Menu
 
+**[T]** Apply techniques — select from the technique toolkit above
 **[G]** Generate more — fresh round in specific directions or untried categories
 **[X]** Cross-pollinate — generate prompt for other LLMs (proceeds to step-02b)
 **[R]** Riff — apply riffing techniques to favorites (proceeds to step-02c)
 **[S]** Shortlist — review all candidates, pick favorites (proceeds to step-03a)
 **[O]** Other — tell me what you need
 
-**My recommendation:** [If any hard gate is failing, address it here — e.g., "We have 28 candidates, below the 40 minimum. I recommend [G] to generate more before shortlisting." If all gates pass, recommend based on session state — e.g., "All gates pass. If you have favorites you want to explore, try [R]. Otherwise [S] to start shortlisting."]
+**My recommendation:** [If any hard gate is failing, address it here. If techniques remain unapplied, mention them: "You have [N] techniques still available — [list top 2-3 most impactful]. Want to try any before moving on?" If all gates pass and technique coverage is strong, recommend based on session state.]
 
 **HALT — wait for user selection before proceeding.**
 

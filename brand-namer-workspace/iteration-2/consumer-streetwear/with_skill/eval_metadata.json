@@ -1,0 +1,107 @@
+{
+  "eval_id": 2,
+  "eval_name": "consumer-streetwear",
+  "prompt": "I'm starting a sustainable streetwear brand. We use deadstock fabrics and recycled materials to make limited-run drops of hoodies, tees, and accessories. Based in East London. Target audience: 18-30 year olds who care about sustainability but don't want to look like they shop at a hemp store. Think the intersection of Stussy and Patagonia. The vibe is: rebellious, conscious, urban, a bit dark, anti-corporate. Competitors in our space: Pangaia, Story MFG, 69 Worldwide, Brain Dead, Stussy. The name needs to work as a streetwear label - something you'd see on a tag or embroidered on a chest. Preferably one word or short.",
+  "assertions": [
+    {
+      "id": "cat-coverage",
+      "text": "At least 6 of 11 naming categories attempted",
+      "type": "generation"
+    },
+    {
+      "id": "five-senses",
+      "text": "Five Senses Scan run (fashion is a physical product)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "subculture-codes",
+      "text": "Subculture Code-Switch Naming applied (streetwear/skate codes)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "arbitrary-absurd",
+      "text": "Arbitrary/Absurd Association heavily weighted (per SKILL.md fashion guidance)",
+      "type": "generation"
+    },
+    {
+      "id": "contrarian",
+      "text": "Contrarian/Anti-Category Naming applied",
+      "type": "generation"
+    },
+    {
+      "id": "no-compound-track",
+      "text": "B2B compound track SKIPPED per SKILL.md fashion guidance ('Nobody in streetwear wears Loamworks')",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "found-word-focus",
+      "text": "Heavy found word, sensory, and arbitrary emphasis (per fashion playbook)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "badgeability",
+      "text": "Badgeability/Wearability test applied (would you wear this on a hat?)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "cultural-tension",
+      "text": "Cultural Tension Naming explored (sustainability vs streetwear tension)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "desired-self",
+      "text": "Desired-Self Naming considered (what identity does buying this project?)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "trend-cycle",
+      "text": "Trend-Cycle Audit applied (will this name date?)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "technique-labeling",
+      "text": "Each riff labeled with which technique produced it",
+      "type": "riffing"
+    },
+    {
+      "id": "riff-volume",
+      "text": "10+ riffs per direction",
+      "type": "riffing"
+    },
+    {
+      "id": "consumer-riffing-checklist",
+      "text": "Consumer riffing checklist used (adjacent metaphor, sensory expansion, nature mining, French naturalized vocab)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "hard-gates",
+      "text": "Hard gate checks displayed before generation menu",
+      "type": "workflow"
+    },
+    {
+      "id": "conflict-flagging",
+      "text": "Inline conflict flagging with warning emoji",
+      "type": "generation"
+    },
+    {
+      "id": "fashion-conflict-tolerance",
+      "text": "Relaxed conflict-flagging per fashion guidance (a plumbing company conflict is irrelevant)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "candidate-count",
+      "text": "At least 40 unique candidates generated",
+      "type": "generation"
+    },
+    {
+      "id": "place-evocation",
+      "text": "Place/Environment Evocation explored (East London)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "memetic-viral",
+      "text": "Memetic/Viral Engineering considered",
+      "type": "consumer-specific"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "skill_name": "brand-namer",
+  "iteration": 1,
+  "timestamp": "2026-03-25",
+  "summary": {
+    "total_evals": 6,
+    "total_assertions": 130,
+    "total_passed": 127,
+    "total_failed": 3,
+    "overall_pass_rate": 0.977,
+    "avg_candidates_per_session": 182,
+    "avg_categories_per_session": 8.5,
+    "avg_techniques_per_session": 26.7,
+    "avg_tokens": 115779,
+    "avg_duration_seconds": 498.1
+  },
+  "evals": [
+    {
+      "name": "consumer-hot-sauce",
+      "type": "consumer",
+      "pass_rate": 0.917,
+      "passed": 22,
+      "failed": 2,
+      "total": 24,
+      "candidates": 162,
+      "categories": 8,
+      "techniques": 33,
+      "tokens": 118762,
+      "duration_s": 510.7,
+      "failures": ["Shelf Test not formally tracked", "Social-native testing not formally tracked"]
+    },
+    {
+      "name": "consumer-streetwear",
+      "type": "consumer",
+      "pass_rate": 1.0,
+      "passed": 20,
+      "failed": 0,
+      "total": 20,
+      "candidates": 192,
+      "categories": 9,
+      "techniques": 27,
+      "tokens": 116841,
+      "duration_s": 471.9,
+      "failures": []
+    },
+    {
+      "name": "consumer-mens-skincare",
+      "type": "consumer",
+      "pass_rate": 1.0,
+      "passed": 22,
+      "failed": 0,
+      "total": 22,
+      "candidates": 174,
+      "categories": 9,
+      "techniques": 22,
+      "tokens": 117743,
+      "duration_s": 486.3,
+      "failures": []
+    },
+    {
+      "name": "enterprise-cybersecurity",
+      "type": "enterprise",
+      "pass_rate": 1.0,
+      "passed": 22,
+      "failed": 0,
+      "total": 22,
+      "candidates": 155,
+      "categories": 9,
+      "techniques": 25,
+      "tokens": 114161,
+      "duration_s": 495.0,
+      "failures": []
+    },
+    {
+      "name": "enterprise-data-integration",
+      "type": "enterprise",
+      "pass_rate": 1.0,
+      "passed": 21,
+      "failed": 0,
+      "total": 21,
+      "candidates": 216,
+      "categories": 8,
+      "techniques": 23,
+      "tokens": 111667,
+      "duration_s": 460.1,
+      "failures": []
+    },
+    {
+      "name": "enterprise-legaltech",
+      "type": "enterprise",
+      "pass_rate": 0.952,
+      "passed": 20,
+      "failed": 1,
+      "total": 21,
+      "candidates": 193,
+      "categories": 8,
+      "techniques": 30,
+      "tokens": 115501,
+      "duration_s": 564.7,
+      "failures": ["SCAMPER not formally applied (in techniques_not_yet_used despite being on B2B riffing checklist)"]
+    }
+  ],
+  "cross_cutting_observations": [
+    {
+      "finding": "Consumer brief-type detection works correctly",
+      "detail": "All 3 consumer evals loaded consumer-naming.md, ran Five Senses Scan, used consumer riffing checklist (not B2B), and adapted compound vocabulary to consumer domains"
+    },
+    {
+      "finding": "Enterprise brief-type detection works correctly",
+      "detail": "All 3 enterprise evals loaded enterprise-naming.md, applied enterprise-specific tests (buyer committee, sales conversation fit, etc.), and used B2B riffing checklist"
+    },
+    {
+      "finding": "Fashion/lifestyle compound override fires correctly",
+      "detail": "Streetwear eval correctly skipped B2B compound track per SKILL.md guidance. Hot sauce used food-appropriate compounds. Men's skincare used beauty-appropriate compounds."
+    },
+    {
+      "finding": "Hard gates consistently enforced",
+      "detail": "All 6 evals passed all 4 hard gates (candidate count, category coverage, structural diversity, technique cycling). Average 182 candidates vs 60 minimum."
+    },
+    {
+      "finding": "Technique tracking YAML frontmatter consistently produced",
+      "detail": "All 6 evals produced techniques_used and techniques_not_yet_used arrays in 01-candidates.md frontmatter, enabling technique accountability"
+    },
+    {
+      "finding": "Minor gap: consumer evaluation techniques (shelf test, social-native) not always formally tracked",
+      "detail": "Hot sauce eval missed shelf_test and social_native_testing in techniques_used even though brief mentioned Instagram handle. Men's skincare DID track both. Suggests these are sometimes done informally but not recorded."
+    },
+    {
+      "finding": "Minor gap: SCAMPER occasionally skipped in B2B riffing checklist",
+      "detail": "Legaltech eval had SCAMPER in techniques_not_yet_used despite B2B checklist requiring it. Other B2B evals completed SCAMPER. May be a prioritization issue when technique count is already high (30+ techniques used)."
+    }
+  ]
+}

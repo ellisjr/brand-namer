@@ -1,0 +1,194 @@
+{
+  "expectations": [
+    {
+      "text": "At least 6 of 11 naming categories attempted",
+      "passed": true,
+      "evidence": "All 11 of 11 categories were attempted: Found Word (24), Evocative (14), Sensory/Five Senses (18), Foreign-Root (14), Invented/Coined (8), Compound (18), Metaphorical (7), Botanical Masculine (11), Verb-as-Brand (6), Arbitrary/Absurd (4), Cross-Domain/Adjacent (8). Documented in both the transcript and 01-candidates.md."
+    },
+    {
+      "text": "Five Senses Scan run as dedicated generation pass (skincare is sensory)",
+      "passed": true,
+      "evidence": "Category 3 in 01-candidates.md is titled 'Sensory / Five Senses Scan (18 candidates)' and is organized by sense: Sight (8: Onyx, Sable, Obsidian, Graphite, Slate, Carbon, Shade, Tint), Smell (4: Vetiver, Moss, Bark, Pith), Touch (2: Balm, Suede), Taste (2: Tonic, Neat), Sound (2: Still, Hush). Transcript confirms: 'Five Senses Scan -- ran as dedicated generation category (18 candidates across sight/smell/touch/taste/sound).'"
+    },
+    {
+      "text": "Emotional Temperature Mapping applied (masc positioning)",
+      "passed": true,
+      "evidence": "Transcript Step 01a documents a full Emotional Temperature Target: 'Thermal: Cool-to-neutral, Weight: Medium-heavy, Energy: Calm-to-moderate, Texture: Smooth-to-matte, Brightness: Dark-muted.' Transcript Step 02a lists Emotional Temperature Mapping as technique #2 applied: 'used as filter (cool, medium-heavy, calm, smooth-to-matte, dark-muted).'"
+    },
+    {
+      "text": "Price-Signal Calibration applied (luxury/masstige register)",
+      "passed": true,
+      "evidence": "Transcript Step 02a lists technique #7: 'Price-Signal Calibration -- targeted masstige register (between luxury and clinical).' The preference profile in 01-candidates.md confirms: 'preferred_registers: [\"masstige\", \"clinical-craft bridge\"].' Candidate descriptions reflect this register throughout (e.g., Tonic House described as 'Premium, house-style brand. Nordstrom-ready')."
+    },
+    {
+      "text": "Adjacent-Category Code Borrowing explored (e.g., spirits/fragrance codes for skincare)",
+      "passed": true,
+      "evidence": "Transcript Step 02a lists technique #3: 'Adjacent-Category Code Borrowing -- borrowed from spirits (Proof, Neat, Dram, Cask, Bitters) and watchmaking (Calibre, Bezel, Mainspring, Complication).' Category 11 in 01-candidates.md is entirely 'Adjacent-Category / Cross-Domain (8 candidates)' with subsections 'From Spirits' (Proof, Dram, Cask, Bitters) and 'From Watchmaking' (Bezel)."
+    },
+    {
+      "text": "Front-of-Pack Hierarchy Fit tested (name on a matte black bottle)",
+      "passed": true,
+      "evidence": "Transcript Step 03a Phase 3 states: 'All 15 names hold weight above a descriptor stack on a matte black bottle. Short names (Temper, Slate, Hone, Tinct, Dram) are strongest in this format.' The brief itself captures 'Must look good on a matte black bottle' as a visual test constraint."
+    },
+    {
+      "text": "Dual-audience consideration (men who want skincare but masculine framing)",
+      "passed": true,
+      "evidence": "The brief captures this tension explicitly: 'Name's #1 job: Signal \"elevated skincare built for you\" to men who'd never admit they need a routine.' Anti-targets include 'Glossier (too feminine)' and 'War Paint (too aggressive).' Territory #4 'The Ritual' anti-patterns specify 'NOT feminine self-care.' Desired-Self Naming technique was applied with description: 'the considered man who invests in himself quietly.' The competitive whitespace identifies 'Soft/approachable masculinity' as overused, positioning the brand in 'quiet authority' instead."
+    },
+    {
+      "text": "Desired-Self Naming explored (what identity does this project?)",
+      "passed": true,
+      "evidence": "Transcript Step 02a lists technique #5: 'Desired-Self Naming -- \"the considered man who invests in himself quietly.\"' Candidate #130 Merit is labeled 'desired-self' in its technique tag in 01-candidates.md."
+    },
+    {
+      "text": "Color-to-Name Mapping explored (matte black palette)",
+      "passed": true,
+      "evidence": "The Five Senses Scan Sight subsection generated 8 candidates all aligned to a dark/matte/black palette: Onyx (black gemstone), Sable (dark brown-black), Obsidian (jet black volcanic glass), Graphite (dark grey, matte), Slate (dark stone, matte), Carbon (dark, foundational), Shade (darkness), Tint (slight color). The Emotional Temperature Target specifies 'Brightness: Dark-muted' and 'Texture: Smooth-to-matte.' Territory 'Botanical Masculine' semantic field includes 'slate, basalt' (dark materials)."
+    },
+    {
+      "text": "At least 3 structural types represented",
+      "passed": true,
+      "evidence": "Transcript Hard Gate Status reports: '42% found, 14% compound, 11% foreign-root, 6% coined, 27% other -- PASS (min 3 types).' 01-candidates.md YAML documents structural_mix with found_words (82), compounds (18), coined_invented (8), foreign_root (14), sensory (18), metaphorical (7), botanical (11), verb_as_brand (6), arbitrary (4), cross_domain (8). Well over 3 distinct structural types."
+    },
+    {
+      "text": "Ownability alternatives generated alongside found words",
+      "passed": true,
+      "evidence": "Compound category (18 candidates) creates ownable variants of found words: Temper Lab, Temper & Co, Slate & Co, Tonic House, Caliber Co, Cortex Lab, Carbon Lab, etc. Coined/Invented category (8 candidates) provides fully ownable alternatives: Kace, Saxe, Graev, Hault, Tekt, Stenn, Korr. Riffing families generate compressed/coined ownability alternatives: Tempra, Cortis, Tinct, Apothec, Tempre, Corte. The shortlist includes both found words (Temper, Slate) and ownable variants (Temper Lab, Tinct)."
+    },
+    {
+      "text": "Compound vocabulary dynamically generated from beauty/skincare domain (not tech suffixes)",
+      "passed": true,
+      "evidence": "Compound suffixes used are beauty/retail/DTC-native: 'Lab' (skincare/clinical), 'House' (fragrance/fashion), '& Co' (heritage retail), 'Supply' (DTC masculine), 'Provisions' (artisanal retail), 'Studio' (creative craft). Examples: Temper Lab, Tonic House, Vetiver House, Slate & Co, Salve Co, Grain Studio, Slate Provisions. No tech suffixes like '-ify', '-ly', '-io', '-tech' appear anywhere in the output."
+    },
+    {
+      "text": "Each riff labeled with which technique produced it",
+      "passed": true,
+      "evidence": "All 63 riffs in 01-candidates.md are individually labeled with their technique. Examples: '133. Tempra | root compression', '134. Tempero | language shift (Latin: \"I moderate\")', '136. Forge | metaphor shift', '141. Tempre | creative respelling', '146. Corte | root compression', '156. Tinct | root compression (tincture)', '162. Apothec | root compression (apothecary)', '168. Gage | metaphor shift (measurement tool)', '186. Salve | synonym.'"
+    },
+    {
+      "text": "10+ riffs per direction",
+      "passed": true,
+      "evidence": "All 6 riff families have 10+ riffs: Family 1 TEMPER (12 riffs, items 133-144), Family 2 CORTEX (10 riffs, items 145-154), Family 3 TONIC (11 riffs, items 155-165), Family 4 CALIBER (10 riffs, items 166-175), Family 5 SLATE (10 riffs, items 176-185), Family 6 BALM (10 riffs, items 186-195)."
+    },
+    {
+      "text": "Consumer riffing checklist used (not B2B checklist)",
+      "passed": true,
+      "evidence": "Transcript Step 03a Phase 3 explicitly shows 'Consumer Riffing Checklist Status' with 5 consumer-specific items: '[x] Adjacent metaphor', '[x] Sensory expansion', '[x] Nature mining', '[x] French naturalized vocabulary', '[x] Shelf / Gift / Social-native tests.' This is the consumer checklist, not the B2B checklist (which would include items like 'Category descriptor test', 'Analyst-friendly naming', etc.)."
+    },
+    {
+      "text": "Hard gate checks displayed before generation menu",
+      "passed": true,
+      "evidence": "Transcript Step 02a shows 'Hard Gate Status (all passed)' with 4 gates checked: 'Candidate count: 132 unique (pre-riffing) -- PASS (min 60)', 'Category coverage: 11/11 -- PASS (min 6)', 'Structural mix... PASS (min 3 types)', 'Technique coverage: 18+ techniques used -- PASS.' This appears before routing to riffing. Step 03a Phase 1 'Entry Checkpoint' shows gates checked again: 'Candidate count: 195 -- PASS', 'Category coverage: 11/11 -- PASS' before proceeding to shortlisting."
+    },
+    {
+      "text": "Inline conflict flagging with warning emoji",
+      "passed": true,
+      "evidence": "Warning emoji flags appear throughout both the transcript and 01-candidates.md. Examples: '60. Verso | ... | ⚠️ Verso Skincare exists', '130. Merit | ... | ⚠️ Merit Beauty exists', '44. Carbon | ... | ⚠️ Carbon Health', '150. Integra | ... | ⚠️ Acura Integra', '39. Onyx | ... | ⚠️ Various existing uses', '110. Santal | ... | ⚠️? Le Labo Santal 33', '111. Juniper | ... | ⚠️? Juniper Networks.' Over 20 names have conflict flags."
+    },
+    {
+      "text": "At least 40 unique candidates generated",
+      "passed": true,
+      "evidence": "132 unique candidates generated in the divergent generation phase (numbered 1-132), plus 63 riffs (133-195), for 195 total. Even after deduplication (transcript notes ~40 new unique from riffing, with some riffs being duplicates), the pre-riffing count alone (132) is well over 40."
+    },
+    {
+      "text": "Shelf Test applied (Nordstrom/Saks shelf context)",
+      "passed": true,
+      "evidence": "Transcript Step 03a Phase 3 shows shelf test results: 'Strong shelf presence: Temper, Calibre, Basalt, Tinct, Cachet, Bezel, Métier, Dram' and 'Good shelf presence: Cortex, Tonic, Slate, Hone, Stratum, Temper Lab, Vetiver.' The distribution context is Nordstrom/Saks per the brief: 'Distribution: DTC-first, then Nordstrom/Saks.' The consumer riffing checklist confirms shelf test was applied."
+    },
+    {
+      "text": "Gift Test considered (premium skincare is highly giftable)",
+      "passed": true,
+      "evidence": "Transcript Step 03a Phase 3 shows explicit Gift Test results: 'Strong gift energy: Temper, Basalt, Calibre, Bezel, Dram' and 'Good gift energy: all others.' The consumer riffing checklist includes 'Shelf / Gift / Social-native tests -- run on all 15 shortlisted names' with a checkmark."
+    },
+    {
+      "text": "French Naturalized Vocabulary Mining applied (premium/luxury register)",
+      "passed": true,
+      "evidence": "Transcript Step 02a lists technique #8: 'French Naturalized Vocabulary -- Cachet, Contour, Trait, Finesse, Calibre, Aplomb.' 01-candidates.md has a dedicated 'French Naturalized' subsection under Foreign-Root with 4 candidates: Cachet ('prestige, distinction'), Contour ('outline, shape'), Trait ('a line drawn, a feature'), Finesse ('subtle skill, refinement'). Riffing produced Métier ('Skill, craft, profession'). Aplomb appears in the Evocative category. Consumer riffing checklist explicitly checks off 'French naturalized vocabulary -- Cachet, Métier, Contour, Finesse, Calibre.'"
+    },
+    {
+      "text": "Sound symbolism considered (angular sounds for masculine positioning)",
+      "passed": true,
+      "evidence": "All 5 territory definitions include explicit phonetic profiles targeting masculine-appropriate sounds: 'Crisp consonants (t, k, s)' (Atelier), 'Hard consonants balanced with flowing vowels' (Quiet Authority), 'Hard stops (d, t, k), short vowels' (Surface & Structure), 'Anglo-Saxon roots, hard consonants, earthy vowels' (Botanical Masculine). The Invented/Coined section explicitly describes angular sound choices: 'Saxe | coined (sibilant S, open A, plosive X) | Masculine, precise, angular', 'Korr | coined (hard K, back O, rolled R) | Substantial, dark, masculine', 'Kace | coined (hard K, open A, sibilant close) | Sharp, clean.' Japanese sound-symbolic entries (Sumi, Kawa, Muro, Hada) also appear."
+    }
+  ],
+  "summary": {
+    "passed": 22,
+    "failed": 0,
+    "total": 22,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "output_chars": 46735,
+    "transcript_chars": 18558
+  },
+  "timing": {
+    "total_tokens": 127262,
+    "executor_duration_seconds": 619.4,
+    "total_duration_seconds": 619.4
+  },
+  "claims": [
+    {
+      "claim": "195 total unique candidates generated",
+      "type": "factual",
+      "verified": false,
+      "evidence": "The transcript claims 195 total with 132 from generation + 63 from riffing. However, the riffing section itself identifies numerous duplicates (items marked 'duplicate of #X'): at least 15 riffs are duplicates of generation candidates. The transcript acknowledges this: 'New unique candidates from riffing: ~40 (after deduplication).' So the true unique count is closer to 172, not 195. The numbering goes to 195 but many are not unique."
+    },
+    {
+      "claim": "All 11 naming categories attempted",
+      "type": "factual",
+      "verified": true,
+      "evidence": "All 11 categories are present in 01-candidates.md with candidates in each: Found Word (24), Evocative (14), Sensory (18), Foreign-Root (14), Invented/Coined (8), Compound (18), Metaphorical (7), Botanical Masculine (11), Verb-as-Brand (6), Arbitrary/Absurd (4), Cross-Domain (8)."
+    },
+    {
+      "claim": "25+ techniques used",
+      "type": "factual",
+      "verified": true,
+      "evidence": "01-candidates.md YAML frontmatter lists 33 distinct techniques in the techniques_used array. The transcript mentions 18+ at Step 02a and 25+ by Step 03a. The YAML enumeration is consistent with this claim."
+    },
+    {
+      "claim": "Consumer-specific reference files loaded (consumer-naming.md)",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript Step 01a states: 'consumer-naming.md (loaded during 02a for Five Senses Scan and consumer techniques).' The consumer-specific techniques (Five Senses Scan, Shelf Test, Gift Test, French Naturalized Vocabulary) are all present in the output, confirming the reference was used."
+    },
+    {
+      "claim": "Branching method used for generation (mandatory for deep sessions)",
+      "type": "process",
+      "verified": false,
+      "evidence": "Transcript states 'Used the branching method (mandatory for deep sessions): For each category, generated 3 parallel mini-batches from different semantic domains, evaluated internally, expanded the strongest branches, presented all survivors.' However, this is a process claim about the internal generation method that cannot be independently verified from the output alone -- the output only shows final candidates, not intermediate branches."
+    },
+    {
+      "claim": "Shelf test results differentiate 'strong' vs 'good' shelf presence",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Transcript Step 03a shows two tiers: 'Strong shelf presence: Temper, Calibre, Basalt, Tinct, Cachet, Bezel, Métier, Dram' vs. 'Good shelf presence: Cortex, Tonic, Slate, Hone, Stratum, Temper Lab, Vetiver.' All 15 shortlisted names are accounted for."
+    }
+  ],
+  "user_notes_summary": null,
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "At least 40 unique candidates generated",
+        "reason": "The threshold of 40 is very low for this skill, which targets 60+ at minimum and produced 132 pre-riffing. A count of 40 would pass even a mediocre execution. Consider raising to 80+ or testing that the count meets the skill's own hard gate (60 minimum)."
+      },
+      {
+        "assertion": "At least 6 of 11 naming categories attempted",
+        "reason": "Similarly, 6 of 11 is a low bar -- the skill's own hard gate requires 6 minimum, and a well-executed session should attempt all 11 for a consumer brief. Consider raising to 8+ or checking for all 11."
+      },
+      {
+        "assertion": "Five Senses Scan run as dedicated generation pass (skincare is sensory)",
+        "reason": "This checks that the technique was run, but not that the output is actually sensory. A pass could be awarded even if the 'sensory' candidates were just ordinary words with a 'sensory' label. Consider checking that candidates in the sensory pass include at least 3 distinct senses."
+      },
+      {
+        "reason": "No assertion checks whether cross-pollination (Step 02b) was attempted or skipped. The transcript shows it was skipped entirely (jumped from 02a to 02c). For a deep session with consumer brief, cross-pollination is a valuable step that could yield differentiated candidates."
+      },
+      {
+        "reason": "No assertion checks the quality or diversity of the shortlist -- only generation is tested. The shortlist of 15 names is a critical output, and assertions could verify it spans multiple territories, structural types, and registers."
+      },
+      {
+        "reason": "No assertion checks whether the Feeling Spectrum was actually used to filter candidates. The brief captures a detailed spectrum (Authority: 7, Precision: 8, etc.) but there's no verification that names inconsistent with this spectrum were filtered out."
+      }
+    ],
+    "overall": "Assertions are comprehensive in breadth -- they cover consumer-specific techniques, structural diversity, and process gates well. The main weakness is that several thresholds (40 candidates, 6 categories) are set lower than the skill's own hard gates, making them easy to satisfy. The eval also lacks assertions about shortlist quality and cross-pollination usage."
+  }
+}

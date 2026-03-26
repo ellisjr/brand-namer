@@ -8,8 +8,8 @@
 - Read this COMPLETE file before taking any action
 - FORBIDDEN to load next step until user selects [C] Continue
 - FORBIDDEN to select names to riff on behalf of the user without asking them first
-- FORBIDDEN to generate fewer than 10 riffs per direction
-- FORBIDDEN to present riffs without labeling which technique produced each one
+- FORBIDDEN to generate fewer than 10 NEW UNIQUE riffs per direction (duplicates of existing candidates do NOT count toward this minimum — if a riff duplicates a name already in the pool, note it as independently generated but do not count it)
+- FORBIDDEN to present riffs without labeling which SPECIFIC technique produced each one — "riff" is not a technique label. Use: "language shift: Latin", "compound creation", "synonym explosion", "SCAMPER-Substitute", "affix: -works suffix", "sensory shift: motion", etc. Every riff MUST have a specific technique tag.
 - Update artifact frontmatter `stepsCompleted` before loading next step
 - After handling non-menu user input, ALWAYS re-display the current menu
 
@@ -22,8 +22,8 @@
 ## FAILURE MODES
 
 - CRITICAL: Selecting names to riff on behalf of user without asking
-- CRITICAL: Generating fewer than 10 riffs per direction
-- CRITICAL: Not labeling which technique produced each riff
+- CRITICAL: Generating fewer than 10 NEW UNIQUE riffs per direction (duplicates don't count)
+- CRITICAL: Not labeling each riff with the SPECIFIC technique that produced it (e.g., "language shift: Latin", not just "riff")
 - CRITICAL: Presenting all riff families at once instead of one at a time
 
 ---
@@ -135,16 +135,55 @@ Be specific about the technique: not just "riff" but "synonym explosion on 'ligh
 
 This format helps the user make informed comparisons rather than just reacting to a flat list. See `references/brand-psychology.md` for the open-door/closed-door framework and story type classifications.
 
+### Riff count verification
+
+Before presenting the menu, verify riff counts. For each direction, count only NEW UNIQUE riffs — names that are not duplicates of candidates already in the pool before this riffing round. Display the verified count:
+
+```
+Riff count verification (new unique riffs only):
+- [Seed 1]: [N] new unique riffs (of [M] generated, [K] were duplicates)
+- [Seed 2]: [N] new unique riffs
+...
+Directions below 10: [list any that need more]
+```
+
+If any direction has fewer than 10 new unique riffs, generate more before presenting the menu.
+
+### Technique toolkit — resurface unapplied techniques
+
+Display the technique toolkit from step-02a with updated checkmarks. Any techniques that remain unapplied should be offered again here. The user can apply them now or carry them forward to step-03a.
+
+```
+**Technique Toolkit** (unapplied techniques — select any, or skip):
+
+RIFFING TECHNIQUES
+[x] Linguistic riffing (morpheme swap, language shift, etymology) ✓
+[ ] Homonym/Synonym/Sound-Alike — systematic sound-alike exploration
+[ ] Systematic Affix Exploration — roots in prefix AND suffix positions
+
+BRIEF-SPECIFIC ({consumer|enterprise})
+[ ] Desired-Self Naming — what identity does buying this project?
+[ ] Trend-Cycle Audit — will this name feel dated in 5 years?
+[ ] Memetic/Viral Engineering — shareability and meme potential
+
+GENERATION (carried forward from step-02a)
+[ ] Prefix × Suffix Matrix — systematic combinatorial grid
+[ ] Morphological Analysis (Zwicky) — dimensional decomposition
+
+Select with numbers, [A] all remaining, or [C] to skip
+```
+
 ---
 
 ## Menu
 
+**[T]** Apply techniques — select from the technique toolkit above
 **[R]** Riff more — pick more names to riff on or apply different techniques
 **[G]** Generate more — go back to fresh generation (loop to step-02a)
 **[X]** Cross-pollinate — get riff ideas from other models (loop to step-02b)
 **[C]** Continue — proceed to Shortlisting (Step 7 of 13)
 
-**My recommendation:** [Based on session state — e.g., "You have strong riff families building around [directions]. If you're happy with the pool depth, [C] to shortlist. If any direction feels underexplored, [R] to riff more."]
+**My recommendation:** [Based on session state. If unapplied techniques remain, mention the most impactful: "You still have [Desired-Self, Trend-Cycle, Memetic/Viral] available — these often produce the most distinctive consumer names. Want to try any before shortlisting?" If riff coverage is strong, recommend [C].]
 
 **HALT — wait for user selection before proceeding.**
 

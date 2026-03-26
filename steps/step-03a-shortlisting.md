@@ -58,10 +58,30 @@ Display the full status summary, then present the menu:
 **What would you like to do?**
 - **(a) Generate more** — fresh round in specific directions, or try a category we haven't used
 - **(b) Cross-pollinate** — I'll generate a prompt you can paste into ChatGPT/Gemini/Grok for fresh perspectives
-- **(c) Apply riffing techniques** — [list SPECIFIC unused techniques: SCAMPER, synonym explosion, affix exploration, respelling, industry-native compound patterns, language shift, compound creation, classical stems, conceptual blending — only list ones not yet applied]
-- **(d) Apply deepening techniques** — [list: Inversion, Constraint Removal, Six Hats, First Principles, TRIZ, Analogical Reasoning, Three-Team Method]
+- **(c) Apply techniques from the toolkit** — see technique toolkit below
 - **(e) Move to shortlisting** — review all candidates, pick favorites for validation
 - **(f) Something else** — tell me what you need
+
+**Technique Toolkit** (carried forward — select any unapplied techniques):
+
+RIFFING TECHNIQUES
+[show checked/unchecked status for each, grouped by brief type]
+
+GENERATION TECHNIQUES
+[show any still-unapplied generation techniques]
+
+DEEPENING TECHNIQUES
+[ ] SCAMPER — 7 systematic transformations
+[ ] Inversion / reverse brainstorming
+[ ] Constraint Removal — what if no constraints?
+[ ] Three-Team Method — on-brief, competitor, unrelated domain
+[ ] Pre-Mortem — imagine the name failed
+[ ] Analogical Reasoning — import from parallel domains
+
+BRIEF-SPECIFIC ({consumer|enterprise})
+[show unapplied brief-specific techniques — these are the ones most often missed]
+
+Select with numbers, [A] all remaining, or choose a menu option above
 
 **My recommendation:** [Always include a specific recommendation with rationale. If any hard gate is failing, recommend addressing it before (e). E.g., "I'd hold off on shortlisting — your pool is 85% found words with only 3 categories attempted. I recommend (a) to try Coined/Invented and Sound-Symbolic categories, then (c) to apply SCAMPER and language shift. That should give us structural diversity before the validation bloodbath."]"
 

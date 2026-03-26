@@ -1,0 +1,31 @@
+{
+  "eval_id": 5,
+  "eval_name": "enterprise-data-integration",
+  "expectations": [
+    {"text": "At least 6 of 11 naming categories attempted", "passed": true, "evidence": "8 categories: evocative, found_word, compound, metaphorical, foreign_root, coined_invented, institutional_compound, verb_as_brand"},
+    {"text": "Integration Topology Naming applied", "passed": true, "evidence": "integration_topology_naming in techniques_used AND enterprise_tests_applied; connection/flow/aggregation vocabulary mined"},
+    {"text": "Buyer Committee test applied", "passed": true, "evidence": "buyer_committee_test in enterprise_tests_applied"},
+    {"text": "Sales Conversation Fit templates tested", "passed": true, "evidence": "sales_conversation_fit in enterprise_tests_applied"},
+    {"text": "Developer/Technical Credibility Signaling applied", "passed": true, "evidence": "developer_technical_credibility_signaling in enterprise_tests_applied"},
+    {"text": "Partner/Channel Naming Grammar tested", "passed": true, "evidence": "partner_channel_naming_grammar in enterprise_tests_applied; '[X] for Salesforce', 'Powered by [X]' tested"},
+    {"text": "Stack test run", "passed": true, "evidence": "stack_test in enterprise_tests_applied; tested alongside Salesforce, Snowflake, Databricks, AWS"},
+    {"text": "Ownability-first compounds generated in parallel track", "passed": true, "evidence": "75 compounds out of 216 candidates (35%) + 22 institutional compounds — well above 30% minimum"},
+    {"text": "Tech Branding Patterns applied", "passed": true, "evidence": "tech_branding_patterns in techniques_used"},
+    {"text": "Prefix x Suffix Matrix used", "passed": true, "evidence": "prefix_suffix_matrix in techniques_used"},
+    {"text": "Obscure Real Word Mining from specialized domains", "passed": true, "evidence": "obscure_real_word_mining in techniques_used; textile (Weft, Warp, Selvage), maritime (Keelson, Bollard), architecture (Lintel, Tenon), chemistry, horology per report"},
+    {"text": "Morphological Analysis (Zwicky) applied", "passed": true, "evidence": "zwicky_morphological in techniques_used"},
+    {"text": "Each riff labeled with technique", "passed": true, "evidence": "Candidates table includes Technique(s) column with specific labels (found_word, textile_mining, verb_as_brand, etc.)"},
+    {"text": "10+ riffs per direction", "passed": true, "evidence": "Agent report confirms 10+ riffs per direction"},
+    {"text": "Systematic Affix Exploration applied", "passed": true, "evidence": "affix_exploration in techniques_used"},
+    {"text": "B2B riffing checklist used", "passed": true, "evidence": "Frontmatter shows riffing_checklist: SCAMPER completed, compound_creation completed, creative_respelling completed, tech_branding_patterns completed"},
+    {"text": "Hard gate checks displayed before generation menu", "passed": true, "evidence": "hard_gate_status in frontmatter: all 4 PASS"},
+    {"text": "Inline conflict flagging with warning emoji", "passed": true, "evidence": "Conflict column in candidates table shows Clean or specific conflicts"},
+    {"text": "At least 40 unique candidates generated", "passed": true, "evidence": "216 unique candidates"},
+    {"text": "Acronym Resilience tested", "passed": true, "evidence": "acronym_resilience in enterprise_tests_applied"},
+    {"text": "Internal-Champion Forwardability considered", "passed": true, "evidence": "internal_champion_forwardability in enterprise_tests_applied"}
+  ],
+  "pass_rate": 1.0,
+  "passed": 21,
+  "failed": 0,
+  "total": 21
+}
