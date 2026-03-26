@@ -29,6 +29,10 @@ Core naming categories and generation vocabulary. Load this file during Loop 2 (
 - [Personified Names as a Naming Angle](#personified-names-as-a-naming-angle)
 - [Motion & Direction as a Naming Angle](#motion--direction-as-a-naming-angle)
 - [Arbitrary / Absurd Association as a Naming Angle](#arbitrary--absurd-association-as-a-naming-angle)
+- [Founder / Surname as a Naming Angle](#founder--surname-as-a-naming-angle)
+- [Toponym / Place-Name as a Naming Angle](#toponym--place-name-as-a-naming-angle)
+- [Multi-Word Phrase as a Naming Angle](#multi-word-phrase-as-a-naming-angle)
+- [Numeric / Alphanumeric as a Naming Angle](#numeric--alphanumeric-as-a-naming-angle)
 - [Verb-as-Brand Pattern](#verb-as-brand-pattern)
 - [Obscure Real Word Mining (Specialized Domain Dictionaries)](#obscure-real-word-mining-specialized-domain-dictionaries)
 - [Anti-Patterns: The LLM Naming Trap](#anti-patterns-the-llm-naming-trap)
@@ -224,12 +228,23 @@ Two complete, recognizable words joined together.
 - **Mailchimp** — Mail + Chimp. Email with personality.
 - **Dropbox** — Drop + Box. Put things in a box.
 
+**Sub-types:** Compounds are the single most common naming pattern in enterprise (27% of top B2B brands). These sub-types help generate structurally diverse compounds rather than defaulting to one pattern:
+
+| Sub-type | Structure | Examples | Best for |
+|---|---|---|---|
+| **Action + Object** | Verb + Noun | Dropbox, ClickUp, Buildkite, LaunchDarkly | Products that DO something to something |
+| **Domain + Function** | Industry + Role | Salesforce, HubSpot, Datadog, LogRocket | Products that serve a specific market |
+| **Metaphorical compound** | Unexpected collision | CrowdStrike, Snowflake, Firebolt, Mailchimp | Distinctive, memorable, brand-forward |
+| **Stacking (3+ elements)** | Multiple words | SecurityScorecard, PointClickCare, SmartRecruiters | Maximum clarity, lower distinctiveness |
+| **Verb + Noun (imperative)** | Command form | Outreach, WalkMe, Lookout, Sendoso | Active, directive, user-facing |
+
 **Generation techniques:**
 - Pair an action word with an object word (Snapchat, Dropbox)
 - Pair a quality with a domain (Salesforce, Brightside)
 - Pair two unexpected nouns (Mailchimp, Firestick)
 - Keep total syllable count to 2-3 if possible
 - The best compounds create a vivid mental image from the collision of the two words
+- **Try each sub-type deliberately** — if your first 10 compounds are all Domain+Function, switch to Metaphorical or Action+Object
 
 ### 10. Sound-Symbolic / Phonesthetic
 
@@ -410,6 +425,171 @@ This is different from Metaphorical naming (where the connection is explainable:
 - Don't confuse arbitrary with random. A good arbitrary name still has excellent phonetic properties, is easy to spell and pronounce, creates a vivid mental image, and passes the SMILE test. It just doesn't relate to the product.
 
 **Phonetic tendency:** Arbitrary names work best when the word itself is phonetically strong — concrete nouns with 1-2 syllables, clear vowels, and satisfying consonant patterns. The name has to carry itself entirely on sound and imagery since it gets no semantic lift from the product connection.
+
+---
+
+## Founder / Surname as a Naming Angle
+
+The single most common naming pattern in consumer branding (~28% of top 1,000 consumer brands). A founder's actual name becomes the brand. This is distinct from "Personified Names" (where a first name is strategically chosen for warmth, like Claude or Alexa) — here the name is inherited, and it carries institutional authority rather than approachability.
+
+**Why it works:** A personal name stakes the founder's reputation on the product. It signals accountability ("I put my name on this"), heritage ("this has been the [surname] way for generations"), and authenticity. In luxury, fashion, and food, the founder's name IS the brand story.
+
+**Real examples:**
+- **Chanel** — Coco Chanel. The name became synonymous with French luxury.
+- **Ford** — Henry Ford. Institutional, American, industrial.
+- **Heinz** — Henry J. Heinz. 150+ years of the name on the bottle.
+- **Dyson** — James Dyson. The inventor IS the brand.
+- **McKinsey** — James O. McKinsey. The surname carries institutional gravitas.
+
+**Sub-patterns:**
+
+| Sub-pattern | Examples | Dynamics |
+|---|---|---|
+| **Surname only** | Ford, Chanel, Gucci, Heinz, Bose, Dyson | Maximum authority, minimal warmth |
+| **First + Last** | Ralph Lauren, Calvin Klein, Tommy Hilfiger, Tom Ford | More personal, fashion-dominant |
+| **Possessive ('s)** | McDonald's, Kellogg's, Levi's, Hershey's, Wendy's, Rao's | "This person's place/thing" — warmth + ownership. The /z/ ending is soft, approachable. Dominant in food, restaurants, artisanal products. |
+| **Title + Name** | Dr. Martens, Dr. Bronner's, Mrs. Meyer's, Mr. Clean | Title adds credential (Dr.) or character (Mr./Mrs.) |
+| **Two Founders** | Ben & Jerry's, Dolce & Gabbana, Bang & Olufsen, Hewlett-Packard | Partnership energy, doubled authority |
+| **Fictional Founder** | Trader Joe's, Betty Crocker, Mrs. Butterworth's, Samuel Adams | Creates a persona without requiring a real founder. Warmth of a name, freedom of fiction. |
+
+**Generation techniques:**
+1. If the user IS the founder: evaluate their surname on phonetic quality (1-3 syllables ideal), distinctiveness, memorability, cross-language safety, and emotional tone. Not every surname makes a good brand — help the user see honestly whether theirs does.
+2. If the surname is weak: consider using the first name, a middle name, a maiden name, or a family name from another generation. "James" might be stronger than "Kowalczyk" for a consumer brand.
+3. For the fictional founder variant: generate names that carry the right era, class, and cultural coding. "Trader Joe's" signals casual adventure. "Mrs. Meyer's" signals domestic expertise.
+4. Consider which sub-pattern fits the category: possessive ('s) for food/restaurants, surname-only for luxury/automotive, first+last for fashion.
+
+**When to use:** Luxury, fashion, food & beverage, spirits, automotive, professional services, artisanal products. Works when the founder has a story worth telling or a name worth wearing.
+
+**When NOT to use:** When the founder doesn't want personal brand attachment, when the company will scale beyond the founder, when the surname is unpronounceable in target markets, or when the category values innovation over heritage (most tech/SaaS).
+
+**Anti-patterns:**
+- Don't use a founder surname that will be mispronounced in the primary market
+- Don't force a founder name on a product category where it signals "small" rather than "authoritative" (enterprise infrastructure rarely benefits from a personal name)
+- Don't use a founder name if the founder has — or may develop — personal brand risk
+
+---
+
+## Toponym / Place-Name as a Naming Angle
+
+Using a real geographic place name as the brand. Place names carry entire sensory worlds — climate, culture, cuisine, lifestyle, adventure — in a single word, polished by centuries of use.
+
+This is distinct from "Evocative" (where Patagonia evokes a feeling) — the mechanism here is geographic: the name borrows from a real place's accumulated cultural meaning. It's also distinct from "Founder Surname" — these are places, not people.
+
+**Why it works:** Place names have instant concreteness (you can picture the place), deep emotional resonance (the associations of that geography), and usually strong phonetic properties (centuries of verbal use have smoothed them). They also carry terroir — an implicit claim of origin, authenticity, or aspiration.
+
+**Real examples:**
+- **Patagonia** — Remote, pristine, adventurous. The place IS the brand ethos.
+- **Arizona** (iced tea) — Desert heat. Made in New York. The irony doesn't matter — the associations work.
+- **Corona** — Mexican beach town energy. The name evokes sunset and lime.
+- **Columbia** (sportswear) — The Columbia River. Pacific Northwest outdoor heritage.
+- **San Pellegrino** — Italian mineral springs. The place authenticates the product.
+- **Palo Alto Networks** — Silicon Valley pedigree as institutional credibility signal.
+
+**Sub-patterns:**
+
+| Sub-pattern | Examples | Why it works |
+|---|---|---|
+| **Literal origin** | San Pellegrino, Perrier, Topo Chico, San Marzano | Authenticity — "from the real place." Strongest in food/beverage. |
+| **Aspirational/romantic** | Patagonia, Columbia, Malibu, Hollister, Aspen | Borrows the place's lifestyle. The brand doesn't need to be FROM there. |
+| **Ironic/arbitrary** | Arizona (made in NY), Corona (made in Mexico City), Waterloo | Place chosen for sound/associations, not origin. |
+| **Country/region as modifier** | Canada Dry, Canada Goose, Irish Spring, Bombay Sapphire | Country adds cultural flavor, heritage, or exoticism. |
+
+**Generation techniques:**
+1. **Atlas mining:** Open a world atlas. Scan for place names with strong phonetic properties and rich cultural associations. Don't limit to major cities — small towns, rivers, mountain ranges, islands, and regions are often more ownable.
+2. **Climate/terrain vocabulary:** Match the brand's personality to a geography. Warm/tropical → Caribbean/Mediterranean names. Rugged/outdoor → Nordic/Patagonian names. Refined/cultured → Italian/French names.
+3. **Wine region vocabulary:** Wine regions have been named and renamed for centuries, producing sonorous, culturally rich place names: Barolo, Rioja, Sancerre, Stellenbosch, Mendoza.
+4. **Historical place names:** Ancient or historical names for modern places: Byzantium, Carthage, Avalon, Hispania, Vinland.
+
+**When to use:** Food & beverage (strongest fit), spirits, outdoor/adventure, luxury goods, hospitality. Also effective in enterprise when the goal is institutional gravitas (Palo Alto Networks, Manhattan Associates).
+
+**When NOT to use:** When the place has negative associations in the target market, when geographic specificity limits expansion (though Patagonia proves this rarely matters), or when the place name is so common it's unownable.
+
+**Anti-patterns:**
+- Don't use a place name with active negative political associations
+- Don't use a place name so famous it overwhelms the brand (naming a startup "Paris" or "Tokyo" creates more confusion than distinctiveness)
+- Check if the place name is already heavily used in the target category
+
+---
+
+## Multi-Word Phrase as a Naming Angle
+
+Complete phrases, sentences, or multi-word expressions used as brand names. Not compounds (which fuse two words into one unit) but phrases that retain their grammatical structure — prepositions, articles, and all.
+
+This pattern is exploding in DTC and challenger brands. Phrases are inherently distinct (hard to confuse "Who Gives a Crap" with any competitor), they tell a micro-story, and they carry built-in brand attitude.
+
+**Why it works:** A phrase name IS a brand statement. It conveys positioning, personality, and values in the name itself, reducing the need for taglines or explanations. The grammatical completeness makes it feel intentional and confident — this isn't a coined word trying to sound like a name; it's a declaration.
+
+**Real examples:**
+- **Youth to the People** — A mission statement as a brand name. Who the product is for and what it believes.
+- **Who Gives a Crap** — Toilet paper. The irreverence IS the differentiation.
+- **Once Upon a Farm** — Baby food. A storytelling frame that evokes nostalgia and naturalness.
+- **Citizens of Humanity** — Jeans. Elevates a commodity product into a values statement.
+- **Rent the Runway** — What you do + where it matters. The name IS the value proposition.
+- **Dollar Shave Club** — Price point + product + membership. Complete pitch in three words.
+
+**Sub-patterns:**
+
+| Sub-pattern | Examples | Dynamics |
+|---|---|---|
+| **[Noun] of [Noun]** | Citizens of Humanity, Book of the Month, Taste of the Wild, Function of Beauty | Formal, literary, elevated. The "of" creates a relationship between two ideas. |
+| **[Verb/Action] phrase** | Rent the Runway, Dollar Shave Club, Who Gives a Crap | Conversational, provocative, memorable. Often contains the value proposition. |
+| **[Adj] + [Noun] phrase** | Liquid Death, Magic Spoon, Honest Tea, Perfect Bar, Gentle Monster | Reads as a phrase, not an institutional compound. The adjective surprises or subverts. |
+| **Character-name phrase** | Jolly Rancher, Sour Patch Kids, Sweaty Betty, Scrub Daddy | Creates a character/persona. Playful, consumer-facing. |
+
+**Generation techniques:**
+1. Write out 10 brand statements, mission phrases, or manifestos for the product. Can any of them BE the name?
+2. Try "[Adj] + [Noun]" combinations where the adjective surprises — pair an unexpected adjective with the product category or a concrete noun.
+3. Try "[Noun] of [Noun]" constructions that link the product to a bigger idea.
+4. Write imperative sentences ("Rent the ___", "Make the ___", "Break the ___") and test if any work as names.
+5. Look for cultural phrases, idioms, or narrative frames ("Once Upon a ___") that can be adapted.
+
+**Trade-offs:**
+- **High distinctiveness** — almost impossible to confuse with competitors
+- **Harder to compress** — doesn't fit neatly into app icons, hashtags, or URLs (often gets abbreviated: YTTP, WGAC)
+- **Verbal clarity** — easy to say and remember as a phrase, but harder to spell/search for
+- **Category-dependent** — works for DTC, challenger brands, consumer products. Rarely works for enterprise SaaS or developer tools.
+
+**When to use:** Challenger brands, DTC, categories where attitude > efficiency, products where the name IS the marketing.
+
+**When NOT to use:** Enterprise, developer tools, mobile apps, anything requiring compact display or global translation.
+
+---
+
+## Numeric / Alphanumeric as a Naming Angle
+
+Numbers used as structural elements in brand names — not just version markers (iPhone 15) but as the name itself or a critical component. This pattern has zero connection to the other 11 categories and is completely absent from most naming frameworks, yet it appears in dozens of successful brands.
+
+**Why it works:** Numbers are globally readable (no translation needed), visually distinctive on a shelf or screen, inherently memorable (humans are wired to remember short number sequences), and can encode meaningful references that become brand stories.
+
+**Real examples:**
+- **7UP** — The "7" is unexplained, which makes it more memorable. The mystery IS the brand.
+- **Five9** — 99.999% uptime. The name IS the value proposition, compressed into a number.
+- **6sense** — Sixth sense. The number encodes a concept.
+- **Auth0** — Authentication + zero (trust). Alphanumeric hybrid.
+- **n8n** — "Nodemation" (node + automation). Leetspeak-adjacent compression.
+- **H2O.ai** — Chemical formula as brand. Signals scientific precision.
+- **WD-40** — "Water Displacement, 40th formula." The name tells the origin story.
+
+**Sub-patterns:**
+
+| Sub-pattern | Examples | Dynamics |
+|---|---|---|
+| **Number-as-name** | Five9, 8x8, F5, 7UP, T3, CB2 | Compact, mysterious, globally readable |
+| **Number-as-concept** | 6sense (sixth sense), 15Five (15 min/5 questions), 360Learning | Encodes a meaningful reference — rewards those who "get it" |
+| **Alphanumeric hybrid** | n8n, Auth0, H2O.ai, C3.ai, C2FO, D2iQ | Leetspeak-adjacent. Signals technical/developer culture. |
+| **Number as modifier** | Chanel No. 5, Step2, One A Day | Number adds specificity or versioning to a word |
+
+**Generation techniques:**
+1. Does the brand's core concept involve a number? (five nines of uptime, sixth sense, 360 degrees, etc.) If so, the number can BE the name.
+2. Can the brand name be expressed as a formula or equation? (H2O, C3, E2E)
+3. Try replacing syllables with numbers: "for" → 4, "to/too" → 2, "ate" → 8, "won/one" → 1, "ten" → 10.
+4. What numbers carry the right signals? Low numbers (1-5) = simplicity, focus. High numbers (360, 99) = completeness, precision. Powers of 2 (8, 16, 64) = technical culture.
+
+**Cautions:**
+- Numbers can be ambiguous in speech ("is it the numeral 5 or the word Five?")
+- Alphanumeric names are harder to trademark
+- Some numbers have cultural baggage (4 is unlucky in Chinese/Japanese/Korean cultures, 13 in Western culture)
+- Purely numeric names (like "360") are nearly impossible to own in search
 
 ---
 

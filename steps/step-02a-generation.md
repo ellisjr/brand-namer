@@ -250,6 +250,11 @@ GENERATION TECHNIQUES
 [ ] Morphological Analysis (Zwicky) — dimensional decomposition
 [ ] Domain-First Naming — start from available .com domains or ccTLD hacks (.ly, .is, .us, .io, .me, .al)
 [ ] Contrarian/Anti-Category — name from the opposite direction
+[ ] Truncation/Clipping — clip a real word to create ownable variant (Brex, Deel, Navan, Phenom)
+[ ] Toponym Mining — atlas dive for place names with strong cultural/phonetic associations
+[ ] Multi-Word Phrase — full grammatical phrases as names (Youth to the People, Rent the Runway)
+[ ] Numeric/Alphanumeric — numbers as structural name elements (6sense, Five9, Auth0)
+[ ] Founder/Surname Evaluation — assess founder's name for brand viability, try sub-patterns ('s, Title+Name)
 
 CONSUMER-SPECIFIC (show for consumer/fashion/food/beauty briefs)
 [x] Five Senses Scan ✓
@@ -265,6 +270,8 @@ ENTERPRISE-SPECIFIC (show for B2B/enterprise/tech briefs)
 [ ] Vertical Code Calibration — match naming register to the specific vertical
 [ ] Category Creation Naming — is this joining or creating a category?
 [ ] Enterprise Objection Preemption — would a Fortune 500 CISO/VP approve this vendor?
+[ ] Lowercase/Casing Strategy — test names in lowercase for dev tool / CLI-native positioning
+[ ] [Brand] AI Suffix — test with/without " AI" appended for AI-focused products
 
 DEEPENING TECHNIQUES
 [ ] SCAMPER — 7 systematic transformations on each name

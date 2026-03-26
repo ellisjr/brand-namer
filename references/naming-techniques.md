@@ -32,6 +32,8 @@ Riffing, transformation, ownability, and advanced generation techniques. Load th
 17. [Bouba-Kiki Effect (Sound-Meaning Mapping)](#bouba-kiki-effect-sound-meaning-mapping)
 18. [Brand Architecture & System Name Family Design](#brand-architecture--system-name-family-design)
 19. [Morphological Productivity Planning](#morphological-productivity-planning)
+20. [Truncation / Clipping](#truncation--clipping)
+21. [Lowercase / Casing as Naming Strategy](#lowercase--casing-as-naming-strategy)
 
 ---
 
@@ -355,6 +357,26 @@ Names where "AI" naturally appears within the word — not appended as a suffix 
 
 **Anti-pattern:** Don't force "AI" into words where it doesn't belong (e.g., "AIssay," "TrAIage"). The insertion should feel discovered, not constructed. If you have to capitalize AI in the middle of a word to make it visible, it's probably forced.
 
+### [Brand] AI Suffix Pattern
+
+Distinct from AI-embedded naming. This is simply appending " AI" as a suffix to a brand name. It's now one of the most common enterprise naming patterns, appearing in 15+ major brands.
+
+**Examples:** Scale AI, Mistral AI, Together AI, Fireworks AI, Landing AI, Vectra AI, Leena AI, Traceable AI, Arize AI, Snorkel AI, Olive AI
+
+**When it works:**
+- The base name is strong enough to stand alone (Scale, Mistral, Together)
+- The " AI" suffix clarifies positioning in a crowded market
+- The product IS fundamentally an AI product, not just AI-enhanced
+
+**When it doesn't:**
+- When every competitor also uses " AI" — the suffix becomes noise rather than signal
+- When the base name is weak and " AI" is doing all the heavy lifting
+- When the product isn't primarily AI (it becomes misleading)
+
+**Generation technique:** Generate names normally (found words, coined, metaphorical, etc.), then test with and without " AI" appended. If the name works better WITH the suffix, keep it. If it works just as well without, drop it — you'll have a more durable name.
+
+**Caution:** " AI" as a suffix is becoming as overused as "-ly" and "-ify" were in 2015-2020. Consider whether the suffix adds genuine clarity or just follows a trend. Names like "Anthropic" and "Cohere" succeed without it.
+
 ---
 
 ## Backronym Generation
@@ -664,5 +686,79 @@ Evaluate whether a name can spawn intuitive derivatives — verb forms, user nou
 | **Adjective** | Can you describe something as [name]-like? | "Very Stripe-like" (clean, precise) | Harder with compounds |
 | **Feature family** | Do sub-names feel coherent? | GitHub Actions, GitHub Copilot | — |
 | **Hashtag** | Does #[name] work? | #Notion, #Figma | #Sightcraft (fine) |
+
+---
+
+## Truncation / Clipping
+
+Taking a familiar word and deliberately removing letters — usually from the end — to create a shorter, more ownable name. This is one of the most productive startup naming patterns of 2015-2026 and is distinct from creative respelling (which changes letters but preserves length), portmanteau (which blends two words), and coined names (which are built from morphemes). Truncation starts with ONE real word and clips it.
+
+**Why it works:** The clip retains a phonetic connection to the source word, so the name "feels like it means something" without being a taken dictionary word. The shorter form is more modern, more ownable, and often more globally pronounceable than the full word.
+
+**Real examples:**
+
+| Name | Source word | Operation |
+|---|---|---|
+| **Brex** | Break/Breakthrough | Clip to root + X ending |
+| **Deel** | Deal | Vowel shift + truncation |
+| **Navan** | Navigate | Clip after stressed syllable, add -an |
+| **Huma** | Human | Drop final consonant |
+| **Phenom** | Phenomenon | Clip after third syllable (colloquial clip already exists) |
+| **Pendo** | Pendulum | Clip after second syllable, add -o |
+| **Checkr** | Checker | Drop final vowel (Flickr pattern) |
+
+**The technique:**
+1. Start with a real word that captures the brand's core concept
+2. Identify the stressed syllable — this is the anchor you must preserve
+3. Try clipping at different points:
+   - After the stressed syllable: phenomenon → **phenom**
+   - At the syllable boundary: navigate → **navi** or **navan**
+   - One letter before the end: human → **huma**
+4. Optionally add a short suffix to improve the ending: -o (Pendo), -a (Huma), -an (Navan), -x (Brex), -r (Checkr)
+5. Test: does the clip still "point back" to the source word? If a listener can guess the origin, the clip is working. If not, it's just a coined word.
+
+**The spectrum of transparency:**
+- **Obvious clip:** Phenom (everyone knows it's phenomenon) — less ownable but instantly understood
+- **Suggestive clip:** Navan (most people sense "navigate" but aren't sure) — sweet spot
+- **Opaque clip:** Brex (is it "break"? "breakthrough"? "Brexia"?) — maximally ownable but loses the semantic lift
+
+**When to use:** When the source word is perfect but taken, too generic, or too long. Truncation preserves the emotional resonance of the source word while creating something registrable.
+
+**Anti-patterns:**
+- Don't clip so aggressively that the connection to the source word is lost entirely — at that point you're just coining, not clipping
+- Don't add more than one suffix letter — "Naviganto" is a coined word, not a clip
+- Test pronunciation: some clips create awkward consonant clusters or ambiguous vowels
+
+---
+
+## Lowercase / Casing as Naming Strategy
+
+For developer tools and technical products, typographic casing is a structural naming decision that changes how the brand is perceived. Lowercase styling signals "built by engineers, for engineers" — it rejects corporate formality in favor of terminal-native aesthetics.
+
+**Why it works:** Developers live in terminals, code editors, and CLIs where everything is lowercase. A brand styled in lowercase (dbt, vercel, supabase) feels native to that environment. It signals that the people behind the product write code, not marketing copy. In a sea of CamelCase enterprise names, lowercase is a counter-positioning move.
+
+**Real examples:**
+
+| Style | Examples | Signal |
+|---|---|---|
+| **All lowercase** | dbt, vercel, supabase, resend, linear | "We're engineers, not a brand team." Terminal-native. |
+| **camelCase, lowercase start** | mParticle, nCino, iPhone, eBay | Technical precision. The lowercase start signals "this is a variable name, not a proper noun." |
+| **Abbreviated lowercase** | npm, gcc, vim, tmux | Deep technical culture. The name IS a CLI command. |
+
+**When to use:** Developer tools, DevOps, infrastructure, CLI tools, open-source projects, and products where the primary user is an engineer. The lowercase convention is a trust signal in these communities.
+
+**When NOT to use:** Enterprise sales (lowercase can look unprofessional to CIOs), consumer products (confusing in marketing materials), luxury (undercuts premium positioning), or any context where the name needs to start a sentence naturally.
+
+**Generation technique:** When the brief is for a dev tool or technical product:
+1. Generate names normally using all categories
+2. Test each finalist in both Title Case and lowercase
+3. For short names (1-2 syllables, 3-6 characters), lowercase almost always works: stripe, vercel, linear
+4. For compound names, try camelCase with lowercase start: mParticle, nCino
+5. For CLI tools, consider all-lowercase abbreviated forms that feel like terminal commands
+
+**Cautions:**
+- Lowercase names cause friction in prose — "dbt is a tool" looks like a typo at the start of a sentence. Brands like dbt solve this by styling it as always-lowercase, even mid-sentence.
+- Legal filings and trademarks may require a capitalized version — have one ready.
+- Lowercase styling works best when the entire brand system is consistent (website, docs, packaging all lowercase). Mixing cases undermines the signal.
 
 ---
