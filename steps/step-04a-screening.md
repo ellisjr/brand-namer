@@ -44,8 +44,8 @@ When validating 5+ names, spawn parallel subagents at Haiku tier rather than doi
 For each shortlisted name, spawn a Haiku subagent:
 "Search for '[name]' as a company, brand, or software product.
  Classify: Clear (no conflicts) / Flagged (something exists, different industry) / Taken (active conflict in related space).
- Check domains: [name].com, [name].ai, [name].co, [name].io — search site:[name].[tld] for each.
- Return: name, competitive_status, conflicts_found, domain_status_per_tld"
+ Check domain registration via WHOIS for [name].com, [name].ai, [name].co, [name].io (see WHOIS server map in step-04b).
+ Return: name, competitive_status, conflicts_found, domain_registration_per_tld"
 ```
 
 This turns 20 minutes of sequential main-model searches into 2-3 minutes of parallel Haiku work. The main model then consolidates results and presents the batched screening table.
@@ -59,7 +59,7 @@ This turns 20 minutes of sequential main-model searches into 2-3 minutes of para
 
 **Set up before starting validation.** Web searches are unreliable proxies for domain availability and trademark clearance. Use the right tools:
 
-- **Domain availability:** Check specific TLDs explicitly using `site:[name].[tld]` searches or direct registrar lookups (Namecheap, Cloudflare, GoDaddy). Do NOT say "check name.ai" without actually searching for it — search `site:name.ai` or `"name.ai"` directly. Check `.com`, `.ai`, `.co`, `.io` for every candidate.
+- **Domain availability:** Use WHOIS via CLI for definitive registration checks (see step-04b for full server map and method). WHOIS catches registered-but-parked domains that web searches miss. Check `.com`, `.ai`, `.co`, `.io` for every candidate. For `.app`/`.dev` TLDs, use RDAP as fallback. Web search (`site:[name].[tld]`) is a supplementary check for whether a registered domain has an active website, but is NOT sufficient to determine registration status.
 - **Trademark search:** [MarkerAPI](https://markerapi.com/) offers text-based USPTO trademark search via REST API (paid). [Apify AI Trademark Conflict Analyzer](https://apify.com/vibexcoder/ai-trademark-conflict-analyzer/api/mcp) provides risk scores and phonetic matching as an MCP server (needs Apify account). The [jordanburke/trademark-mcp-server](https://github.com/jordanburke/trademark-mcp-server) searches by serial/registration number only (not by name) and requires a USPTO API key. For common English words (e.g., "Triage," "Assay"), a trademark attorney is essential for Class 9/42 clearance.
 - **Social handles:** Search `x.com/[name]`, `instagram.com/[name]`, and LinkedIn company pages directly.
 
@@ -71,9 +71,10 @@ Not every session has access to full tooling. Adapt validation depth to what's a
 
 | Tier | Tools available | What you can do |
 |---|---|---|
-| **Tier A (Full)** | Web search + domain registrar + trademark API + social search | Full validation pipeline: competitive screen, explicit TLD checks, trademark search, social handle checks |
-| **Tier B (Web only)** | Web search only | Competitive screening via web search, domain checks via `site:[name].[tld]` searches, trademark via `"[name]" trademark USPTO` proxies. Note limitations to user. |
-| **Tier C (Offline)** | No external tools | Conflict flagging from training data only (inline flags). Heuristic risk labeling based on name characteristics (common English words = high risk, compounds = lower risk, coined = lowest risk). Recommend the user do their own domain/trademark checks and provide a checklist. |
+| **Tier A (Full)** | Bash (WHOIS/RDAP) + web search + trademark API + social search | Full validation pipeline: definitive domain registration via WHOIS, competitive screen via web search, trademark search, social handle checks |
+| **Tier B (Bash + Web)** | Bash (WHOIS/RDAP) + web search | Definitive domain registration via WHOIS, competitive screening via web search, trademark via `"[name]" trademark USPTO` proxies. Note trademark limitations to user. |
+| **Tier C (Web only)** | Web search only | Competitive screening via web search, domain checks via `site:[name].[tld]` searches (misses parked/inactive domains). Note limitations to user. |
+| **Tier D (Offline)** | No external tools | Conflict flagging from training data only (inline flags). Heuristic risk labeling based on name characteristics (common English words = high risk, compounds = lower risk, coined = lowest risk). Recommend the user do their own domain/trademark checks and provide a checklist. |
 
 Detect your tier at the start of this step and inform the user: "I have access to [tools]. This means I can [capabilities]. For [gaps], I recommend [workaround]."
 
