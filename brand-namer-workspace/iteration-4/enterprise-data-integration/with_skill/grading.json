@@ -1,0 +1,192 @@
+{
+  "expectations": [
+    {
+      "text": "At least 6 of 11 naming categories attempted",
+      "passed": true,
+      "evidence": "01-candidates.md YAML header lists 10 categories in categories_used: [evocative, found_word, compound, institutional_compound, coined_invented, foreign_root, metaphorical, sound_symbolic, blend_portmanteau, verb_as_brand]. Only 'acronymic' was skipped. Transcript confirms '10 of 11 attempted.' The candidate tables show distinct entries in each category with unique names."
+    },
+    {
+      "text": "Integration Topology Naming applied (connection, flow, aggregation vocabulary)",
+      "passed": true,
+      "evidence": "Transcript line 97: 'Enterprise-specific techniques: Integration Topology Naming, Trust-Without-Claims Lexicon.' 01-candidates.md YAML techniques_used includes 'integration_topology_naming.' The generated names include connection/flow/aggregation vocabulary (Conduitflow, Meshpoint, Crossworks, Linkforge, etc.) consistent with this technique. However, the technique is only listed — there is no separate labeled section showing exactly which candidates it produced, so the evidence is present but indirect."
+    },
+    {
+      "text": "Buyer Committee test applied",
+      "passed": true,
+      "evidence": "02-shortlist.md lines 215-258 contain a full Buyer Committee Scoring table with all 23 shortlisted names scored across 4 buyer roles (Champion, Economic Buyer, Technical Evaluator, End User) on a 1-7 scale, with averages and a ranked top-10 list noting minimum scores."
+    },
+    {
+      "text": "Sales Conversation Fit templates tested",
+      "passed": true,
+      "evidence": "02-shortlist.md lines 148-211 contain three Sales Conversation Fit template tests: Template 1 ('We use [X] to connect our Salesforce and Snowflake instances'), Template 2 ('Powered by [X]'), Template 3 ('[X] for Salesforce'). Each template shows every shortlisted name evaluated with naturalness/authority ratings and notes."
+    },
+    {
+      "text": "Developer/Technical Credibility Signaling applied",
+      "passed": true,
+      "evidence": "01-candidates.md YAML techniques_used includes 'developer_technical_credibility.' Transcript line 145: 'Developer/technical credibility.' The brief's #1 job is 'Signal technical credibility to data engineers.' Stack Test verdicts in 02-shortlist.md include credibility assessments (e.g., Cipher: 'Technical credibility high,' Deepgrid: 'Strong dev credibility'). Buyer Committee includes a 'Technical Evaluator (engineer-respected)' column. The technique is evidenced through both generation and evaluation."
+    },
+    {
+      "text": "Partner/Channel Naming Grammar tested ('[X] for Salesforce', 'Powered by [X]')",
+      "passed": true,
+      "evidence": "02-shortlist.md lines 173-211 explicitly test 'Powered by [X]' (Template 2) and '[X] for Salesforce' (Template 3) for all 23 shortlisted names. Additionally, lines 290-316 provide an Integration Grammar Summary table testing all 23 names across four grammars: 'Powered by [X]', '[X] for Salesforce', '[X] + Snowflake', '[X] API'."
+    },
+    {
+      "text": "Stack test run (name alongside Salesforce, Snowflake, Databricks, AWS)",
+      "passed": true,
+      "evidence": "02-shortlist.md lines 116-144 contain a Stack Test table where all 23 shortlisted names are placed alongside 'Snowflake + Databricks + Salesforce + AWS' with peer-level or acceptable verdicts and detailed notes for each."
+    },
+    {
+      "text": "Ownability-first compounds generated in parallel track",
+      "passed": true,
+      "evidence": "01-candidates.md YAML techniques_used includes 'ownability_first_parallel_track.' Transcript line 97: 'Ownability-first parallel track: compounds generated alongside every found word.' Category 5 in 01-candidates.md (lines 138-154) is titled 'Compound (Ownability-First Parallel Track)' with 10 candidates generated using Tech Branding Patterns as compound elements."
+    },
+    {
+      "text": "Tech Branding Patterns applied",
+      "passed": true,
+      "evidence": "01-candidates.md lines 140-141: 'Tech Branding Patterns applied: Using industry-native compound elements for data infrastructure.' The technique is listed in YAML as 'Tech Branding Patterns.' Category 5 table shows 7 candidates explicitly attributed to 'Tech Branding Patterns' technique (Dataweft, Meshpoint, Spliceworks, Parsegrid, Cipherbase, Conduitflow, Bridgeworks)."
+    },
+    {
+      "text": "Prefix x Suffix Matrix used for systematic combinatorial generation",
+      "passed": true,
+      "evidence": "01-candidates.md lines 172-191 show Category 7: 'Prefix × Suffix Matrix' with a 7x8 grid (prefixes: Cross-, Mesh-, Signal-, Cipher-, Parse-, Link-, Splice-; suffixes: -works, -craft, -point, -bridge, -grid, -scope, -path, -forge). 10 strongest combinations selected and presented. YAML lists 'Prefix × Suffix Matrix' in techniques_used."
+    },
+    {
+      "text": "Obscure Real Word Mining from specialized domains (textile/maritime/architecture)",
+      "passed": true,
+      "evidence": "01-candidates.md YAML techniques_used includes 'obscure_real_word_mining.' Category 2 mines textile/weaving vocabulary (Weft, Lattice, Truss, Sinew, Splice, Loom, Tether). Category 10 (Three-Team Method) mines maritime (Ballast #84, Capstan #85), architecture (Turnstile #86), typography (Ligature #87), and forestry (Cambium #88). Riffing adds more textile terms (Selvage, Bobbin, Skein, Tela)."
+    },
+    {
+      "text": "Morphological Analysis (Zwicky) applied for systematic coverage",
+      "passed": false,
+      "evidence": "01-candidates.md YAML lists 'morphological_analysis_zwicky' under 'techniques_not_yet_used' (line 60). The technique was never applied during this session. No Zwicky box or morphological analysis matrix appears in any output file."
+    },
+    {
+      "text": "Each riff labeled with which technique produced it",
+      "passed": true,
+      "evidence": "01-candidates.md riffing sections (lines 344-476) show every riff in tables with a 'Specific Technique' column. Examples: Weftworks — 'compound creation: -works suffix'; Selvage — 'adjacent_metaphor: textile'; Gradus — 'language_shift: Latin'; Transcrypt — 'morpheme_swap: trans- + crypt.' All 69 riffs have explicit technique labels."
+    },
+    {
+      "text": "10+ NEW UNIQUE riffs per direction (duplicates don't count), OR 8+ per direction if total riff count exceeds 60",
+      "passed": true,
+      "evidence": "01-candidates.md riff count summary (lines 482-490): Direction 1 (Weft): 12 new unique; Direction 2 (Splice): 11 new unique (1 duplicate removed); Direction 3 (Vernier): 11 new unique; Direction 4 (Cipher): 11 new unique; Direction 5 (Vectis): 11 new unique (1 duplicate removed); Direction 6 (Orchestration): 13 new unique. Total: 69 new riffs. All 6 directions exceed the 10-riff minimum. Verified by counting entries in each table minus noted duplicates."
+    },
+    {
+      "text": "Systematic Affix Exploration applied (roots in prefix AND suffix positions)",
+      "passed": true,
+      "evidence": "01-candidates.md Category 6 (lines 155-171) is titled 'Institutional Compound — Systematic Affix Exploration.' It explicitly defines prefix vocabulary [True-, Cross-, Clear-, Deep-, Signal-, Data-, Core-] and suffix vocabulary [-point, -mark, -works, -bridge, -line, -forge, -grid, -scope, -path]. 10 candidates generated by crossing these. YAML lists 'Systematic Affix Exploration' in techniques_used."
+    },
+    {
+      "text": "B2B riffing checklist used (SCAMPER, compound creation, creative respelling, tech branding)",
+      "passed": true,
+      "evidence": "02-shortlist.md lines 266-276 show an explicit riffing checklist: '[x] SCAMPER — applied during generation'; '[x] Compound creation — 48 compounds generated'; '[x] Creative respelling — Konnex, Condukt, Cypher, Shuttl applied'; '[x] Industry-native compound patterns — Tech Branding Patterns applied with brief-specific compound vocabulary.' All 4 core B2B techniques checked off."
+    },
+    {
+      "text": "Hard gate checks displayed before generation menu",
+      "passed": true,
+      "evidence": "Transcript lines 149-157 show 'Hard Gate Status (Post-Generation)' with a table checking candidate count (PASS, 127 vs min 60), category coverage (PASS, 10/11 vs min 6), structural mix (PASS), and technique coverage (PASS, 26 used, 6 remaining). This appears before the technique toolkit user selection at line 158. Also displayed as entry gates at shortlisting (02-shortlist.md lines 66-74)."
+    },
+    {
+      "text": "Inline conflict flagging for known conflicts (warning emoji or text flag — substance over format)",
+      "passed": true,
+      "evidence": "01-candidates.md uses inline conflict flags throughout. Examples: Transit (#3) '⚠️? Transit app (urban mobility)'; Gauge (#9) '⚠️ Gauge (multiple tech cos)'; Loom (#16) '⚠️ Loom (video messaging)'; Nexus (#91) '⚠️ Nexus (Google devices, many cos)'; Dataweave (#103) '⚠️ DataWeave (MuleSoft's language)'; BearingPoint (#41) '⚠️ BearingPoint (consulting firm)'. At least 20 names flagged across the candidate list. The ⚠️? variant indicates potential conflicts, ⚠️ indicates confirmed ones."
+    },
+    {
+      "text": "At least 40 unique candidates generated",
+      "passed": true,
+      "evidence": "01-candidates.md YAML header: 'total_unique_candidates: 197.' The numbered candidate entries run from #1 (Vernier) through #197 (Unison). Even accounting for the 2 noted duplicates in riffing (Spliceworks #140 = #35, Vecture appeared twice), the count is well above 40. The initial generation round alone produced 127 unique candidates."
+    },
+    {
+      "text": "Acronym Resilience tested",
+      "passed": false,
+      "evidence": "No mention of 'acronym resilience' testing anywhere in the transcript, 01-candidates.md, or 02-shortlist.md. Grep for 'acronym' only returns the skipped acronymic category. The shortlist evaluation includes Stack Test, Sales Conversation Fit, and Buyer Committee — but no acronym resilience check (e.g., testing what initials spell or how names abbreviate in daily use)."
+    },
+    {
+      "text": "Internal-Champion Forwardability considered",
+      "passed": false,
+      "evidence": "No mention of 'Internal-Champion Forwardability' or 'forwardability' anywhere in the outputs. The Buyer Committee table has a 'Champion (easy to pitch)' column, which is related but not the same — forwardability specifically tests whether a champion can easily forward/explain the name in internal emails and Slack. The Champion column scores pitchability, not forwardability. No distinct forwardability analysis was performed."
+    },
+    {
+      "text": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+      "passed": true,
+      "evidence": "Transcript lines 155-160 show the hard gate checks (which include technique coverage: '26 techniques used, 6 remaining') followed by 'Technique Toolkit — User Selection' with 'User instruction: Select [A] all remaining.' 01-candidates.md YAML lists techniques_used (25+ techniques) and techniques_not_yet_used (6 techniques: morphological_analysis_zwicky, domain_first_naming, semiotic_territory_mapping, backronym_generation, ai_embedded_naming, bouba_kiki_effect). This demonstrates applied/unapplied status tracking and user selection."
+    }
+  ],
+  "summary": {
+    "passed": 19,
+    "failed": 3,
+    "total": 22,
+    "pass_rate": 0.86
+  },
+  "execution_metrics": {
+    "output_chars": 65928,
+    "transcript_chars": 12284
+  },
+  "timing": {
+    "total_duration_seconds": 567.0,
+    "total_tokens": 121526
+  },
+  "claims": [
+    {
+      "claim": "197 total unique candidates generated",
+      "type": "factual",
+      "verified": true,
+      "evidence": "01-candidates.md numbered entries run from #1 to #197. YAML header confirms total_unique_candidates: 197. Two duplicates were noted in riffing (Spliceworks #140 was a duplicate of #35, and Vecture appeared twice in Direction 5) but were still counted in the numbering — actual unique count is approximately 195. Close enough to the claim given numbering conventions."
+    },
+    {
+      "claim": "10 of 11 naming categories attempted",
+      "type": "factual",
+      "verified": true,
+      "evidence": "01-candidates.md shows 15 distinct category sections covering evocative, found word (4 territories), compound, institutional compound, prefix×suffix matrix, coined/invented (2 sections), metaphorical, foreign-root, blend/portmanteau, sound-symbolic, verb-as-brand, and contrarian/SCAMPER. Only Acronymic was skipped. Mapping to the 11-category framework confirms 10+ categories."
+    },
+    {
+      "claim": "23 names shortlisted for validation",
+      "type": "factual",
+      "verified": true,
+      "evidence": "02-shortlist.md YAML shortlisted_names array contains exactly 23 entries. All 23 appear in the Stack Test, Sales Conversation Fit, and Buyer Committee tables."
+    },
+    {
+      "claim": "26 techniques used, 6 remaining",
+      "type": "factual",
+      "verified": false,
+      "evidence": "01-candidates.md YAML techniques_used lists approximately 35 items (not 26), and techniques_not_yet_used lists 6. The transcript claims '26 techniques used, 6 remaining' but the YAML contains more than 26 entries in techniques_used. The riffing-specific techniques (synonym_explosion, morpheme_swap, etc.) were likely added after the generation hard gate check, inflating the final count. The '26 at gate check time' claim is plausible but unverifiable."
+    },
+    {
+      "claim": "All shortlisted names tested in all three Sales Conversation templates",
+      "type": "quality",
+      "verified": false,
+      "evidence": "02-shortlist.md Sales Conversation Fit tables only show 16 names tested in Template 1 and Template 2 (not all 23). The remaining 7 names (Traverse, Assay, Signalbridge, Truepath, Coreline) are listed in the shortlist and appear in the Stack Test and Buyer Committee tables but are absent from the Sales Conversation Fit detail tables. They may have been omitted for brevity, but the claim of 'all 23 names tested' is not fully evidenced."
+    },
+    {
+      "claim": "Buyer Committee shows no score below 5 for top 10",
+      "type": "factual",
+      "verified": true,
+      "evidence": "02-shortlist.md top-10 table (lines 249-258) confirms minimum scores: Datum min 6, Integris min 5, Vernier min 5, Konnex min 6, Splice min 5, Deepgrid min 5, Accord min 5, Trellis min 5, Nexora min 5, Conduit min 5. All are >= 5."
+    },
+    {
+      "claim": "Session stopped after Step 03a per user instructions",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript final section: 'Stopped after: Step 03a (Shortlisting) per user instructions. Next step if resumed: Step 04a (Competitive Screening).' Session metadata confirms 'Stopped after: Shortlisting (Step 03a).'"
+    }
+  ],
+  "user_notes_summary": null,
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Integration Topology Naming applied (connection, flow, aggregation vocabulary)",
+        "reason": "The assertion passes when the technique name appears in a YAML list, even if the technique was not distinctly applied as a labeled section. The candidates do contain connection/flow vocabulary, but that could emerge from ordinary compound naming without the specific Integration Topology framework. Consider requiring a labeled section or explicit group of candidates attributed to this technique."
+      },
+      {
+        "assertion": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+        "reason": "The transcript shows the user selected '[A] all remaining' but the actual toolkit display (with checkboxes or applied/unapplied status per technique) is summarized rather than shown verbatim. A more discriminating assertion would require the actual toolkit UI to appear in the transcript or an artifact, showing each technique with its status."
+      },
+      {
+        "reason": "No assertion checks the quality or distinctiveness of the generated names — whether they actually avoid 'LLM averaging' or produce genuinely creative options. A session could produce 197 generic compounds and pass every structural gate. Consider an assertion that samples specific names and evaluates whether they demonstrate creative range (e.g., at least N names that don't use obvious data/connect/link/flow vocabulary)."
+      },
+      {
+        "reason": "The 'Internal-Champion Forwardability considered' assertion is easy to confuse with the Buyer Committee's 'Champion' column. The assertion could clarify what counts — a distinct forwardability test vs. the Champion column in buyer committee scoring — to avoid ambiguous grading."
+      }
+    ],
+    "overall": "The assertion set is strong on structural/process coverage (gates, technique usage, volume) but has gaps on two enterprise-specific tests (Acronym Resilience, Internal-Champion Forwardability) that the skill claims to support. The Integration Topology assertion is passable but could be tightened to require more explicit evidence."
+  }
+}

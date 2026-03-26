@@ -1,0 +1,117 @@
+{
+  "eval_id": 6,
+  "eval_name": "enterprise-legaltech",
+  "prompt": "We're building an AI-powered legal document review platform. We use LLMs to analyze contracts, flag risks, extract key terms, and compare against playbooks. Seed stage, $4M raised. Target: legal operations teams and in-house counsel at companies with 10+ lawyers. Should feel authoritative and precise, but NOT stuffy Latin (no Lexicon, no Juris, no Veritas - those are played out). Think more Clio/Relativity energy. This is a regulated industry - can't use words like 'attorney', 'counsel', 'legal advice'. Competitors: Kira Systems, eBrevia, Luminance, Ironclad, ContractPodAi, Harvey. The name should signal 'built for lawyers' without sounding like a law firm. Needs to work internationally - UK and EU markets from day one.",
+  "assertions": [
+    {
+      "id": "cat-coverage",
+      "text": "At least 6 of 11 naming categories attempted",
+      "type": "generation"
+    },
+    {
+      "id": "vertical-codes",
+      "text": "Vertical Code Calibration applied for legaltech",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "regulated-compliance",
+      "text": "Regulated-Industry Lexical Compliance applied (avoided 'attorney', 'counsel', 'legal advice')",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "latin-avoidance",
+      "text": "Avoided transparent Latin clich\u00e9s per user constraint AND skill guidance (Lex-, Juris-, Veritas-)",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "buyer-committee",
+      "text": "Buyer Committee test applied during shortlisting (Step 03a) OR offered in technique toolkit",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "sales-conversation",
+      "text": "Sales Conversation Fit templates tested during shortlisting OR offered in technique toolkit",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "enterprise-objection",
+      "text": "Enterprise Objection Preemption applied during shortlisting OR offered in technique toolkit",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "cross-language",
+      "text": "Cross-language risk noted during generation (basic flags) OR systematic checks offered in technique toolkit",
+      "type": "generation"
+    },
+    {
+      "id": "ownability-parallel",
+      "text": "Ownability-first compounds generated in parallel track",
+      "type": "generation"
+    },
+    {
+      "id": "classical-stems",
+      "text": "Classical Stem Engineering applied (but naturalized, not transparent Latin per clich\u00e9 guard)",
+      "type": "generation"
+    },
+    {
+      "id": "personified-names",
+      "text": "Personified Names explored (Harvey is a competitor - this angle is proven in legaltech)",
+      "type": "generation"
+    },
+    {
+      "id": "three-team",
+      "text": "Lexicon Three-Team Method applied OR offered in technique toolkit",
+      "type": "generation"
+    },
+    {
+      "id": "technique-labeling",
+      "text": "Each riff labeled with SPECIFIC technique (e.g., 'language shift: Latin', not just 'riff')",
+      "type": "riffing"
+    },
+    {
+      "id": "riff-volume",
+      "text": "10+ NEW UNIQUE riffs per direction (duplicates don't count), OR 8+ per direction if total riff count exceeds 60",
+      "type": "riffing"
+    },
+    {
+      "id": "homonym-synonym",
+      "text": "Homonym/Synonym/Sound-Alike Riffing applied OR offered in technique toolkit",
+      "type": "riffing"
+    },
+    {
+      "id": "b2b-riffing-checklist",
+      "text": "B2B riffing checklist used",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "hard-gates",
+      "text": "Hard gate checks displayed before generation menu",
+      "type": "workflow"
+    },
+    {
+      "id": "conflict-flagging",
+      "text": "Inline conflict flagging for known conflicts (\u26a0\ufe0f emoji or text flag \u2014 substance over format)",
+      "type": "generation"
+    },
+    {
+      "id": "candidate-count",
+      "text": "At least 40 unique candidates generated",
+      "type": "generation"
+    },
+    {
+      "id": "category-creation",
+      "text": "Category Creation Naming considered OR offered in technique toolkit",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "lifecycle-stress",
+      "text": "Name Lifecycle Stress Test offered in technique toolkit or applied during shortlisting",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "technique-toolkit",
+      "text": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+      "type": "workflow"
+    }
+  ]
+}

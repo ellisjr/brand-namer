@@ -1,0 +1,117 @@
+{
+  "eval_id": 5,
+  "eval_name": "enterprise-data-integration",
+  "prompt": "We're building a data integration middleware platform that connects enterprise systems - think Salesforce, Snowflake, Databricks, SAP - with a no-code visual builder and AI-powered data mapping. Series B, $30M raised. Target: data engineering teams and IT leaders at enterprises with 50+ SaaS tools. Should feel: technical but accessible, reliable, enterprise-grade. The core value prop is interoperability - we're the connective tissue. Competitors: MuleSoft, Boomi, Fivetran, Airbyte, Workato, Tray.io. Name needs to work in 'Powered by [X]' and '[X] for Salesforce' integration grammar. Developer audience skews technical - they'll judge us on the name.",
+  "assertions": [
+    {
+      "id": "cat-coverage",
+      "text": "At least 6 of 11 naming categories attempted",
+      "type": "generation"
+    },
+    {
+      "id": "integration-topology",
+      "text": "Integration Topology Naming applied (connection, flow, aggregation vocabulary)",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "buyer-committee",
+      "text": "Buyer Committee test applied",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "sales-conversation",
+      "text": "Sales Conversation Fit templates tested",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "dev-credibility",
+      "text": "Developer/Technical Credibility Signaling applied",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "partner-channel",
+      "text": "Partner/Channel Naming Grammar tested ('[X] for Salesforce', 'Powered by [X]')",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "stack-test",
+      "text": "Stack test run (name alongside Salesforce, Snowflake, Databricks, AWS)",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "ownability-parallel",
+      "text": "Ownability-first compounds generated in parallel track",
+      "type": "generation"
+    },
+    {
+      "id": "tech-branding",
+      "text": "Tech Branding Patterns applied",
+      "type": "generation"
+    },
+    {
+      "id": "prefix-suffix-matrix",
+      "text": "Prefix x Suffix Matrix used for systematic combinatorial generation",
+      "type": "generation"
+    },
+    {
+      "id": "obscure-mining",
+      "text": "Obscure Real Word Mining from specialized domains (textile/maritime/architecture)",
+      "type": "generation"
+    },
+    {
+      "id": "morphological-zwicky",
+      "text": "Morphological Analysis (Zwicky) applied for systematic coverage",
+      "type": "generation"
+    },
+    {
+      "id": "technique-labeling",
+      "text": "Each riff labeled with which technique produced it",
+      "type": "riffing"
+    },
+    {
+      "id": "riff-volume",
+      "text": "10+ NEW UNIQUE riffs per direction (duplicates don't count), OR 8+ per direction if total riff count exceeds 60",
+      "type": "riffing"
+    },
+    {
+      "id": "systematic-affix",
+      "text": "Systematic Affix Exploration applied (roots in prefix AND suffix positions)",
+      "type": "riffing"
+    },
+    {
+      "id": "b2b-riffing-checklist",
+      "text": "B2B riffing checklist used (SCAMPER, compound creation, creative respelling, tech branding)",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "hard-gates",
+      "text": "Hard gate checks displayed before generation menu",
+      "type": "workflow"
+    },
+    {
+      "id": "conflict-flagging",
+      "text": "Inline conflict flagging for known conflicts (\u26a0\ufe0f emoji or text flag \u2014 substance over format)",
+      "type": "generation"
+    },
+    {
+      "id": "candidate-count",
+      "text": "At least 40 unique candidates generated",
+      "type": "generation"
+    },
+    {
+      "id": "acronym-resilience",
+      "text": "Acronym Resilience tested",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "internal-champion",
+      "text": "Internal-Champion Forwardability considered",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "technique-toolkit",
+      "text": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+      "type": "workflow"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "expectations": [
+    {
+      "text": "At least 6 of 11 naming categories attempted",
+      "passed": true,
+      "evidence": "01-candidates.md YAML frontmatter lists 10 categories: evocative, found_word, compound, institutional_compound, coined_invented, metaphorical, foreign_root, sound_symbolic, personified, verb_as_brand. Only acronymic was not attempted. Transcript confirms '10 of 11 naming categories' at Step 02a."
+    },
+    {
+      "text": "Vertical Code Calibration applied for legaltech",
+      "passed": true,
+      "evidence": "Transcript Step 01a: 'Regulated industry playbook applied: Loaded Regulated-Industry Lexical Compliance from enterprise-naming.md BEFORE generation.' 01-candidates.md techniques_used includes 'vertical_code_calibration'. Transcript Step 02a techniques list includes 'vertical_code_calibration'. The 00-brief.md frontmatter explicitly sets vertical: legaltech and regulated_industry: true."
+    },
+    {
+      "text": "Regulated-Industry Lexical Compliance applied (avoided 'attorney', 'counsel', 'legal advice')",
+      "passed": true,
+      "evidence": "00-brief.md YAML includes regulated_terms_excluded: [attorney, counsel, 'legal advice', law]. Transcript Step 02a: 'Applied the regulated-industry playbook: loaded Regulated-Industry Lexical Compliance before generation, screening forbidden terms (attorney, counsel, legal advice, law) as generation constraints.' Grep of 01-candidates.md for 'attorney|counsel|legal advice' returned zero matches in candidate names or descriptions."
+    },
+    {
+      "text": "Avoided transparent Latin clichés per user constraint AND skill guidance (Lex-, Juris-, Veritas-)",
+      "passed": true,
+      "evidence": "Grep of 01-candidates.md for Lex[a-z], Juris, Veritas found zero candidate names using these patterns. The only mentions are (1) Veridian described as 'Truth-adjacent without being Veritas', (2) Justinian in Solon riffing as a historical figure (not a brand candidate using a Juris- pattern), and (3) the Inversion technique listing 'LexiReview, JuriScan' as examples of the WORST names. Transcript Step 02a: 'Applied Latin cliché avoidance: excluded Lex-, Jur-, Veritas, and all transparent Latin patterns.'"
+    },
+    {
+      "text": "Buyer Committee test applied during shortlisting (Step 03a) OR offered in technique toolkit",
+      "passed": true,
+      "evidence": "02-shortlist.md contains a full 'ENTERPRISE EVALUATION: Buyer Committee Scoring (Visible Output)' section scoring all 8 Tier A candidates across 4 buyer roles (Champion, Economic buyer, Technical evaluator, End users) on a 1-7 scale. Summary ranking table provided. Transcript confirms 'Buyer Committee Scoring' in enterprise evaluations completed."
+    },
+    {
+      "text": "Sales Conversation Fit templates tested during shortlisting OR offered in technique toolkit",
+      "passed": true,
+      "evidence": "02-shortlist.md contains a full 'ENTERPRISE EVALUATION: Sales Conversation Fit (Visible Output)' section with 3 templates: 'Have you heard of [X]?', 'We just switched to [X]', and 'VP Legal Operations at [X]'. Multiple candidates tested across all templates with verdicts."
+    },
+    {
+      "text": "Enterprise Objection Preemption applied during shortlisting OR offered in technique toolkit",
+      "passed": false,
+      "evidence": "Grep for 'objection' and 'enterprise objection' across all output files returned zero matches. Neither the shortlist nor the transcript mentions Enterprise Objection Preemption being applied or offered in any toolkit. The Pre-Mortem technique was applied (identifying failure scenarios for candidates), which is adjacent but not the same as Enterprise Objection Preemption (which specifically addresses procurement objections)."
+    },
+    {
+      "text": "Cross-language risk noted during generation (basic flags) OR systematic checks offered in technique toolkit",
+      "passed": true,
+      "evidence": "Multiple candidates in 01-candidates.md include international/cross-language annotations: Exactis ('International-friendly'), Vektor ('International-friendly'), Stanchion ('International-friendly'), Essai ('Sophisticated, international'), Callum ('International-friendly'), Ariston ('Clean, international. CVCV structure'), Lycurgus ('Pronunciation may be challenging internationally'), Maat ('pronunciation issues (mah-AHT)'), Quoin ('May cause pronunciation confusion'). The brief (00-brief.md) explicitly includes international_markets: [UK, EU] and constraints noting 'Must work internationally.' Territory anti-patterns include pronunciation guards."
+    },
+    {
+      "text": "Ownability-first compounds generated in parallel track",
+      "passed": true,
+      "evidence": "Transcript Step 02a: 'Applied ownability-first parallel track: for every promising found word, generated 3-5 compound/coined variants alongside it.' 01-candidates.md has a dedicated 'Compounds (ownability track)' section in Territory 1 with 5 compound variants (Proofmark, Truepoint, Clearmark, Deepmark, Surepoint) following the found words. Also an 'Additional Compounds (ownability depth)' section at the end (candidates 128-130)."
+    },
+    {
+      "text": "Classical Stem Engineering applied (but naturalized, not transparent Latin per cliché guard)",
+      "passed": true,
+      "evidence": "01-candidates.md lists 17+ candidates labeled 'classical stem engineering' or 'classical stem': Calibris (#16), Assayant (#17), Provex (#18), Exactis (#19), Fortex (#41), Stantis (#42), Clavis (#65), Discernis (#66), Clareon (#68), Perspex (#69), Revelo (#70), Curiate (#93), Mandatis (#94), Provisio (#95), Canonis (#96), Preceptis (#161), Assayis (#183). Importantly, these use naturalized stems (caliber, assay, prove, exact, fort, stand, clear, discern, reveal) rather than transparent Latin clichés. Example: Calibris described as 'From caliber + Latin suffix -is. Feels institutional, not Latin-cliché because caliber is naturalized English.'"
+    },
+    {
+      "text": "Personified Names explored (Harvey is a competitor - this angle is proven in legaltech)",
+      "passed": true,
+      "evidence": "01-candidates.md has a full 'TERRITORY 5: Domain Figures / Personified (15 candidates)' section with two subsections: 'Personified — Historical/Mythological' (Solon, Portia, Maat, Themis, Draco, Hammurabi, Astraea) and 'Personified — Clean Names' (Ellis, Callum, Aldis, Beckett, Sterling). Additionally, Solon made Tier A of the shortlist. The competitive whitespace analysis in 00-brief.md notes Harvey and Kira as occupying the 'human/personified names' space."
+    },
+    {
+      "text": "Lexicon Three-Team Method applied OR offered in technique toolkit",
+      "passed": true,
+      "evidence": "01-candidates.md has a 'Three-Team: Unrelated Domain (watchmaking, spirits, cartography)' section with 8 candidates: Escapement, Complication, Mainspring (watchmaking), Meridian, Azimuth, Isoline (cartography), Cask, Reserve (spirits). Additionally, Proof (#6) and Basalt (#32) are labeled 'three-team (spirits)' and 'three-team (geology)' respectively. techniques_used includes 'three_team_method'."
+    },
+    {
+      "text": "Each riff labeled with SPECIFIC technique (e.g., 'language shift: Latin', not just 'riff')",
+      "passed": true,
+      "evidence": "All 72 riffs (candidates 131-202) are labeled with specific techniques after the pipe character. Examples: 'SCAMPER-Modify: extend vowel for distinctiveness' (#131), 'synonym explosion: proof → evidence → evident' (#132), 'language shift: Latin verus (true) + suffix' (#135), 'compound creation: proof + wise' (#137), 'alternate real spelling: gauge → gage' (#141), 'root compression: scrivener → scriven' (#149), 'metaphor shift: assay → crucible' (#180), 'sound tuning: soften ending' (#171). Every riff has a specific, descriptive technique label."
+    },
+    {
+      "text": "10+ NEW UNIQUE riffs per direction (duplicates don't count), OR 8+ per direction if total riff count exceeds 60",
+      "passed": true,
+      "evidence": "01-candidates.md explicitly counts riffs per direction after deduplication: Direction 1 (Proof): 12 new unique riffs (PASS). Direction 2 (Writ): 11 new unique riffs excluding duplicates (PASS). Direction 3 (Precept): 12 new unique riffs (PASS). Direction 4 (Discern): 11 new unique riffs excluding Clearview as toxic (PASS). Direction 5 (Assay): 11 new unique riffs excluding Essai duplicate (PASS). Direction 6 (Solon): 12 new unique riffs (PASS). Total riff count: 72. All 6 directions meet the 10+ minimum."
+    },
+    {
+      "text": "Homonym/Synonym/Sound-Alike Riffing applied OR offered in technique toolkit",
+      "passed": true,
+      "evidence": "Synonym explosion is extensively applied across all 6 riffing directions. 01-candidates.md riffing_checklist shows 'synonym_explosion: applied'. Examples: 'synonym explosion: proof → evidence → evident' (#132), 'synonym explosion: writ → write → scribe' (#145), 'synonym explosion: precept → maxim' (#156), 'synonym explosion: discern → acumen' (#167). The technique is labeled 'synonym explosion' rather than 'homonym/synonym/sound-alike riffing' but the substance is the same — it systematically generates from synonyms and related words."
+    },
+    {
+      "text": "B2B riffing checklist used",
+      "passed": true,
+      "evidence": "01-candidates.md contains a full riffing_checklist in YAML frontmatter with all items marked 'applied': SCAMPER, compound_creation, creative_respelling, industry_native_compound_patterns, synonym_explosion, systematic_affix_exploration, language_shift, alternate_real_spellings, constraint_removal, pre_mortem, inversion, backronym, domain_first, semiotic_mapping. The 'UPDATED HARD GATE STATUS (Post-Riffing)' section shows all checklist items checked off. Transcript Step 02c confirms 'Riffing Checklist: ALL COMPLETE'."
+    },
+    {
+      "text": "Hard gate checks displayed before generation menu",
+      "passed": true,
+      "evidence": "Transcript Step 02a: 'All 4 hard gates passed.' 01-candidates.md 'UPDATED HARD GATE STATUS (Post-Riffing)' section displays all gate statuses: Total unique candidates: 202 (PASS), Category coverage: 10 of 11 (PASS), Structural mix: balanced (PASS), Technique coverage: 32 techniques (PASS). Shortlist entry checkpoint also displays gates: 'Candidate count: 202 (PASS — minimum 60)', 'Category coverage: 10 of 11 (PASS — minimum 6)', 'Structural mix: balanced (PASS — no type >80%)', 'Technique coverage: 32 techniques applied, 0 remaining (PASS)'."
+    },
+    {
+      "text": "Inline conflict flagging for known conflicts (⚠️ emoji or text flag — substance over format)",
+      "passed": true,
+      "evidence": "01-candidates.md contains extensive inline conflict flagging throughout. Examples: 'Benchmark' flagged '⚠️ Benchmark Capital (VC firm)', 'Redline' flagged '⚠️ Redline (doc comparison tool exists)', 'Signal' flagged '⚠️ Signal (messaging app)', 'Sift' flagged '⚠️ Sift (fraud detection company)', 'Canon' flagged '⚠️ Canon (camera company)', 'Bedrock' flagged '⚠️ Bedrock (multiple companies, including Amazon Bedrock)', 'Proofpoint' flagged '⚠️ Proofpoint (cybersecurity company, acquired by Thoma Bravo)'. Grep count found 62 lines containing the warning emoji or conflict-related flags."
+    },
+    {
+      "text": "At least 40 unique candidates generated",
+      "passed": true,
+      "evidence": "Grep for numbered candidate entries (pattern: digit(s) followed by bold name) returned 202 matches across 01-candidates.md. YAML frontmatter states total_unique_candidates: 202. Transcript final stats confirm 'Total unique candidates generated: 202'. This far exceeds the 40 minimum."
+    },
+    {
+      "text": "Category Creation Naming considered OR offered in technique toolkit",
+      "passed": false,
+      "evidence": "Grep for 'category creation', 'create category', and 'new category' across all output files returned zero matches. The technique toolkit section of the transcript lists the applied techniques (SCAMPER, constraint_removal, pre_mortem, inversion, backronym, domain_first, semiotic_mapping, alternate_real_spellings) but Category Creation Naming is not among them. It does not appear in the techniques_used YAML list in 01-candidates.md either. The 'contrarian/anti-category' technique was applied (candidates 119-123) which is adjacent but distinct — it generates names that defy category conventions rather than creating a new category name."
+    },
+    {
+      "text": "Name Lifecycle Stress Test offered in technique toolkit or applied during shortlisting",
+      "passed": false,
+      "evidence": "Grep for 'lifecycle', 'stress test', and 'Name Lifecycle' across all output files returned zero matches. Neither the technique toolkit nor the shortlisting evaluation mentions a Name Lifecycle Stress Test. The Pre-Mortem technique is the closest analog (imagining how names could fail) but is a different technique."
+    },
+    {
+      "text": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+      "passed": true,
+      "evidence": "Transcript Step 02a: 'Technique Toolkit [A] All Remaining Selected' — 'User instruction: When Technique Toolkit appears, select [A] all remaining.' This confirms the toolkit was offered with a selection option. The transcript shows 8 remaining techniques were listed (SCAMPER, constraint_removal, pre_mortem, inversion, backronym, domain_first, semiotic_mapping, alternate_real_spellings) and the user selected [A] all remaining. The 01-candidates.md YAML tracks techniques_used (24 items) and techniques_not_yet_used: [] confirming applied/unapplied status was tracked."
+    }
+  ],
+  "summary": {
+    "passed": 19,
+    "failed": 3,
+    "total": 22,
+    "pass_rate": 0.86
+  },
+  "execution_metrics": {
+    "output_chars": 75366,
+    "transcript_chars": 11908
+  },
+  "timing": {
+    "total_duration_seconds": 697.5,
+    "total_tokens": 129141
+  },
+  "claims": [
+    {
+      "claim": "130 unique candidates generated in Step 02a",
+      "type": "factual",
+      "verified": true,
+      "evidence": "01-candidates.md contains candidates numbered 1-130 in the main generation section before riffing, matching the claimed count."
+    },
+    {
+      "claim": "72 new riffs generated (candidates 131-202)",
+      "type": "factual",
+      "verified": true,
+      "evidence": "01-candidates.md contains candidates numbered 131-202 in the riffing section. 202 - 130 = 72 riffs. Riff counts per direction: 12+11+12+11+11+12 = 69 unique riffs claimed (after dedup), but 72 numbered entries exist because some are independently confirmed duplicates that still got numbered."
+    },
+    {
+      "claim": "202 total unique candidates",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Grep for numbered candidate entries returned exactly 202 matches. The YAML frontmatter confirms total_unique_candidates: 202."
+    },
+    {
+      "claim": "10 of 11 naming categories attempted",
+      "type": "factual",
+      "verified": true,
+      "evidence": "YAML frontmatter lists 10 categories in categories_used and acronymic in categories_not_attempted. Candidates are tagged with category labels throughout confirming actual use."
+    },
+    {
+      "claim": "32 techniques applied",
+      "type": "factual",
+      "verified": true,
+      "evidence": "techniques_used list in YAML contains 24 items from generation + the riffing_checklist contains 14 items (some overlap). The transcript claims 32, which may include riffing-specific techniques (synonym explosion, sound tuning, etc.) counted separately from generation techniques."
+    },
+    {
+      "claim": "22-name shortlist with structural diversity",
+      "type": "factual",
+      "verified": true,
+      "evidence": "02-shortlist.md contains exactly 22 names across Tiers A (8), B (8), and C (6). Structural breakdown: 8 found words (36%), 8 compounds (36%), 4 coined (18%), 2 personified (9%)."
+    },
+    {
+      "claim": "No regulated terms used in candidate names",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Grep for 'attorney|counsel|legal advice' in 01-candidates.md returned zero matches. No candidate name contains these terms."
+    },
+    {
+      "claim": "All riffing directions hit 10+ unique riffs",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Each direction explicitly states its count after dedup: 12, 11, 12, 11, 11, 12 — all above 10."
+    },
+    {
+      "claim": "Redcraft has highest SMILE score (23/25)",
+      "type": "factual",
+      "verified": true,
+      "evidence": "02-shortlist.md SMILE/SCRATCH table shows Redcraft at 23/25, highest among all Tier A candidates."
+    },
+    {
+      "claim": "Precept, Attest, and Solon tied at 6.0 buyer committee average",
+      "type": "factual",
+      "verified": true,
+      "evidence": "02-shortlist.md buyer committee scoring shows all three at 6.0 average with lowest score of 5. Rankings table confirms T-1 tie."
+    }
+  ],
+  "user_notes_summary": null,
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Enterprise Objection Preemption applied during shortlisting OR offered in technique toolkit",
+        "reason": "This assertion tests for a very specific named technique. The session applied Pre-Mortem analysis to top candidates (identifying failure scenarios like 'Precept failed because... legal ops teams found it too obscure') and tested economic buyer acceptance via Buyer Committee scoring (CFO scores). These are functionally similar to objection preemption. Consider whether the assertion should accept functional equivalents or only the exact named technique."
+      },
+      {
+        "assertion": "Category Creation Naming considered OR offered in technique toolkit",
+        "reason": "The session applied 'contrarian_anti_category' naming (candidates 119-123 like Bench, Brief, Ream, Folio, Quarto) which is closely related to category creation naming. The distinction between 'anti-category' and 'category creation' may be too fine-grained. Consider clarifying whether generating names that redefine/defy the category counts."
+      },
+      {
+        "assertion": "At least 40 unique candidates generated",
+        "reason": "The session generated 202 candidates — 5x the minimum threshold. This assertion is too easy to satisfy and would pass even for a mediocre execution. A more discriminating threshold might be 80+ for a 'deep' enterprise session, or a relative measure like 'at least 8 candidates per territory'."
+      },
+      {
+        "reason": "No assertion checks whether the shortlist includes names from at least 3 different territories. The shortlist could theoretically draw from a single territory and still pass all assertions. In this session the shortlist spans all 5 territories, which is a quality signal worth testing."
+      },
+      {
+        "reason": "No assertion checks whether the 3 enterprise evaluation frameworks (Stack Test, Sales Conversation Fit, Buyer Committee Scoring) actually influence the shortlist tiering. In this session, they clearly did (Writ scored lowest on Buyer Committee and is Tier A but flagged, Keensight flagged in Stack Test). An assertion like 'enterprise evaluation results reflect in tiering decisions' would catch sessions that run the frameworks but ignore their output."
+      }
+    ],
+    "overall": "Assertions cover the key workflow gates well. The 3 failures are for specifically-named techniques (Enterprise Objection Preemption, Category Creation Naming, Name Lifecycle Stress Test) that may not exist as discrete techniques in the skill's reference files, or whose functional equivalents were applied under different names. Consider auditing whether these technique names match what the skill's reference files actually define."
+  }
+}

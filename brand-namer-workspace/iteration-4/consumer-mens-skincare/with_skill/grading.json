@@ -1,0 +1,243 @@
+{
+  "expectations": [
+    {
+      "id": "cat-coverage",
+      "text": "At least 6 of 11 naming categories attempted",
+      "passed": true,
+      "evidence": "9 of 11 categories attempted: Evocative, Found Word, Foreign-Root, Sensory, Metaphorical, Compound, Invented/Coined, Sound-Symbolic, Verb-as-Brand. Confirmed in both transcript ('Categories Attempted (9 of 11)') and 01-candidates.md YAML frontmatter ('categories_not_attempted: [descriptive, acronymic]'). Each category has 5-10 candidates with names, rationales, and technique labels."
+    },
+    {
+      "id": "five-senses",
+      "text": "Five Senses Scan run as dedicated generation pass (skincare is sensory)",
+      "passed": true,
+      "evidence": "Category 4 in 01-candidates.md is explicitly titled 'Sensory (Five Senses Scan)' with 10 candidates covering all five senses: smell (Vetiver, Resin), taste register (Tonic, Neat, Proof), sight (Matte, Soot), touch (Suede), sound (Still, Cadence). Transcript confirms: 'Five Senses Scan as formal generation round (mandatory for consumer beauty)' and '4. Sensory / Five Senses Scan (10 candidates) -- sight, smell, touch, taste, sound'."
+    },
+    {
+      "id": "emotional-temp",
+      "text": "Emotional Temperature Mapping applied (masc positioning)",
+      "passed": false,
+      "evidence": "No explicit mention of 'Emotional Temperature Mapping' as a named technique anywhere in the transcript or output files. The brief includes a 'Feeling Spectrum' (Authority 7, Innovation/Heritage 5, Precision 8, Intimacy 4, Complexity 6), and masculine positioning is deeply integrated into the generation (phonetic target: hard consonants, crisp vowels; territories like 'Dark Precision Instrument'). However, Emotional Temperature Mapping is a specific consumer-naming technique that should be applied as a labeled pass. The outputs show the concept was implicitly addressed but never explicitly applied or labeled as such."
+    },
+    {
+      "id": "price-signal",
+      "text": "Price-Signal Calibration applied (luxury/masstige register)",
+      "passed": false,
+      "evidence": "No explicit mention of 'Price-Signal Calibration' as a named technique in any output file. The brief captures the price point ($40-60 for moisturizer) and notes Nordstrom/Saks-level quality as a constraint. The shortlist evaluation mentions 'Nordstrom/Saks shelf context' and French Naturalized Vocabulary (luxury register). However, Price-Signal Calibration is a specific consumer-naming technique that should evaluate whether each name signals the correct price tier. It was never explicitly applied or labeled."
+    },
+    {
+      "id": "adjacent-category",
+      "text": "Adjacent-Category Code Borrowing explored (e.g., spirits/fragrance codes for skincare)",
+      "passed": true,
+      "evidence": "01-candidates.md has a dedicated section 'Adjacent-Category (Spirits/Fragrance)' with 4 candidates: Cask (#100), Draft (#101), Bitters (#102), Decant (#103). The technique 'adjacent_category_code_borrowing' is listed in YAML frontmatter. Transcript notes '- Adjacent-Category Code Borrowing (4 candidates: spirits/fragrance)'. The Vetiver fragrance riffing direction (12 riffs: Bergamot, Oud, Amber, etc.) also borrows heavily from fragrance vocabulary. The transcript's Key Observations note: 'Spirits/fragrance vocabulary borrowed well into men's skincare.'"
+    },
+    {
+      "id": "front-of-pack",
+      "text": "Front-of-Pack Hierarchy Fit tested (name on a matte black bottle)",
+      "passed": true,
+      "evidence": "The matte-black-bottle test is used as an explicit evaluation criterion throughout. Transcript: 'matte-black-bottle test' listed as shortlisting criterion. Shortlist entry for Basalt: 'Maximum matte-black-bottle energy, elemental.' Stahl: 'Very strong on bottle, reads masculine.' Key Observation #5: 'The matte-black-bottle test was a powerful filter. Names that \"look good on a matte black bottle\" naturally selected for short, hard, consonant-heavy words with visual weight.' While not labeled 'Front-of-Pack Hierarchy Fit' by that exact name, the same test (how the name looks on packaging in its retail context) was substantively applied."
+    },
+    {
+      "id": "dual-audience",
+      "text": "Dual-audience consideration (men who want skincare but masculine framing)",
+      "passed": true,
+      "evidence": "The core tension of the brief -- men who want skincare but need masculine framing -- pervades the entire session. Brief: 'Name's #1 job: Signal elevated masculinity without saying FOR MEN.' Stoic is described as 'philosophical discipline as masculine virtue. Skincare as stoicism, not vanity.' Territories were chosen for masculine energy (Dark Precision Instrument, Raw Material/Geological). Territories explicitly dropped for being too feminine (Scandinavian Minimalism). Sound-Symbolic category was 'engineered for masculine precision feel.' While not labeled 'Dual-audience consideration' as a standalone technique, the dual-audience tension is the organizing principle of the entire generation strategy."
+    },
+    {
+      "id": "desired-self",
+      "text": "Desired-Self Naming explored (what identity does this project?)",
+      "passed": true,
+      "evidence": "01-candidates.md has a dedicated section 'Cultural Tension / Desired-Self' with candidates: Stoic (#96, 'philosophical discipline, masculine virtue'), Resolute (#97), Sterling (#98, 'highest quality, genuine'), Provenance (#99). A deeper round 'Desired-Self / Cultural Tension (deeper)' adds Merit (#127), Rigor (#128), Tenon (#129). The technique 'desired_self_naming' is listed in YAML frontmatter. Transcript confirms: 'Cultural Tension / Desired-Self (4 candidates)' and 'Desired-Self (deeper)' in technique toolkit."
+    },
+    {
+      "id": "color-name-mapping",
+      "text": "Color-to-Name Mapping explored (matte black palette)",
+      "passed": true,
+      "evidence": "The technique 'color_name_mapping' is listed in the YAML frontmatter of 01-candidates.md. Multiple names directly map from the matte black palette: Onyx (#6, 'dark, polished stone -- matte black energy'), Soot (#38, 'dark residue, charcoal, raw'), Kuro (#63, 'Japanese for black'), Sable (#137, 'dark fur, luxury, matte black'), Blacksand (#52, 'volcanic beaches, dark luxury'), Darkfield (#56), Greystone (#53), Greymoss (#59). The matte black palette is clearly reflected in generation choices. However, Color-to-Name Mapping does not appear as a labeled section heading -- it's distributed across categories rather than run as a dedicated pass."
+    },
+    {
+      "id": "structural-diversity",
+      "text": "At least 3 structural types represented",
+      "passed": true,
+      "evidence": "01-candidates.md YAML frontmatter lists 9 structural types: found_words (95), compounds (30), coined_invented (30), foreign_root (30), sensory (25), sound_symbolic (12), verb_as_brand (10), blends (8), other (4). Transcript hard gate: 'Structural mix: 7+ types (PASS)'. Clearly exceeds the minimum of 3."
+    },
+    {
+      "id": "ownability-parallel",
+      "text": "Ownability alternatives generated alongside found words",
+      "passed": true,
+      "evidence": "The Invented/Coined category (#61-70) runs parallel to Found Words, generating ownable alternatives: Cortis (#61, 'Latin cortex + -is suffix'), Vero (#62, CVCV coined), Stahl (#64, 'German for steel'), Graith (#65, 'archaic: equipment'), Vultric (#67, 'from Latin vultus'), Ferrik (#69, 'from ferrum/iron + hard K'). Classical Stem Engineering adds Curis (#114, 'Latin cura + -is') and Fortis (#115, 'Latin: strong'). These are ownable coined alternatives alongside found words like Temper, Alloy, Bezel. The shortlist includes Cortis (#15, 'clinical precision, ownable coined word')."
+    },
+    {
+      "id": "dynamic-compounds",
+      "text": "Compound vocabulary dynamically generated from beauty/skincare domain (not tech suffixes)",
+      "passed": true,
+      "evidence": "Category 6 (Compound) in 01-candidates.md explicitly avoids tech suffixes. The 10 compounds use consumer-appropriate patterns: color+material (Blacksand, Greystone), material+material (Stonewater), nature (Ironbark, Greymoss, Ironmoss), sensory (Coldfront), adjective+noun (Darkfield, Highmark, Clearfield). Transcript generation strategy notes: 'Consumer-appropriate compounds (nature+nature, sensory pairings) not institutional (-works, -craft)'. No -ly, -ify, -io, -works, -craft, or tech-pattern suffixes appear in compounds."
+    },
+    {
+      "id": "technique-labeling",
+      "text": "Each riff labeled with which technique produced it",
+      "passed": true,
+      "evidence": "Every riff in the Step 02c riffing section of 01-candidates.md has a 'Technique' column in its table. Examples from Direction 1 (Basalt): Shale -- 'metaphor shift: geological', Slate -- 'synonym explosion', Tephra -- 'etymology mining: Greek', Ite -- 'root compression'. Direction 2 (Temper): Quench -- 'metaphor shift', Cured -- 'adjacent metaphor', Patine -- 'language shift: French', Wrought -- 'structural shift'. All 94 riffs across 8 directions have technique labels."
+    },
+    {
+      "id": "riff-volume",
+      "text": "10+ NEW UNIQUE riffs per direction (duplicates don't count), OR 8+ per direction if total riff count exceeds 60",
+      "passed": true,
+      "evidence": "8 riffing directions, each with 11-12 riffs: Basalt (12), Temper (12), Caliber (12), Vetiver (12), Cortis (11), Stoic (11), Rook (12), Valet (12). Total riff count ~94, which exceeds 60. All riffs appear unique -- no visible duplicates across directions. Even under the relaxed threshold (8+ per direction when total >60), all directions comfortably exceed with 11-12 each."
+    },
+    {
+      "id": "consumer-riffing-checklist",
+      "text": "Consumer riffing checklist used (not B2B checklist)",
+      "passed": true,
+      "evidence": "Transcript Step 03a explicitly shows 'Phase 3: Consumer Riffing Checklist' with 'All 5 consumer checklist items completed': [x] Adjacent metaphor, [x] Sensory expansion (Five Senses Scan as formal round + sensory riffing), [x] Nature mining (animal/nature territory + geological features), [x] French naturalized vocabulary (Cachet, Calibre, Contour, Motif, Aplomb, Patine), [x] Shelf / Gift / Social-native tests. This is clearly the consumer checklist, not B2B."
+    },
+    {
+      "id": "hard-gates",
+      "text": "Hard gate checks displayed before generation menu",
+      "passed": true,
+      "evidence": "Transcript shows 'Hard Gate Status After Generation' with 4 explicit pass/fail checks: 'Candidate count: 149 (PASS -- minimum 60)', 'Category coverage: 9 of 11 (PASS -- minimum 6)', 'Structural mix: 7+ types (PASS)', 'Technique coverage: 25+ applied (PASS -- technique saturation reached)'. These are displayed before routing to the next step. The shortlisting entry also shows 'Phase 1: Entry Checkpoint -- All Gates Pass' with the same gate structure."
+    },
+    {
+      "id": "conflict-flagging",
+      "text": "Inline conflict flagging for known conflicts (warning emoji or text flag -- substance over format)",
+      "passed": true,
+      "evidence": "01-candidates.md contains 39 conflict flags throughout the candidate tables using the warning emoji pattern. Examples: Gauge (#4) -- 'Gauge skincare exists', Carbon (#7) -- 'Carbon skincare exists', Cortex (#22) -- 'Cortex in tech', Tenet (#43) -- 'Nolan film', Canon (#50) -- 'Canon cameras', Osprey (#88) -- 'Osprey backpacks', Slate (#141) -- 'Slate magazine', Benchmark (#175) -- 'Benchmark VC'. The shortlist table also carries forward flags. Transcript claims 18 conflict flags, but the actual count in 01-candidates.md is ~39 (both definite and uncertain flags)."
+    },
+    {
+      "id": "candidate-count",
+      "text": "At least 40 unique candidates generated",
+      "passed": true,
+      "evidence": "01-candidates.md contains 233 numbered candidates (1-233) across generation and riffing sections, plus a 35-name shortlist drawn from them. YAML frontmatter claims 'total_unique_candidates: 244'. Even accounting for a few duplicates (Hone appears in both Evocative #5 and Verb-as-Brand #76; Temper in Found Word #11 and Verb-as-Brand #77), the count vastly exceeds 40. The hard gate check confirms: 'Candidate count: 149 (PASS -- minimum 60)' after initial generation alone."
+    },
+    {
+      "id": "shelf-test",
+      "text": "Shelf Test applied (Nordstrom/Saks shelf context)",
+      "passed": true,
+      "evidence": "Transcript Step 03a shows 'Shelf Test Results: Strong shelf differentiation: Basalt, Stoic, Proof, Rook, Flint would stand out between Kiehl's/Lumin/Bulldog/Harry's. Vetiver and Sumi would stand out at Nordstrom/Saks tier.' The technique 'shelf_test' is listed in YAML frontmatter. Shortlist selection criteria include 'consumer viability (Shelf/Gift/Social tests)'. The Nordstrom/Saks context is explicitly evaluated."
+    },
+    {
+      "id": "gift-test",
+      "text": "Gift Test considered (premium skincare is highly giftable)",
+      "passed": true,
+      "evidence": "Transcript Step 03a shows 'Gift Test Results: Strong gift names: Stoic, Proof, Rook, Basalt (conversation starters), Vetiver, Sumi (luxury tier).' The technique 'gift_test' is listed in YAML frontmatter. The consumer riffing checklist marks '[x] Shelf / Gift / Social-native tests -- run on all shortlisted names'."
+    },
+    {
+      "id": "french-naturalized",
+      "text": "French Naturalized Vocabulary Mining applied (premium/luxury register)",
+      "passed": true,
+      "evidence": "01-candidates.md has a dedicated 'French Naturalized Vocabulary' section with 5 candidates: Cachet (#91, 'status, distinction, seal of quality'), Calibre (#92, 'French spelling adds sophistication'), Contour (#93, 'shape, outline'), Motif (#94, 'recurring theme, design element'), Aplomb (#95, 'composure, self-assurance'). The technique 'french_naturalized_vocabulary' appears in YAML. Consumer riffing checklist confirms: '[x] French naturalized vocabulary -- Cachet, Calibre, Contour, Motif, Aplomb, Patine'. Patine (#160) also appears in riffing. Cachet and Aplomb both made the final shortlist."
+    },
+    {
+      "id": "sound-symbolism",
+      "text": "Sound symbolism considered (angular sounds for masculine positioning)",
+      "passed": true,
+      "evidence": "Category 8 in 01-candidates.md is 'Sound-Symbolic' with 5 candidates explicitly engineered for masculine precision: Kolt (#71, 'hard K, short, decisive'), Strake (#72, 'hard S-cluster, nautical hull plating'), Vex (#73, 'friction, edge, provocation'), Stoke (#74, 'to fuel, controlled fire'), Grav (#75, 'from gravity, weight, substance'). Transcript generation strategy: 'Phonetic target: hard consonants (k, t, d), crisp vowels (i, e), 1-2 syllables, trochaic'. YAML: 'phonetic_preferences: hard consonants, crisp vowels, 1-2 syllables, trochaic stress'. The emphasis on angular, hard consonant sounds for masculine positioning is consistent throughout."
+    },
+    {
+      "id": "technique-toolkit",
+      "text": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+      "passed": true,
+      "evidence": "Transcript shows 'Technique Toolkit -- All Remaining Applied' with 'Per user instruction, selected [A] all remaining techniques' followed by a list of 13 unapplied techniques: Prefix x Suffix Matrix, Morphological Analysis, Semiotic Territory Mapping, Classical Stem Engineering, Contrarian/Anti-Category, Conceptual Blending, Three-Team Method, Desired-Self (deeper), Cultural Tension (deeper), SCAMPER, Inversion, Pre-Mortem, Constraint Removal. The '[A]' selection implies an option was offered. The YAML also tracks 'techniques_not_yet_used' (5 techniques that remained unused after all applied). The 01-candidates.md file shows dedicated sections for each applied technique with generated names."
+    }
+  ],
+  "summary": {
+    "passed": 21,
+    "failed": 2,
+    "total": 23,
+    "pass_rate": 0.91
+  },
+  "execution_metrics": {
+    "output_files": {
+      "00-brief.md": "4540 bytes",
+      "01-candidates.md": "26405 bytes",
+      "session-transcript.md": "14219 bytes"
+    },
+    "total_output_chars": 45164,
+    "transcript_chars": 14219,
+    "total_unique_candidates_claimed": 244,
+    "total_unique_candidates_verified": 233,
+    "categories_attempted": 9,
+    "riffing_directions": 8,
+    "techniques_applied": 38,
+    "shortlisted": 35,
+    "conflict_flags": 39
+  },
+  "timing": {
+    "executor_duration_seconds": 699.2,
+    "total_duration_seconds": 699.2,
+    "total_tokens": 132067
+  },
+  "claims": [
+    {
+      "claim": "244 unique candidates generated",
+      "type": "factual",
+      "verified": false,
+      "evidence": "01-candidates.md contains 233 numbered candidates (#1-#233), not 244. The YAML frontmatter and transcript both claim 244, and the transcript calculates '149 generation + ~96 riffs, net of duplicates'. However, 149 + 96 = 245, not 244, and the actual numbered entries only go to 233. The discrepancy is ~11 names. At least 2 are known duplicates (Hone appears in Evocative and Verb-as-Brand; Temper in Found Word and Verb-as-Brand). Still well above any threshold, but the 244 figure is inflated."
+    },
+    {
+      "claim": "9 of 11 naming categories attempted",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Confirmed by counting distinct category sections in 01-candidates.md: Evocative, Found Word, Foreign-Root, Sensory (Five Senses Scan), Metaphorical, Compound, Invented/Coined, Sound-Symbolic, Verb-as-Brand. Descriptive and Acronymic were not attempted, as documented."
+    },
+    {
+      "claim": "38+ techniques applied",
+      "type": "factual",
+      "verified": true,
+      "evidence": "01-candidates.md YAML frontmatter 'techniques_used' list contains 36 named techniques. With shelf_test, gift_test, social_native_test (3 more), the count reaches 39. Consistent with the '38+' claim."
+    },
+    {
+      "claim": "18 conflict flags",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Transcript claims '18' conflict flags, but 01-candidates.md contains approximately 39 warning emoji flags across all candidate tables (including both definite conflicts and uncertain ones marked with '?'). The transcript figure appears to undercount significantly."
+    },
+    {
+      "claim": "35 names shortlisted",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Shortlist table in 01-candidates.md contains exactly 35 ranked entries from Basalt (#1) through Stag (#35)."
+    },
+    {
+      "claim": "All 8 riffing axes applied",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript lists all 8: root compression, etymology mining, metaphor shift, outcome shift, sensory shift, sound tuning, language shift, structural shift. These are visible as technique labels on individual riffs in 01-candidates.md."
+    },
+    {
+      "claim": "Consumer riffing checklist 5/5 complete",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Transcript shows all 5 items checked: adjacent metaphor, sensory expansion, nature mining, French naturalized vocabulary, shelf/gift/social-native tests. Each item has supporting evidence in the outputs."
+    },
+    {
+      "claim": "SMILE/SCRATCH evaluation applied to shortlisting",
+      "type": "process",
+      "verified": true,
+      "evidence": "01-candidates.md shortlist table includes SMILE scores (S/M/I/L/E columns) for all 35 candidates. Transcript mentions: 'Applied SMILE/SCRATCH evaluation to full pool.'"
+    }
+  ],
+  "user_notes_summary": null,
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Emotional Temperature Mapping applied (masc positioning)",
+        "reason": "This assertion name may not match how the skill actually labels this technique. The session did extensive work on emotional positioning (Feeling Spectrum, archetype mapping, phonetic targeting for masculine energy), but never used the exact phrase 'Emotional Temperature Mapping'. If this is a specific technique from consumer-naming.md, the assertion is good and the skill failed to apply it by name. If it's meant to check for emotional positioning in general, the assertion should be reworded to match what the skill actually produces."
+      },
+      {
+        "assertion": "Price-Signal Calibration applied (luxury/masstige register)",
+        "reason": "Similar issue -- the session clearly considered price-tier signaling (Nordstrom/Saks placement, $40-60 moisturizer, French register for luxury). But the specific technique 'Price-Signal Calibration' was never invoked by name. If this is a labeled technique in consumer-naming.md, the skill should be running it explicitly. The eval correctly catches this gap."
+      },
+      {
+        "reason": "No assertion checks the quality of conflict flags. The session flagged 39 potential conflicts but the accuracy of those flags is unverified -- did it miss obvious conflicts? For example, 'Basalt' (ranked #1) has no flag, but there could be existing Basalt-branded products. A spot-check assertion on conflict completeness would be valuable."
+      },
+      {
+        "reason": "No assertion checks whether the shortlist actually represents diversity from the full pool rather than clustering on one territory. The 35-name shortlist is heavily weighted toward geological/material vocabulary (Basalt, Flint, Obsidian, Slate, Ore, Quarry, Resin, Alloy, Suede). A 'shortlist diversity' assertion could check that at least 4 naming categories or territories are represented in the top 10."
+      },
+      {
+        "assertion": "Front-of-Pack Hierarchy Fit tested (name on a matte black bottle)",
+        "reason": "This passed because the matte-black-bottle test was applied extensively. But the assertion name 'Front-of-Pack Hierarchy Fit' implies a more specific technique (how the brand name relates to product name, size, descriptor on the front of packaging). The session tested visual bottle appeal but not hierarchy fit per se. Consider whether this assertion should be split into 'visual packaging test' and 'naming hierarchy fit'."
+      }
+    ],
+    "overall": "Strong eval set that catches most meaningful outcomes. The two failures (Emotional Temperature Mapping, Price-Signal Calibration) are genuine gaps -- the skill should be invoking these consumer techniques by name. The main weakness is that several assertions can pass through implicit/distributed evidence rather than requiring explicit, labeled technique application. Consider requiring named technique invocations rather than accepting diffuse evidence."
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "expectations": [
+    {
+      "id": "cat-coverage",
+      "text": "At least 6 of 11 naming categories attempted",
+      "passed": true,
+      "evidence": "01-candidates.md YAML frontmatter lists 14 categories in categories_used: evocative, found_word, compound, sound_symbolic, metaphorical, foreign_root, arbitrary_absurd, verb_as_brand, invented_coined, sensory_five_senses, sensory_dissonance, cultural_tension, ingredient_process, blend_portmanteau. Each category has a dedicated table with candidates. Hard gate status confirms '14 of 11 categories attempted (PASS — minimum 6)'."
+    },
+    {
+      "id": "five-senses",
+      "text": "Five Senses Scan run as a dedicated generation pass (not inline)",
+      "passed": true,
+      "evidence": "01-candidates.md contains a dedicated 'FIVE SENSES SCAN (Consumer formal round)' section (candidates #93-107) with five subsections: SIGHT (Ochre, Rust, Umber, Sediment), SMELL (Peat, Resin, Smoke Ring), TOUCH (Grit, Grain), TASTE (Tang, Pang, Bitters), SOUND (Crackle, Rumble, Growl). This is a standalone pass, not inline within another category."
+    },
+    {
+      "id": "sensory-dissonance",
+      "text": "Sensory Dissonance (Cowshed Strategy) applied or offered",
+      "passed": true,
+      "evidence": "01-candidates.md has a dedicated 'SENSORY DISSONANCE (Consumer technique)' section (candidates #108-114) with the note 'Inverted territory (medium gradient — brand has design confidence)'. Candidates include Frost (temperature inversion), Quiet (volume inversion), Moss (softness inversion), Velvet (texture inversion), Still (motion inversion), Dew (moisture inversion), Idle (energy inversion). The Cowshed strategy is explicitly referenced: '#110 Moss — Soft, green, gentle for something aggressive. Cowshed strategy.'"
+    },
+    {
+      "id": "emotional-temp",
+      "text": "Emotional Temperature Mapping referenced or applied",
+      "passed": true,
+      "evidence": "The transcript states 'Emotional Temperature Mapping' is in the techniques applied list. The 01-candidates.md YAML frontmatter includes 'emotional_temperature_mapping' in techniques_used. The 00-brief.md contains a feeling_spectrum with four axes: authority_vs_approachability: 7, innovation_vs_heritage: 5, precision_vs_playfulness: 7, intimacy_vs_scale: 3 — which is the emotional temperature mapping output."
+    },
+    {
+      "id": "ingredient-mining",
+      "text": "Ingredient/Process Vocabulary Mining applied (fermentation terms)",
+      "passed": true,
+      "evidence": "01-candidates.md YAML lists 'ingredient_process_vocabulary_mining' in techniques_used and 'ingredient_process' in categories_used. Found Word section is explicitly labeled '(Territory: Slow Alchemy / Terroir)' with fermentation-process candidates: Brine (#11), Culture (#12), Steep (#13), Char (#14), Cure (#15), Crock (#16), Stave (#17). Riffing Direction 1 (Brine) further mines: Brinery, Saltern, Lacto, The Cure, Tidepool, Saltbox, Marshland, Brackish. Direction 4 (Culture) mines: Starter, Live Culture, Subculture, Colony, Koji, SCOBY. Clearly applied with fermentation terms throughout."
+    },
+    {
+      "id": "cultural-tension",
+      "text": "Cultural Tension Naming explored",
+      "passed": true,
+      "evidence": "01-candidates.md has a dedicated 'CULTURAL TENSION NAMING' section with the tension articulated: 'Hot sauce is either mass-market commodity or macho heat-bro posturing. Where's the craft?' Candidates #115-118: Slow Riot (tension compound), Rough Cut (tension compound), Feral (tension word), Gall (tension word). Additionally, Feral and Slow Riot were both promoted to the Strongest Contenders tier in the shortlist."
+    },
+    {
+      "id": "arbitrary-absurd",
+      "text": "Arbitrary/Absurd Association angle explored",
+      "passed": true,
+      "evidence": "01-candidates.md has a dedicated 'ARBITRARY / ABSURD ASSOCIATION' section (candidates #72-80) with techniques labeled 'category collision', 'room scan', 'dictionary dive', 'children's word'. Candidates include Hutch, Rook, Awning, Cobalt, Pebble, Sparrow, Hinge, Kettle, Lantern — all deliberately disconnected from hot sauce category conventions."
+    },
+    {
+      "id": "ownability-parallel",
+      "text": "Ownability-first compounds generated in parallel (B2B briefs) OR compound track correctly skipped per SKILL.md guidance (consumer/fashion/food briefs)",
+      "passed": true,
+      "evidence": "This is a consumer/food brief. The brief explicitly states 'Consumer/food brief — NO -works/-craft/-wise/-ware B2B compounds' as a constraint. No B2B ownability-first compound track was run. The compounds generated are consumer-appropriate (nature+nature, sensory pairings, etc.). The transcript confirms: 'B2B compound violations: 0 (all compounds consumer-appropriate)'. The compound track was correctly handled for a consumer brief."
+    },
+    {
+      "id": "dynamic-compounds",
+      "text": "Compound elements generated dynamically from the brief (not static suffix list)",
+      "passed": true,
+      "evidence": "In 01-candidates.md, the COMPOUND section (#25-38) uses brief-derived elements: Mud+bloom (earth imagery from terroir), Root+char (foundation + fire from brief), Stone+brine (mineral + salt from fermentation), Crow+pepper (arbitrary + ingredient), Slow+char (patience + fire from brand personality), Ash+bloom (residue + growth). The PREFIX x SUFFIX MATRIX section explicitly derives: 'Prefixes from brief: Slow-, Wild-, Dark-, Root-, Stone-, Black-, Red-, Rough-' and 'Suffixes from food/beverage industry: -batch, -table, -salt, -root, -bloom, -tongue, -bone, -seed, -mouth, -belly'. These are brief-derived and industry-specific, not a static generic list."
+    },
+    {
+      "id": "no-compound-track-consumer",
+      "text": "Did NOT default to B2B compound patterns (-works, -craft, -wise) for this consumer brief",
+      "passed": true,
+      "evidence": "01-candidates.md section header explicitly states 'COMPOUND — Consumer-Appropriate (NOT B2B patterns)'. The structural mix summary confirms: 'No B2B compounds (-works, -craft, -wise, -ware) generated. All compounds are consumer-appropriate: nature+nature, sensory pairings, arbitrary combinations, food/beverage industry compounds.' I searched for -works, -craft, -wise, -ware across all 249 candidates and found zero instances of these B2B patterns."
+    },
+    {
+      "id": "structural-diversity",
+      "text": "At least 3 structural types represented (found words, compounds, coined, blends, etc.)",
+      "passed": true,
+      "evidence": "01-candidates.md YAML frontmatter lists 10 structural types in structural_mix: found_words (52), compounds (42), coined_invented (18), blends (14), foreign_root (14), respellings (5), verb_as_brand (12), phrase_names (8), sensory_dissonance (7), contrarian (8). No single type exceeds 29%. The hard gate confirms '10 structural types represented (PASS — minimum 3, no type >80%)'."
+    },
+    {
+      "id": "tree-of-thought",
+      "text": "Tree of Thought branching used (3 parallel mini-batches per category)",
+      "passed": false,
+      "evidence": "The transcript lists 'Tree of Thought branching' in techniques applied, and the YAML frontmatter includes 'tree_of_thought_branching' in techniques_used. However, examining the actual 01-candidates.md output, there is no visible evidence of 3 parallel mini-batches per category. Each category presents a single table of candidates. For example, EVOCATIVE has one table of 10 candidates, FOUND WORD one table of 14, COMPOUND one table of 14, etc. There are no 'Branch A / Branch B / Branch C' or similar parallel-batch structures within any category. The technique is claimed but not evidenced in the output structure."
+    },
+    {
+      "id": "technique-labeling",
+      "text": "Each riff labeled with which technique produced it",
+      "passed": true,
+      "evidence": "In the riffing section of 01-candidates.md (Direction 1-6), every riff has a 'Specific Technique' column. Examples: '#183 Brinewell — compound creation: brine + well (source)', '#184 Saltern — synonym explosion: brine → salt works', '#187 Salmura — language shift: Romanian \"saramura\" (brine)', '#190 Tidepool — sensory shift: brine → ocean → tidepool', '#197 Blackthorn — compound creation: black + thorn', '#200 Scratch — outcome shift: bramble → what it does to you'. All 69 riffs across 6 directions have specific technique labels."
+    },
+    {
+      "id": "riff-volume",
+      "text": "10+ NEW UNIQUE riffs per direction (duplicates don't count), OR 8+ per direction if total riff count exceeds 60",
+      "passed": true,
+      "evidence": "01-candidates.md verifies riff counts per direction after excluding duplicates: Direction 1 (Brine): 11 new unique (excluded #182 as duplicate of #155), Direction 2 (Bramble): 12 new unique, Direction 3 (Slow Riot): 12 new unique, Direction 4 (Culture): 11 new unique, Direction 5 (Nettle): 12 new unique, Direction 6 (Loam): 11 new unique (excluded #249 as duplicate of #3). Total: 69 new riffs. All 6 directions exceed the 10-riff minimum. The secondary threshold (8+ if total >60) is also satisfied."
+    },
+    {
+      "id": "linguistic-riffing",
+      "text": "Linguistic riffing applied (morpheme swap, language shift, etymology mining)",
+      "passed": true,
+      "evidence": "In 01-candidates.md riffing sections: Language shift examples: '#187 Salmura — language shift: Romanian \"saramura\" (brine)', '#231 Urtica — language shift: Latin for nettle', '#226 Koji — language shift: Japanese fermentation culture', '#252 Terreno — language shift: Italian/Spanish for terrain'. Etymology mining: '#225 Cultivated — etymology mining: culture → cultivare (Latin)'. Phonetic texture shift (morpheme manipulation): '#186 Brindle — phonetic texture shift: brine → brindle', '#205 Wicket — phonetic texture shift: thicket → wicket'. These demonstrate genuine linguistic riffing."
+    },
+    {
+      "id": "conceptual-riffing",
+      "text": "Conceptual riffing applied (zoom in/out, adjacent metaphor, sensory shift)",
+      "passed": true,
+      "evidence": "In 01-candidates.md riffing sections: Zoom in: '#188 Lacto — zoom in: brine → lacto-fermentation', '#221 Starter — zoom in: culture → starter culture', '#227 SCOBY — zoom in: culture → specific organism'. Zoom out: '#193 Brackish — zoom out: brine → salt water spectrum'. Adjacent metaphor: '#185 Pickle — adjacent metaphor: brine → pickling', '#192 Marshland — adjacent metaphor: brine → salt marsh', '#196 Hedgerow — adjacent metaphor: bramble → wild boundary'. Sensory shift: '#190 Tidepool — sensory shift: brine → ocean → tidepool', '#207 Quiet Storm — sensory shift: slow riot → weather metaphor', '#247 Underfoot — sensory shift: loam → where it lives'."
+    },
+    {
+      "id": "structural-riffing",
+      "text": "Structural riffing applied (syllable reduction, compound creation, blend)",
+      "passed": true,
+      "evidence": "In 01-candidates.md riffing sections: Root compression (syllable reduction): '#198 Thorn — root compression: bramble → its defining feature', '#199 Barb — root compression: thorns → barbed', '#246 Dirt — root compression: loam → simplest synonym'. Compound creation: '#183 Brinewell — compound creation: brine + well (source)', '#191 Saltbox — compound creation: salt + box', '#197 Blackthorn — compound creation: black + thorn', '#209 Slow Hand — compound creation: slow + hand', '#237 Wild Leaf — compound creation: wild + leaf'. Also creative respelling: '#218 Kulture — creative respelling: K for C'."
+    },
+    {
+      "id": "consumer-riffing-checklist",
+      "text": "Consumer riffing checklist used (adjacent metaphor, sensory expansion, nature mining, French naturalized vocab) NOT B2B checklist",
+      "passed": true,
+      "evidence": "02-shortlist.md contains an explicit 'Consumer Riffing Checklist Status' section with all items checked: '[x] Adjacent metaphor — Applied across 6 directions during riffing', '[x] Sensory expansion — Five Senses Scan formal round completed', '[x] Nature mining — Animal/Nature Totem category + riffing on Bramble/Nettle', '[x] French naturalized vocabulary — Applied during shortlisting (see additions below)', '[x] Shelf / Gift / Social-native tests — Applied to all shortlisted names'. French naturalized additions listed: Verve, Panache, Cachet, Piquant. No B2B checklist items appear anywhere."
+    },
+    {
+      "id": "hard-gates",
+      "text": "Hard gate checks displayed before generation menu (count, categories, structural mix, technique cycling)",
+      "passed": true,
+      "evidence": "01-candidates.md contains an explicit 'Hard Gate Status (Post-Generation)' section with four checks: 'Candidate count: 180 candidates (PASS — minimum 60 for deep session)', 'Category coverage: 14 of 11 categories attempted (PASS — minimum 6)', 'Structural mix: 10 structural types represented (PASS — minimum 3, no type >80%)', 'Technique coverage: 25+ techniques used, 4 remaining (PASS — fewer than 8 unused)'. The transcript confirms the same gates. All four dimensions checked."
+    },
+    {
+      "id": "conflict-flagging",
+      "text": "Inline conflict flagging for known conflicts (warning emoji or text flag — substance over format)",
+      "passed": true,
+      "evidence": "01-candidates.md uses inline conflict flags throughout. Examples with warning emoji: '#6 Flux — ⚠️? Flux may be used by several brands', '#9 Ember — ⚠️? Ember has multiple brand uses', '#49 Badger — ⚠️? Badger brand exists (balms/skincare)', '#59 Fuego — ⚠️ Multiple hot sauce brands use Fuego', '#79 Kettle — ⚠️? Kettle Brand chips', '#104 Bitters — ⚠️ Angostura Bitters', '#137 Darkbloom — ⚠️? May exist in other industries', '#165 Bloom — ⚠️? Very common brand name', '#178 Good Trouble — ⚠️? Associated with John Lewis's phrase', '#189 The Cure — ⚠️ The Cure band', '#229 Sting — ⚠️? Sting (musician)', '#239 Hemlock — ⚠️? Bold for food brand', '#245 Terra — ⚠️? Multiple brand uses'. At least 15 conflict flags across the candidate pool."
+    },
+    {
+      "id": "gallery-mode",
+      "text": "Gallery mode presentation used — scannable grid/table format for category overview (H/W/C reaction prompts in interactive sessions, structured table in automated sessions)",
+      "passed": true,
+      "evidence": "01-candidates.md presents all candidates in structured tables organized by category, with columns for #, Name, Technique, Rationale, and Flags. Each category has its own table. The shortlist (02-shortlist.md) uses tiered tables (Strongest Contenders, Strong Contenders, Interesting Long Shots) with columns for #, Name, Source, Category, Why It Works, Shelf Test, Handle. This is a scannable grid/table format. The session was automated (auto-continued), so structured tables are the correct format."
+    },
+    {
+      "id": "candidate-count",
+      "text": "At least 40 unique candidates generated",
+      "passed": true,
+      "evidence": "01-candidates.md YAML frontmatter states total_unique_candidates: 249. The deduplication note confirms '180 candidates' after dedup in Round 1, then 69 new riffs added in riffing for 249 total. Even at the most conservative count (the 180 pre-riffing), this far exceeds the 40 minimum. I can verify by the numbered candidates reaching #252 (with some duplicates excluded)."
+    },
+    {
+      "id": "shelf-test",
+      "text": "Shelf Test or Gift Test referenced for consumer context",
+      "passed": true,
+      "evidence": "02-shortlist.md contains both tests. Selection Criteria #4: 'Shelf test — would it stand out between Yellowbird and Fly By Jing?' and #5: 'Gift test — would someone feel proud gifting a bottle with this name?'. Dedicated 'Shelf Test Results' section: 'Visualized on shelf between Secret Aardvark, Yellowbird, Fly By Jing, Cholula, Truff' with categories (Highest curiosity gap, Strong shelf presence, Premium signal, Earthy/authentic signal). Dedicated 'Gift Test Results' section with categories (Delight on unwrapping, Conversation starter, Premium gift-worthy, Might need context)."
+    },
+    {
+      "id": "social-native",
+      "text": "Social-native testing considered (hashtag, handle, caption tests)",
+      "passed": true,
+      "evidence": "02-shortlist.md contains a full 'Social-Native Test Results (Shortlisted Names)' table with columns for Name, @handle, #hashtag, Caption Test, and Verbal Sharing. All 11 top names tested. Examples: 'Bramble — @bramblesauce — #bramble (6M — needs modifier) — \"Just tried @bramblesauce on eggs and WOW\" — \"You have to try Bramble\"'. 'Slow Riot — @slowriot — #slowriot (tiny — fully ownable) — \"In a Slow Riot kind of mood\"'. The brief constraint 'Must work as an Instagram handle' is directly addressed."
+    },
+    {
+      "id": "technique-toolkit",
+      "text": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+      "passed": false,
+      "evidence": "The transcript mentions hard gate status with '25+ techniques used, 4 remaining (PASS — fewer than 8 unused)' and the YAML lists techniques_not_yet_used: [domain_first_naming, constraint_removal, pre_mortem, trend_cycle_audit]. However, there is no evidence in the transcript or output files that a technique toolkit was displayed to the user at a checkpoint with applied/unapplied status and a selection option. The session was auto-continued, and no checkpoint menu with technique options is documented. The hard gate merely summarizes counts without offering a selection interface."
+    }
+  ],
+  "summary": {
+    "passed": 23,
+    "failed": 2,
+    "total": 25,
+    "pass_rate": 0.92
+  },
+  "timing": {
+    "total_duration_seconds": 720.5
+  },
+  "claims": [
+    {
+      "claim": "180 unique candidates generated in Round 1",
+      "type": "factual",
+      "verified": true,
+      "evidence": "01-candidates.md contains numbered candidates up to #181 in Round 1, with #82 (Steep) noted as duplicate of #13. The deduplication note says 'Total unique after dedup: 180 candidates'. Counting the numbered entries minus the one documented duplicate confirms this."
+    },
+    {
+      "claim": "69 new unique riffs added in riffing round",
+      "type": "factual",
+      "verified": true,
+      "evidence": "01-candidates.md riffing sections show: Direction 1: 11, Direction 2: 12, Direction 3: 12, Direction 4: 11, Direction 5: 12, Direction 6: 11. Two duplicates excluded (#182 duplicate of #155, #249 duplicate of #3). 11+12+12+11+12+11 = 69. Each direction's count is individually documented and verifiable."
+    },
+    {
+      "claim": "249 total unique candidates post-riffing",
+      "type": "factual",
+      "verified": true,
+      "evidence": "180 (Round 1) + 69 (riffing) = 249. Both component counts are verified above. The YAML frontmatter states total_unique_candidates: 249."
+    },
+    {
+      "claim": "25+ techniques applied",
+      "type": "factual",
+      "verified": true,
+      "evidence": "01-candidates.md YAML lists 25 entries in techniques_used (with one duplicate: memetic_viral_engineering appears twice). Removing the duplicate gives 24 unique named techniques. However, the generation tables show additional techniques not in the YAML list (e.g., 'room scan', 'dictionary dive', 'children's word'). The claim of 25+ is supported."
+    },
+    {
+      "claim": "Zero B2B compound violations",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Searched all 249 candidates in 01-candidates.md for -works, -craft, -wise, -ware suffixes. None found. All compounds are consumer-appropriate: nature+nature (Mudbloom, Rootchar), sensory (Slowchar, Saltblack), arbitrary (Crowpepper, Peppermonk), and food industry patterns (-batch, -salt, -root, etc.)."
+    },
+    {
+      "claim": "14 of 11 naming categories attempted",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The 11 standard categories from naming-categories.md are a baseline. 01-candidates.md contains sections for: Evocative, Found Word, Compound, Sound-Symbolic, Metaphorical, Foreign-Root, Arbitrary/Absurd, Verb-as-Brand, Five Senses Scan, Sensory Dissonance, Cultural Tension, Invented/Coined, Blend/Portmanteau, plus additional techniques round. That's 14 named sections. The YAML confirms 14 categories in categories_used."
+    },
+    {
+      "claim": "Consumer riffing checklist items all completed",
+      "type": "quality",
+      "verified": true,
+      "evidence": "02-shortlist.md shows all 5 items checked. Adjacent metaphor: visible in riffing (Pickle, Hedgerow, Tidepool, etc.). Sensory expansion: Five Senses Scan section exists. Nature mining: Animal/Nature Totem section exists, plus Bramble/Nettle riffing. French naturalized vocabulary: Verve, Panache, Cachet, Piquant listed. Shelf/Gift/Social tests: all three have dedicated sections in 02-shortlist.md."
+    },
+    {
+      "claim": "Steps completed: 00, 01a, 01b, 02a, 02c, 03a",
+      "type": "process",
+      "verified": true,
+      "evidence": "Output files confirm: 00-brief.md (Steps 00, 01a, 01b), 01-candidates.md (Steps 02a, 02c), 02-shortlist.md (Step 03a). The YAML stepsCompleted arrays track progression correctly across all three files."
+    }
+  ],
+  "user_notes_summary": null,
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Tree of Thought branching used (3 parallel mini-batches per category)",
+        "reason": "This assertion is hard to grade from outputs alone. The technique is listed in the YAML but there's no structural evidence (e.g., Branch A/B/C labels) in the actual tables. Consider requiring visible branch labels in the output, or defining what 'Tree of Thought branching' evidence looks like in the candidate file."
+      },
+      {
+        "assertion": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+        "reason": "This is a workflow/interaction assertion that cannot be verified in auto-continued sessions. The executor auto-continued past all menus. Consider either: (a) excluding this assertion for auto-continued runs, or (b) requiring the toolkit to be rendered in the output artifact even when auto-continuing."
+      },
+      {
+        "reason": "No assertion checks the quality of the shortlist — e.g., whether shortlisted names actually match the brief personality (craft, authentic, bold, earthy, irreverent) or whether the tiering logic is justified. The shortlist could contain random selections from the pool and still pass all current assertions."
+      },
+      {
+        "reason": "No assertion verifies that the naming territories (step 01b) actually influenced generation. The territories are defined in 00-brief.md, but an assertion checking whether candidates are distributed across territories would test whether territory-driven generation actually happened vs. territories being cosmetic."
+      }
+    ],
+    "overall": "Assertions are thorough on technique coverage and structural compliance. The main gap is that most assertions check process adherence (was X technique applied?) rather than output quality (are the names actually good/distinct/on-brief?). The two failures are both borderline — one is a structural evidence question and the other is an auto-run artifact."
+  }
+}
