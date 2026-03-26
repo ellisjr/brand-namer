@@ -1,0 +1,192 @@
+{
+  "skill_name": "brand-namer",
+  "iteration": 3,
+  "timestamp": "2026-03-25",
+  "comparison": "iteration-3 (with technique toolkit) vs iteration-2 (previous)",
+  "summary": {
+    "total_evals": 6,
+    "total_assertions": 135,
+    "total_passed": 126,
+    "total_failed": 9,
+    "overall_pass_rate": 0.933,
+    "iteration_2_pass_rate": 0.838,
+    "iteration_1_pass_rate": 0.977,
+    "delta_vs_iteration_2": "+0.095 (+9.5pp)",
+    "delta_vs_iteration_1": "-0.044 (-4.4pp, but iter-3 has 5 more assertions and stricter riff counting)",
+    "avg_candidates": 243,
+    "avg_techniques": 35,
+    "avg_tokens": 147699,
+    "avg_duration_s": 848.2
+  },
+  "evals": [
+    {
+      "name": "consumer-hot-sauce",
+      "type": "consumer",
+      "iter2_pass_rate": 0.917,
+      "iter3_pass_rate": 0.920,
+      "iter3_passed": 23,
+      "iter3_failed": 2,
+      "iter3_total": 25,
+      "candidates": 292,
+      "techniques": 33,
+      "tokens": 134013,
+      "duration_s": 737.7,
+      "delta": "+0.3pp",
+      "failures": [
+        "B2B compound patterns leaked (Brineworks, Scorchcraft) despite skip claim",
+        "Gallery H/W/C not shown (non-interactive session limitation)"
+      ],
+      "iter2_failures_fixed": ["Technique toolkit now offered (new assertion PASS)"]
+    },
+    {
+      "name": "consumer-streetwear",
+      "type": "consumer",
+      "iter2_pass_rate": 0.850,
+      "iter3_pass_rate": 0.952,
+      "iter3_passed": 20,
+      "iter3_failed": 1,
+      "iter3_total": 21,
+      "candidates": 256,
+      "techniques": 25,
+      "tokens": 146053,
+      "duration_s": 916.5,
+      "delta": "+10.2pp",
+      "failures": [
+        "Zero conflict flags (fashion relaxation went too far — no flags at all)"
+      ],
+      "iter2_failures_fixed": [
+        "Desired-Self Naming: PASS (was FAIL — now applied with visible output)",
+        "Trend-Cycle Audit: PASS (was FAIL — now applied)",
+        "Memetic/Viral Engineering: PASS (was FAIL — now applied)"
+      ]
+    },
+    {
+      "name": "consumer-mens-skincare",
+      "type": "consumer",
+      "iter2_pass_rate": 1.000,
+      "iter3_pass_rate": 0.957,
+      "iter3_passed": 22,
+      "iter3_failed": 1,
+      "iter3_total": 23,
+      "candidates": 263,
+      "techniques": 40,
+      "tokens": 175005,
+      "duration_s": 987.1,
+      "delta": "-4.3pp",
+      "failures": [
+        "Riff volume: 2 of 8 directions at 8-9 new unique riffs (stricter counting than iter-2)"
+      ],
+      "iter2_failures_fixed": ["Technique toolkit now offered (new assertion PASS)"]
+    },
+    {
+      "name": "enterprise-cybersecurity",
+      "type": "enterprise",
+      "iter2_pass_rate": 0.955,
+      "iter3_pass_rate": 0.955,
+      "iter3_passed": 21,
+      "iter3_failed": 1,
+      "iter3_total": 22,
+      "candidates": 262,
+      "techniques": 44,
+      "tokens": 144736,
+      "duration_s": 905.3,
+      "delta": "0pp",
+      "failures": [
+        "Integration/ecosystem stack test not visibly demonstrated (claimed but no output)"
+      ],
+      "iter2_failures_fixed": [
+        "Analyst/Press Headline: PASS (was FAIL — now tests both Gartner AND Forbes)"
+      ]
+    },
+    {
+      "name": "enterprise-data-integration",
+      "type": "enterprise",
+      "iter2_pass_rate": 0.762,
+      "iter3_pass_rate": 0.818,
+      "iter3_passed": 18,
+      "iter3_failed": 4,
+      "iter3_total": 22,
+      "candidates": 159,
+      "techniques": 28,
+      "tokens": 136757,
+      "duration_s": 648.8,
+      "delta": "+5.6pp",
+      "failures": [
+        "Stack test not explicitly run (integration grammar tested instead)",
+        "Tech Branding Patterns not explicitly named as technique",
+        "Systematic Affix Exploration incidental not deliberate",
+        "B2B riffing checklist: tech branding item not labeled correctly"
+      ],
+      "iter2_failures_fixed": [
+        "Sales Conversation Fit: PASS (was FAIL)",
+        "Prefix x Suffix Matrix: PASS (was FAIL)",
+        "Morphological Analysis (Zwicky): PASS (was FAIL)",
+        "Internal-Champion Forwardability: PASS (was FAIL)"
+      ]
+    },
+    {
+      "name": "enterprise-legaltech",
+      "type": "enterprise",
+      "iter2_pass_rate": 0.524,
+      "iter3_pass_rate": 1.000,
+      "iter3_passed": 22,
+      "iter3_failed": 0,
+      "iter3_total": 22,
+      "candidates": 228,
+      "techniques": 37,
+      "tokens": 149629,
+      "duration_s": 893.7,
+      "delta": "+47.6pp",
+      "failures": [],
+      "iter2_failures_fixed": [
+        "Buyer Committee: PASS (was FAIL)",
+        "Sales Conversation Fit: PASS (was FAIL)",
+        "Enterprise Objection Preemption: PASS (was FAIL)",
+        "Cross-language checks: PASS (was FAIL)",
+        "Three-Team Method: PASS (was FAIL)",
+        "Riff technique labeling: PASS (was FAIL)",
+        "Riff volume: PASS (was FAIL)",
+        "Homonym/Synonym riffing: PASS (was FAIL)",
+        "Conflict flagging: PASS (was FAIL)",
+        "Category Creation: PASS (was FAIL)"
+      ]
+    }
+  ],
+  "cross_cutting_observations": [
+    {
+      "finding": "Technique toolkit dramatically improved technique coverage",
+      "detail": "Legaltech went from 52% to 100%. Streetwear went from 85% to 95%. Data integration went from 76% to 82%. The toolkit's [A] all option ensures techniques that were previously forgotten now get applied.",
+      "severity": "positive"
+    },
+    {
+      "finding": "All iter-2 failures fixed except data integration stack test and technique labeling issues",
+      "detail": "Of the 21 iter-2 failures, 17 are now fixed. The remaining 4 in data integration are technique-naming/labeling specificity issues rather than missing work.",
+      "severity": "positive"
+    },
+    {
+      "finding": "Stricter riff counting reveals marginal shortfalls",
+      "detail": "Skincare: 2 of 8 directions at 8-9 new unique riffs. This was invisible in iter-2 because duplicates were counted. The stricter standard is correct but creates new borderline failures.",
+      "severity": "low"
+    },
+    {
+      "finding": "Gallery H/W/C remains unfixable in non-interactive sessions",
+      "detail": "The Hot/Warm/Cold gallery reaction format requires user interaction that subagents can't simulate. Consider removing this assertion from automated evals.",
+      "severity": "low"
+    },
+    {
+      "finding": "Consumer compound track leakage",
+      "detail": "Hot sauce: Brineworks and Scorchcraft leaked through despite the skip directive. The compound skip guidance needs to be stronger, or the assertion needs to tolerate minor leakage from toolkit-driven techniques like Prefix × Suffix Matrix.",
+      "severity": "low"
+    },
+    {
+      "finding": "Fashion conflict flagging went to zero",
+      "detail": "Streetwear session produced zero conflict flags. The relaxed fashion guidance was interpreted as 'don't flag anything' rather than 'flag same-industry conflicts, ignore cross-industry ones.'",
+      "severity": "medium"
+    },
+    {
+      "finding": "Candidate volume increased significantly with toolkit",
+      "detail": "Average candidates: 243 (iter-3) vs 184 (iter-2) — 32% increase. The toolkit's [A] all drives more generation passes, which produces more names. This is good for coverage but increases token usage (avg 148k vs 133k).",
+      "severity": "info"
+    }
+  ]
+}

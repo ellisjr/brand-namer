@@ -1,0 +1,132 @@
+{
+  "eval_id": 1,
+  "eval_name": "consumer-hot-sauce",
+  "prompt": "I'm launching a small-batch artisanal hot sauce brand. We ferment everything for 6+ months using locally-sourced peppers from farms in the Willamette Valley. Our sauces range from a mild smoky chipotle to a face-melting Carolina Reaper blend. Target audience is food enthusiasts aged 25-45 who shop at farmers' markets, specialty grocery stores, and follow food creators on TikTok/Instagram. The brand should feel: craft, authentic, bold, earthy, with a bit of irreverence. We want something distinctive - not another 'fire' or 'burn' name. Think more Fly By Jing energy than Frank's RedHot. Main competitors: Yellowbird, Secret Aardvark, Heatonist, Fly By Jing, Cholula, Truff. I'd love a name that works on a bottle label and as an Instagram handle.",
+  "assertions": [
+    {
+      "id": "cat-coverage",
+      "text": "At least 6 of 11 naming categories attempted",
+      "type": "generation"
+    },
+    {
+      "id": "five-senses",
+      "text": "Five Senses Scan run as a dedicated generation pass (not inline)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "sensory-dissonance",
+      "text": "Sensory Dissonance (Cowshed Strategy) applied or offered",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "emotional-temp",
+      "text": "Emotional Temperature Mapping referenced or applied",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "ingredient-mining",
+      "text": "Ingredient/Process Vocabulary Mining applied (fermentation terms)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "cultural-tension",
+      "text": "Cultural Tension Naming explored",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "arbitrary-absurd",
+      "text": "Arbitrary/Absurd Association angle explored",
+      "type": "generation"
+    },
+    {
+      "id": "ownability-parallel",
+      "text": "Ownability-first compounds generated in parallel (B2B briefs) OR compound track correctly skipped per SKILL.md guidance (consumer/fashion/food briefs)",
+      "type": "generation"
+    },
+    {
+      "id": "dynamic-compounds",
+      "text": "Compound elements generated dynamically from the brief (not static suffix list)",
+      "type": "generation"
+    },
+    {
+      "id": "no-compound-track-consumer",
+      "text": "Did NOT default to B2B compound patterns (-works, -craft, -wise) for this consumer brief",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "structural-diversity",
+      "text": "At least 3 structural types represented (found words, compounds, coined, blends, etc.)",
+      "type": "generation"
+    },
+    {
+      "id": "tree-of-thought",
+      "text": "Tree of Thought branching used (3 parallel mini-batches per category)",
+      "type": "generation"
+    },
+    {
+      "id": "technique-labeling",
+      "text": "Each riff labeled with which technique produced it",
+      "type": "riffing"
+    },
+    {
+      "id": "riff-volume",
+      "text": "10+ NEW UNIQUE riffs per direction (duplicates of existing candidates don't count)",
+      "type": "riffing"
+    },
+    {
+      "id": "linguistic-riffing",
+      "text": "Linguistic riffing applied (morpheme swap, language shift, etymology mining)",
+      "type": "riffing"
+    },
+    {
+      "id": "conceptual-riffing",
+      "text": "Conceptual riffing applied (zoom in/out, adjacent metaphor, sensory shift)",
+      "type": "riffing"
+    },
+    {
+      "id": "structural-riffing",
+      "text": "Structural riffing applied (syllable reduction, compound creation, blend)",
+      "type": "riffing"
+    },
+    {
+      "id": "consumer-riffing-checklist",
+      "text": "Consumer riffing checklist used (adjacent metaphor, sensory expansion, nature mining, French naturalized vocab) NOT B2B checklist",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "hard-gates",
+      "text": "Hard gate checks displayed before generation menu (count, categories, structural mix, technique cycling)",
+      "type": "workflow"
+    },
+    {
+      "id": "conflict-flagging",
+      "text": "Inline conflict flagging for known conflicts (\u26a0\ufe0f emoji or text flag \u2014 substance over format)",
+      "type": "generation"
+    },
+    {
+      "id": "gallery-mode",
+      "text": "Gallery mode presentation used \u2014 scannable grid/table with Hot/Warm/Cold (H/W/C) reaction prompts for category overview",
+      "type": "presentation"
+    },
+    {
+      "id": "candidate-count",
+      "text": "At least 40 unique candidates generated",
+      "type": "generation"
+    },
+    {
+      "id": "shelf-test",
+      "text": "Shelf Test or Gift Test referenced for consumer context",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "social-native",
+      "text": "Social-native testing considered (hashtag, handle, caption tests)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "technique-toolkit",
+      "text": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+      "type": "workflow"
+    }
+  ]
+}

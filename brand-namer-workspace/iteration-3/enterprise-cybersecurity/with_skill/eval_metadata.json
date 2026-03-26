@@ -1,0 +1,122 @@
+{
+  "eval_id": 4,
+  "eval_name": "enterprise-cybersecurity",
+  "prompt": "We're building an AI-powered cybersecurity platform that uses ML to detect network anomalies, automate incident response, and provide continuous compliance monitoring. We just raised a $12M Series A. Target customers: CISOs and security teams at mid-to-large enterprises (500-10000 employees). Should feel authoritative, technically credible, modern but not gimmicky. We want engineers to respect the name AND C-suite to feel comfortable putting it in a board deck. Competitors: CrowdStrike, SentinelOne, Darktrace, Wiz, Orca Security, Palo Alto Networks. We're positioning as the next-gen platform \u2014 AI-native, not bolted-on AI. Name should work in 'Gartner names [X] a Leader in the CNAPP Magic Quadrant' and also as a CLI command.",
+  "assertions": [
+    {
+      "id": "cat-coverage",
+      "text": "At least 6 of 11 naming categories attempted",
+      "type": "generation"
+    },
+    {
+      "id": "vertical-codes",
+      "text": "Vertical Code Calibration applied for cybersecurity",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "buyer-committee",
+      "text": "Buyer Committee test applied (champion, CFO, technical evaluator, end users)",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "sales-conversation",
+      "text": "Sales Conversation Fit templates tested (elevator pitch, board deck, RFP, Slack, phone)",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "analyst-headline",
+      "text": "Analyst/Press Headline Testing applied (Gartner, Forbes)",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "enterprise-objection",
+      "text": "Enterprise Objection Preemption applied (CISO test, resume test)",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "dev-credibility",
+      "text": "Developer/Technical Credibility Signaling considered (CLI-friendly)",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "acronym-resilience",
+      "text": "Acronym Resilience tested on finalists",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "trust-without-claims",
+      "text": "Trust-Without-Claims Lexicon used (avoid 'secure', 'shield', 'protect')",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "governance-vocab",
+      "text": "Governance/Audit Vocabulary Mining applied",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "ownability-parallel",
+      "text": "Ownability-first compounds generated in parallel track",
+      "type": "generation"
+    },
+    {
+      "id": "tech-branding",
+      "text": "Tech Branding Patterns applied (-works, -craft, -wise, etc.)",
+      "type": "generation"
+    },
+    {
+      "id": "institutional-compounds",
+      "text": "Institutional Compound patterns explored (Color+Noun, Quality+Noun)",
+      "type": "generation"
+    },
+    {
+      "id": "three-team",
+      "text": "Lexicon Three-Team Method applied during generation or riffing",
+      "type": "generation"
+    },
+    {
+      "id": "technique-labeling",
+      "text": "Each riff labeled with which technique produced it",
+      "type": "riffing"
+    },
+    {
+      "id": "riff-volume",
+      "text": "10+ NEW UNIQUE riffs per direction (duplicates of existing candidates don't count)",
+      "type": "riffing"
+    },
+    {
+      "id": "b2b-riffing-checklist",
+      "text": "B2B riffing checklist used (SCAMPER, compound creation, creative respelling, tech branding)",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "hard-gates",
+      "text": "Hard gate checks displayed before generation menu",
+      "type": "workflow"
+    },
+    {
+      "id": "conflict-flagging",
+      "text": "Inline conflict flagging for known conflicts (\u26a0\ufe0f emoji or text flag \u2014 substance over format)",
+      "type": "generation"
+    },
+    {
+      "id": "candidate-count",
+      "text": "At least 40 unique candidates generated",
+      "type": "generation"
+    },
+    {
+      "id": "platform-vs-point",
+      "text": "Platform vs Point-Solution naming considered (this is a platform)",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "integration-ecosystem",
+      "text": "Integration/Ecosystem naming tested (stack test alongside Salesforce, AWS)",
+      "type": "enterprise-specific"
+    },
+    {
+      "id": "technique-toolkit",
+      "text": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+      "type": "workflow"
+    }
+  ]
+}

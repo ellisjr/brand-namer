@@ -1,0 +1,233 @@
+{
+  "expectations": [
+    {
+      "id": "cat-coverage",
+      "text": "At least 6 of 11 naming categories attempted",
+      "passed": true,
+      "evidence": "9 of 11 categories attempted: Found Word, Evocative, Sensory (Five Senses Scan), Foreign-Root, Compound, Coined/Invented, Metaphorical, Sound-Symbolic, Arbitrary/Absurd. Categories explicitly not attempted: Descriptive ('poor fit for premium'), Acronymic ('poor fit for consumer luxury')."
+    },
+    {
+      "id": "five-senses",
+      "text": "Five Senses Scan run as dedicated generation pass (skincare is sensory)",
+      "passed": true,
+      "evidence": "Category 3 is explicitly labeled 'SENSORY (Five Senses Scan)' with 15 candidates spanning all five senses: touch (Hone, Taut, Suede), sight (Matte, Muted), smell (Cedar, Vetiver, Resin, Smoke), sound (Hush), taste (Mineral), and multi-sensory (Char, Amber, Graphite). Each candidate is labeled with its sense modality (e.g., 'sensory_touch', 'sensory_smell')."
+    },
+    {
+      "id": "emotional-temp",
+      "text": "Emotional Temperature Mapping applied (masc positioning)",
+      "passed": true,
+      "evidence": "Step 01a includes a 'Feeling Spectrum' with 5 numeric axes: Authority vs Approachability (7), Innovation vs Heritage (6), Precision vs Playfulness (8), Intimacy vs Scale (5), Simplicity vs Complexity (7). These map the masculine positioning on emotional dimensions."
+    },
+    {
+      "id": "price-signal",
+      "text": "Price-Signal Calibration applied (luxury/masstige register)",
+      "passed": true,
+      "evidence": "The $40-60 price point is explicitly referenced in the brief and carried into shortlisting criterion 4: 'Premium signal ($40-60)'. Shelf Test evaluates Nordstrom/Saks suitability. French Naturalized Vocabulary was applied explicitly for 'premium/luxury register' (Cachet, Contour, Finesse). Adjacent-Category Borrowing from spirits signals premium craft pricing. The entire territory design ('Material Authority', 'Quiet Architecture') calibrates to luxury/masstige register."
+    },
+    {
+      "id": "adjacent-category",
+      "text": "Adjacent-Category Code Borrowing explored (e.g., spirits/fragrance codes for skincare)",
+      "passed": true,
+      "evidence": "Explicit section 'Adjacent-Category Code Borrowing (Spirits/Fragrance)' with 5 candidates: Proof, Reserve, Batch, Cask, Distill. Also Three-Team Method (Team 3: Whiskey) with 4 candidates: Cooper, Stave, Dram, Peat. Also Subculture Code-Switch (Watch Collector) with 5 candidates: Bezel, Crown, Lug, Movement, Dial."
+    },
+    {
+      "id": "front-of-pack",
+      "text": "Front-of-Pack Hierarchy Fit tested (name on a matte black bottle)",
+      "passed": true,
+      "evidence": "Visual anchor defined as 'Matte black bottle, debossed logo, minimal type'. Shortlisting criterion 1: 'Visual authority on matte black bottle'. Shelf Test Results explicitly rate 30 shortlisted names as STRONG/GOOD/WEAK for Nordstrom shelf presence, with names like Basalt, Vesper, Sumi rated STRONG and Upkeep, Grit rated WEAK."
+    },
+    {
+      "id": "dual-audience",
+      "text": "Dual-audience consideration (men who want skincare but masculine framing)",
+      "passed": true,
+      "evidence": "Cultural Tension Naming technique produced 4 candidates (Surface, Routine, Upkeep, Maintain) explicitly framing skincare as masculine maintenance rather than beauty. Shortlisting criterion 3: 'Masculine without aggression'. Brief identifies the tension: 'men aged 28-45 who are just getting into skincare... would never walk into Sephora.' Anti-references (Glossier = too feminine, War Paint = too aggressive) define the dual-audience corridor."
+    },
+    {
+      "id": "desired-self",
+      "text": "Desired-Self Naming explored (what identity does this project?)",
+      "passed": true,
+      "evidence": "Explicit 'Desired-Self Naming' section with 3 candidates: Merit ('Earned quality'), Standard ('A level of quality'), Acumen ('Sharp practical intelligence'). Listed in techniques_used in YAML frontmatter."
+    },
+    {
+      "id": "color-name-mapping",
+      "text": "Color-to-Name Mapping explored (matte black palette)",
+      "passed": true,
+      "evidence": "The matte black palette is heavily embedded in generation. Names directly derived from dark/black color associations: Sumi (ink/charcoal), Kuro (black), Svart (black/Norse), Sable (dark fur color), Char (blackened), Graphite (dark), Soot, Carbon, Slate (grey), Matte (the finish itself), Darkroom, Darkfield, Blackbird, Blackgrain, Blackmark, Darkcraft, Obsidian, Umbra (shadow), Nocturne, Tenebra (darkness). The generation notes specify 'Visual anchor: Matte black bottle' and phonetic target includes 'dark vowels'."
+    },
+    {
+      "id": "structural-diversity",
+      "text": "At least 3 structural types represented",
+      "passed": true,
+      "evidence": "YAML frontmatter lists 8 structural types in structural_mix: found_words (98), compounds (55), coined_invented (30), foreign_root (28), metaphorical (25), sound_symbolic (14), blends (8), respellings (5). Hard gate check confirms: '7 types, no single type >80% (PASS)'."
+    },
+    {
+      "id": "ownability-parallel",
+      "text": "Ownability alternatives generated alongside found words",
+      "passed": true,
+      "evidence": "Riffing generates language-shifted ownable variants of found words: Flint -> Silex (Latin), Basalt -> Basalte (French), plus coined phonesthetic variants (Vosco, Korven, Gravos, Tero). Foreign-root category runs in parallel with found words, providing Italian (Ferro for iron), Japanese (Sumi for ink, Kuro for black), German (Stahl for steel), Swedish (Sten for stone), Latin (Tactus for touch) equivalents that are more trademark-ownable than their English found-word counterparts."
+    },
+    {
+      "id": "dynamic-compounds",
+      "text": "Compound vocabulary dynamically generated from beauty/skincare domain (not tech suffixes)",
+      "passed": true,
+      "evidence": "Compound category uses domain-appropriate vocabulary: craft (Ironworks, Stonecutter), nature (Blackbird, Ironbark), material (Blackgrain), process (Coldpress), conceptual (Darkroom, Darkfield, Nightshift). Ingredient/Process section adds beauty-domain compounds: Emulsion, Tincture, Compound, Salve, Balm. No -ly, -ify, -io, or other tech suffixes appear. Prefix x Suffix Matrix uses material/quality roots (Blackmark, Greystone, Ironridge, Darkcraft)."
+    },
+    {
+      "id": "technique-labeling",
+      "text": "Each riff labeled with which technique produced it",
+      "passed": true,
+      "evidence": "Every riff across all 8 directions carries a technique label. Examples: 'Silex | language_shift_latin', 'Nocturne | metaphor_shift', 'Mettle | sound_alike', 'Columnar | zoom_in', 'Elixir | synonym_explosion', 'Koku | adjacent_metaphor_japanese', 'Gambit | adjacent_metaphor_chess', 'Exposure | adjacent_metaphor_photo'. All 83 riffs are labeled."
+    },
+    {
+      "id": "riff-volume",
+      "text": "10+ NEW UNIQUE riffs per direction (duplicates of existing candidates don't count)",
+      "passed": false,
+      "evidence": "Two directions fall short of the 10-riff minimum. Basalt direction header claims '10 new unique riffs' but only 9 entries are listed (entries 205-213: Columnar, Magma, Tephra, Pumice, Mantle, Cinder, Basalte, Caldera, Scoria). Darkroom direction header claims '10 new unique riffs' but only 8 entries are listed (entries 244-251: Exposure, Developer, Fixer, Aperture, Negative, Latent, Contact, Shutter). The other 6 directions meet or exceed the minimum: Flint (11), Vesper (11), Caliber (11), Tonic (10), Sumi (10), Rook (10)."
+    },
+    {
+      "id": "consumer-riffing-checklist",
+      "text": "Consumer riffing checklist used (not B2B checklist)",
+      "passed": true,
+      "evidence": "Step 03a Exit Checkpoint explicitly shows 'Consumer Riffing Checklist: 5 of 5 core techniques applied (PASS)' with checked items: Adjacent metaphor, Sensory expansion (Five Senses Scan), Nature mining (Dark Botanist + Stoic Naturalist), French naturalized vocabulary (Cachet, Contour, Motif, Finesse, Trait, Rapport), Shelf/Gift/Social-native tests."
+    },
+    {
+      "id": "hard-gates",
+      "text": "Hard gate checks displayed before generation menu",
+      "passed": true,
+      "evidence": "Hard Gate Status displayed after Step 02a generation with 4 checks: Candidate count 175 (PASS, minimum 60), Category coverage 9 of 11 (PASS, minimum 6), Structural mix 7 types no single >80% (PASS), Technique coverage 25+ applied 3 remaining (PASS, <8 unused). Also displayed at Step 03a Entry Checkpoint: 'All 4 hard gates passed. ~245 unique candidates across 9 categories.'"
+    },
+    {
+      "id": "conflict-flagging",
+      "text": "Inline conflict flagging for known conflicts (substance over format)",
+      "passed": true,
+      "evidence": "Seven inline conflict flags found in the candidates file: Flint ('Note: Flint MI water association'), Carbon ('Warning: Carbon3D'), Meridian ('Warning: many Meridian companies'), Canon ('Warning: Canon Inc'), Crown ('Warning: widely used'), Hallmark ('Warning: Hallmark cards'), Benchmark ('Warning: Benchmark Capital'). Uses 'Warning:' and 'Note:' text labels rather than emoji, which satisfies 'substance over format'."
+    },
+    {
+      "id": "candidate-count",
+      "text": "At least 40 unique candidates generated",
+      "passed": true,
+      "evidence": "YAML frontmatter: total_unique_candidates: 263. Candidates file contains 251 numbered entries across core categories (105), technique-driven generation (66), and riffing (83, minus some duplicates logged). Transcript reports '~175 candidates before riffing' and '~83 new unique riffs'. The deduplication log identifies 6 cross-generation duplicates. All counts vastly exceed the 40 minimum."
+    },
+    {
+      "id": "shelf-test",
+      "text": "Shelf Test applied (Nordstrom/Saks shelf context)",
+      "passed": true,
+      "evidence": "Explicit 'Shelf Test Results' in Step 03a categorizing all 30 shortlisted names: STRONG for Nordstrom (Basalt, Vesper, Sumi, Ferro, Sable, Nocturne, Umbra, Silex), GOOD (Flint, Slate, Caliber, Tonic, Resin, Temper, Mettle, Dusk, Proof, Bezel, Dram, Sterling), WEAK (Upkeep, Grit, Darkroom with reasons: 'too utilitarian', 'too rough', 'too long')."
+    },
+    {
+      "id": "gift-test",
+      "text": "Gift Test considered (premium skincare is highly giftable)",
+      "passed": true,
+      "evidence": "Explicit 'Gift Test Results' in Step 03a categorizing all 30 shortlisted names: HIGH (Vesper, Sumi, Sable, Nocturne, Sterling, Ferro), MEDIUM (Basalt, Flint, Caliber, Tonic, Resin, Rook, Mettle, Proof, Bezel, Dram), LOW (Upkeep, Grit, Stave)."
+    },
+    {
+      "id": "french-naturalized",
+      "text": "French Naturalized Vocabulary Mining applied (premium/luxury register)",
+      "passed": true,
+      "evidence": "Explicit 'French Naturalized Vocabulary' section with 6 candidates: Cachet ('Prestige, seal of quality'), Contour ('Line defining shape'), Rapport ('Connection, trust'), Trait ('Distinguishing quality'), Motif ('Recurring design element'), Finesse ('Refined skill'). Additionally, French vocabulary appears in riffing: Crepuscule (twilight), Soir (evening), Basalte (French spelling). Consumer riffing checklist confirms: 'French naturalized vocabulary -- Cachet, Contour, Motif, Finesse, Trait, Rapport'."
+    },
+    {
+      "id": "sound-symbolism",
+      "text": "Sound symbolism considered (angular sounds for masculine positioning)",
+      "passed": true,
+      "evidence": "Category 8 'SOUND-SYMBOLIC' contains 5 candidates explicitly designed with angular/hard phonetics: Kovalt ('Hard K + back O + hard T'), Tarvos ('Celtic bull deity'), Gravus ('Heavy, serious'), Stova ('Hard onset + open back vowel'), Vosker ('Fricative V + plosive K'). Generation notes specify phonetic target: 'Hard consonants for authority, fricatives for sophistication, dark vowels, 1-2 syllables, trochaic stress'. Preference profile: 'hard onset, dark vowels, trochaic'."
+    },
+    {
+      "id": "technique-toolkit",
+      "text": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+      "passed": true,
+      "evidence": "Hard gate check at Step 02a shows technique tracking: 'Technique coverage: 25+ applied, 3 remaining (PASS, <8 unused)'. YAML frontmatter maintains explicit applied/unapplied lists: techniques_used (37 techniques listed) and techniques_not_yet_used: [domain_first, backronym, semiotic_mapping]. This tracking was displayed at the generation checkpoint for user review."
+    }
+  ],
+  "summary": {
+    "passed": 22,
+    "failed": 1,
+    "total": 23,
+    "pass_rate": 0.96
+  },
+  "execution_metrics": {
+    "output_chars": 33369,
+    "transcript_chars": 11709
+  },
+  "timing": {
+    "total_tokens": 175005,
+    "executor_duration_seconds": 987.1,
+    "total_duration_seconds": 987.1
+  },
+  "claims": [
+    {
+      "claim": "~263 total unique candidates generated",
+      "type": "factual",
+      "verified": false,
+      "evidence": "The candidates file contains 251 numbered entries (1-251). Deduplication log identifies 6 duplicates (Obsidian, Salve, Emulsion, Darkfield, Grain, Cask). After removing duplicates: ~245 unique. The YAML claims 263, the transcript says '~245 unique candidates' at shortlisting. The 263 figure is not substantiated by the numbered entries; 245 is closer to accurate."
+    },
+    {
+      "claim": "9 of 11 naming categories attempted",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Counted 9 distinct category sections in the candidates file: Found Word, Evocative, Sensory, Foreign-Root, Compound, Coined/Invented, Metaphorical, Sound-Symbolic, Arbitrary/Absurd."
+    },
+    {
+      "claim": "~83 new unique riffs generated",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Counting riff entries: Flint (11) + Vesper (11) + Caliber (11) + Basalt (9) + Tonic (10) + Sumi (10) + Rook (10) + Darkroom (8) = 80 entries, not 83. Headers claim 10 for Basalt and Darkroom but list only 9 and 8 respectively."
+    },
+    {
+      "claim": "Basalt direction has 10 new unique riffs",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Only 9 riffs listed (entries 205-213): Columnar, Magma, Tephra, Pumice, Mantle, Cinder, Basalte, Caldera, Scoria."
+    },
+    {
+      "claim": "Darkroom direction has 10 new unique riffs",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Only 8 riffs listed (entries 244-251): Exposure, Developer, Fixer, Aperture, Negative, Latent, Contact, Shutter."
+    },
+    {
+      "claim": "40+ techniques applied",
+      "type": "factual",
+      "verified": true,
+      "evidence": "YAML techniques_used list contains 37 distinct technique names. The transcript says '40+ techniques'. The technique-driven generation section shows 16 distinct technique categories, plus 9 core category generation methods, plus 12 riffing techniques = plausibly 37-40 depending on granularity of counting."
+    },
+    {
+      "claim": "30 names in the shortlist",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The shortlist table in the transcript contains exactly 30 numbered entries, and the candidates file lists all 30 in the SHORTLIST section."
+    },
+    {
+      "claim": "All hard gates passed",
+      "type": "process",
+      "verified": true,
+      "evidence": "Hard gate checks are displayed twice (after Step 02a and at Step 03a entry) with all checks showing PASS status."
+    },
+    {
+      "claim": "Consumer riffing checklist 5 of 5 applied",
+      "type": "process",
+      "verified": true,
+      "evidence": "Five checklist items shown with checkmarks: Adjacent metaphor, Sensory expansion, Nature mining, French naturalized vocabulary, Shelf/Gift/Social-native tests. All five have supporting evidence in the generation and shortlisting outputs."
+    }
+  ],
+  "user_notes_summary": null,
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "riff-volume: 10+ NEW UNIQUE riffs per direction",
+        "reason": "The assertion caught a real gap -- two directions fell short. However, the failure is borderline (9 and 8 vs minimum 10) and the headers in the output falsely claim compliance. Consider also checking that the header claims match the actual listed count, to catch self-reporting discrepancies."
+      },
+      {
+        "assertion": "technique-toolkit",
+        "reason": "This assertion is difficult to verify from a transcript that summarizes rather than reproducing full menus. The evidence shows technique tracking exists (YAML metadata, hard gate counts), but whether the toolkit was 'offered as a menu with user selection option' cannot be confirmed without seeing the actual interactive exchange. A transcript that merely states results were displayed could pass this even without genuine user interaction."
+      },
+      {
+        "reason": "No assertion checks the quality or appropriateness of the generated names to the brief. A generation pass that produces 263 candidates but all in the wrong register (e.g., all playful/feminine names) would pass every quantitative assertion. Consider adding a qualitative spot-check: e.g., 'At least 80% of shortlisted names pass a basic brief-alignment check (not feminine, not aggressive, not clinical)'."
+      },
+      {
+        "reason": "No assertion verifies that cross-pollination (Step 02b) was skipped or attempted. The transcript shows steps 00, 01a, 01b, 02a, 02c, 03a but not 02b. The YAML shows cross_model_sources: []. If cross-pollination is optional, that's fine, but if it's expected for consumer briefs, this is an unchecked gap."
+      }
+    ],
+    "overall": "Strong execution with 22/23 assertions passing. The single failure (riff-volume) reveals an output integrity issue where headers claim counts that don't match listed entries. Quantitative coverage is excellent but assertions skew heavily toward process compliance over output quality."
+  }
+}

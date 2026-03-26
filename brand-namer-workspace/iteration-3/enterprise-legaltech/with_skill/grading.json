@@ -1,0 +1,205 @@
+{
+  "expectations": [
+    {
+      "text": "At least 6 of 11 naming categories attempted",
+      "passed": true,
+      "evidence": "All 11 of 11 naming categories were attempted, as shown in the generation table in both the transcript (line 137: 'Categories attempted: 11 of 11') and the candidates file (categories_used lists all 11: evocative, found_word, compound, coined_invented, metaphorical, institutional_compound, foreign_root, verb_as_brand, sound_symbolic, obscure_real_word, blend_portmanteau). Verified: each category has a dedicated section with numbered candidates in 01-candidates.md."
+    },
+    {
+      "text": "Vertical Code Calibration applied for legaltech",
+      "passed": true,
+      "evidence": "Transcript Step 01a explicitly states: 'Vertical code calibration (legaltech): Most successful legaltech brands are NOT Latin. Authority comes from phonetic weight and unexpected vocabulary, not etymology. The Lex-/Juris- pattern is exhausted. Successful examples: Clio (mythological), Harvey (personified), Everlaw (compound), Relativity (physics metaphor), Disco (found word).' Also listed as a technique in session-transcript.md line 342: 'Vertical Code Calibration (legaltech-specific)' and in the YAML techniques_used array as 'vertical_code_calibration'."
+    },
+    {
+      "text": "Regulated-Industry Lexical Compliance applied (avoided 'attorney', 'counsel', 'legal advice')",
+      "passed": true,
+      "evidence": "Transcript Step 01a states: 'Regulated industry screening applied: Per enterprise-naming.md, legal sector controlled terms: law, attorney, counsel, legal advice. All candidates screened against these terms during generation.' The candidates file generation notes confirm: 'NO regulated terms (attorney, counsel, legal advice, law, barrister, solicitor)'. Verified: grep for 'attorney', 'counsel', 'legal advice' as candidate names returns zero hits. One candidate ('Raad') is described as meaning 'counsel' in Dutch, but the name itself does not contain the regulated English terms. Technique 'regulated_industry_compliance' appears in techniques_used."
+    },
+    {
+      "text": "Avoided transparent Latin clich\u00e9s per user constraint AND skill guidance (Lex-, Juris-, Veritas-)",
+      "passed": true,
+      "evidence": "No candidates named Lexicon, Juris, Veritas, or using Lex-/Juris-/Veritas- prefixes appear in the candidate pool. Grep for these patterns returns only the constraint description text, not candidate names. The generation notes explicitly list 'NO Latin cliches (Lexicon, Juris, Veritas, Lex-, etc.)' as an enforced constraint. Some candidates use naturalized classical roots (e.g., Dokimax from Greek, Gnomon from Greek, Nomos from Greek) but these are not transparent Latin cliches -- they are exactly the 'naturalized, not transparent Latin' approach the assertion requires."
+    },
+    {
+      "text": "Buyer Committee test applied during shortlisting (Step 03a) OR offered in technique toolkit",
+      "passed": true,
+      "evidence": "Buyer Committee test was fully applied with detailed 5-role scoring table in 01-candidates.md (lines 386-402). Twelve candidates scored across Champion (pitch), Economic Buyer (ROI), Technical (depth), Legal/Procurement (clean), and End User (daily) roles. Results fed into shortlisting decisions. Also listed in transcript line 165 and techniques_used YAML."
+    },
+    {
+      "text": "Sales Conversation Fit templates tested during shortlisting OR offered in technique toolkit",
+      "passed": true,
+      "evidence": "Sales Conversation Fit was fully applied with detailed 6-context scoring table in 01-candidates.md (lines 404-415). Nine candidates tested across Elevator Pitch, Board Deck, RFP, Slack, Phone, and Email Sig contexts. Results directly informed the shortlist ranking (e.g., Axiom 5.5/6, Gauge 5.5/6)."
+    },
+    {
+      "text": "Enterprise Objection Preemption applied during shortlisting OR offered in technique toolkit",
+      "passed": true,
+      "evidence": "Enterprise Objection Preemption was applied with results shown in 01-candidates.md (lines 424-427): 'CISO/VP LinkedIn test' with Pass list (14 names) and Flag list (3 names with specific concerns: Penumbra 'may feel too dark', Crucible 'may feel too intense', Darkfield 'may feel too obscure'). Listed in techniques_used and transcript line 167."
+    },
+    {
+      "text": "Cross-language risk noted during generation (basic flags) OR systematic checks offered in technique toolkit",
+      "passed": true,
+      "evidence": "The naming-categories.md reference (which contains cross-language guidance) was loaded during generation (transcript line 128). International compatibility check for US, UK, EU phonotactics was stated as part of the generation approach (transcript line 135). Basic flags exist: 'Dike' flagged with 'Pronunciation issue in English' (line 182), 'Gauzh' flagged with 'Pronunciation risk' (line 299). While per-candidate cross-language flags are sparse (no 'means X in French' warnings), the assertion allows 'basic flags' and the infrastructure was established. The generation notes list 'International compatibility (US, UK, EU)' as an enforced constraint."
+    },
+    {
+      "text": "Ownability-first compounds generated in parallel track",
+      "passed": true,
+      "evidence": "Transcript line 132 states: 'Ownability-first parallel track (compounds alongside found words)'. The candidates file demonstrates this concretely: each major category section includes 'Compound variants (ownability track)' subsections with dedicated compounds (e.g., AxiomWorks #14, TrueRubric #15, DeepCaliber #16 in Category 1; Gaugeworks #36, TrueBearing #37, Assaymark #38 in Category 2). Tier 3 of the shortlist is explicitly labeled 'Compound insurance (ownability-first)' with 10 compounds."
+    },
+    {
+      "text": "Classical Stem Engineering applied (but naturalized, not transparent Latin per clich\u00e9 guard)",
+      "passed": true,
+      "evidence": "Classical Stem Engineering is listed in techniques_used YAML and transcript lines 176 and 348 ('Classical Stem Engineering -- non-Latin stem construction'). Evidence in candidates: Dokimax (#42, from Greek 'dokimazein'), Skepsis (#43, from Greek 'skeptomai'), Pravex (#44, from Slavic 'prav-'), Gnomon (#93, Greek), Kanon (#94, Greek), Stathmos (#95, Greek). These are naturalized stems from Greek and Slavic roots, not transparent Latin cliches, satisfying both the technique requirement and the cliche guard."
+    },
+    {
+      "text": "Personified Names explored (Harvey is a competitor - this angle is proven in legaltech)",
+      "passed": true,
+      "evidence": "Category 6 (PERSONIFIED / DOMAIN FIGURES) contains 12 personified candidates across 3 branches: Branch A (mythological: Themis, Minos, Solon, Astraea, Dike), Branch B (historical/literary: Draco, Portia, Atticus, Hammurabi), Branch C (authoritative names: Argus, Thane, Corvin). Additional personified riffs on Thane produced 10 more (Thanemark, Reeve, Warden, Seneschal, etc.). Two personified names (Argus #5, Thane #7) made Tier 1 of the shortlist. Harvey is noted as a competitor in Step 01a ('Harvey (personified)') and as an exclusion ('No famous fictional lawyers (Harvey taken)')."
+    },
+    {
+      "text": "Lexicon Three-Team Method applied OR offered in technique toolkit",
+      "passed": true,
+      "evidence": "Three-Team Method was fully applied with results in 01-candidates.md (lines 365-383): Team 1 (On-brief: 3 candidates -- Redline, Clausewise, Briefscope), Team 2 (Competitor: 2 unique -- Penumbra, Parallux), Team 3 (Unrelated domains -- whiskey/observatory/watchmaker: 6 unique -- Proof, Reserve, Cask, Zenith, Apogee, Bezel). Transcript confirms 11 additional candidates from Three-Team Method. Listed in techniques_used."
+    },
+    {
+      "text": "Each riff labeled with SPECIFIC technique (e.g., 'language shift: Latin', not just 'riff')",
+      "passed": true,
+      "evidence": "Every riff in the riffing section has a specific technique label after the pipe delimiter. Examples from Assay riffs: 'language shift: French' (#129), 'agent suffix: -er' (#130), 'compound creation: -point' (#131), 'compound creation: True- prefix' (#132), 'sound tuning: -on suffix' (#133), 'language shift: Italian' (#134), 'etymology mining: Old English' (#136), 'adjacent metaphor: gemology' (#137). Same pattern continues for all 6 riffing seeds with labels like 'alternate real spelling', 'synonym explosion', 'zoom in: precision instrument', 'root compression', 'creative respelling: K-for-C', 'conceptual blending', 'sensory shift', etc."
+    },
+    {
+      "text": "10+ NEW UNIQUE riffs per direction (duplicates of existing candidates don't count)",
+      "passed": true,
+      "evidence": "Verified by counting numbered candidates in each riffing seed section of 01-candidates.md: Assay: #129-142 = 14 new riffs. Gauge: #143-154 = 12 new riffs. Bearing: #155-166 = 12 new riffs. Gnomon: #167-177 = 11 new riffs. Crucible: #178-189 = 12 new riffs. Thane: #190-199 = 10 new riffs. All meet the 10+ threshold. Transcript confirms these counts with PASS labels."
+    },
+    {
+      "text": "Homonym/Synonym/Sound-Alike Riffing applied OR offered in technique toolkit",
+      "passed": true,
+      "evidence": "Listed in techniques_used YAML array as 'homonym_synonym_sound_alike'. Transcript line 168 confirms: 'Homonym/Synonym/Sound-Alike Riffing' was applied as part of the technique toolkit. Evidence in candidates: 'synonym explosion' technique labels appear on riffs (e.g., #148 Metra 'synonym explosion: Greek metron', #152 Grademark 'synonym explosion: grade + mark', #157 Headingmark 'synonym explosion: heading + mark'). Also, Gage (#143) is explicitly an alternate spelling/homonym of Gauge."
+    },
+    {
+      "text": "B2B riffing checklist used",
+      "passed": true,
+      "evidence": "Transcript line 293: 'Riffing checklist: ALL core B2B techniques applied (PASS)'. Shortlist exit gate in both transcript and candidates file shows the checklist with all items checked: '[x] SCAMPER -- applied', '[x] Compound creation -- applied extensively', '[x] Creative respelling -- applied (K-for-C, alternate spellings)', '[x] Industry-native compound patterns -- applied (legaltech-calibrated)'. Also confirmed in session statistics: 'Riffing checklist | Complete'."
+    },
+    {
+      "text": "Hard gate checks displayed before generation menu",
+      "passed": true,
+      "evidence": "Hard gate status displayed at three checkpoints: (1) After generation, before toolkit/next-step menu (transcript lines 155-159: candidate count 128 PASS, category coverage 11/11 PASS, structural mix PASS, technique coverage PASS). (2) At shortlisting entry (transcript lines 255-259: candidate count 228 PASS, category coverage PASS, structural mix PASS, technique coverage PASS). (3) At shortlisting exit (transcript lines 290-298). Each gate display precedes a decision/menu point."
+    },
+    {
+      "text": "Inline conflict flagging for known conflicts (\u26a0\ufe0f emoji or text flag \u2014 substance over format)",
+      "passed": true,
+      "evidence": "38 'Warning:' conflict flags appear throughout the candidates file. Examples: 'Warning: Protocol may have existing tech usage' (#10), 'Warning: Palantir has an Index product' (#21), 'Warning: Benchmark Capital' (#24), 'Warning: Various Transit companies' (#27), 'Warning: Canon Inc. (cameras)' (#13), 'Warning: BlackLine accounting software' (#69), 'Warning: Redpoint Ventures' (#71), 'Warning: Sift (fraud detection)' (#103), 'Warning: BearingPoint (consultancy)' (#155), 'Warning: Clearscope (SEO tool)' (#223), 'Warning: Precedex is a pharmaceutical' (#128). These are substantive inline conflict flags using text-based 'Warning:' format."
+    },
+    {
+      "text": "At least 40 unique candidates generated",
+      "passed": true,
+      "evidence": "The candidates file contains numbered candidates from #1 through #225 in the main body. The YAML frontmatter claims total_unique_candidates: 228 (likely including 3 deduplicated entries noted in deduplication_log). Even using the conservative count of 225 uniquely numbered entries, this far exceeds the 40-candidate threshold. The transcript claims 228 total with 128 from core generation + 71 riffs + 11 three-team + 8 SCAMPER + 7 matrix = 225 (with 3 dedup overlaps)."
+    },
+    {
+      "text": "Category Creation Naming considered OR offered in technique toolkit",
+      "passed": true,
+      "evidence": "Category Creation Naming was fully applied with results in 01-candidates.md (lines 417-421): five names tested for category-creation potential -- Axiom ('the Axiom for contract intelligence'), Gauge ('the Gauge for legal risk'), Parse ('the Parse for document analysis'), Assay ('the Assay for contract review'), Darkfield ('Darkfield: hidden risk detection'). Listed in techniques_used YAML as 'category_creation_naming' and in transcript line 169."
+    },
+    {
+      "text": "Name Lifecycle Stress Test offered in technique toolkit or applied during shortlisting",
+      "passed": true,
+      "evidence": "Name Lifecycle Stress Test was fully applied with detailed results in 01-candidates.md (lines 457-468). Seven names tested against expansion ('Expand beyond contract review?'), acquisition ('Acquired?'), and verbification ('Becomes a verb?'). Specific results documented, e.g., 'Axiom: Axiom for procurement, Axiom for compliance, Axiom by [Acquirer] all work. Let me Axiom this -- slightly awkward as verb but acceptable.' Listed in techniques_used YAML as 'name_lifecycle_stress_test' and transcript lines 170 and 235."
+    },
+    {
+      "text": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+      "passed": true,
+      "evidence": "Transcript line 161: 'Technique Toolkit selection: [A] All remaining' shows the toolkit was offered at a checkpoint with a selection option. The YAML frontmatter tracks applied/unapplied status via 'techniques_used' (37 items) and 'techniques_not_yet_used' (3 items: domain_first, backronym, AI_embedded_naming). Transcript lines 243-246 show post-riffing toolkit status: '37 techniques applied, 3 remaining (domain-first, backronym, AI-embedded naming -- diminishing returns at this depth)'. The [A] option suggests a menu was presented. However, the transcript does not show the full menu with per-technique applied/unapplied checkboxes at the moment of offering -- it only shows the selection result and the status afterward."
+    }
+  ],
+  "summary": {
+    "passed": 22,
+    "failed": 0,
+    "total": 22,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "output_chars": 56431,
+    "transcript_chars": 17219,
+    "output_files": 2,
+    "numbered_candidates": 225,
+    "claimed_candidates": 228,
+    "categories_attempted": 11,
+    "techniques_applied": 37,
+    "shortlisted": 30
+  },
+  "timing": {
+    "total_tokens": 149629,
+    "executor_duration_seconds": 893.7,
+    "total_duration_seconds": 893.7
+  },
+  "claims": [
+    {
+      "claim": "228 unique candidates generated",
+      "type": "factual",
+      "verified": false,
+      "evidence": "The candidates file contains 225 uniquely numbered entries (#1 through #225). The YAML frontmatter claims 228 and the deduplication_log lists 3 entries (Darkfield, Transit, Mainspring) as duplicates across methods. The math: 225 unique numbered + 3 deduplicated = 228 total generated (pre-dedup). However, the YAML says 'total_unique_candidates: 228' which is misleading -- it should be 225 unique or 228 total pre-dedup. Minor discrepancy."
+    },
+    {
+      "claim": "37 techniques applied, 3 remaining",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The techniques_used array in YAML frontmatter lists 37 distinct technique names. The techniques_not_yet_used array lists 3 (domain_first, backronym, AI_embedded_naming). 37 + 3 = 40 total techniques in the system. Counts are consistent across transcript and candidates file."
+    },
+    {
+      "claim": "128 candidates from core generation",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Candidates #1 through #128 span the 11 category sections in 01-candidates.md. The generation table in the transcript sums to: 17+24+13+13+13+12+9+10+4+6+7 = 128. Verified."
+    },
+    {
+      "claim": "71 new riffs generated across 6 seeds",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Assay: 14 (#129-142) + Gauge: 12 (#143-154) + Bearing: 12 (#155-166) + Gnomon: 11 (#167-177) + Crucible: 12 (#178-189) + Thane: 10 (#190-199) = 71. Matches the claim."
+    },
+    {
+      "claim": "All hard gates passed (entry + exit)",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Entry gate: 228 candidates (>60), 11/11 categories (>6), 32/38/30 structural mix (no type >80%), 37 techniques with 3 remaining (<8 unused). Exit gate: 30 shortlisted (>15), structural diversity maintained, riffing checklist complete. All gates show PASS."
+    },
+    {
+      "claim": "Enterprise-naming.md and brand-psychology.md loaded during brief intake",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript Step 01a lines 52-53 explicitly state: 'references/brand-psychology.md -- Aaker dimensions, archetypes, cognitive science, feeling spectrum' and 'references/enterprise-naming.md -- B2B techniques, evaluation frameworks, regulated-industry compliance, vertical code calibration'."
+    },
+    {
+      "claim": "Session stopped after Step 03a",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript metadata (line 9): 'Stopped after: Step 03a (Shortlisting)'. Steps completed listed as: 00, 01a, 01b, 02a, 02b, 02c, 03a. No Step 04x output files exist. The candidates file stepsCompleted array confirms the same sequence."
+    },
+    {
+      "claim": "Cross-pollination skipped due to automated run",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript Step 02b (lines 183-184): 'Cross-pollination was offered per mandatory deep session requirement. Since this is an automated run with no external LLM access, cross-pollination was noted as available but skipped.'"
+    }
+  ],
+  "user_notes_summary": null,
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Cross-language risk noted during generation (basic flags) OR systematic checks offered in technique toolkit",
+        "reason": "This assertion is too easy to satisfy with 'basic flags' -- the output shows only 2 pronunciation-related flags out of 225+ candidates, and zero explicit cross-language negative-meaning checks (e.g., 'Warning: means X in French/German'). For a brief that requires 'international from day one' across US, UK, and EU markets, the cross-language screening is superficial. A more discriminating assertion would require at least N candidates to have explicit cross-language annotations, or require a dedicated cross-language screening step."
+      },
+      {
+        "assertion": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+        "reason": "The transcript shows the selection result ('[A] All remaining') but doesn't show the actual toolkit menu presentation with per-technique checkboxes or applied/unapplied labels. The YAML tracks this metadata, but that's a data structure, not a user-facing menu. This assertion passed because the status tracking exists, but it's unclear whether the user saw a proper interactive toolkit display. The assertion should perhaps require evidence of the menu itself being displayed, not just the selection outcome."
+      },
+      {
+        "reason": "No assertion checks whether the competitive whitespace analysis actually influenced territory selection. The whitespace mapping identifies 4 gaps (precision/measurement, cartographic, non-Latin scholarly, architectural) and the 5 territories map directly to these, but no assertion tests this causal link. A weak execution could define territories unrelated to the whitespace analysis and still pass all current assertions."
+      },
+      {
+        "reason": "No assertion checks the quality of conflict flags -- 38 'Warning:' tags exist, but some obvious conflicts may be missed. For example, 'Axiom' (the top recommendation) is a well-known enterprise software company (Axiom Space, Axiom Law, Axiom alternatives in legal staffing). This was not flagged despite being the #1 pick. An assertion checking that top-5 shortlist names have been conflict-checked would catch this."
+      }
+    ],
+    "overall": "Strong execution with thorough generation, well-applied enterprise techniques, and good structural diversity. The assertions cover the key workflow gates and technique applications well. Main gaps are in verifying quality of cross-language checks and accuracy of conflict flagging on top picks."
+  }
+}

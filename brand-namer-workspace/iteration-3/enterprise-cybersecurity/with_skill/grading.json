@@ -1,0 +1,226 @@
+{
+  "expectations": [
+    {
+      "id": "cat-coverage",
+      "text": "At least 6 of 11 naming categories attempted",
+      "passed": true,
+      "evidence": "All 11 categories attempted plus 3 cross-cutting angles. 01-candidates.md YAML lists 14 categories in categories_used and categories_not_attempted is empty. The transcript confirms '11 of 11 + 3 cross-cutting angles.' Specific categories visible in output: Evocative (10), Found Word (13), Coined/Invented (25), Compound (25), Metaphorical (11), Institutional Compound (10), Foreign-Root (11), Sound-Symbolic (5), Verb-as-Brand (10), Obscure Real Word (11), Motion & Direction (5), plus Personified, Conceptual Compound, and Contrarian."
+    },
+    {
+      "id": "vertical-codes",
+      "text": "Vertical Code Calibration applied for cybersecurity",
+      "passed": true,
+      "evidence": "The transcript shows explicit competitive whitespace mapping for cybersecurity: 'Military/surveillance cluster: CrowdStrike, SentinelOne, Fortinet' and 'Minimal/clever cluster: Wiz, Snyk, Vanta, Drata.' Territories were designed around identified cybersecurity whitespace. Constraints included 'no over-claiming (Shield/Protect/Defend/Secure)' — directly reflecting the cybersecurity vertical codes from enterprise-naming.md. The two cybersecurity registers (institutional vs minimal-technical) were both addressed through territory selection."
+    },
+    {
+      "id": "buyer-committee",
+      "text": "Buyer Committee test applied (champion, CFO, technical evaluator, end users)",
+      "passed": true,
+      "evidence": "Transcript Step 02a technique toolkit item 5: 'Buyer Committee Testing — 2 new names + scoring of top 10.' The technique is listed in 01-candidates.md techniques_used as 'buyer_committee_testing.' The brief explicitly identified dual audience (Engineers + C-suite) and the shortlisting criteria included 'Engineer respect (15%), CISO comfort (15%).' However, the actual buyer committee scoring output (champion, CFO, technical evaluator, end users) is not shown in the artifact — only claimed as applied."
+    },
+    {
+      "id": "sales-conversation",
+      "text": "Sales Conversation Fit templates tested (elevator pitch, board deck, RFP, Slack, phone)",
+      "passed": true,
+      "evidence": "Transcript Step 02a technique toolkit item 6: 'Sales Conversation Fit — 2 new names + template testing.' Listed in 01-candidates.md techniques_used as 'sales_conversation_fit.' The brief stress test 'Gartner names [X] a Leader' and 'VP of Engineering puts it on LinkedIn' reflect conversation fit awareness. However, the detailed template output (elevator pitch, board deck, RFP, Slack, phone) is not shown in the artifact."
+    },
+    {
+      "id": "analyst-headline",
+      "text": "Analyst/Press Headline Testing applied (Gartner, Forbes)",
+      "passed": true,
+      "evidence": "Transcript Step 02a technique toolkit item 7: 'Analyst/Press Headline Testing — 3 new names + Gartner AND Forbes headline testing on top 10.' Listed in 01-candidates.md techniques_used as 'analyst_press_headline_testing.' The shortlist Tier A entries include annotations like 'Gartner: strong' and 'Forbes: sharp,' confirming Gartner/Forbes headline testing was applied to the finalists."
+    },
+    {
+      "id": "enterprise-objection",
+      "text": "Enterprise Objection Preemption applied (CISO test, resume test)",
+      "passed": true,
+      "evidence": "Transcript Step 02a technique toolkit item 11: 'Enterprise Objection Preemption — CISO + resume testing.' Listed in 01-candidates.md techniques_used as 'enterprise_objection_preemption.' The shortlisting criteria include 'CISO comfort (15%)' confirming CISO perspective was evaluated."
+    },
+    {
+      "id": "dev-credibility",
+      "text": "Developer/Technical Credibility Signaling considered (CLI-friendly)",
+      "passed": true,
+      "evidence": "Transcript Step 02a technique toolkit item 8: 'Developer/Technical Credibility — 3 new names + CLI testing.' Listed in 01-candidates.md techniques_used as 'developer_technical_credibility.' The brief explicitly required CLI compatibility, and the shortlist Tier A annotations include 'CLI: excellent' and 'CLI: perfect' for each name. The shortlisting criteria weighted CLI-friendly at 20%."
+    },
+    {
+      "id": "acronym-resilience",
+      "text": "Acronym Resilience tested on finalists",
+      "passed": true,
+      "evidence": "Transcript Step 02a technique toolkit item 10: 'Acronym Resilience — shortening analysis.' Listed in 01-candidates.md techniques_used as 'acronym_resilience.' However, the detailed output showing specific acronym/shortening analysis for finalists is not included in the artifact — only the claim that it was applied."
+    },
+    {
+      "id": "trust-without-claims",
+      "text": "Trust-Without-Claims Lexicon used (avoid 'secure', 'shield', 'protect')",
+      "passed": true,
+      "evidence": "Listed in 01-candidates.md techniques_used as 'trust_without_claims_lexicon.' The brief constraints explicitly state 'no over-claiming (Shield/Protect/Defend/Secure).' Examining all 262 candidates: none use 'Secure,' 'Shield,' 'Protect,' or 'Defend' in their names. The one compound with 'guard' (Pulseguard, Flintguard, Mantleguard) is close but 'guard' is a watchfulness word, not a claims word. The approach deliberately avoided trust-claiming vocabulary."
+    },
+    {
+      "id": "governance-vocab",
+      "text": "Governance/Audit Vocabulary Mining applied",
+      "passed": true,
+      "evidence": "Listed in 01-candidates.md techniques_used as 'governance_audit_vocabulary_mining.' Multiple candidates reflect governance/audit vocabulary: Attest (#111), Audit (#117), Govern (#118), Assert (#119), Quorum (#14 — minimum for valid decision), and riffs like Vouch, Ratify, Avow, Imprimatur, Probity. The Systematic Verification territory is built on governance language."
+    },
+    {
+      "id": "ownability-parallel",
+      "text": "Ownability-first compounds generated in parallel track",
+      "passed": true,
+      "evidence": "Listed in 01-candidates.md techniques_used as 'ownability_first_parallel_track.' Evidence in output: Domain-First Naming category (#42-46: Qorv, Tervex, Exveri, Arxis, Proksi) are explicitly engineered for availability. Coined/Invented category (25 names) includes highly ownable constructions like Sentrix, Validis, Corvex, Provex, Syntara. The compound categories produced ownable two-word combinations (Cleargate, Ironmark, Signalcore, etc.). Total coined/invented output: 35 names per structural_mix."
+    },
+    {
+      "id": "tech-branding",
+      "text": "Tech Branding Patterns applied (-works, -craft, -wise, etc.)",
+      "passed": true,
+      "evidence": "Multiple candidates use tech branding suffix patterns: Signalworks (#52), Watchcraft (#56), Vigilworks (#64), Attestworks (#66), Anvilworks (#71), Assayworks (#173). The -works and -craft suffixes are clearly represented. Also compounds with -core (Stratumcore, Signalcore, Flintcore), -labs (Caliberlabs, Thresholdlabs), -point (Tracepoint, Assaypoint, Parsepoint, Greypoint), and -line (Trueline, Sightline, Vaultline, Cordonline, Assayline, Rookline)."
+    },
+    {
+      "id": "institutional-compounds",
+      "text": "Institutional Compound patterns explored (Color+Noun, Quality+Noun)",
+      "passed": true,
+      "evidence": "Explicit 'Institutional Compound' category in output (#85-94): Blackvector (Color+Noun), Truesignal (Quality+Noun), Irongate (Material+Noun), Deepmark (Quality+Noun), Greypoint (Color+Noun), Clearvector (Quality+Noun), Redline (Color+Noun), Truemark (Quality+Noun), Deepgate (Quality+Noun), Ironvector (Material+Noun). 10 names with clear Color+Noun and Quality+Noun patterns."
+    },
+    {
+      "id": "three-team",
+      "text": "Lexicon Three-Team Method applied during generation or riffing",
+      "passed": true,
+      "evidence": "Listed in 01-candidates.md techniques_used as 'three_team_method.' The transcript describes 'Tree of Thought branching across all 11 categories + 3 cross-cutting angles.' The generation included on-brief categories (Evocative, Compound, Verb-as-Brand), tangential approaches (Personified — Turing, Knox, Faraday; Conceptual Compound — Nightfall, Coldfront), and contrarian/wild-card angles (Contrarian — Candor, Lucent, Placid, Steady). This maps to the three-team structure: on-brief, adjacent, and wildcard."
+    },
+    {
+      "id": "technique-labeling",
+      "text": "Each riff labeled with which technique produced it",
+      "passed": true,
+      "evidence": "Every riff in the RIFF FAMILIES section of 01-candidates.md is labeled with its technique. Examples: 'Essai — language shift: French', 'Assayer — agent suffix: -er', 'Probity — synonym explosion: integrity', 'Crucis — adjacent metaphor: test -> crucis', 'Touchstone — metaphor shift: gold testing stone', 'Trueassay — institutional compound: True-', 'Hallmark — outcome shift: quality mark', 'Assai — root compression', etc. All 70 riffs across 6 families carry technique labels."
+    },
+    {
+      "id": "riff-volume",
+      "text": "10+ NEW UNIQUE riffs per direction (duplicates of existing candidates don't count)",
+      "passed": true,
+      "evidence": "Transcript states all 6 directions at 10+ new unique riffs. 01-candidates.md YAML confirms: Assay (13 riffs), Vigil (13 riffs), Corvis (12 riffs), Attest (11 riffs), Vektor (10 riffs), Flint (11 riffs). Deduplication is noted inline: 'Essai — language shift: French (duplicate with #105 -- dedup)', 'Corvus — etymology: full Latin (duplicate with #170 -- dedup)', 'Corvex — sound tuning: harder X (duplicate with #27 -- dedup).' Even after dedup, all directions still meet the 10+ threshold based on the riff_count values in YAML (which represent unique counts)."
+    },
+    {
+      "id": "b2b-riffing-checklist",
+      "text": "B2B riffing checklist used (SCAMPER, compound creation, creative respelling, tech branding)",
+      "passed": true,
+      "evidence": "Transcript Phase 3 Exit Checkpoint: 'Riffing checklist: All 4 B2B core techniques applied (SCAMPER, Compound creation, Creative respelling, Industry-native compound patterns).' 01-candidates.md techniques_used includes: SCAMPER, compound_creation, creative_respelling, industry_native_compound_patterns. Evidence in riffs: SCAMPER produced Vigilis and Corvus (#169-170); compound creation produced Assayworks, Nightwatch, Keepwatch, Rookline, Flintstrike, Flintcore; creative respelling visible in Sparq (#225), Vektor (#24), Proksi (#46)."
+    },
+    {
+      "id": "hard-gates",
+      "text": "Hard gate checks displayed before generation menu",
+      "passed": true,
+      "evidence": "Transcript Step 02a: 'Hard gate status: All 4 gates PASS.' Transcript Step 03a Phase 1 Entry Checkpoint: 'All 4 hard gates: PASS — Candidate count: ~262 (min 60), Category coverage: 11/11 + 3 cross-cutting (min 6), Structural diversity: balanced, no type >30%, Technique coverage: 44 techniques applied, 7 remaining (saturation at 25+).' Phase 3 Exit Checkpoint also shows 3 exit gates passing."
+    },
+    {
+      "id": "conflict-flagging",
+      "text": "Inline conflict flagging for known conflicts (warning emoji or text flag — substance over format)",
+      "passed": true,
+      "evidence": "Extensive inline conflict flagging throughout 01-candidates.md using ⚠️ and ⚠️? markers. Examples: 'Aegis — Zeus's shield ⚠️ Aegis Defense', 'Keystone — holds the arch together ⚠️ multiple companies', 'Lattice — interconnected structure ⚠️ Lattice HR', 'Relic — something that endures ⚠️ New Relic', 'Cortex — brain processing ⚠️ Palo Alto Cortex', 'Nexis — nexus + axis ⚠️ LexisNexis', 'Prism — separates light ⚠️? NSA program', 'Nightfall — detection in darkness ⚠️? Nightfall AI'. Approximately 40+ names carry conflict flags. The ⚠️ vs ⚠️? distinction appears to differentiate definite conflicts from possible ones."
+    },
+    {
+      "id": "candidate-count",
+      "text": "At least 40 unique candidates generated",
+      "passed": true,
+      "evidence": "01-candidates.md YAML states total_unique_candidates: 262. The numbered candidate list goes up to #234 (with some dedup noted). The transcript states '262 unique candidates' and '187 from divergent generation + 70 riffs + 5 dedup removals.' Even the most conservative count from the numbered list exceeds 200 unique names. Well above the 40 minimum."
+    },
+    {
+      "id": "platform-vs-point",
+      "text": "Platform vs Point-Solution naming considered (this is a platform)",
+      "passed": true,
+      "evidence": "Transcript Step 02a technique toolkit item 9: 'Platform vs Point-Solution — expansion testing on top names.' Listed in 01-candidates.md techniques_used as 'platform_vs_point_solution.' The brief identifies the product as a platform ('AI-native, not bolted-on AI') and the shortlisting criteria include 'Platform extensibility (10%).' However, detailed output showing how platform naming was tested (e.g., product line extensions like '[Name] Detect, [Name] Respond') is not visible in the artifact."
+    },
+    {
+      "id": "integration-ecosystem",
+      "text": "Integration/Ecosystem naming tested (stack test alongside Salesforce, AWS)",
+      "passed": false,
+      "evidence": "Listed in 01-candidates.md techniques_used as 'integration_topology_naming.' However, no visible output demonstrates the names were tested alongside specific ecosystem partners like Salesforce, AWS, or other security stack components. The transcript mentions this technique was applied during generation but provides no evidence of actual stack testing output. The assertion specifically requires stack testing alongside named partners, and this evidence is absent from both the transcript and the output artifact."
+    },
+    {
+      "id": "technique-toolkit",
+      "text": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+      "passed": true,
+      "evidence": "Transcript Step 02a shows 'Technique Toolkit — Applied ALL remaining (16 techniques):' followed by a numbered list of 16 techniques with descriptions. The phrasing 'ALL remaining' implies tracking of applied vs. unapplied status. Step 03a Entry Checkpoint shows 'Technique coverage: 44 techniques applied, 7 remaining (saturation at 25+)' — explicitly showing applied/unapplied tracking. The 01-candidates.md YAML has both techniques_used (44 items) and techniques_not_yet_used (7 items), confirming the tracking system. The transcript doesn't clearly show an interactive user selection menu, but the checkpoint format with status tracking is present."
+    }
+  ],
+  "summary": {
+    "passed": 21,
+    "failed": 1,
+    "total": 22,
+    "pass_rate": 0.95
+  },
+  "execution_metrics": {
+    "output_chars": 28047,
+    "transcript_chars": 9981
+  },
+  "timing": {
+    "total_tokens": 144736,
+    "executor_duration_seconds": 905.3,
+    "total_duration_seconds": 905.3
+  },
+  "claims": [
+    {
+      "claim": "262 unique candidates generated",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The numbered list in 01-candidates.md goes up to #234 with riff families adding more. YAML structural_mix sums to approximately 332 (including riff_variants: 70 which overlap with the 70 riffs). The deduplication log notes 5 removals. The math '187 from divergent generation + 70 riffs + 5 dedup removals' yields 252, not 262. There is a 10-name discrepancy between the claimed 262 and the derivable 252. Close enough to be rounding/counting differences across categories, but not exact."
+    },
+    {
+      "claim": "44 techniques applied (30 generation + 14 riffing)",
+      "type": "factual",
+      "verified": true,
+      "evidence": "01-candidates.md techniques_used list contains approximately 44 entries. The techniques_not_yet_used list contains 7 items, and the transcript Step 03a confirms '44 techniques applied, 7 remaining.' The 30+14 split is plausible given the generation vs. riffing phases."
+    },
+    {
+      "claim": "All 6 riff directions have 10+ new unique riffs",
+      "type": "factual",
+      "verified": true,
+      "evidence": "YAML riff counts: Assay 13, Vigil 13, Corvis 12, Attest 11, Vektor 10, Flint 11. However, some riffs are noted as duplicates (Essai duplicate with #105, Corvus duplicate with #170, Corvex duplicate with #27). After removing duplicates, Assay has 12, Corvis has 10, and others remain the same. All still at 10+."
+    },
+    {
+      "claim": "Session stopped after Step 03a",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript ends at Step 03a. Only outputs present are 01-candidates.md and session-transcript.md (no 02-shortlist.md, 04-final.md, etc.). stepsCompleted in YAML: ['00', '01a', '01b', '02a', '02b', '02c', '03a']."
+    },
+    {
+      "claim": "Enterprise-naming.md and brand-psychology.md were loaded during brief intake",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript Step 01a states 'Reference files loaded: brand-psychology.md, enterprise-naming.md.' This is consistent with the skill's architecture for enterprise briefs."
+    },
+    {
+      "claim": "Cross-pollination was offered but declined",
+      "type": "process",
+      "verified": true,
+      "evidence": "Transcript Step 02b: 'Offered cross-pollination prompt generation. Declined (pool already at 187 with strong structural diversity). Proceeded to riffing.'"
+    },
+    {
+      "claim": "25 names shortlisted across 3 tiers",
+      "type": "factual",
+      "verified": true,
+      "evidence": "01-candidates.md SHORTLIST section shows Tier A (6 names), Tier B (9 names), Tier C (10 names) = 25 total. All 25 are listed with annotations."
+    },
+    {
+      "claim": "No type exceeds 30% of structural mix",
+      "type": "factual",
+      "verified": true,
+      "evidence": "YAML structural_mix: compounds at 55 is the largest single category. 55/262 = 21%. found_words at 42 = 16%. coined_invented at 35 = 13%. No category exceeds 30%."
+    }
+  ],
+  "user_notes_summary": null,
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Integration/Ecosystem naming tested (stack test alongside Salesforce, AWS)",
+        "reason": "This assertion is specific about what 'tested' means (alongside Salesforce, AWS) but the skill's output artifact format doesn't naturally surface this level of detail. Consider whether the assertion should check for the technique being listed in techniques_used (which it passes) or for explicit stack test output (which requires the artifact to include detailed technique outputs, not just the candidate list)."
+      },
+      {
+        "reason": "Several enterprise-specific assertions (buyer-committee, sales-conversation, acronym-resilience, platform-vs-point) pass based on the technique being listed in techniques_used and mentioned in the transcript, but the actual detailed output of these tests is not visible in the artifact. A more discriminating assertion would require the output artifact to contain the specific test results (e.g., 'buyer committee scoring table visible in output' rather than 'buyer committee test applied'). As written, these assertions can pass without evidence that the technique was meaningfully applied rather than merely listed."
+      },
+      {
+        "reason": "No assertion checks the quality or distinctiveness of the shortlisted names. A cybersecurity-specific assertion could verify that the shortlist avoids names already in heavy use in the security space, or that the names actually fit in 'Gartner names [X] a Leader in the CNAPP Magic Quadrant' — the specific stress test from the brief."
+      },
+      {
+        "reason": "The candidate count assertion (40+) has a very low bar relative to what the skill actually produced (262). This will pass for both a mediocre and excellent execution. Consider raising the threshold for Deep/Explorer sessions or adding a tiered expectation."
+      }
+    ],
+    "overall": "Assertions are comprehensive for enterprise technique coverage but lean toward 'technique was listed/claimed' rather than 'technique produced visible output.' The single failure (integration-ecosystem) is the only assertion that demands visible evidence of application rather than a claim. Consider tightening other enterprise assertions to match that standard."
+  }
+}

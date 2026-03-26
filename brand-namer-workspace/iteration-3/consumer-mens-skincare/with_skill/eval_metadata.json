@@ -1,0 +1,122 @@
+{
+  "eval_id": 3,
+  "eval_name": "consumer-mens-skincare",
+  "prompt": "I'm developing a premium men's skincare line targeting men aged 28-45 who are just getting into skincare. Not the Axe Body Spray guy - more the guy who reads GQ, owns a nice watch, and is willing to spend $40-60 on a moisturizer but would never walk into Sephora. Products: cleanser, moisturizer, eye cream, SPF. The brand should feel: elevated but masculine, clinical-meets-luxury, no-nonsense, confident. Think Aesop meets The Ordinary but specifically for men. Don't want anything too feminine (Glossier-ish), too aggressive (War Paint), or too clinical (CeraVe). Competitors: Lumin, Kiehl's, Bulldog, Harry's (skincare line), Hims. We're DTC-first with plans for Nordstrom/Saks placement. The name should look good on a matte black bottle.",
+  "assertions": [
+    {
+      "id": "cat-coverage",
+      "text": "At least 6 of 11 naming categories attempted",
+      "type": "generation"
+    },
+    {
+      "id": "five-senses",
+      "text": "Five Senses Scan run as dedicated generation pass (skincare is sensory)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "emotional-temp",
+      "text": "Emotional Temperature Mapping applied (masc positioning)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "price-signal",
+      "text": "Price-Signal Calibration applied (luxury/masstige register)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "adjacent-category",
+      "text": "Adjacent-Category Code Borrowing explored (e.g., spirits/fragrance codes for skincare)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "front-of-pack",
+      "text": "Front-of-Pack Hierarchy Fit tested (name on a matte black bottle)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "dual-audience",
+      "text": "Dual-audience consideration (men who want skincare but masculine framing)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "desired-self",
+      "text": "Desired-Self Naming explored (what identity does this project?)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "color-name-mapping",
+      "text": "Color-to-Name Mapping explored (matte black palette)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "structural-diversity",
+      "text": "At least 3 structural types represented",
+      "type": "generation"
+    },
+    {
+      "id": "ownability-parallel",
+      "text": "Ownability alternatives generated alongside found words",
+      "type": "generation"
+    },
+    {
+      "id": "dynamic-compounds",
+      "text": "Compound vocabulary dynamically generated from beauty/skincare domain (not tech suffixes)",
+      "type": "generation"
+    },
+    {
+      "id": "technique-labeling",
+      "text": "Each riff labeled with which technique produced it",
+      "type": "riffing"
+    },
+    {
+      "id": "riff-volume",
+      "text": "10+ NEW UNIQUE riffs per direction (duplicates of existing candidates don't count)",
+      "type": "riffing"
+    },
+    {
+      "id": "consumer-riffing-checklist",
+      "text": "Consumer riffing checklist used (not B2B checklist)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "hard-gates",
+      "text": "Hard gate checks displayed before generation menu",
+      "type": "workflow"
+    },
+    {
+      "id": "conflict-flagging",
+      "text": "Inline conflict flagging for known conflicts (\u26a0\ufe0f emoji or text flag \u2014 substance over format)",
+      "type": "generation"
+    },
+    {
+      "id": "candidate-count",
+      "text": "At least 40 unique candidates generated",
+      "type": "generation"
+    },
+    {
+      "id": "shelf-test",
+      "text": "Shelf Test applied (Nordstrom/Saks shelf context)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "gift-test",
+      "text": "Gift Test considered (premium skincare is highly giftable)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "french-naturalized",
+      "text": "French Naturalized Vocabulary Mining applied (premium/luxury register)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "sound-symbolism",
+      "text": "Sound symbolism considered (angular sounds for masculine positioning)",
+      "type": "consumer-specific"
+    },
+    {
+      "id": "technique-toolkit",
+      "text": "Technique toolkit offered at checkpoint with applied/unapplied status and user selection option",
+      "type": "workflow"
+    }
+  ]
+}
