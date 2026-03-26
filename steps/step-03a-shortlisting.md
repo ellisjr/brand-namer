@@ -166,6 +166,31 @@ At each transition point, present the FULL menu of available techniques and let 
 - Brand Architecture test (can the name extend to product lines?)
 - Speech & Channel Robustness (voicemail/podcast/voice assistant test)
 
+### Enterprise evaluation — visible output required (B2B briefs only)
+
+For B2B/enterprise briefs, the following evaluations must produce **visible, per-name output** in the shortlist — not just a claim that they were applied. Show the actual test results:
+
+**Stack Test** (mandatory for B2B briefs with named competitors/partners):
+```
+Stack Test — does [name] look peer-level alongside the customer's existing tools?
+| Shortlisted Name | Stack Context | Verdict |
+|---|---|---|
+| Weft | Weft + Snowflake + Databricks + Salesforce | Peer-level ✓ |
+| Meshworks | Meshworks + AWS + SAP + Workato | Slightly long but credible ✓ |
+```
+
+**Sales Conversation Fit** (mandatory):
+Test each shortlisted name in at least 3 of these templates and show the results:
+- "Have you heard of [X]?"
+- "We just switched to [X] for our [use case]."
+- "Let me show you what [X] can do."
+- "[X] integrates with your existing stack."
+
+**Buyer Committee scoring** (mandatory):
+Show explicit per-name scoring across roles (Champion, CFO, Technical Evaluator, End User).
+
+These visible outputs prevent the common failure mode where enterprise techniques are listed as "applied" in metadata but never actually demonstrated.
+
 Which would you like to try?"
 
 If the user asks about any technique, explain it briefly. The full library is in `references/elicitation-techniques.md`, `references/naming-techniques.md`, and `references/consumer-naming.md` or `references/enterprise-naming.md` (depending on brief type).
