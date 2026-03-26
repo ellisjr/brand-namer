@@ -192,6 +192,7 @@ Use the EXACT canonical technique names shown above when recording in `technique
 **[R]** Riff more — pick more names to riff on or apply different techniques
 **[G]** Generate more — go back to fresh generation (loop to step-02a)
 **[X]** Cross-pollinate — get riff ideas from other models (loop to step-02b)
+**[A]** Add your own — contribute names or fragments the riffing sparked
 **[C]** Continue — proceed to Shortlisting (Step 7 of 13)
 
 **My recommendation:** [Based on session state. If unapplied techniques remain, mention the most impactful: "You still have [Desired-Self, Trend-Cycle, Memetic/Viral] available — these often produce the most distinctive consumer names. Want to try any before shortlisting?" If riff coverage is strong, recommend [C].]
@@ -199,6 +200,7 @@ Use the EXACT canonical technique names shown above when recording in `technique
 **HALT — wait for user selection before proceeding.**
 
 IF user provides non-menu input: Respond helpfully, then re-display this menu.
+IF [A]: Capture user-contributed names/fragments, add to candidate pool with source "user-generated," offer to riff on them, then re-display this menu.
 IF [R]: Run another riffing round within this step (ask user which names to riff on), then re-display this menu.
 IF [G]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02c"]`, then read fully and follow: `./step-02a-generation.md`
 IF [X]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02c"]`, then read fully and follow: `./step-02b-cross-pollination.md`

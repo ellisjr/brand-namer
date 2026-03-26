@@ -169,6 +169,8 @@ Then expand the categories the user picks, showing the full numbered list with r
 
 After the user reacts to each category, build their preference profile incrementally: "You consistently picked [patterns]. You consistently skipped [patterns]. This tells me you gravitate toward [summary]." Use this profile to sharpen all subsequent generation and riffing.
 
+**User idea capture:** After presenting each batch, ask: "Did any of these spark your own ideas? If a name made you think of something — even a fragment, a vibe, a word — tell me and I'll add it to the pool." Users often have their best naming ideas when reacting to generated candidates, but won't volunteer them unless explicitly invited. Any user-contributed names go into the candidate pool with source labeled as "user-generated" and get the same treatment as AI-generated candidates (riffing, validation, etc.).
+
 **Transparency rule:** After presenting all categories the user asked to see, note what's remaining: "You've seen [M] candidates across [N] categories. [K] more are available in [remaining categories]. Want to see those too, or move on?" Nothing is hidden — but the user controls the pace.
 
 **Category-by-category presentation:**
@@ -302,6 +304,7 @@ Select with numbers (e.g., "3, 5, 8") or [A] all remaining, then [C] to skip
 **[X]** Cross-pollinate — generate prompt for other LLMs (proceeds to step-02b)
 **[R]** Riff — apply riffing techniques to favorites (proceeds to step-02c)
 **[S]** Shortlist — review all candidates, pick favorites (proceeds to step-03a)
+**[A]** Add your own — contribute names or fragments that came to mind
 **[O]** Other — tell me what you need
 
 **My recommendation:** [If any hard gate is failing, address it here. If techniques remain unapplied, mention them: "You have [N] techniques still available — [list top 2-3 most impactful]. Want to try any before moving on?" If all gates pass and technique coverage is strong, recommend based on session state.]
@@ -309,6 +312,7 @@ Select with numbers (e.g., "3, 5, 8") or [A] all remaining, then [C] to skip
 **HALT — wait for user selection before proceeding.**
 
 IF user provides non-menu input: Respond helpfully, then re-display this menu.
+IF [A]: Capture user-contributed names/fragments, add to candidate pool with source "user-generated," offer to riff on them, then re-display this menu.
 IF [G]: Run another generation round within this step, then re-display this menu with updated gate status.
 IF [X]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02a"]`, then read fully and follow: `./step-02b-cross-pollination.md`
 IF [R]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02a"]`, then read fully and follow: `./step-02c-riffing.md`
