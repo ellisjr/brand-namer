@@ -248,7 +248,7 @@ GENERATION TECHNIQUES
 [x] Tree of Thought branching ✓
 [ ] Prefix × Suffix Matrix — systematic combinatorial grid
 [ ] Morphological Analysis (Zwicky) — dimensional decomposition
-[ ] Domain-First Naming — start from available .com domains
+[ ] Domain-First Naming — start from available .com domains or ccTLD hacks (.ly, .is, .us, .io, .me, .al)
 [ ] Contrarian/Anti-Category — name from the opposite direction
 
 CONSUMER-SPECIFIC (show for consumer/fashion/food/beauty briefs)

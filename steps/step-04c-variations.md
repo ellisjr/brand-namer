@@ -38,6 +38,7 @@ For names where the exact preferred domain is unavailable but the name itself is
 - Try modifiers: [name]ai, [name]co, [name]io (as part of the name, not just TLD)
 - Try creative respellings that preserve pronunciation
 - Try compound extensions: [name] + a relevant word
+- Try ccTLD domain hacks: can the name (or a riff on it) split naturally at a TLD boundary? E.g., if "Supply" is strong but taken → supp.ly. If "Genius" resonates → geni.us. Check `.ly`, `.is`, `.us`, `.io`, `.me`, `.al`, `.it`, `.to` as word-completion TLDs. The split must be natural — the prefix should be a real word or suggestive fragment, and pronunciation should flow across the dot. See `references/naming-techniques.md` Domain Hacks section for the full ccTLD table and generation technique.
 
 Generate 3-5 variations per name that needs them. Preserve the phonetic and emotional qualities of the original.
 

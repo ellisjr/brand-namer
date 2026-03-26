@@ -248,15 +248,55 @@ Add these to promising roots to create institutional compounds.
 | **un-** | Reversal, disruption | Unsplash, Unbounce |
 
 ### Domain Hacks
-Using the TLD as part of the name:
+Using the TLD as part of the name. Two distinct patterns:
 
-| Pattern | Example | Notes |
+#### Pattern 1: TLD as suffix
+The TLD replaces the last syllable or letters of the word. The domain *is* the name.
+
+| TLD | Example | Word formed | Notes |
+|---|---|---|---|
+| **.ly** | bit.ly, vend.ly, visual.ly | Bitly, Vendly, Visually | Most productive ccTLD hack. Works with verbs, adjectives, adverbs. |
+| **.io** | stud.io, pull.io, portfol.io | Studio, Pullio, Portfolio | Natural when word ends in -io. Developer-friendly. |
+| **.ai** | essai → ess.ai, verific.ai | Essai, Verificai | Works when name naturally splits at the TLD boundary. |
+| **.co** | angel.co, dri.co | Angel, Drico | .co as shorthand for "company" or word completion. |
+| **.is** | th.is, what.is, generat.is | This, Whatis, Generatis | Icelandic ccTLD. Clean for philosophical/identity names. |
+| **.me** | about.me, na.me, resu.me | Aboutme, Name, Resume | Personal brands, consumer products, identity. |
+| **.it** | do.it, dev.it, sp.it | Doit, Devit, Spit | Italian ccTLD. Works with short action words. |
+| **.us** | foc.us, geni.us, stat.us | Focus, Genius, Status | Strong with Latin-root words ending in -us. |
+| **.so** | al.so, ver.so, cur.so | Also, Verso, Curso | Less common but distinctive. |
+| **.er** | mak.er, build.er, discov.er | Maker, Builder, Discover | Works with agent nouns. Limited registrar support. |
+| **.al** | optim.al, minim.al, sign.al | Optimal, Minimal, Signal | Works with -al adjectives and Latin roots. |
+| **.to** | pho.to, cryp.to, poin.to | Photo, Crypto, Pointo | Tongan ccTLD. Natural with -to endings. |
+
+#### Pattern 2: TLD as semantic layer
+The TLD adds meaning but the name works without it too.
+
+| TLD | Example | Notes |
 |---|---|---|
-| **name.ai** | essai → ess.ai | Works when the name naturally splits at the TLD boundary |
-| **name.io** | stud.io, pull.io | The .io becomes part of pronunciation |
-| **name.co** | angel.co, stripe.co | .co as shorthand for "company" |
+| **.ai** | sentry.ai, proof.ai | Signals AI/intelligence — becoming a de facto tech TLD |
+| **.io** | tray.io, socket.io | Signals developer/infrastructure tooling |
+| **.co** | stripe.co, hover.co | Signals modern startup — perceived as .com alternative |
 
-**Caution:** Domain hacks are clever but can cause confusion in verbal communication ("Is it E-S-S dot A-I or E-S-S-A-I dot com?"). Best when the hack is the *primary* domain, not an alternative.
+#### Generation technique: ccTLD-first naming
+When generating names, work backwards from productive ccTLDs:
+
+1. **Pick a target ccTLD** (e.g., `.ly`)
+2. **List words that end in those letters** — friendly, deeply, supply, apply, rally, tally, deftly, swiftly
+3. **Split at the TLD boundary** — friend.ly, deep.ly, supp.ly, app.ly, ral.ly, tal.ly, deft.ly, swift.ly
+4. **Evaluate the prefix as a standalone brand element** — does "friend," "deep," "supp," "ral" carry meaning on its own?
+5. **Best candidates** have a prefix that works as a word or suggestive fragment AND a natural pronunciation across the dot
+
+**When this works best:**
+- `.ly` — the most versatile; turns almost any verb/adjective into an adverb-brand (clever.ly, exact.ly, rapid.ly)
+- `.is` — existential/identity brands (gen.is, what.is, th.is)
+- `.us` — Latin-root words with built-in gravitas (foc.us, rad.us, nex.us)
+- `.io` — words with Italian/Latin -io endings (stud.io, rat.io, portfol.io)
+
+**Cautions:**
+- Domain hacks can cause confusion in verbal communication ("Is it V-E-N-D dot L-Y or V-E-N-D-L-Y dot com?"). Best when the hack is the *primary* domain, not an alternative.
+- Some ccTLDs have registration restrictions or political risks (e.g., `.ly` is Libya, `.io` is British Indian Ocean Territory — both have had stability concerns). Research the registry before committing.
+- The more natural the split, the stronger the hack. `bit.ly` works because "bit" is a real word. `visu.al` works because the split is clean. `bra.nd` doesn't work because "bra" derails the reading.
+- Verbal test: say "check out [name]" aloud. If the listener wouldn't know how to type it, the hack is too clever.
 
 ### Y-for-I Respelling (the Lyft/Byte pattern)
 The single most productive respelling for tech brands. Replace "i" with "y" to create distinctiveness while preserving pronunciation:
@@ -363,16 +403,18 @@ Different from creative respelling (which invents new spellings). These are actu
 When all good words seem taken, invert the process: start from what domains ARE available and work backwards to names.
 
 **The technique:**
-1. Identify the user's preferred TLDs (.com, .ai, .co, .io)
+1. Identify the user's preferred TLDs (.com, .ai, .co, .io — and ccTLDs if open to domain hacks)
 2. Use domain registrar search tools to scan for available domains in the target semantic space
 3. Work backwards from available domains to names worth building a brand around
+4. For ccTLD hacks: list words ending in the TLD letters, split at the boundary, evaluate (see Domain Hacks section above)
 
 **Example process:**
 - Search registrar for available 5-6 letter .com domains containing "sift," "vet," "flux," "true"
 - Find siftwise.com is available → evaluate "Siftwise" as a brand name
 - Find truevet.com is available → evaluate "Truevet" as a brand name
+- Try ccTLD-first: words ending in "-ly" → swift.ly, deft.ly, supp.ly → evaluate as brands
 
-**When to use:** Late in the pipeline after validation has killed most candidates. This inverts the normal flow (name → check domain) to (available domain → evaluate name). It's pragmatic rather than creative, but pragmatism wins when creativity keeps hitting walls.
+**When to use:** Late in the pipeline after validation has killed most candidates. This inverts the normal flow (name → check domain) to (available domain → evaluate name). It's pragmatic rather than creative, but pragmatism wins when creativity keeps hitting walls. The ccTLD variant is especially productive when .com is saturated in the target space.
 
 **Anti-pattern:** Don't settle for a mediocre name just because the domain is available. The domain is a necessary condition, not a sufficient one. A great name with a slightly imperfect domain (name.ai instead of name.com) beats a forgettable name with a perfect .com.
 
