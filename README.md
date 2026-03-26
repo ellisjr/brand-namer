@@ -175,6 +175,7 @@ Produce candidates across many naming categories. Breadth before depth.
 - **Cross-pollination** — generates paste-ready prompts for ChatGPT/Gemini/Grok, merges results back into the candidate pool. Mandatory offer (user can decline).
 - **Creative riffing** with labeled techniques — the user sees WHY each name was generated. Every riff must have a SPECIFIC technique tag ("language shift: Latin", not just "riff"). Riff counts verify 10+ NEW UNIQUE riffs per direction (duplicates of existing candidates don't count).
 - **Technique Toolkit** — at every checkpoint (generation, riffing, shortlisting), the skill displays all available techniques with applied/unapplied status. Users can select individual techniques by number, [A] all remaining, or [C] skip. Unapplied techniques resurface at every subsequent checkpoint until used or skipped. This ensures techniques like Desired-Self Naming, Trend-Cycle Audit, and Morphological Analysis don't get silently skipped.
+- **User idea capture** — after each batch and at every checkpoint menu, the user is invited to contribute their own names or fragments sparked by the generated candidates. User-contributed names enter the same pipeline (riffing, validation) as AI-generated ones.
 - **Gallery mode** — scannable H/W/C grid before diving into category-by-category expansion
 
 ### Loop 3: Select
@@ -192,7 +193,7 @@ User-directed convergence. The user makes all cuts.
 Validate what survives. Riff on what doesn't.
 
 - **Competitive screening** — web search + technical registries (GitHub, npm, PyPI, MCP)
-- **Domain availability** — explicit TLD checks (.com, .ai, .co, .io)
+- **Domain availability** — explicit TLD checks (.com, .ai, .co, .io) + ccTLD domain hacks (.ly, .is, .us, .me, .al, .it, .to, etc.)
 - **Batched death trigger** — when names die, present them in one table and offer riffing options
 - **Pool recovery** — killed names become creative seeds, not dead ends (max 3 recovery rounds)
 - **Trademark screening, social handles, stress tests** — tiered by available tooling
@@ -357,7 +358,7 @@ Optimized for multi-stakeholder procurement. Emphasizes buyer-committee consensu
 | **Found Word** | Real dictionary words repurposed | Stripe, Notion, Bench |
 | **Foreign-Root** | Non-English words carrying meaning | Audi, Volvo, Lego |
 | **Acronymic** | Initials or abbreviated phrases | IKEA, BMW, ASICS |
-| **Compound** | Two complete words joined | Salesforce, Dropbox, Mailchimp |
+| **Compound** | Two complete words joined (5 sub-types: Action+Object, Domain+Function, Metaphorical, Stacking, Verb+Noun) | Salesforce, Dropbox, CrowdStrike |
 | **Sound-Symbolic** | Engineered for phonetic feel | Google, TikTok, Zoom |
 | **Institutional Compound** | Finance/enterprise compound pattern | BlackRock, Benchmark, Cornerstone |
 
@@ -366,6 +367,10 @@ Optimized for multi-stakeholder procurement. Emphasizes buyer-committee consensu
 | Angle | What it does | Examples |
 |---|---|---|
 | **Personified Names** | Human names as brands — instant warmth, conversational | Claude, Alexa, Oscar, Ada, Harvey |
+| **Founder / Surname** | Founder's name becomes the brand — heritage, authority, accountability. 6 sub-patterns: surname-only, first+last, possessive ('s), title+name, two founders, fictional founder | Chanel, Ford, McDonald's, Dr. Martens, Dolce & Gabbana |
+| **Toponym / Place-Name** | Geographic places as brands — borrows cultural associations. Sub-patterns: literal origin, aspirational, ironic, country-as-modifier | Patagonia, Arizona, Corona, San Pellegrino |
+| **Multi-Word Phrase** | Full grammatical phrases as names — micro-stories with built-in attitude. Growing fast in DTC/challenger. | Youth to the People, Who Gives a Crap, Rent the Runway |
+| **Numeric / Alphanumeric** | Numbers as structural name elements — globally readable, encode meaning | 7UP, Five9, 6sense, Auth0, H2O.ai |
 | **Motion & Direction** | Movement, navigation, momentum — forward-looking energy | Stride, Vector, Bearing, Surge, Arc |
 | **Arbitrary / Absurd Association** | Zero logical connection to the product — maximum distinctiveness | Apple, Cowshed, Diesel, Penguin, Egg |
 | **Verb-as-Brand** | Action verbs as names — the brand is something you DO | Slack, Kindle, Bolt, Drift, Zoom |
@@ -413,6 +418,10 @@ Mine specialized vocabularies where nobody in tech is looking. 18 domains covere
 | **Conceptual Blending** | Blend mental models, not just syllables (Fauconnier & Turner) |
 | **Morphological Analysis (Zwicky)** | Systematic combinatorial generation across dimensions |
 | **Lexicon Three-Team Method** | On-brief, competitor, unrelated-domain teams generating simultaneously |
+| **Truncation / Clipping** | Clip a real word to create shorter, ownable variant — preserves phonetic connection to source | Brex, Deel, Navan, Phenom, Pendo |
+| **[Brand] AI Suffix** | Append " AI" to a strong base name — clarifies positioning for AI products (distinct from AI-embedded naming) | Scale AI, Mistral AI, Together AI |
+| **Lowercase / Casing Strategy** | Typographic casing as naming decision — all-lowercase, camelCase, CLI-native. Signals "built by engineers." | dbt, vercel, mParticle, nCino |
+| **ccTLD Domain Hacks** | TLD completes the word — 12 ccTLDs (.ly, .io, .ai, .is, .us, .me, .al, .it, .co, .so, .er, .to) with generation technique | bit.ly, vend.ly, geni.us, foc.us, stud.io |
 
 ---
 
@@ -476,9 +485,9 @@ brand-namer/
 │   ├── step-00-session-start.md            (134 lines — session detection, resume handler)
 │   ├── step-01a-brief.md                   (139 lines — brand brief intake)
 │   ├── step-01b-territories.md             (123 lines — territories, whitespace, session mode)
-│   ├── step-02a-generation.md              (312 lines — divergent generation, hard gates, technique toolkit, gallery mode)
+│   ├── step-02a-generation.md              (323 lines — divergent generation, hard gates, technique toolkit, gallery mode, user idea capture)
 │   ├── step-02b-cross-pollination.md       (97 lines — cross-model ideation)
-│   ├── step-02c-riffing.md                 (209 lines — creative riffing, technique library, riff verification)
+│   ├── step-02c-riffing.md                 (211 lines — creative riffing, technique library, riff verification, user idea capture)
 │   ├── step-03a-shortlisting.md            (331 lines — shortlisting, checkpoints, riffing checklist, enterprise evaluation)
 │   ├── step-04a-screening.md               (163 lines — competitive screening, validation setup)
 │   ├── step-04b-domains.md                 (124 lines — domain availability, pool recovery)
@@ -489,15 +498,15 @@ brand-namer/
 ├── README.md                               (this file)
 ├── CLAUDE.md                               (project conventions)
 └── references/
-    ├── naming-categories.md                (554 lines — 11 categories, phonesthetics, cross-language)
-    ├── naming-techniques.md                (606 lines — riffing, affixes, respelling, advanced generation)
+    ├── naming-categories.md                (734 lines — 11 categories, 9 cross-cutting angles, phonesthetics, cross-language)
+    ├── naming-techniques.md                (764 lines — riffing, affixes, respelling, truncation, casing, advanced generation)
     ├── consumer-naming.md                  (694 lines — sensory, experiential, consumer strategy)
     ├── enterprise-naming.md                (427 lines — B2B techniques, evaluation, compliance)
     ├── brand-psychology.md                 (431 lines — archetypes, personality, cognitive science)
     └── elicitation-techniques.md           (324 lines — 10 deepening techniques)
 ```
 
-Total: ~5,100 lines across 21 files (excluding README). Step files are loaded one at a time. Reference files are loaded on-demand based on brief type.
+Total: ~5,970 lines across 21 files (excluding README). Step files are loaded one at a time. Reference files are loaded on-demand based on brief type.
 
 ## Installation
 
