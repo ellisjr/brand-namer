@@ -5,7 +5,7 @@ brand-namer-output/
 .claude/sidecar_sessions/
 
 # Archived monolithic file (superseded by split files)
-references/.naming-taxonomies.md
+skills/brand-namer/references/.naming-taxonomies.md
 
 # OS files
 .DS_Store
@@ -14,5 +14,5 @@ references/.naming-taxonomies.md
 v2-workspace/
 v2/
 docs/
-references/enterprise-brand-names.md
-references/top-consumer-brands.md
+skills/brand-namer/references/enterprise-brand-names.md
+skills/brand-namer/references/top-consumer-brands.md

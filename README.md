@@ -479,58 +479,63 @@ Each artifact's frontmatter includes `stepsCompleted` for session resumption. St
 
 ```
 brand-namer/
-├── SKILL.md                                (425 lines — role, philosophy, reference loading, artifacts, playbooks)
-├── workflow.md                             (124 lines — enforcement rules, system failures, step routing)
-├── steps/
-│   ├── step-00-session-start.md            (134 lines — session detection, resume handler)
-│   ├── step-01a-brief.md                   (139 lines — brand brief intake)
-│   ├── step-01b-territories.md             (123 lines — territories, whitespace, session mode)
-│   ├── step-02a-generation.md              (323 lines — divergent generation, hard gates, technique toolkit, gallery mode, user idea capture)
-│   ├── step-02b-cross-pollination.md       (97 lines — cross-model ideation)
-│   ├── step-02c-riffing.md                 (211 lines — creative riffing, technique library, riff verification, user idea capture)
-│   ├── step-03a-shortlisting.md            (331 lines — shortlisting, checkpoints, riffing checklist, enterprise evaluation)
-│   ├── step-04a-screening.md               (164 lines — competitive screening, validation setup)
-│   ├── step-04b-domains.md                 (180 lines — domain availability via WHOIS/RDAP, pool recovery)
-│   ├── step-04c-variations.md              (69 lines — variation generation)
-│   ├── step-04d-trademark.md               (70 lines — trademark screening)
-│   ├── step-04e-social.md                  (106 lines — social handles, stress tests)
-│   └── step-04f-final.md                   (101 lines — final tiered presentation)
+├── .claude-plugin/
+│   └── plugin.json                         (plugin manifest — name, version, author, keywords)
+├── skills/brand-namer/
+│   ├── SKILL.md                            (425 lines — role, philosophy, reference loading, artifacts, playbooks)
+│   ├── workflow.md                         (124 lines — enforcement rules, system failures, step routing)
+│   ├── steps/
+│   │   ├── step-00-session-start.md        (134 lines — session detection, resume handler)
+│   │   ├── step-01a-brief.md              (139 lines — brand brief intake)
+│   │   ├── step-01b-territories.md        (123 lines — territories, whitespace, session mode)
+│   │   ├── step-02a-generation.md         (323 lines — divergent generation, hard gates, technique toolkit, user idea capture)
+│   │   ├── step-02b-cross-pollination.md  (97 lines — cross-model ideation)
+│   │   ├── step-02c-riffing.md            (211 lines — creative riffing, technique library, user idea capture)
+│   │   ├── step-03a-shortlisting.md       (331 lines — shortlisting, checkpoints, riffing checklist)
+│   │   ├── step-04a-screening.md          (164 lines — competitive screening, validation setup)
+│   │   ├── step-04b-domains.md            (180 lines — domain availability via WHOIS/RDAP, pool recovery)
+│   │   ├── step-04c-variations.md         (69 lines — variation generation)
+│   │   ├── step-04d-trademark.md          (70 lines — trademark screening)
+│   │   ├── step-04e-social.md             (106 lines — social handles, stress tests)
+│   │   └── step-04f-final.md              (101 lines — final tiered presentation)
+│   └── references/
+│       ├── naming-categories.md           (734 lines — 11 categories, 9 cross-cutting angles, phonesthetics, cross-language)
+│       ├── naming-techniques.md           (764 lines — riffing, affixes, respelling, truncation, casing, advanced generation)
+│       ├── consumer-naming.md             (694 lines — sensory, experiential, consumer strategy)
+│       ├── enterprise-naming.md           (427 lines — B2B techniques, evaluation, compliance)
+│       ├── brand-psychology.md            (431 lines — archetypes, personality, cognitive science)
+│       └── elicitation-techniques.md      (324 lines — 10 deepening techniques)
 ├── README.md                               (this file)
-├── CLAUDE.md                               (project conventions)
-└── references/
-    ├── naming-categories.md                (734 lines — 11 categories, 9 cross-cutting angles, phonesthetics, cross-language)
-    ├── naming-techniques.md                (764 lines — riffing, affixes, respelling, truncation, casing, advanced generation)
-    ├── consumer-naming.md                  (694 lines — sensory, experiential, consumer strategy)
-    ├── enterprise-naming.md                (427 lines — B2B techniques, evaluation, compliance)
-    ├── brand-psychology.md                 (431 lines — archetypes, personality, cognitive science)
-    └── elicitation-techniques.md           (324 lines — 10 deepening techniques)
+└── CLAUDE.md                               (project conventions)
 ```
 
 Total: ~6,030 lines across 21 files (excluding README). Step files are loaded one at a time. Reference files are loaded on-demand based on brief type.
 
 ## Installation
 
-### Option 1: Clone from GitHub (recommended)
+### Option 1: Plugin marketplace (recommended)
 
 ```bash
-# User-level (available in all projects)
-git clone https://github.com/ellisjr/brand-namer.git ~/.claude/skills/brand-namer
+# Add the marketplace
+/plugin marketplace add ellisjr/brand-namer
 
-# Or project-level (available in this project only)
-git clone https://github.com/ellisjr/brand-namer.git .claude/skills/brand-namer
+# Install the plugin
+/plugin install brand-namer
 ```
 
-### Option 2: Copy manually
+### Option 2: Clone from GitHub
 
 ```bash
-# Download and copy the brand-namer/ folder into either:
-~/.claude/skills/brand-namer/     # user-level
-.claude/skills/brand-namer/       # project-level
+# Clone as a plugin (user-level — available in all projects)
+git clone https://github.com/ellisjr/brand-namer.git ~/.claude/plugins/brand-namer
+
+# Or project-level (available in this project only)
+git clone https://github.com/ellisjr/brand-namer.git .claude/plugins/brand-namer
 ```
 
 ### Verify installation
 
-Claude Code auto-detects skills by their YAML frontmatter. Once installed, the skill triggers when you mention naming, brand names, company names, product names, or "what should I call this." You can also invoke it directly:
+Claude Code auto-detects plugins by their `.claude-plugin/plugin.json` manifest. Once installed, the skill triggers when you mention naming, brand names, company names, product names, or "what should I call this." You can also invoke it directly:
 
 ```
 /brand-namer
