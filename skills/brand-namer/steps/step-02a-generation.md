@@ -13,6 +13,7 @@ Fill the possibility space. Generate broadly across naming categories and struct
 - 6+ of the 11 naming categories attempted, with at least 5 candidates each
 - 3+ structural types represented (found words, compounds, coined, blends, respellings, foreign-root)
 - For B2B briefs, compounds and coined names make up at least 30% of the pool
+- The brief type's must-run moves each run as a labeled pass
 
 ## Guardrails
 
@@ -43,9 +44,9 @@ One model generating "three branches" is still one mind with one set of habits; 
 | **Adjacent category** | Name this as a brand in a more desirable neighboring category (spirits for a sauce, fragrance for skincare, outdoor gear for apparel, a design studio for a dev tool), then keep every name whose codes transfer | Borrows the vocabulary of a category with richer naming culture |
 | **Far-off domain** | Name this as if it were three unrelated products in turn (a perfume house, a climbing-gear company, a jazz label; pick frames far from the brief), then keep every name whose energy transfers | Produces the unexpected names, and the least overlap with the other teams |
 
-Distance is what buys divergence. In testing on a consumer brief, a "name a rival" team reproduced about a quarter of the on-brief team's names, while the far-off-domain team shared almost none with either. Use the rival stance instead of the adjacent-category one for B2B briefs, where breaking the category's naming conventions matters more than borrowing a neighbor's.
+Distance is what buys divergence. In testing on a consumer brief, a "name a rival" team reproduced about a quarter of the on-brief team's names, while the far-off-domain team shared almost none with either. For B2B briefs, where breaking the category's naming conventions matters more than borrowing a neighbor's, swap the adjacent-category team for a **rival** team: name a challenger launching against this brand next year that deliberately breaks the category's naming conventions, then keep every name that would work for ours.
 
-Spawn all three in one turn (the Agent tool, default model, `effort: "high"`), so they finish together. Each team reads the reference files itself and returns a table. Give each the same brief with only the stance line changed:
+Spawn all three in one turn and **wait for them in the foreground** (the Agent tool with `run_in_background: false`, default model, `effort: "high"`). Nothing useful can happen until all three return, and a session that spawns them in the background and ends its turn can mistake that pause for the end of the session. Each team reads the reference files itself and returns a table. Give each the same brief with only the stance line changed:
 
 ```
 You are one of three independent naming teams working the same brief. You cannot
@@ -53,13 +54,15 @@ see the other teams' work, and that independence is the point: do not guess at o
 avoid what they might produce.
 
 YOUR STANCE: [On-brief | Adjacent category: name this as a <neighboring category>
-brand | Far-off domain: name this as if it were a <frame 1>, then a <frame 2>, then
-a <frame 3>]. [One sentence on what to keep, from the table.]
+brand | Rival (B2B): name a challenger launching against this brand that breaks the
+category's naming conventions | Far-off domain: name this as if it were a <frame 1>,
+then a <frame 2>, then a <frame 3>]. [One sentence on what to keep, from the table.]
 
 THE BRIEF: [body of 00-brief.md: naming target, one-liner, audience, personality,
 archetype, feeling spectrum, seed words, constraints, competitors]
 TERRITORIES: [each with its emotional promise and semantic field]
-BRIEF TYPE: [consumer: no institutional -works/-craft/-wise/-ware compounds |
+BRIEF TYPE: [consumer: no institutional -works/-craft/-wise/-ware compounds; include a
+Sensory section from a Five Senses Scan (sight, smell, touch, taste, sound) |
 B2B: for every found word also give 2-3 compound or coined variants]
 
 First read these two files completely, and use their categories, techniques,
@@ -90,11 +93,11 @@ When the teams return:
 1. **Merge and deduplicate.** Record each name's `source` (team-onbrief, team-adjacent, team-faroff). A name two or three teams produced independently is a convergence signal: it is probably strong and probably obvious, so flag it as such rather than dropping the duplicates silently. Expect roughly 150 unique names from three teams of 50-60.
 2. **Compare the veins.** The three "Richest vein" lines tell you which semantic domains are productive for this brief. Note them for the user and for later rounds.
 3. **Present through the gallery** exactly as below. The user still sees everything, in numbered batches, and reacts by category.
-4. **Second wave on demand.** When the user marks categories or territories Hot, spawn one or two targeted agents for those, or expand them yourself in context if the gaps are small.
+4. **Second wave on the Hot directions.** When the user marks categories or territories Hot, spawn a targeted agent per Hot direction (same brief, the far-off stance, a brief that names the direction and the names already in it, 20-30 new names). Fresh contexts aimed at a direction the user has already chosen are where sessions find the name they end up with. Expand in context only when a Hot direction has fewer than ten names and a handful more will do.
 
 **Fallback, when you cannot spawn subagents:** branch in context. For each category, generate three mini-batches of 3-5 names from deliberately different semantic domains (for Found Words: textile vocabulary, then geological, then governance), judge which opened new territory, expand the one or two strongest by 5-10 names, and present everything from the surviving branches. A flat list of 10 names in a category means you explored one neighborhood and stopped.
 
-**Cost, so you can say it to the user before spawning:** each team reads about 1,400 lines of reference and thinks at high effort, so a team runs to roughly 125,000 tokens and five minutes, and the three run in parallel. That one round costs about as much as an entire in-context session through shortlisting did before this method existed. It is the right trade in a deep session, where this round is the whole point, and the wrong one in a quick brainstorm. If the user is cost-sensitive, `effort: "medium"` is the lever to pull first; keep three teams rather than dropping to two, since the far-off team is where the divergence comes from.
+**Cost, so you can say it to the user before spawning:** each team reads about 1,400 lines of reference and thinks at high effort, so a team runs to roughly 125,000 tokens and five minutes, and the three run in parallel. That one round costs about as much as an entire in-context session through shortlisting did before this method existed. A deep session is a do-once, do-it-right engagement, so full depth is the default: three teams at high effort, and the second wave below for every Hot direction. Economize only if the user asks to, and then by lowering effort to medium rather than dropping a team, since the far-off team is where the divergence comes from.
 
 **Quick mode:** skip branching and generate a single strong batch per category.
 
@@ -109,9 +112,24 @@ When the teams return:
 - Consider **Personified Names** (see `references/naming-categories.md`) — human names used as brands (Claude, Alexa, Oscar, Ada). Particularly strong for AI, health, finance, and trust-dependent products.
 - If generation feels convergent or safe despite branching, read `references/elicitation-techniques.md` and apply **SCAMPER** to your best candidates or **Inversion** to identify what to avoid. If the session is stuck, try **Constraint Removal** to find the user's true preferences.
 
-### Hard gates (generation volume) — BLOCKING
+### Must-run moves by brief type
 
-These gates are **blocking** — do not proceed to Loop 3 (shortlisting) until they are met or the user explicitly waives them after being warned.
+Beyond the categories, a handful of moves have earned a place in every deep session of their brief type. In testing, the shortlists that won were built on them, and sessions that left them to chance skipped them. Run each as a visible pass with its own labeled batch and record it in `approaches_tried`:
+
+| Consumer, fashion, food, beauty | B2B, enterprise, developer tools |
+|---|---|
+| Five Senses Scan, shown as its own category | Vertical Code Calibration: read the vertical's row in `references/enterprise-naming.md` before generating |
+| Emotional Temperature Mapping | Category Creation Naming: is this joining a category or creating one |
+| Cultural Tension Naming | Trust-Without-Claims lexicon, and governance vocabulary where the product carries risk |
+| Desired-Self Naming | Integration topology vocabulary when the product is connective tissue |
+| Adjacent-Category Code Borrowing | Ownability-first compound track, in parallel (below) |
+| Arbitrary / Absurd Association | Personified names for daily-use tools |
+
+Everything else in the reference files stays optional and surfaces through "untried approaches" at the checkpoint.
+
+### Hard gates (generation volume)
+
+Hold these gates before Loop 3 (shortlisting). Proceed past a failing gate only after the user has heard the consequence and confirmed.
 
 **1. Minimum candidate count:**
 - **Deep sessions:** Generate at least **60 unique candidates** before entering shortlisting.
@@ -194,7 +212,7 @@ Then expand the categories the user picks, showing the full numbered list with r
 
 ### Presentation rules (hard constraints)
 
-- **Max 15 candidates per batch.** Never present more than 15 candidates in a single message or table. If a category or round has more, split into sub-batches of 10-15 with a reaction checkpoint after each.
+- **Max 15 candidates per reaction batch.** A list the user reacts to name by name holds at most 15; split larger sets into sub-batches of 10-15 with a reaction checkpoint after each. The gallery grid is the one exception: it shows 3-5 names per category across all categories at once, because its job is a scan and its only question is Hot, Warm, or Cold per category, not a verdict per name.
 - **Number everything selectable.** All tables and lists where the user might need to refer to specific items include reference numbers. This applies to gallery tables, category expansions, riff presentations, checkpoint menus, validation tables — any display with selectable options. Never present a selectable list without numbering.
 
 ### Presentation order and pacing

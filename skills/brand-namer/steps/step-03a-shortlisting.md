@@ -12,6 +12,8 @@ User-driven convergence, with a gate on the way in and a gate on the way out.
 - Entry gate status displayed before shortlisting begins
 - The user chose what to keep; a preference profile built from their keep/cut patterns
 - Definitions and etymology provided for the top 5-10 picks where they add value
+- The shortlist written in the deliverable shape below: a ranked top five with case and risk, every name defined, variants collapsed, a scorecard and a pre-mortem
+- The brief type's evaluations shown per name, not claimed
 - Exit gate status displayed before validation
 - Riffing checklist satisfied or explicitly waived
 - 15+ names entering validation, or the user waived the shortlist-size gate
@@ -110,11 +112,19 @@ Which would you like to try?"
 
 If the user asks about any technique, explain it briefly. The full library is in `references/elicitation-techniques.md`, `references/naming-techniques.md`, and `references/consumer-naming.md` or `references/enterprise-naming.md` depending on brief type.
 
-### Enterprise evaluation — show the results (B2B briefs only)
+### Evaluations that appear in the shortlist, by brief type
 
-For B2B and enterprise briefs, the evaluations below produce **visible, per-name output** in the shortlist. In testing, these were often listed as applied without any results shown, which gives the user nothing to react to. Show the actual tests:
+Run these on every shortlist and show the result per name. The menu above is for the user's extra picks; these are not optional. In blind testing, the shortlists that carried them were judged markedly more usable, and the names they killed were the right kills. A test listed as applied with no per-name output gives the user nothing to decide from.
 
-**Stack Test** (for B2B briefs with named competitors or partners):
+**Consumer, fashion, food, and beauty briefs:**
+- **Shelf Test, Gift Test, and Social-native tests** (hashtag clean, handle plausible, caption-ready) on every shortlisted name, as a table with a one-word verdict per test (`references/consumer-naming.md`)
+- **Price-Signal Calibration:** does each name's register match the brief's price tier
+- **Trend-Cycle Audit** on the top ten: which names will date, and why
+- **Badgeability** for anything worn or carried: would the customer put it on a hat, a tote, a bottle
+
+**B2B and enterprise briefs:**
+
+**Stack Test** (for briefs with named competitors or partners):
 ```
 Stack Test — does [name] look peer-level alongside the customer's existing tools?
 | Shortlisted Name | Stack Context | Verdict |
@@ -155,15 +165,22 @@ Test: "Can an internal champion easily explain and forward this name via email/S
 
 For high-stakes naming decisions, consider evaluating the shortlist from multiple distinct perspectives simultaneously — not just sequentially through techniques. Frame it as: "Let me look at your top candidates through three lenses at once: the strategist (does this name position you correctly?), the creative (does this name have narrative energy?), and the analyst (does this name have practical risks?)." This cross-pollination often surfaces insights that no single technique catches alone.
 
+### The shortlist deliverable
+
+The shortlist is what the client takes away from ideation, and in blind testing the shape of this document moved the verdict more than the names in it. Write `02-shortlist.md` in this shape:
+
+1. **Top five, ranked.** Each gets a two-line case: what the name means or where it comes from, why it fits this brief, and the one risk the user should know before falling for it.
+2. **The rest of the shortlist**, usually 10 to 15 more names. Each carries a one-line definition or etymology (for any word that is not everyday vocabulary), a one-line reason it is here, and its risk or conflict flag. Group by direction if that helps the read, but every name has its own lines.
+3. **Variants collapsed.** A root and its ownability variants (Pyx and Pyxhall, Tieline and Tiepoint) are one entry with the alternates noted beside it, not separate slots. The shortlist counts directions the user could choose, not spellings.
+4. **A scorecard on the top ten:** SMILE/SCRATCH from `references/brand-psychology.md` as a compact table, alongside the brief type's evaluations above.
+5. **A pre-mortem on the top five:** one line each on how the name could have failed eighteen months after launch (`references/elicitation-techniques.md`).
+6. **Frontmatter:** the shortlisted names, the preference profile from the user's keep/cut patterns, the riffing checklist status, and session metadata.
+
+Nothing here is a new technique. It is the definitions check, the evaluations, and the pre-mortem gathered into one document the user can decide from.
+
 ### Transition trigger
 
-The user has a shortlist of ~5-20 names they want validated. Confirm the list before proceeding. Write the shortlist to `brand-namer-output/02-shortlist.md` with YAML frontmatter capturing:
-- The shortlisted names
-- The user's preference profile (patterns from their keep/cut decisions)
-- Riffing checklist status
-- Session metadata
-
-Then proceed to Phase 3.
+The user has a shortlist of 15 to 20 directions they want validated. Confirm the list, write `02-shortlist.md` in the shape above, then proceed to Phase 3.
 
 ---
 

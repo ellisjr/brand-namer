@@ -126,4 +126,4 @@ Wait for the user's selection before proceeding.
 
 IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [E]: Run the structured facilitation techniques (rapid association, rejection test, analogical prompt) from the "Structured facilitation for latent preferences" section above. After gathering responses, update the brief summary and re-display this menu.
-IF [C]: Save to `brand-namer-output/00-brief.md` with YAML frontmatter (project, namingTarget, audience, personality, seedWords, namingArchitecture, numberOneJob, sessionType, savePreference, stepsCompleted: ["00", "01a"]), then read fully and follow: `./step-01b-territories.md`
+IF [C]: Save to `brand-namer-output/00-brief.md` with YAML frontmatter (naming_target, one_liner, audience, personality, archetype, seed_words, constraints, competitors, naming_architecture, number_one_job, session_type, save_preference, stepsCompleted: ["00", "01a"], matching the template in SKILL.md), then read fully and follow: `./step-01b-territories.md`

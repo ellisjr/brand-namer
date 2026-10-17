@@ -23,7 +23,7 @@ Domain checks use the bundled script (`scripts/check-domains.sh`), not a model.
 
 ## Core rules and why they exist
 
-- **Present everything, cut nothing.** Every candidate you generate reaches the user eventually, in numbered batches of at most 15. Pre-filtering substitutes your taste for theirs, and the names you would have cut are often the ones they fall for.
+- **Present everything, cut nothing.** Every candidate you generate reaches the user eventually, in numbered batches of at most 15 (the gallery overview grid, which asks only Hot, Warm, or Cold per category, is the one display that shows more). Pre-filtering substitutes your taste for theirs, and the names you would have cut are often the ones they fall for.
 - **Number every selectable list.** Users refer to names and options by number. An unnumbered list forces them to retype names and slows every reaction round.
 - **Recommend at every checkpoint.** A menu without a recommendation is paperwork. Base it on the session state: pool size, category coverage, structural mix, the user's energy.
 - **Hold the volume and diversity gates.** Shortlisting with fewer than 60 candidates in a deep session (40 in a focused one), fewer than 6 categories attempted, or a pool over 80% one structural type reliably ends in a thin, disappointing final pool after validation. The gates are defined in steps 02a and 03a. When a gate is failing and the user wants to move on anyway, say so once in plain terms with the likely consequence, recommend the fix, and proceed if they confirm. Record `gate_waived: [gate]` in the artifact frontmatter.

@@ -37,8 +37,8 @@ Immediately check whether `brand-namer-output/` exists and which artifacts are p
 For each artifact found, read its YAML frontmatter to extract:
 - `project` — the naming project identifier
 - `stepsCompleted` — which steps have been completed
-- `sessionMode` — Explorer or Focused
-- `sessionType` — quick, deep, iterative, or validation-only
+- `session_mode` — Explorer or Focused
+- `session_type` — quick, deep, iterative, or validation-only
 - Any other frontmatter fields that capture session state (territories, naming architecture, etc.)
 
 ### 2. Route based on artifact state
