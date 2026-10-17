@@ -190,9 +190,11 @@ The user has a shortlist of 15 to 20 directions they want validated. Confirm the
 
 Before presenting the exit menu, run the three hard gate checks:
 
-1. **Shortlist size gate:** If fewer than **15 names** are entering validation, warn: "Your shortlist has [N] names. With an 80-90% kill rate for found words, you'll likely end up with [1-3] survivors. I recommend expanding to 15-20 before validating." Recommend [A], [B], or [G].
-2. **Structural diversity gate:** If the shortlist is >80% found words (or any single type), flag it: "Your shortlist is [N]% found words. Generating compound/coined alternatives now is critical insurance." Recommend [B].
+1. **Shortlist size gate:** If fewer than **15 names** are entering validation, warn: "Your shortlist has [N] names. With an 80-90% kill rate for found words, you'll likely end up with [1-3] survivors. I recommend expanding to 15-20 before validating." Recommend [A], [K], or [G].
+2. **Structural diversity gate:** If the shortlist is >80% found words (or any single type), flag it: "Your shortlist is [N]% found words. Compound or coined alternates for each found-word root are the insurance." Recommend [K], whose alternates item is that insurance.
 3. **Riffing checklist gate:** Check whether the riffing checklist (below) has been satisfied. If not, recommend [K] before [C].
+
+The checklist is the one home for compound and coined alternates. An earlier menu offered them as a separate option beside the checklist, and for B2B briefs the two did the same work, so sessions ran it twice.
 
 ### Status summary and menu
 
@@ -202,8 +204,7 @@ Display the full status summary, then present the menu:
 **Riffing checklist:** [items done / items remaining].
 
 **[A]** Apply more riffing techniques to the shortlist — [name the specific moves not yet made]
-**[B]** Generate compound/coined alternatives for each found word on the shortlist (ownability insurance)
-**[K]** Run the riffing checklist to close the gaps, then proceed to validation
+**[K]** Run the riffing checklist — close the gaps shown above, including compound or coined alternates for each found-word root, then proceed to validation
 **[G]** Go back — generate more candidates first
 **[C]** Continue — take the shortlist into Competitive Screening (Step 8 of 13)
 
@@ -213,8 +214,7 @@ Wait for the user's selection before proceeding.
 
 IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [A]: Apply the specified riffing techniques to the shortlist names, update `02-shortlist.md`, then re-display this exit checkpoint menu with updated gate status.
-IF [B]: For each found word on the shortlist, generate 3-5 compound/coined alternatives. Add them to `02-shortlist.md`. Then re-display this exit checkpoint menu with updated gate status.
-IF [K]: Display the riffing checklist (below) with current status and work through uncompleted items. Then re-display this exit checkpoint menu with updated gate status.
+IF [K]: Display the riffing checklist (below) with current status and work through the uncompleted items. Record the alternates beside their root in `02-shortlist.md` (variants stay collapsed into the root's entry) and add them to `01-candidates.md`. Then re-display this exit checkpoint menu with updated gate status.
 IF [G]: Route back to step-02a for additional generation, then return to the Phase 1 entry checkpoint of this file.
 IF [C]: Proceed if the riffing checklist is satisfied or the user has waived it. If gaps remain, display the checklist status and ask once: "The riffing checklist has gaps. Proceed anyway? This will likely leave a thin final pool." If the user confirms, record `riffing_checklist: waived` in `02-shortlist.md` and proceed. Route to: `./step-04a-screening.md`
 
@@ -231,7 +231,7 @@ Before running, check `approaches_tried` and the technique labels on riffs in `0
 ```
 Riffing checklist status:
 - [x] SCAMPER — applied during 2c
-- [ ] Compound creation — NOT YET DONE
+- [ ] Compound alternates — NOT YET DONE
 - [ ] Creative respelling — NOT YET DONE
 - [x] Tech branding patterns — applied during 2c
 
@@ -243,11 +243,11 @@ If ALL core techniques for the relevant brief type have been applied, note: "Rif
 
 **For B2B/enterprise/tech briefs — core checklist:**
 - [ ] **SCAMPER** — Substitute, Combine, Adapt, Modify, Eliminate, Reverse. Apply the full framework systematically to your top 3-5 shortlisted names — don't skip this even when the technique count is already high. SCAMPER catches transformations that other riffing techniques miss because it forces you through all 7 operations rather than letting you gravitate toward your preferred 2-3.
-- [ ] **Compound creation** — each root combined with at least 5 different second words
-- [ ] **Creative respelling** — Y-for-I, K-for-C, dropped vowels tested on each root
-- [ ] **Industry-native compound patterns** — generate 8-12 compound elements (suffixes, prefixes, structural patterns) native to the brief's specific industry, then systematically cross each shortlisted root with them. For tech/SaaS this might be -works, -craft, -OS, -ware, -kit, -base. For finance it might be Capital, Partners, Group, Advisors. For healthcare it might be Health, Therapeutics, Sciences, Bio. For legal it might be Counsel-adjacent governance vocabulary. The point is NOT to apply a fixed list — it's to identify what compound structures are credible and natural in this specific vertical, then systematically test your roots against them. See `references/naming-techniques.md` for tech/SaaS examples and the dynamic generation process in SKILL.md step-02a. Adapt or skip if the user has explicitly rejected compound patterns for their brief — note the adaptation in the checklist status.
+- [ ] **Compound alternates** — three to five compound or coined alternates for each found-word root on the shortlist, chosen for quality rather than filled to a quota. The earlier rule, five compounds for every root, added 163 mechanical names (Nomgrid, Pedfield) to one cybersecurity pool at the last step before validation, none of which the user would choose and all of which were noise in Loop 4. Roots that are already compounds or coined need no alternates.
+- [ ] **Creative respelling** — Y-for-I, K-for-C, dropped vowels tested on each root; keep only the spellings that read as a brand rather than a typo
+- [ ] **Industry-native compound patterns** — generate 8-12 compound elements (suffixes, prefixes, structural patterns) native to the brief's specific industry, then cross the shortlist's found-word roots with them and keep the credible results; this is where the compound alternates above usually come from. For tech/SaaS this might be -works, -craft, -OS, -ware, -kit, -base. For finance it might be Capital, Partners, Group, Advisors. For healthcare it might be Health, Therapeutics, Sciences, Bio. For legal it might be Counsel-adjacent governance vocabulary. The point is NOT to apply a fixed list — it's to identify what compound structures are credible and natural in this specific vertical, then systematically test your roots against them. See `references/naming-techniques.md` for tech/SaaS examples and the dynamic generation process in SKILL.md step-02a. Adapt or skip if the user has explicitly rejected compound patterns for their brief — note the adaptation in the checklist status.
 
-The B2B goal: for every found word on the shortlist, you should have 3-5 compound/coined alternatives ready. When the found word dies in validation (and it probably will), the alternatives are already in the pipeline.
+The B2B goal: for every found word on the shortlist, three to five compound or coined alternates you would be willing to show the user as names in their own right. When the found word dies in validation (and it probably will), the alternates are already in the pipeline.
 
 **For consumer/fashion/lifestyle briefs — core checklist:**
 Session testing shows the B2B riffing toolkit (compounds, affixes, tech patterns) produces the wrong kind of names for consumer brands and has very low hit rates (~8%). Replace with consumer-appropriate techniques:

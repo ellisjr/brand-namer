@@ -99,15 +99,15 @@ The instructions are written for current Claude models (Opus 5.5 and later): pla
 ║  │  │  3 hard gate checks → riffing checklist status → menu    │   │    ║
 ║  │  │                                                          │   │    ║
 ║  │  │  ══ RIFFING CHECKLIST (complete or waive) ══             │   │    ║
-║  │  │  B2B: □ SCAMPER □ Compounds □ Respelling □ Industry cpds │   │    ║
+║  │  │  B2B: □ SCAMPER □ Alternates □ Respelling □ Industry cpds│   │    ║
 ║  │  │  Consumer: □ Adj metaphor □ Sensory □ Nature □ French    │   │    ║
 ║  │  │           □ Shelf / Gift / Social-native tests           │   │    ║
 ║  │  │                                                          │   │    ║
-║  │  │  [A] More riffing  [B] Compound alts  [K] Run checklist  │   │    ║
+║  │  │  [A] More riffing  [K] Run checklist (incl. alternates)  │   │    ║
 ║  │  │  [G] Go back   [C] ▶ Continue to validation             │   │    ║
 ║  │  └──────────────────────────────────────────────────────────┘   │    ║
 ║  └─────────────────────────────────────────────────────────────────┘     ║
-║          │ [A][B][K] loop within │ [G] loops to Loop 2                  ║
+║          │ [A][K] loop within    │ [G] loops to Loop 2                  ║
 ╚═══════════════════════════════════════════════════════════════════════════╝
                            │ [C]
                            ▼
@@ -170,7 +170,7 @@ Understand what you're naming. Define the strategic space before generating anyt
 Produce candidates across many naming categories. Breadth before depth.
 
 - **Divergent generation** across 11 naming categories, with ownability-first compound generation running in parallel for B2B briefs (30% compound minimum before gallery presentation) and suppressed for consumer briefs
-- **Three independent generation teams** in deep and focused sessions. The first round runs as three isolated subagents in the spirit of Lexicon's three-team method: one names the brand on-brief, one names it as a brand in a more desirable adjacent category and keeps what transfers, one names it as three far-off products (a perfume house, a climbing-gear company, a jazz label) and keeps what transfers. Separate contexts produce genuinely different vocabularies, which one model pretending to branch cannot: in a prototype on a hot-sauce brief, three teams returned 158 unique names, 91% of them absent from a 248-name in-context run of the same brief, and the far-off team overlapped only 3-7% with the others. Names two teams produce independently are flagged as a convergence signal. Falls back to in-context branching when subagents are unavailable.
+- **Three independent generation teams** in deep and focused sessions. The first round runs as three isolated subagents in the spirit of Lexicon's three-team method: one names the brand on-brief, one names it as a brand in a more desirable adjacent category and keeps what transfers, one names it as three far-off products (a perfume house, a climbing-gear company, a jazz label) and keeps what transfers. Separate contexts produce genuinely different vocabularies, which one model pretending to branch cannot: in a prototype on a hot-sauce brief, three teams returned 158 unique names, 91% of them absent from a 248-name in-context run of the same brief, and the far-off team overlapped only 3-7% with the others. A "rival" stance was tried for B2B briefs and dropped after it overlapped the on-brief team by 42% on a cybersecurity brief; B2B briefs now use the same three stances, with a second far-off team when the category has no richer neighbor. Names two teams produce independently are flagged as a convergence signal. The main session owns the must-run moves after the teams return, and Hot gallery rows are grouped into named directions before the second wave spawns one agent per direction. Falls back to in-context branching when subagents are unavailable.
 - **Hard generation gates** — minimum 60 candidates, 6+ categories, 3+ structural types. The skill holds these before shortlisting; the user can waive them after hearing the consequence.
 - **Cross-pollination** — generates paste-ready prompts for ChatGPT/Gemini/Grok, merges results back into the candidate pool. Offered at least once per deep session (user can decline). When no other model is to hand, offers to run the prompt through any multi-model tool in the session, or in a fresh Claude context with a different stance.
 - **Creative riffing** with labeled techniques — the user sees WHY each name was generated. Every riff carries a specific technique tag ("language shift: Latin", not just "riff"). Riff counts verify 10+ new unique riffs per direction (duplicates of existing candidates don't count).
@@ -189,7 +189,7 @@ User-directed convergence. The user makes all cuts.
 - **Shortlist deliverable contract** — the shortlist has a fixed shape: ranked top five with case and risk, a definition and reason for every name, ownability variants collapsed into one entry, a SMILE/SCRATCH scorecard on the top ten, a pre-mortem on the top five. Blind testing showed this shape moved client verdicts more than the names did.
 - **Per-brief-type evaluations shown per name** — consumer: shelf, gift, social-native, price-signal, trend-cycle, badgeability; enterprise: stack test, sales conversation fit, buyer committee, acronym resilience, objection preemption, lifecycle, champion forwardability
 - **Enterprise evaluation with visible output** (B2B briefs) — Stack Test, Sales Conversation Fit, Buyer Committee scoring, Acronym Resilience, Enterprise Objection Preemption, Name Lifecycle Stress Test, and Internal-Champion Forwardability produce per-name tables/results, not just metadata claims
-- **Exit checkpoint** with 3 hard gate checks + the **riffing checklist** (deep sessions) — displayed with visible `[x]`/`[ ]` status, completed or explicitly waived before validation. B2B checklist: SCAMPER, compound creation, creative respelling, industry-native compound patterns. Consumer checklist: adjacent metaphor, sensory expansion, nature mining, French naturalized vocabulary, shelf/gift/social-native tests.
+- **Exit checkpoint** with 3 hard gate checks + the **riffing checklist** (deep sessions) — displayed with visible `[x]`/`[ ]` status, completed or explicitly waived before validation. B2B checklist: SCAMPER, three to five compound or coined alternates per found-word root (quality, not a quota: a five-per-root rule once added 163 mechanical names to a pool at the last step), creative respelling, industry-native compound patterns. Consumer checklist: adjacent metaphor, sensory expansion, nature mining, French naturalized vocabulary, shelf/gift/social-native tests. The checklist is the one home for compound alternates; the separate "compound alternatives" menu option was merged into it because the two did the same work on B2B briefs.
 - **Structural diversity gate** — if shortlist is >80% one type, flagged before validation proceeds
 
 ### Loop 4: De-risk
@@ -570,17 +570,18 @@ Tested across 6 diverse briefs (3 consumer: hot sauce, streetwear, men's skincar
 | **Iter-4** (naming precision) | 91.2% (124/136) | Fixed compound leakage, conflict flagging, visible enterprise output. Remaining failures are technique naming precision |
 | **Iter-5** (1.1 rework, Opus executors) | 84.9% (135/159) vs 1.0.0 at 94.3% | Register trim, three-team generation, and removal of the technique toolkit. Lost the blind shortlist comparison 0/6 to 1.0.0; the gap was deliverable structure the toolkit had forced |
 | **Iter-6** (shortlist contract + must-runs) | 95.6% (152/159) vs 1.0.0 at 94.3% | Restored the shortlist deliverable shape and six must-run moves per brief type as positive contracts. Won the blind comparison 6/6 (mean 8.67 vs 7.07); content 4.20 vs 4.03, structure 4.46 vs 3.02 |
+| **Iter-7** (iteration-6 open items) | 96.6% (57/59) on the two briefs rerun | Dropped the B2B rival stance (second-team overlap 42% → 12%), cut the checklist quota (163 → 39 late names on cybersecurity), main session owns the must-runs, Hot rows grouped into directions, [B] merged into [K], scripted anti-pattern check and a 15-20-direction check added to the evals. Won both blind pairings (8.7 vs 6.6 hot sauce, 8.75 vs 5.65 cybersecurity) |
 
 From iteration 5 the eval runs on Opus at high effort for both arms, with a 1.0.0 snapshot as the baseline, Sonnet graders, and Opus blind comparators judging each pair of shortlists under a fresh random A/B mapping. The blind comparison is the quality measure; assertions check process.
 
-**What the skill produces** (iteration-6 with-skill runs):
-- 360-555 unique candidate names per deep session, from three isolated generation teams, a second wave on the user's Hot directions, the must-run passes, riffing, and the riffing checklist
+**What the skill produces** (iteration-6 and -7 with-skill runs):
+- 360-555 unique candidate names per deep session, from three isolated generation teams, a second wave on the user's Hot directions, the must-run passes, riffing, and the riffing checklist (39-61 alternates since iteration 7, down from 163)
 - 8-10 of 11 naming categories attempted
 - 60-70 riffs across 5-6 directions with specific technique labels
 - A 20-direction shortlist in the deliverable shape: ranked top five with case and risk, definition and reason per name, variants collapsed, SMILE/SCRATCH scorecard, pre-mortem, per-brief-type evaluations
 - Full YAML-frontmatter artifacts for session resumption
 
-**Cost:** a deep session through shortlisting runs about 1.0-1.1M tokens and 22-29 minutes on Opus, roughly a third in the main session and the rest in the generation teams and second wave. The skill optimizes for thoroughness and divergence, not speed; economize only on request, by lowering effort rather than dropping a team.
+**Cost:** a deep session through shortlisting runs about 1.15-1.35M tokens and about 30 minutes on Opus, roughly a third in the main session and the rest in the generation teams and the second wave (four or five agents since iteration 7). The skill optimizes for thoroughness and divergence, not speed; economize only on request, by lowering effort rather than dropping a team.
 
 ## License
 

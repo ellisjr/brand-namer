@@ -44,7 +44,7 @@ One model generating "three branches" is still one mind with one set of habits; 
 | **Adjacent category** | Name this as a brand in a more desirable neighboring category (spirits for a sauce, fragrance for skincare, outdoor gear for apparel, a design studio for a dev tool), then keep every name whose codes transfer | Borrows the vocabulary of a category with richer naming culture |
 | **Far-off domain** | Name this as if it were three unrelated products in turn (a perfume house, a climbing-gear company, a jazz label; pick frames far from the brief), then keep every name whose energy transfers | Produces the unexpected names, and the least overlap with the other teams |
 
-Distance is what buys divergence. In testing on a consumer brief, a "name a rival" team reproduced about a quarter of the on-brief team's names, while the far-off-domain team shared almost none with either. For B2B briefs, where breaking the category's naming conventions matters more than borrowing a neighbor's, swap the adjacent-category team for a **rival** team: name a challenger launching against this brand next year that deliberately breaks the category's naming conventions, then keep every name that would work for ours.
+Distance is what buys divergence. In testing on a consumer brief, a "name a rival" team reproduced about a quarter of the on-brief team's names, while the far-off-domain team shared almost none with either. The rival stance was then tried as the B2B alternative and did worse: on a cybersecurity brief it shared 42% of its names with the on-brief team, because a challenger "breaking the category's conventions" still names from inside the category, and from the same territories. So B2B briefs use the same three stances as consumer briefs. Choose the adjacent category for its richer naming culture: a design studio or an instrument maker for a developer tool, a scientific publisher for a data product, a private bank for a fintech, an architecture practice for an infrastructure platform. When the brief's category has no neighbor with a richer naming culture than its own, run a **second far-off team** instead, with three frames unlike the first team's. Give the adjacent and far-off teams the territories as orientation rather than as a constraint, since a team handed the on-brief team's semantic fields tends back toward them.
 
 Spawn all three in one turn and **wait for them in the foreground** (the Agent tool with `run_in_background: false`, default model, `effort: "high"`). Nothing useful can happen until all three return, and a session that spawns them in the background and ends its turn can mistake that pause for the end of the session. Each team reads the reference files itself and returns a table. Give each the same brief with only the stance line changed:
 
@@ -54,13 +54,13 @@ see the other teams' work, and that independence is the point: do not guess at o
 avoid what they might produce.
 
 YOUR STANCE: [On-brief | Adjacent category: name this as a <neighboring category>
-brand | Rival (B2B): name a challenger launching against this brand that breaks the
-category's naming conventions | Far-off domain: name this as if it were a <frame 1>,
-then a <frame 2>, then a <frame 3>]. [One sentence on what to keep, from the table.]
+brand | Far-off domain: name this as if it were a <frame 1>, then a <frame 2>, then a
+<frame 3>]. [One sentence on what to keep, from the table.]
 
 THE BRIEF: [body of 00-brief.md: naming target, one-liner, audience, personality,
 archetype, feeling spectrum, seed words, constraints, competitors]
-TERRITORIES: [each with its emotional promise and semantic field]
+TERRITORIES: [each with its emotional promise and semantic field; for the adjacent and
+far-off stances add: "these orient you; name from your stance's own vocabulary"]
 BRIEF TYPE: [consumer: no institutional -works/-craft/-wise/-ware compounds; include a
 Sensory section from a Five Senses Scan (sight, smell, touch, taste, sound) |
 B2B: for every found word also give 2-3 compound or coined variants]
@@ -90,10 +90,11 @@ distinct on-brief names>".
 
 When the teams return:
 
-1. **Merge and deduplicate.** Record each name's `source` (team-onbrief, team-adjacent, team-faroff). A name two or three teams produced independently is a convergence signal: it is probably strong and probably obvious, so flag it as such rather than dropping the duplicates silently. Expect roughly 150 unique names from three teams of 50-60.
+1. **Merge and deduplicate.** Record each name's `source` (team-onbrief, team-adjacent, team-faroff, team-faroff-2). A name two or three teams produced independently is a convergence signal: it is probably strong and probably obvious, so flag it as such rather than dropping the duplicates silently. Expect roughly 150 unique names from three teams of 50-60.
 2. **Compare the veins.** The three "Richest vein" lines tell you which semantic domains are productive for this brief. Note them for the user and for later rounds.
-3. **Present through the gallery** exactly as below. The user still sees everything, in numbered batches, and reacts by category.
-4. **Second wave on the Hot directions.** When the user marks categories or territories Hot, spawn a targeted agent per Hot direction (same brief, the far-off stance, a brief that names the direction and the names already in it, 20-30 new names). Fresh contexts aimed at a direction the user has already chosen are where sessions find the name they end up with. Expand in context only when a Hot direction has fewer than ten names and a handful more will do.
+3. **Run the must-run moves yourself.** The team prompt does not ask for them, so the main session owns the brief type's must-run moves (below). Before each one, look at the teams' Approach columns: a move a team already ran as a labeled pass counts as done and is not repeated. The rest run in context as their own labeled batches, with the merged pool as the exclusion list, before the gallery is built, so the gallery shows them as rows of their own.
+4. **Present through the gallery** exactly as below. The user still sees everything, in numbered batches, and reacts by category.
+5. **Translate Hot rows into directions, then run the second wave.** Gallery rows are presentation units; the second wave is aimed at directions. Group the Hot rows that share a vein (a found-word row and the compound row built on the same vocabulary are one direction), give each direction a name, and list the names already in it. Six Hot rows usually become three or four directions. Then spawn one targeted agent per direction (same brief, the far-off stance, a brief that names the direction and the names already in it, 20-30 new names). Fresh contexts aimed at a direction the user has already chosen are where sessions find the name they end up with. Expand in context only when a direction has fewer than ten names and a handful more will do.
 
 **Fallback, when you cannot spawn subagents:** branch in context. For each category, generate three mini-batches of 3-5 names from deliberately different semantic domains (for Found Words: textile vocabulary, then geological, then governance), judge which opened new territory, expand the one or two strongest by 5-10 names, and present everything from the surviving branches. A flat list of 10 names in a category means you explored one neighborhood and stopped.
 
@@ -114,7 +115,7 @@ When the teams return:
 
 ### Must-run moves by brief type
 
-Beyond the categories, a handful of moves have earned a place in every deep session of their brief type. In testing, the shortlists that won were built on them, and sessions that left them to chance skipped them. Run each as a visible pass with its own labeled batch and record it in `approaches_tried`:
+Beyond the categories, a handful of moves have earned a place in every deep session of their brief type. In testing, the shortlists that won were built on them, and sessions that left them to chance skipped them. The main session runs each as a visible pass with its own labeled batch and records it in `approaches_tried`; a move a generation team already covered in its table counts, and is noted rather than rerun:
 
 | Consumer, fashion, food, beauty | B2B, enterprise, developer tools |
 |---|---|
