@@ -3,26 +3,19 @@
 **Progress:** Step 5 of 13 — Next: Creative Riffing (step-02c)
 **Reads:** `brand-namer-output/01-candidates.md` | **Writes:** `brand-namer-output/01-candidates.md` (append)
 
-## MANDATORY EXECUTION RULES (READ FIRST)
+## Purpose
 
-- Read this COMPLETE file before taking any action
-- FORBIDDEN to load next step until user selects [C] Continue
-- FORBIDDEN to skip offering cross-pollination — it is a mandatory offer in every deep session
-- FORBIDDEN to auto-merge paste-in results without deduplication and user review
-- Update artifact frontmatter `stepsCompleted` before loading next step
-- After handling non-menu user input, ALWAYS re-display the current menu
+Widen the possibility space with other models' creative biases.
 
-## SUCCESS METRICS
+## Done when
 
-- Cross-pollination offered to the user (mandatory in every deep session)
-- If user accepted: self-contained prompt generated, ready to paste into another LLM
-- If user pasted results back: results deduplicated, classified, chunked, and integrated into `01-candidates.md` with source model tracked
+- Cross-pollination offered (it is a standing offer in every deep session; the user can decline)
+- If accepted, a self-contained prompt generated that the user can paste into another LLM
+- If results pasted back, they are deduplicated, attributed to the source model, and merged into `01-candidates.md`
 
-## FAILURE MODES
+## Guardrails
 
-- CRITICAL: Not offering cross-pollination at all during a deep session
-- CRITICAL: Not deduplicating paste-in results against existing candidates
-- CRITICAL: Not tracking which model generated the paste-in results (source attribution missing)
+- Deduplicate paste-ins against the existing pool and keep the source model on every candidate. A name two models produced independently is a validation signal, not a duplicate to drop silently.
 
 ---
 
@@ -85,13 +78,9 @@ You **must** offer to generate the cross-pollination prompt at least once during
 
 **My recommendation:** [For consumer/lifestyle/fashion/food briefs: "I'd strongly recommend generating a cross-pollination prompt — it's consistently the highest-yield stage for consumer brands." For other briefs: "If you have access to another LLM, cross-pollination often surfaces names that wouldn't emerge from a single model. Otherwise, [C] to continue to riffing."]
 
-**HALT — wait for user selection before proceeding.**
+Wait for the user's selection before proceeding.
 
-IF user provides non-menu input: Respond helpfully, then re-display this menu.
+IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [P]: Generate the self-contained prompt, present it to the user for copying, then re-display this menu (user will return with paste-in results or choose [C]).
 IF [M]: Process the paste-in results using the handling pipeline above (normalize, deduplicate, chunk, classify, present, save), then re-display this menu.
 IF [C]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02b"]`, then read fully and follow: `./step-02c-riffing.md`
-
-## Master Rule
-
-Skipping steps, optimizing sequences, auto-advancing past menus, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.

@@ -3,28 +3,21 @@
 **Progress:** Step 6 of 13 — Next: Shortlisting (step-03a)
 **Reads:** `brand-namer-output/01-candidates.md` | **Writes:** `brand-namer-output/01-candidates.md` (append)
 
-## MANDATORY EXECUTION RULES (READ FIRST)
+## Purpose
 
-- Read this COMPLETE file before taking any action
-- FORBIDDEN to load next step until user selects [C] Continue
-- FORBIDDEN to select names to riff on behalf of the user without asking them first
-- FORBIDDEN to generate fewer than 10 NEW UNIQUE riffs per direction (duplicates of existing candidates do NOT count toward this minimum — if a riff duplicates a name already in the pool, note it as independently generated but do not count it)
-- FORBIDDEN to present riffs without labeling which SPECIFIC technique produced each one — "riff" is not a technique label. Use: "language shift: Latin", "compound creation", "synonym explosion", "SCAMPER-Substitute", "affix: -works suffix", "sensory shift: motion", etc. Every riff MUST have a specific technique tag.
-- Update artifact frontmatter `stepsCompleted` before loading next step
-- After handling non-menu user input, ALWAYS re-display the current menu
+Expand the directions the user likes while the possibility space is still open, using named transformation techniques.
 
-## SUCCESS METRICS
+## Done when
 
-- User's selected names riffed with 10-20+ variants each
-- Multiple technique types applied (linguistic, conceptual, structural, homonym/synonym, affix, three-team)
-- Riff families presented one at a time with reaction prompts after each
+- The user's selected names riffed, with at least 10 new unique riffs per direction
+- Several technique types applied (linguistic, conceptual, structural, homonym/synonym, affix, three-team)
+- Riff families presented one at a time, each followed by a reaction prompt
 
-## FAILURE MODES
+## Guardrails
 
-- CRITICAL: Selecting names to riff on behalf of user without asking
-- CRITICAL: Generating fewer than 10 NEW UNIQUE riffs per direction (duplicates don't count)
-- CRITICAL: Not labeling each riff with the SPECIFIC technique that produced it (e.g., "language shift: Latin", not just "riff")
-- CRITICAL: Presenting all riff families at once instead of one at a time
+- The user chooses which names to riff on. Your sense of "most riffable" is a suggestion, not a selection.
+- Label every riff with the specific technique that produced it ("language shift: Latin", "affix: -works suffix", "SCAMPER-Substitute"), never just "riff". The labels let the user ask for more of what is working.
+- Duplicates of names already in the pool do not count toward the 10. Note them as independently generated and move on.
 
 ---
 
@@ -149,63 +142,27 @@ Directions below 10: [list any that need more]
 
 If any direction has fewer than 10 new unique riffs, generate more before presenting the menu.
 
-### Technique toolkit — resurface unapplied techniques
+### Untried approaches
 
-Display the technique toolkit from step-02a with updated checkmarks. Any techniques that remain unapplied should be offered again here. The user can apply them now or carry them forward to step-03a.
-
-```
-**Technique Toolkit** (unapplied techniques — select any, or skip):
-
-RIFFING TECHNIQUES
-[x] Linguistic riffing (morpheme swap, language shift, etymology) ✓
-[ ] Homonym/Synonym/Sound-Alike — systematic sound-alike exploration
-[ ] Systematic Affix Exploration — roots in prefix AND suffix positions
-
-CONSUMER-SPECIFIC (show for consumer briefs)
-[ ] Emotional Temperature Mapping — warm/cool, heavy/light as generation filters
-[ ] Price-Signal Calibration — match name register to price tier
-[ ] Desired-Self Naming — what identity does buying this project?
-[ ] Trend-Cycle Audit — will this name feel dated in 5 years?
-[ ] Memetic/Viral Engineering — shareability and meme potential
-
-ENTERPRISE-SPECIFIC (show for B2B briefs)
-[ ] Category Creation Naming — is this joining or creating a category?
-[ ] Enterprise Objection Preemption — Fortune 500 CISO/VP approval test
-[ ] Name Lifecycle Stress Test — what if they expand beyond current product?
-[ ] Acronym Resilience — what will people shorten this to?
-[ ] Internal-Champion Forwardability — can a champion easily share this name?
-
-GENERATION (carried forward from step-02a)
-[ ] Prefix × Suffix Matrix — systematic combinatorial grid
-[ ] Morphological Analysis (Zwicky) — dimensional decomposition
-
-Select with numbers, [A] all remaining, or [C] to skip
-```
-
-Use the EXACT canonical technique names shown above when recording in `techniques_used`.
+Before the menu, update `approaches_tried` and `approaches_worth_trying` in `01-candidates.md` and mention the one or two untried riffing moves that would most help this pool: for a consumer brief that might be Desired-Self or Trend-Cycle Audit from `references/consumer-naming.md`; for a B2B brief, Acronym Resilience or Name Lifecycle Stress Test from `references/enterprise-naming.md`; for any brief, the Three-Team Method or systematic affix exploration if the riffs so far have all come from one transformation type. The user can take them under [R] or carry on.
 
 ---
 
 ## Menu
 
-**[T]** Apply techniques — select from the technique toolkit above
-**[R]** Riff more — pick more names to riff on or apply different techniques
+**[R]** Riff more — pick more names to riff on, or apply one of the untried approaches above
 **[G]** Generate more — go back to fresh generation (loop to step-02a)
 **[X]** Cross-pollinate — get riff ideas from other models (loop to step-02b)
 **[A]** Add your own — contribute names or fragments the riffing sparked
 **[C]** Continue — proceed to Shortlisting (Step 7 of 13)
 
-**My recommendation:** [Based on session state. If unapplied techniques remain, mention the most impactful: "You still have [Desired-Self, Trend-Cycle, Memetic/Viral] available — these often produce the most distinctive consumer names. Want to try any before shortlisting?" If riff coverage is strong, recommend [C].]
+**My recommendation:** [Based on session state. If the riffs have all come from one or two transformation types, suggest the untried approach most likely to help. If riff coverage is varied and the user has clear favorites, recommend [C].]
 
-**HALT — wait for user selection before proceeding.**
+Wait for the user's selection before proceeding.
 
-IF user provides non-menu input: Respond helpfully, then re-display this menu.
+IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [A]: Capture user-contributed names/fragments, add to candidate pool with source "user-generated," offer to riff on them, then re-display this menu.
 IF [R]: Run another riffing round within this step (ask user which names to riff on), then re-display this menu.
 IF [G]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02c"]`, then read fully and follow: `./step-02a-generation.md`
 IF [X]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02c"]`, then read fully and follow: `./step-02b-cross-pollination.md`
 IF [C]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02c"]`, then read fully and follow: `./step-03a-shortlisting.md`
-
-## Master Rule
-
-Skipping steps, optimizing sequences, auto-advancing past menus, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.

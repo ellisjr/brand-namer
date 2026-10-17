@@ -3,27 +3,21 @@
 **Progress:** Step 3 of 13 — Next: Divergent Generation (step-02a)
 **Reads:** `brand-namer-output/00-brief.md` | **Writes:** `brand-namer-output/00-brief.md` (update with territories, whitespace, session mode)
 
-## MANDATORY EXECUTION RULES (READ FIRST)
+## Purpose
 
-- Read this COMPLETE file before taking any action
-- FORBIDDEN to load next step until user selects [C] Continue
-- FORBIDDEN to generate name candidates during this step — this is territory definition and competitive mapping only
-- FORBIDDEN to skip the competitive whitespace mapping — it must be presented to the user before proceeding
-- Update artifact frontmatter `stepsCompleted` before loading next step
-- After handling non-menu user input, ALWAYS re-display the current menu
+Define 3-5 naming territories and map the competitive whitespace so that generation is intentionally diverse rather than many names in one vibe.
 
-## SUCCESS METRICS
+## Done when
 
-- 3-5 naming territories defined, each with emotional promise, semantic field, phonetic profile, and anti-patterns
+- 3-5 territories defined, each with emotional promise, semantic field, phonetic profile, and anti-patterns
 - Competitive whitespace mapped and presented to the user
-- Session mode (Explorer vs. Focused) determined
-- Default territory checks applied (Personified for daily-use tools, Animal/Nature for consumer)
+- Session mode (Explorer or Focused) determined
+- Default territory checks applied (Personified for daily-use tools, Animal/Nature for consumer briefs)
 
-## FAILURE MODES
+## Guardrails
 
-- CRITICAL: Generating names before territories are aligned with the user
-- CRITICAL: Skipping the competitive whitespace mapping
-- CRITICAL: Not applying default territory checks — failing to include Personified for daily-use tools or Animal/Nature for consumer/lifestyle briefs when appropriate
+- Still no name candidates. Territories are the generation lanes; names produced before the lanes are aligned cluster in the first vibe you happened to reach for.
+- Present the whitespace map before continuing. It is how the user gains confidence the names will not echo their competitors.
 
 ---
 
@@ -110,14 +104,10 @@ If the user gave you a sparse brief ("I need a name for my AI startup"), work wi
 
 **My recommendation:** Review the territories carefully — they're the creative lanes for all name generation. If a territory feels off or you want to explore a direction I didn't include, now is the time. Once you're satisfied with 3-5 strong territories, [C] locks them in and we start generating.
 
-**HALT — wait for user selection before proceeding.**
+Wait for the user's selection before proceeding.
 
-IF user provides non-menu input: Respond helpfully, then re-display this menu.
+IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [A]: Ask the user to describe the new territory (or propose one based on their input). Define it with the full structure (name, emotional promise, semantic field, phonetic profile, anti-patterns). Add it to the territory list and re-display this menu.
 IF [D]: Ask which territory to drop (or confirm if they've named one). Remove it and re-display this menu.
 IF [R]: Ask which territory to revise and what to change. Update the definition and re-display this menu.
-IF [C]: Update `brand-namer-output/00-brief.md` — add territories (with full definitions), competitive whitespace summary, and session mode to the YAML frontmatter. Update `stepsCompleted: ["step-00", "step-01a", "step-01b"]`. Then read fully and follow: `./step-02a-divergent-generation.md`
-
-## Master Rule
-
-Skipping steps, optimizing sequences, auto-advancing past menus, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.
+IF [C]: Update `brand-namer-output/00-brief.md` — add territories (with full definitions), competitive whitespace summary, and session mode to the YAML frontmatter. Update `stepsCompleted: ["00", "01a", "01b"]`. Then read fully and follow: `./step-02a-generation.md`

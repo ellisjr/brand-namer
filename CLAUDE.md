@@ -13,7 +13,7 @@ Designed to defeat "LLM averaging" — where AI defaults to safe, generic names 
   plugin.json                       — Plugin manifest (name, version, author, keywords)
 skills/brand-namer/
   SKILL.md                          — Entry point: Role, Philosophy, Reference Loading, Artifacts, Scenario Playbooks
-  workflow.md                       — Execution router: MANDATORY RULES, SYSTEM FAILURE defs, step routing table
+  workflow.md                       — Execution router: core rules with reasons, session routing, menu format, step routing table
   steps/
     step-00-session-start.md        — Session detection, resume handler
     step-01a-brief.md               — Brand brief intake
@@ -42,8 +42,8 @@ CLAUDE.md                           — This file (project conventions)
 ## Key conventions
 
 - **SKILL.md is the skill entry point.** It has YAML frontmatter (`name`, `description`) for skill detection, plus Role, Philosophy, Reference Loading, Artifacts, and Scenario Playbooks — global context that persists throughout the session.
-- **workflow.md governs execution.** It contains MANDATORY EXECUTION RULES, SYSTEM FAILURE definitions, the step routing table, user waiver protocol, chat-then-redisplay pattern, and menu format standard.
-- **Step files in `steps/` are loaded one at a time.** Each step file is self-contained with its own MANDATORY EXECUTION RULES, SUCCESS METRICS, FAILURE MODES, execution content, menu with HALT, and Master Rule. The LLM reads only the current step — never peeking ahead.
+- **workflow.md governs execution.** It is the single home for the core rules (each with its reason), how to handle non-menu input and gate waivers, the menu format, session-type detection and the quick-mode fast path, and the step routing table. Nothing in a step file should restate these.
+- **Step files in `steps/` are loaded one at a time.** Each step file is self-contained: a Purpose, a "Done when" list of outcomes, a short Guardrails list (only the constraints that matter for that step, each with its why), the execution content, and a menu with a recommendation followed by a wait for the user. The LLM reads only the current step — never peeking ahead.
 - **Reference files are loaded on-demand**, not all upfront. Each step file specifies which reference file to read and when.
 - **Artifacts** are output to `brand-namer-output/` (00-brief.md through 04-final.md) with YAML frontmatter for session resumption and `stepsCompleted` tracking.
 - The skill supports **cross-pollination** with other LLMs (ChatGPT/Gemini/Grok) via generated prompts the user can paste into other models.
@@ -52,7 +52,8 @@ CLAUDE.md                           — This file (project conventions)
 
 - **Architecture:** SKILL.md → workflow.md → step files. Execution content lives in step files. Global context lives in SKILL.md. Routing and enforcement live in workflow.md.
 - **Plugin structure:** `.claude-plugin/plugin.json` is the manifest. Skill files live under `skills/brand-namer/`. Relative paths within skill files (e.g., `./workflow.md`, `./steps/step-01a-brief.md`) resolve from the skill directory.
-- When editing step files, preserve the BMAD-style template structure: MANDATORY EXECUTION RULES, SUCCESS METRICS, FAILURE MODES, Execution, Menu with HALT, Master Rule.
+- When editing step files, preserve the template structure: Purpose, Done when, Guardrails, Execution, Menu (with recommendation and IF handlers). Write instructions as plain statements with their reasons; the skill targets Opus 5.5 and later, which follow explained instructions better than ALL-CAPS emphasis. Add a guardrail only for a failure that reproduces, and attach its why.
+- Technique variety is tracked as free text (`approaches_tried` / `approaches_worth_trying` in `01-candidates.md` frontmatter), not as a canonical-name checklist. Gates are about the pool (count, categories, structural mix, shortlist size, riffing checklist), not about technique counts.
 - When editing SKILL.md, preserve the loop structure references (Loops 1-4) and the Artifact Chain section.
 - Reference files are self-contained reference material — edit them independently.
 - The `description` field in SKILL.md frontmatter controls when Claude Code triggers the skill — keep it comprehensive.

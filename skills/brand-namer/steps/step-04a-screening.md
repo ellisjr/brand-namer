@@ -3,29 +3,22 @@
 **Progress:** Step 8 of 13 — Next: Domains & Pool Recovery (step-04b)
 **Reads:** `brand-namer-output/02-shortlist.md` | **Writes:** `brand-namer-output/03-validation.md` (created here)
 
-## MANDATORY EXECUTION RULES (READ FIRST)
+## Purpose
 
-- Read this COMPLETE file before taking any action
-- FORBIDDEN to load next step until user selects [C] Continue
-- FORBIDDEN to remove "Taken" names from the working set — they must be bucketed, not deleted
-- FORBIDDEN to use inconsistent search templates across names — define templates BEFORE starting
-- Update artifact frontmatter `stepsCompleted` before loading next step
-- After handling non-menu user input, ALWAYS re-display the current menu
+Catch the conflicts training data missed: recent companies, small competitors, names that only surface via web search.
 
-## SUCCESS METRICS
+## Done when
 
-- Validation tier detected and communicated to user with capabilities and gaps
-- All shortlisted names screened with consistent search templates
-- Results categorized (Clear / Flagged / Taken) with inline resolution for Flagged names
-- Dead names offered for riffing via batched validation-death trigger
-- Technical project screening applied when applicable
+- Validation tooling tier detected and its capabilities and gaps communicated to the user
+- Every shortlisted name screened with the same baseline search templates
+- Results categorized Clear / Flagged / Taken, with flagged names resolved inline
+- Dead names offered for riffing via the batched validation-death menu
+- Technical registry screening applied when naming a dev tool, library, or plugin
 
-## FAILURE MODES
+## Guardrails
 
-- CRITICAL: Inconsistent search templates across names — all names must get the same baseline queries
-- CRITICAL: Removing "Taken" names instead of bucketing them in "Taken — available for riffing & deepening"
-- CRITICAL: Not offering riffing on dead names via the validation-death trigger
-- CRITICAL: Presenting a separate resolution step for Flagged names instead of resolving inline
+- Define the search templates before starting and apply the same set to every name. Improvised per-name queries produce signal that cannot be compared across names.
+- Bucket taken names; never delete them. A taken name the user loved tells you exactly which territory to riff in.
 
 ---
 
@@ -33,27 +26,18 @@
 
 ### Part 1: Validation Setup
 
-#### Model optimization for validation
+#### Parallel subagents for validation
 
-Validation is factual and parallelizable — it doesn't need the creative reasoning that generation requires. Use smaller/faster models to save tokens and time:
-
-**Subagent spawning for validation (recommended):**
-When validating 5+ names, spawn parallel subagents at Haiku tier rather than doing sequential searches with the main model. Each subagent handles one name:
+Validation is factual and parallelizable. It does not need the creative reasoning generation requires, so when screening 5 or more names, spawn one subagent per name in a single turn (the Agent tool, `model: "haiku"`, `effort: "low"`) rather than running sequential searches yourself. Each subagent gets a self-contained brief:
 
 ```
-For each shortlisted name, spawn a Haiku subagent:
-"Search for '[name]' as a company, brand, or software product.
- Classify: Clear (no conflicts) / Flagged (something exists, different industry) / Taken (active conflict in related space).
- Check domain registration via WHOIS for [name].com, [name].ai, [name].co, [name].io (see WHOIS server map in step-04b).
- Return: name, competitive_status, conflicts_found, domain_registration_per_tld"
+Search for "[name]" as a company, brand, or software product in [industry].
+Classify: Clear (no conflicts) / Flagged (something exists, different industry) / Taken (active conflict in a related space).
+Check domain registration via WHOIS for [name].com, [name].ai, [name].co, [name].io, using the server map and parsing rules below.
+Return: name, competitive_status, conflicts_found (with URLs), domain_registration_per_tld.
 ```
 
-This turns 20 minutes of sequential main-model searches into 2-3 minutes of parallel Haiku work. The main model then consolidates results and presents the batched screening table.
-
-**Session-level model recommendations:**
-- **Quick Mode:** Sonnet is sufficient and significantly cheaper than Opus. The compressed pipeline doesn't benefit from Opus's deeper reasoning.
-- **Deep Mode:** Opus recommended for best creative output, especially during generation branching and riffing.
-- **Validation-heavy sessions:** Run the main session on Sonnet/Opus, spawn Haiku subagents for all screening tasks.
+Include the WHOIS server map and parsing rules from step-04b in the brief, since the subagent cannot see this skill. Twenty sequential searches become two or three minutes of parallel work; you then consolidate the results into the screening table.
 
 #### Validation tools and limitations
 
@@ -113,7 +97,7 @@ Report results to the user. **Do NOT remove "Taken" names from the working set.*
 
 The goal is to find an *available* name that carries the same energy. Taken names are creative assets, not dead ends.
 
-#### Validation-death trigger (mandatory — batched)
+#### Validation-death trigger (batched)
 When names die in competitive screening, don't fire a recovery prompt for each one individually. Collect all deaths from the validation round, then present one consolidated recovery menu:
 
 "**[N] names died in this round:**
@@ -154,11 +138,7 @@ Categorize technical conflicts the same way (Clear / Flagged / Taken). A 50-star
 
 **My recommendation:** If names died during screening, use the validation-death trigger menu above before continuing. Taken names with strong energy are your best creative seeds — riff on them now rather than losing that signal.
 
-**HALT — wait for user selection before proceeding.**
+Wait for the user's selection before proceeding.
 
-IF user provides non-menu input: Respond helpfully, then re-display this menu.
+IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [C]: Save `03-validation.md`, update frontmatter `stepsCompleted`, load next step (`steps/step-04b-domains.md`).
-
-## Master Rule
-
-Skipping steps, optimizing sequences, auto-advancing past menus, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.

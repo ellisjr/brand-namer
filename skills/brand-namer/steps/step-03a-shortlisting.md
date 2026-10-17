@@ -3,35 +3,24 @@
 **Progress:** Step 7 of 13 — Next: Competitive Screening (step-04a)
 **Reads:** `brand-namer-output/01-candidates.md` | **Writes:** `brand-namer-output/02-shortlist.md`
 
-## MANDATORY EXECUTION RULES (READ FIRST)
+## Purpose
 
-- Read this COMPLETE file before taking any action
-- FORBIDDEN to load next step until user selects [D] in the Phase 3 Exit Checkpoint menu AND the riffing checklist is satisfied (or explicitly waived)
-- FORBIDDEN to pre-filter or eliminate candidates before the user sees them — the user decides what stays and what goes
-- FORBIDDEN to skip hard gate checks at either entry or exit — both checkpoint menus must be displayed with full gate status
-- FORBIDDEN to silently skip the riffing checklist — it must be displayed with current status
-- Read `references/naming-techniques.md` now if not already loaded
-- Update artifact frontmatter `stepsCompleted` before loading next step
-- After handling non-menu user input, ALWAYS re-display the current menu
+User-driven convergence, with a gate on the way in and a gate on the way out.
 
-## SUCCESS METRICS
+## Done when
 
-- All entry gate checks (4 checks) displayed with status before shortlisting begins
-- User-directed shortlisting completed — user chose what to keep, not the AI
-- Preference profile built from user's keep/cut patterns
-- Definitions provided for top 5-10 picks (especially obscure words, foreign roots, non-obvious secondary meanings)
-- All exit gate checks (3 checks) displayed with status before proceeding to validation
-- Riffing checklist satisfied or explicitly waived by user
-- 15+ names entering validation
+- Entry gate status displayed before shortlisting begins
+- The user chose what to keep; a preference profile built from their keep/cut patterns
+- Definitions and etymology provided for the top 5-10 picks where they add value
+- Exit gate status displayed before validation
+- Riffing checklist satisfied or explicitly waived
+- 15+ names entering validation, or the user waived the shortlist-size gate
 
-## FAILURE MODES
+## Guardrails
 
-- CRITICAL: Not running the 4 hard gate checks at entry — user enters shortlisting without knowing pool quality
-- CRITICAL: Pre-filtering candidates before the user sees them — AI substituting its judgment for the user's
-- CRITICAL: Not building a preference profile from the user's reactions
-- CRITICAL: Not running the riffing checklist at exit — found words enter validation without compound/coined alternatives
-- CRITICAL: Entering validation with <15 names without explicit user waiver
-- CRITICAL: Auto-advancing past either checkpoint menu
+- Never pre-filter. The user decides what stays and what goes.
+- Show both gate checks. The user should know pool quality before shortlisting and again before validation, because validation kills 80-90% of found words and a thin shortlist produces a thin result.
+- Load `references/naming-techniques.md` for the riffing checklist if it is not already in context.
 
 ---
 
@@ -39,12 +28,11 @@
 
 ### Hard gate checks
 
-Before presenting the entry menu, run ALL FOUR hard gate checks by reading `01-candidates.md` frontmatter:
+Before presenting the entry menu, run the three hard gate checks by reading `01-candidates.md` frontmatter:
 
-1. **Candidate count gate:** If < 60 candidates (deep session) or < 40 (focused session), warn: "We have [N] candidates — below the [60/40] minimum for a strong shortlist." Recommend (a) or (b) before (e).
+1. **Candidate count gate:** If < 60 candidates (deep session) or < 40 (focused session), warn: "We have [N] candidates — below the [60/40] minimum for a strong shortlist." Recommend [G] or [X] before [S].
 2. **Category coverage gate:** Display the coverage table. If < 6 categories attempted, recommend trying missing categories.
 3. **Structural diversity gate:** If > 80% of candidates are one type (found words, compounds, or coined), flag it and recommend generating alternatives.
-4. **Technique coverage gate:** Display `techniques_not_yet_used` count. If > 8 unused, list them explicitly in option (c).
 
 ### Status summary and menu
 
@@ -53,47 +41,24 @@ Display the full status summary, then present the menu:
 "**Status:** [N] unique candidates across [M] categories.
 **Category coverage:** [N] of 11 attempted. Not yet tried: [list].
 **Structural mix:** [N]% found words, [N]% compounds, [N]% coined/other.
-**Techniques used:** [list]. **Not yet used:** [list with count].
+**Approaches tried:** [from frontmatter]. **Worth trying:** [one or two that fit the gaps].
 
-**What would you like to do?**
-- **(a) Generate more** — fresh round in specific directions, or try a category we haven't used
-- **(b) Cross-pollinate** — I'll generate a prompt you can paste into ChatGPT/Gemini/Grok for fresh perspectives
-- **(c) Apply techniques from the toolkit** — see technique toolkit below
-- **(e) Move to shortlisting** — review all candidates, pick favorites for validation
-- **(f) Something else** — tell me what you need
+**[G]** Generate more — fresh round in specific directions, an untried category, or one of the approaches above
+**[X]** Cross-pollinate — I'll generate a prompt you can paste into another LLM for fresh perspectives
+**[R]** Riff more — apply riffing or deepening techniques to favorites before converging
+**[S]** Start shortlisting — review all candidates, pick favorites for validation
+**[O]** Other — tell me what you need
 
-**Technique Toolkit** (carried forward — select any unapplied techniques):
+**My recommendation:** [Always include a specific recommendation with rationale. If any hard gate is failing, recommend addressing it before [S]. For example: "I'd hold off on shortlisting — your pool is 85% found words with only 3 categories attempted. I recommend [G] to try Coined/Invented and Sound-Symbolic, then [R] for SCAMPER and language shift. That gives us structural diversity before the validation bloodbath."]"
 
-RIFFING TECHNIQUES
-[show checked/unchecked status for each, grouped by brief type]
+Wait for the user's selection before proceeding.
 
-GENERATION TECHNIQUES
-[show any still-unapplied generation techniques]
-
-DEEPENING TECHNIQUES
-[ ] SCAMPER — 7 systematic transformations
-[ ] Inversion / reverse brainstorming
-[ ] Constraint Removal — what if no constraints?
-[ ] Three-Team Method — on-brief, competitor, unrelated domain
-[ ] Pre-Mortem — imagine the name failed
-[ ] Analogical Reasoning — import from parallel domains
-
-BRIEF-SPECIFIC ({consumer|enterprise})
-[show unapplied brief-specific techniques — these are the ones most often missed]
-
-Select with numbers, [A] all remaining, or choose a menu option above
-
-**My recommendation:** [Always include a specific recommendation with rationale. If any hard gate is failing, recommend addressing it before (e). E.g., "I'd hold off on shortlisting — your pool is 85% found words with only 3 categories attempted. I recommend (a) to try Coined/Invented and Sound-Symbolic categories, then (c) to apply SCAMPER and language shift. That should give us structural diversity before the validation bloodbath."]"
-
-**HALT — wait for user selection before proceeding.**
-
-IF user provides non-menu input: Respond helpfully, then re-display this menu.
-IF (a): Route back to step-02a for a fresh generation round in user-specified directions, then return to this checkpoint.
-IF (b): Generate a cross-pollination prompt for the user to paste into another LLM, then re-display this menu after they return with results.
-IF (c): Route back to step-02c to apply the specified riffing techniques, then return to this checkpoint.
-IF (d): Route back to step-02c to apply the specified deepening techniques, then return to this checkpoint.
-IF (e): Proceed to Phase 2 (Shortlisting Process) below.
-IF (f): Address the user's request, then re-display this menu.
+IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
+IF [G]: Route back to step-02a for a fresh generation round in user-specified directions, then return to this checkpoint.
+IF [X]: Generate a cross-pollination prompt for the user to paste into another LLM, then re-display this menu after they return with results.
+IF [R]: Route back to step-02c to apply the specified riffing or deepening techniques, then return to this checkpoint.
+IF [S]: Proceed to Phase 2 (Shortlisting Process) below.
+IF [O]: Address the user's request, then re-display this menu.
 
 ---
 
@@ -131,46 +96,25 @@ This approach prevents decision fatigue from seeing the full pool at once, gener
 
 After batch elimination, compile the Keeps into the working shortlist. If the pool is thin (<8), offer a second pass on the cuts to rescue any the user regrets dropping.
 
-### Deepening techniques — present the full menu
+### Deepening and evaluation techniques — offer the menu
 
-At each transition point, present the FULL menu of available techniques and let the user choose. Don't pre-select 2-3 techniques — show everything and let the user decide what's relevant.
+Before the exit checkpoint, offer the user the deepening and evaluation techniques available so they choose what is relevant rather than you pre-selecting:
 
-"Before we move into validation, here are the deepening and riffing techniques available. Choose any that interest you, or skip straight to validation:
+"Before we move into validation, here are the techniques available. Choose any that interest you, or skip straight to validation:
 
-**Riffing techniques:**
-- SCAMPER (7 systematic transformations on each name)
-- Synonym explosion (5-10 synonyms per root)
-- Affix exploration (prefix/suffix library crossing)
-- Creative respelling (Y-for-I, K-for-C, dropped vowels, etc.)
-- Industry-native compound patterns (generate compound elements from the brief's vertical, then cross with roots)
-- Language shift (Latin, Greek, French translations)
-- Compound creation (root x 5+ second words)
-- Classical stem engineering (Greek/Latin root construction)
-- Conceptual blending (merge mental models, not just syllables)
+- **Riffing:** SCAMPER, synonym explosion, affix exploration, creative respelling, industry-native compound patterns, language shift, compound creation, classical stem engineering, conceptual blending
+- **Deepening:** SCAMPER on the brief itself, Inversion, Constraint Removal, Six Thinking Hats, Red Team vs Blue Team, First Principles, Analogical Reasoning, TRIZ, Three-Team Method, Pre-Mortem
+- **Evaluation:** Semantic Differential Scaling, Morphological Productivity, Brand Architecture test, Speech & Channel Robustness
 
-**Deepening techniques:**
-- SCAMPER on the brief itself
-- Inversion / reverse brainstorming
-- Constraint Removal (what if no constraints existed?)
-- Six Thinking Hats evaluation
-- Red Team vs Blue Team
-- First Principles (strip category conventions)
-- Analogical Reasoning (import from parallel domains)
-- TRIZ contradiction resolution
-- Lexicon Three-Team Method
-- Pre-Mortem stress test
+Which would you like to try?"
 
-**Evaluation techniques:**
-- Semantic Differential Scaling (score on bipolar attribute pairs)
-- Morphological Productivity (can the name spawn verbs/derivatives?)
-- Brand Architecture test (can the name extend to product lines?)
-- Speech & Channel Robustness (voicemail/podcast/voice assistant test)
+If the user asks about any technique, explain it briefly. The full library is in `references/elicitation-techniques.md`, `references/naming-techniques.md`, and `references/consumer-naming.md` or `references/enterprise-naming.md` depending on brief type.
 
-### Enterprise evaluation — visible output required (B2B briefs only)
+### Enterprise evaluation — show the results (B2B briefs only)
 
-For B2B/enterprise briefs, the following evaluations must produce **visible, per-name output** in the shortlist — not just a claim that they were applied. Show the actual test results:
+For B2B and enterprise briefs, the evaluations below produce **visible, per-name output** in the shortlist. In testing, these were often listed as applied without any results shown, which gives the user nothing to react to. Show the actual tests:
 
-**Stack Test** (mandatory for B2B briefs with named competitors/partners):
+**Stack Test** (for B2B briefs with named competitors or partners):
 ```
 Stack Test — does [name] look peer-level alongside the customer's existing tools?
 | Shortlisted Name | Stack Context | Verdict |
@@ -179,17 +123,17 @@ Stack Test — does [name] look peer-level alongside the customer's existing too
 | Meshworks | Meshworks + AWS + SAP + Workato | Slightly long but credible ✓ |
 ```
 
-**Sales Conversation Fit** (mandatory):
+**Sales Conversation Fit:**
 Test each shortlisted name in at least 3 of these templates and show the results:
 - "Have you heard of [X]?"
 - "We just switched to [X] for our [use case]."
 - "Let me show you what [X] can do."
 - "[X] integrates with your existing stack."
 
-**Buyer Committee scoring** (mandatory):
+**Buyer Committee scoring:**
 Show explicit per-name scoring across roles (Champion, CFO, Technical Evaluator, End User).
 
-**Acronym Resilience** (mandatory):
+**Acronym Resilience:**
 For each shortlisted name, show what acronym/abbreviation people will naturally use and whether it conflicts:
 ```
 | Name | Natural shortening | Conflict? |
@@ -198,20 +142,14 @@ For each shortlisted name, show what acronym/abbreviation people will naturally 
 | Steelthread | ST | May conflict with internal abbreviation |
 ```
 
-**Enterprise Objection Preemption** (mandatory):
+**Enterprise Objection Preemption:**
 Test each shortlisted name: "Would a Fortune 500 CISO approve this vendor name? Would a VP put this on their LinkedIn?" Show pass/fail per name.
 
-**Name Lifecycle Stress Test** (mandatory):
+**Name Lifecycle Stress Test:**
 For top 5-10 shortlisted names, test: "What if the company expands beyond [current product]? Does the name still work?" Show results.
 
-**Internal-Champion Forwardability** (mandatory):
+**Internal-Champion Forwardability:**
 Test: "Can an internal champion easily explain and forward this name via email/Slack?" Show which names are easy vs. hard to forward.
-
-These visible outputs prevent the common failure mode where enterprise techniques are listed as "applied" in metadata but never actually demonstrated. Record each technique in `techniques_used` using its canonical name exactly as shown above.
-
-Which would you like to try?"
-
-If the user asks about any technique, explain it briefly. The full library is in `references/elicitation-techniques.md`, `references/naming-techniques.md`, and `references/consumer-naming.md` or `references/enterprise-naming.md` (depending on brief type).
 
 ### Multi-perspective evaluation
 
@@ -222,7 +160,7 @@ For high-stakes naming decisions, consider evaluating the shortlist from multipl
 The user has a shortlist of ~5-20 names they want validated. Confirm the list before proceeding. Write the shortlist to `brand-namer-output/02-shortlist.md` with YAML frontmatter capturing:
 - The shortlisted names
 - The user's preference profile (patterns from their keep/cut decisions)
-- Which techniques have been applied
+- Riffing checklist status
 - Session metadata
 
 Then proceed to Phase 3.
@@ -233,46 +171,45 @@ Then proceed to Phase 3.
 
 ### Hard gate checks
 
-Before presenting the exit menu, run ALL THREE hard gate checks:
+Before presenting the exit menu, run the three hard gate checks:
 
-1. **Shortlist size gate:** If fewer than **15 names** are entering validation, warn: "Your shortlist has [N] names. With an 80-90% kill rate for found words, you'll likely end up with [1-3] survivors. I recommend expanding to 15-20 before validating." Recommend (a), (b), or (e).
-2. **Structural diversity gate:** If the shortlist is >80% found words (or any single type), flag it: "Your shortlist is [N]% found words. Generating compound/coined alternatives now is critical insurance." Recommend (b).
-3. **Riffing checklist gate:** Check whether the mandatory riffing checklist (below) has been satisfied. If not, recommend (c) before (d).
+1. **Shortlist size gate:** If fewer than **15 names** are entering validation, warn: "Your shortlist has [N] names. With an 80-90% kill rate for found words, you'll likely end up with [1-3] survivors. I recommend expanding to 15-20 before validating." Recommend [A], [B], or [G].
+2. **Structural diversity gate:** If the shortlist is >80% found words (or any single type), flag it: "Your shortlist is [N]% found words. Generating compound/coined alternatives now is critical insurance." Recommend [B].
+3. **Riffing checklist gate:** Check whether the riffing checklist (below) has been satisfied. If not, recommend [K] before [C].
 
 ### Status summary and menu
 
 Display the full status summary, then present the menu:
 
 "**Shortlist:** [N] names selected. **Structural mix:** [N]% found words, [N]% compounds, [N]% coined/other.
-**Riffing status:** [list which techniques have been applied and which haven't].
+**Riffing checklist:** [items done / items remaining].
 
-**What would you like to do?**
-- **(a) Apply more riffing techniques** to the shortlist — [list SPECIFIC unapplied techniques]
-- **(b) Generate compound/coined alternatives** for each found word on the shortlist (ownability insurance)
-- **(c) Run the mandatory riffing checklist** to ensure coverage, then proceed to validation
-- **(d) Skip straight to validation** — take the shortlist as-is into competitive screening
-- **(e) Go back** — generate more candidates first
+**[A]** Apply more riffing techniques to the shortlist — [name the specific moves not yet made]
+**[B]** Generate compound/coined alternatives for each found word on the shortlist (ownability insurance)
+**[K]** Run the riffing checklist to close the gaps, then proceed to validation
+**[G]** Go back — generate more candidates first
+**[C]** Continue — take the shortlist into Competitive Screening (Step 8 of 13)
 
-**My recommendation:** [Always include a specific recommendation. If any gate is failing, STRONGLY recommend addressing it. Never recommend (d) when the shortlist is <15 names or >80% found words — those conditions guarantee a thin, disappointing final pool.]"
+**My recommendation:** [Always include a specific recommendation. If any gate is failing, recommend addressing it and say why. Do not recommend [C] when the shortlist is <15 names or >80% found words; those conditions reliably produce a thin, disappointing final pool.]"
 
-**HALT — wait for user selection before proceeding.**
+Wait for the user's selection before proceeding.
 
-IF user provides non-menu input: Respond helpfully, then re-display this menu.
-IF (a): Apply the specified riffing techniques to the shortlist names, update `02-shortlist.md`, then re-display this exit checkpoint menu with updated gate status.
-IF (b): For each found word on the shortlist, generate 3-5 compound/coined alternatives. Add them to `02-shortlist.md`. Then re-display this exit checkpoint menu with updated gate status.
-IF (c): Display the riffing checklist (below) with current status and work through uncompleted items. Then re-display this exit checkpoint menu with updated gate status.
-IF (d): Only proceed if the riffing checklist is satisfied OR the user has explicitly waived it. If not satisfied, display the checklist status and ask: "The riffing checklist has gaps. Proceed anyway? (This will likely result in a thin final pool.)" If the user confirms, proceed. Route to: `./step-04a-competitive-screening.md`
-IF (e): Route back to step-02a for additional generation, then return to the Phase 1 entry checkpoint of this file.
+IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
+IF [A]: Apply the specified riffing techniques to the shortlist names, update `02-shortlist.md`, then re-display this exit checkpoint menu with updated gate status.
+IF [B]: For each found word on the shortlist, generate 3-5 compound/coined alternatives. Add them to `02-shortlist.md`. Then re-display this exit checkpoint menu with updated gate status.
+IF [K]: Display the riffing checklist (below) with current status and work through uncompleted items. Then re-display this exit checkpoint menu with updated gate status.
+IF [G]: Route back to step-02a for additional generation, then return to the Phase 1 entry checkpoint of this file.
+IF [C]: Proceed if the riffing checklist is satisfied or the user has waived it. If gaps remain, display the checklist status and ask once: "The riffing checklist has gaps. Proceed anyway? This will likely leave a thin final pool." If the user confirms, record `riffing_checklist: waived` in `02-shortlist.md` and proceed. Route to: `./step-04a-screening.md`
 
-### Riffing checklist (before entering Loop 4) — BLOCKING
+### Riffing checklist (before entering Loop 4)
 
-**In deep sessions (default):** This checklist is **blocking** — you must either complete it or get explicit user waiver before entering validation. Display it as a visible checklist with the status of each item. Do not silently skip it.
+**In deep sessions (default):** complete this checklist, or get the user's explicit waiver, before entering validation. Display it with the status of each item. It exists because found words die in validation at 80-90%, and a shortlist that enters validation without alternatives for each direction comes out nearly empty.
 
-**In quick sessions:** This checklist is skippable — but warn the user once: "Found words have an 80-90% validation kill rate without compound alternatives. Want to riff first, or go straight to validation?" Then respect their choice.
+**In quick sessions:** the checklist is skippable, but warn the user once: "Found words have an 80-90% validation kill rate without compound alternatives. Want to riff first, or go straight to validation?" Then respect their choice.
 
-**Core checklist (mandatory in deep sessions — apply to each direction):**
+**Core checklist (deep sessions, applied to each direction):**
 
-Before running, check the `techniques_used` array in `01-candidates.md` frontmatter. Display the checklist with current status:
+Before running, check `approaches_tried` and the technique labels on riffs in `01-candidates.md`. Display the checklist with current status:
 
 ```
 Riffing checklist status:
@@ -319,13 +256,9 @@ If the user wants more candidates after reviewing the shortlist, loop back to st
 
 ## Menu
 
-This step has THREE menus (Phase 1 Entry Checkpoint, Phase 2 Technique Menu, and Phase 3 Exit Checkpoint). Each is defined inline above within its respective phase. The controlling menu for step advancement is the Phase 3 Exit Checkpoint — only option (d) from that menu, after the riffing checklist is satisfied or waived, routes to the next step.
+This step has three menus (Phase 1 Entry Checkpoint, Phase 2 Technique Menu, and Phase 3 Exit Checkpoint), each defined inline above. Only [C] on the Phase 3 Exit Checkpoint, with the riffing checklist satisfied or waived, routes to the next step.
 
-**HALT — wait for user selection before proceeding at each menu.**
+Wait for the user's selection at each menu before proceeding.
 
-IF user provides non-menu input: Respond helpfully, then re-display the current phase's menu.
-IF Phase 3 option (d) with riffing checklist satisfied or waived: Update `02-shortlist.md` frontmatter `stepsCompleted`, then read fully and follow: `./step-04a-competitive-screening.md`
-
-## Master Rule
-
-Skipping steps, optimizing sequences, auto-advancing past menus, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.
+IF user provides non-menu input: Respond, then bring them back to the current phase's menu (see workflow.md).
+IF Phase 3 [C] with riffing checklist satisfied or waived: Update `02-shortlist.md` frontmatter `stepsCompleted`, then read fully and follow: `./step-04a-screening.md`

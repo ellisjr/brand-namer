@@ -3,28 +3,21 @@
 **Progress:** Step 12 of 13 — Next: Final Presentation (step-04f)
 **Reads:** `brand-namer-output/03-validation.md` | **Writes:** `brand-namer-output/03-validation.md` (update)
 
-## MANDATORY EXECUTION RULES (READ FIRST)
+## Purpose
 
-- Read this COMPLETE file before taking any action
-- FORBIDDEN to load next step until user selects [C] Continue
-- FORBIDDEN to check social handles for all names — Tier 1 (Available & Clear) only
-- FORBIDDEN to simulate System 1 gut reactions — the user's gut is the instrument, not the AI's
-- Update artifact frontmatter `stepsCompleted` before loading next step
-- After handling non-menu user input, ALWAYS re-display the current menu
+Social handle checks, optional stress tests, and an extended presence check for the finalists.
 
-## SUCCESS METRICS
+## Done when
 
-- Social handles checked for Tier 1 names only (not wasting time on flagged names)
-- Optional stress tests (Pre-Mortem, System 1/System 2) offered to user
-- Extended presence check offered for top 1-3 finalists
-- Generate-more checkpoint offered if pool feels thin after social checks
+- Social handles checked for Tier 1 names only
+- Pre-Mortem and System 1 / System 2 tests offered
+- Extended presence check offered for the top 1-3
+- Generate-more checkpoint offered if the pool feels thin
 
-## FAILURE MODES
+## Guardrails
 
-- CRITICAL: Checking social handles for all names instead of Tier 1 only
-- CRITICAL: Not offering stress tests (Pre-Mortem, System 1/System 2) as options
-- CRITICAL: AI attempting to simulate System 1 gut reactions instead of letting the user do it
-- CRITICAL: Not offering extended presence check for finalists
+- Tier 1 names only. Handle checks on names already flagged waste the user's time.
+- The System 1 test is the user's gut, not yours. An LLM can only do analytical evaluation; the split-second reaction that decides how a name lands in the world belongs to the user.
 
 ---
 
@@ -92,15 +85,11 @@ For the top 1-3 finalists, offer to check broader digital presence:
 
 **My recommendation:** If you have strong finalists you're excited about, run [P] Pre-Mortem to catch hidden risks, then [T] Two-Speed Test to validate gut alignment. These optional tests take 5-10 minutes and frequently change the final ranking. If the pool feels thin or uninspiring, use [G] first.
 
-**HALT — wait for user selection before proceeding.**
+Wait for the user's selection before proceeding.
 
-IF user provides non-menu input: Respond helpfully, then re-display this menu.
+IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [P]: Run Pre-Mortem on top 3-5, record results in `03-validation.md`, then re-display this menu.
 IF [T]: Run System 1/System 2 test (user-driven), record results in `03-validation.md`, then re-display this menu.
 IF [X]: Run extended presence check on top 1-3, record results in `03-validation.md`, then re-display this menu.
 IF [G]: Loop back to generation, re-validate new names through full chain (4a+4b+4d+4e), then re-display this menu.
 IF [C]: Update `03-validation.md` frontmatter `stepsCompleted`, load next step (`steps/step-04f-final.md`).
-
-## Master Rule
-
-Skipping steps, optimizing sequences, auto-advancing past menus, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.

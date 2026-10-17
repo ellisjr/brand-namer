@@ -1,7 +1,7 @@
 {
   "name": "brand-namer",
-  "version": "1.0.0",
-  "description": "Professional-grade brand naming with 4-loop cyclable architecture. Defeats LLM averaging with enforced divergent generation, technique cycling, and ownability-first compound creation.",
+  "version": "1.1.0",
+  "description": "Professional-grade brand naming with 4-loop cyclable architecture. Defeats LLM averaging with broad divergent generation, technique cycling, and ownability-first compound creation.",
   "author": {
     "name": "Jonathan Ellis",
     "url": "https://github.com/ellisjr"

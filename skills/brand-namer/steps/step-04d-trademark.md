@@ -3,28 +3,21 @@
 **Progress:** Step 11 of 13 — Next: Social & Stress Tests (step-04e)
 **Reads:** `brand-namer-output/03-validation.md` | **Writes:** `brand-namer-output/03-validation.md` (update)
 
-## MANDATORY EXECUTION RULES (READ FIRST)
+## Purpose
 
-- Read this COMPLETE file before taking any action
-- FORBIDDEN to load next step until user selects [C] Continue
-- FORBIDDEN to claim trademark clearance — this is a preliminary screen, not legal advice
-- FORBIDDEN to skip phonetically similar mark checks
-- Update artifact frontmatter `stepsCompleted` before loading next step
-- After handling non-menu user input, ALWAYS re-display the current menu
+A preliminary trademark risk screen on the survivors.
 
-## SUCCESS METRICS
+## Done when
 
-- All survivors screened for trademark risk with consistent search methodology
-- Each name categorized as Low / Medium / High trademark risk
+- Each survivor rated Low / Medium / High trademark risk with a consistent search methodology
 - Phonetically similar registered marks checked for every candidate
-- "Not legal advice" disclaimer included — trademark attorney recommended
-- Checkpoint offered after screening in case strong candidates were killed
+- "Not legal advice" disclaimer included and a trademark attorney recommended
+- A generate-more checkpoint offered if strong candidates were killed
 
-## FAILURE MODES
+## Guardrails
 
-- CRITICAL: Claiming trademark clearance instead of recommending a trademark attorney
-- CRITICAL: Not checking phonetically similar marks (e.g., "Korvus" must trigger a search for "Corvus")
-- CRITICAL: Skipping the "not legal advice" disclaimer
+- This is a screen, not clearance. Always recommend a trademark attorney before any filing.
+- Check phonetically similar marks. "Korvus" must trigger a search for "Corvus"; trademark conflicts are about confusion, not spelling.
 
 ---
 
@@ -59,12 +52,8 @@ After trademark results, if any strong candidates were killed, ask: "Trademark s
 
 **My recommendation:** If your strongest candidates survived trademark screening with Low Risk ratings, proceed with [C]. If trademark screening killed favorites, use [G] to generate replacements before moving on — it's cheaper to generate now than to restart later.
 
-**HALT — wait for user selection before proceeding.**
+Wait for the user's selection before proceeding.
 
-IF user provides non-menu input: Respond helpfully, then re-display this menu.
+IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [G]: Loop back to generation, then re-validate new names through 4a+4b+4d (check the validation log — skip already-screened names). Return to this menu after.
 IF [C]: Update `03-validation.md` frontmatter `stepsCompleted`, load next step (`steps/step-04e-social.md`).
-
-## Master Rule
-
-Skipping steps, optimizing sequences, auto-advancing past menus, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.

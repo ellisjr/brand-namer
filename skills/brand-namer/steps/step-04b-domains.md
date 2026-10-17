@@ -3,29 +3,21 @@
 **Progress:** Step 9 of 13 — Next: Variation Generation (step-04c)
 **Reads:** `brand-namer-output/03-validation.md` | **Writes:** `brand-namer-output/03-validation.md` (update)
 
-## MANDATORY EXECUTION RULES (READ FIRST)
+## Purpose
 
-- Read this COMPLETE file before taking any action
-- FORBIDDEN to load next step until user selects [C] Continue
-- FORBIDDEN to skip any of the 4 TLDs (.com, .ai, .co, .io) — check all four for every name
-- FORBIDDEN to allow more than 3 recovery rounds without a decision checkpoint
-- FORBIDDEN to auto-loop recovery — always ask before each round
-- Update artifact frontmatter `stepsCompleted` before loading next step
-- After handling non-menu user input, ALWAYS re-display the current menu
+Get definitive domain registration status for every survivor, and recover the pool when validation has thinned it.
 
-## SUCCESS METRICS
+## Done when
 
-- All survivors checked for domain availability across all 4 TLDs (.com, .ai, .co, .io)
-- Validation log maintained tracking which checks each name has passed
-- Pool recovery offered proactively if pool drops below ~5 strong candidates
-- Recovery rounds capped at 3 with minimum delta check enforced
+- All survivors checked on `.com`, `.ai`, `.co`, and `.io`
+- A validation log records which checks each name has passed
+- Pool recovery offered when fewer than about 5 strong candidates remain
+- Recovery capped at 3 rounds, with a decision checkpoint after each
 
-## FAILURE MODES
+## Guardrails
 
-- CRITICAL: Not checking all 4 TLDs for every surviving name
-- CRITICAL: Allowing endless recovery loops (>3 rounds) without forcing a decision checkpoint
-- CRITICAL: Not tracking which names have already been validated (re-running expensive searches)
-- CRITICAL: Not offering pool recovery when pool is dangerously thin
+- Use WHOIS or RDAP, not web search. Web search misses registered-but-parked domains, which is most of them.
+- Ask before each recovery round and stop at 3. Recovery produces names that need validation, which kills names, which triggers more recovery; without a cap the loop never ends.
 
 ---
 
@@ -168,13 +160,9 @@ Recovery loops can amplify churn — each round generates new candidates that ne
 
 **My recommendation:** If the surviving pool is below 5 strong candidates, use [R] to recover before continuing. Pool recovery often produces the session's best names. If the pool is healthy (5+), proceed with [C].
 
-**HALT — wait for user selection before proceeding.**
+Wait for the user's selection before proceeding.
 
-IF user provides non-menu input: Respond helpfully, then re-display this menu.
+IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [G]: Loop back to generation step (step-02c for riffing, step-02a for fresh generation). Re-validate only new names on return.
 IF [R]: Run pool recovery process described above, then re-display this menu.
 IF [C]: Update `03-validation.md` frontmatter `stepsCompleted`, load next step (`steps/step-04c-variations.md`).
-
-## Master Rule
-
-Skipping steps, optimizing sequences, auto-advancing past menus, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.

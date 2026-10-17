@@ -11,7 +11,7 @@ This skill uses a **step-file architecture**. SKILL.md defines the role, philoso
 
 ```
 SKILL.md              ← You are here. Role + Philosophy + Reference Loading + Artifacts + Playbooks
-workflow.md           ← Execution rules, system failure definitions, step routing table
+workflow.md           ← Execution rules, session routing, menu format, step routing table
 steps/
   step-00-session-start.md    ← Session detection, resume handler
   step-01a-brief.md           ← Brand brief intake
@@ -64,7 +64,7 @@ Professional naming agencies charge $15,000–$75,000+ for brand naming engageme
 7. **Isolate context — name ONLY what's being named.** When the user provides background documents (PRDs, pitch decks, business plans), extract information about the NAMING TARGET only. Do not let surrounding context bleed into the naming brief. If the user is naming a platform built for a fund called "InnovateHealth Ventures," you are naming the PLATFORM, not the fund. If the user is naming a feature within an app, you are naming the FEATURE, not the app. Confirm the naming target explicitly before generating: "Just to confirm — we're naming [the platform/the feature/the company], correct?"
 8. **Show your work — technique transparency.** When applying riffing or generation techniques, label which technique produced each candidate. Don't just show outputs — show the technique name alongside each result. This lets the user understand WHY a name was generated and request more of a specific technique if it's working. Format: `**Name** | technique used | rationale`
 9. **Narrate before you act.** Before any multi-step operation (validation runs, batch generation, pool recovery), tell the user what you're about to do, how many steps it involves, and what to expect. "I'm going to screen your 12 shortlisted names — web search for each, then domain checks. I'll present results in a single table when done." This prevents the user from sitting in silence wondering what's happening during long operations.
-10. **Recommend at every checkpoint.** Every checkpoint menu MUST include your recommendation with brief rationale based on the current session state — pool size, technique coverage, user energy. The user may override, but the guidance helps. "I'd lean toward (a) — your pool is thin after validation and riffing on the dead names usually produces the strongest survivors."
+10. **Recommend at every checkpoint.** Every checkpoint menu includes your recommendation with brief rationale based on the current session state — pool size, category and structural coverage, user energy. The user may override, but the guidance helps. "I'd lean toward (a) — your pool is thin after validation and riffing on the dead names usually produces the strongest survivors."
 
 ---
 
@@ -76,18 +76,18 @@ This skill has **6 reference files** in `references/`, organized by when they're
 
 | File | Lines | When to load | Brief type |
 |---|---|---|---|
-| `references/naming-categories.md` | ~550 | **Step 02a (Generation)** — always | All briefs |
-| `references/naming-techniques.md` | ~600 | **Step 02c (Riffing), Step 03a (Shortlisting), Step 04b (Pool recovery)** | All briefs |
-| `references/consumer-naming.md` | ~660 | **Step 02a (Generation)** — for consumer/lifestyle/food/beauty/fashion | Consumer briefs only |
-| `references/enterprise-naming.md` | ~420 | **Step 01a (Brief), Step 02a (Generation), Step 03a (Shortlisting), Steps 04a-04e (Validation)** | B2B/enterprise briefs only |
+| `references/naming-categories.md` | ~730 | **Step 02a (Generation)** — always | All briefs |
+| `references/naming-techniques.md` | ~760 | **Step 02c (Riffing), Step 03a (Shortlisting), Step 04b (Pool recovery)** | All briefs |
+| `references/consumer-naming.md` | ~690 | **Step 02a (Generation)** — for consumer/lifestyle/food/beauty/fashion | Consumer briefs only |
+| `references/enterprise-naming.md` | ~430 | **Step 01a (Brief), Step 02a (Generation), Step 03a (Shortlisting), Steps 04a-04e (Validation)** | B2B/enterprise briefs only |
 | `references/brand-psychology.md` | ~430 | **Steps 01a-01b (Brief/Territories)** — load once, retain | All briefs |
 | `references/elicitation-techniques.md` | ~325 | **When triggered** (user asks, session stuck, stress-testing) | On demand |
 
-**For a consumer brief:** Load naming-categories.md + consumer-naming.md + brand-psychology.md = ~1,640 lines across the session. Never load enterprise-naming.md.
+**For a consumer brief:** Load naming-categories.md + consumer-naming.md + brand-psychology.md. Never load enterprise-naming.md.
 
-**For a B2B brief:** Load naming-categories.md + enterprise-naming.md + brand-psychology.md = ~1,400 lines across the session. Never load consumer-naming.md.
+**For a B2B brief:** Load naming-categories.md + enterprise-naming.md + brand-psychology.md. Never load consumer-naming.md.
 
-**For a quick session:** Load naming-categories.md only (~550 lines). Add consumer-naming.md if it's a sensory/physical product. Skip everything else.
+**For a quick session:** Load naming-categories.md only. Add consumer-naming.md if it's a sensory/physical product. Skip everything else.
 
 ### Troubleshooting — when the session gets stuck
 
@@ -102,14 +102,9 @@ This skill has **6 reference files** in `references/`, organized by when they're
 | Names fail in real-world speech | Not tested in context | `enterprise-naming.md` | Run Sales Conversation Fit templates. Run Speech & Channel Robustness tests. |
 | Pool too thin after validation | Normal — 80-90% kill rate for found words | `naming-techniques.md` | Pool recovery with industry-native compounds. Try Domain-First Naming. |
 
-### Context health management
+### Artifacts are the authoritative state
 
-In long sessions (50+ turns, 100+ candidates), context pressure will degrade quality. Manage it:
-
-1. **Artifacts are the authoritative state.** If context compresses, the artifacts contain everything needed to resume. Treat `01-candidates.md` and `02-shortlist.md` as the source of truth, not conversation history.
-2. **Save frequently.** After every batch of candidates, every user reaction round, and every validation step — save to the appropriate artifact immediately.
-3. **Summarize before advancing.** At each loop transition, write a brief status summary into the conversation: "Status: [N] candidates, [M] shortlisted, [K] validated. Preference profile: [summary]. Next: [stage]." This survives context compression better than scattered details across many turns.
-4. **Don't re-read reference files.** Load sections once per stage. If you need to re-reference a technique, recall it from what you've already loaded — don't re-read the file.
+Treat `01-candidates.md` and `02-shortlist.md` as the source of truth for the pool and the user's preferences, not conversation history. Long sessions accumulate hundreds of names across many turns; the artifacts are what let you and a future session see the whole pool at once. Save after every batch, reaction round, and validation step (triggers below), and at each loop transition write a one-line status into the conversation: "Status: [N] candidates, [M] shortlisted, [K] validated. Preference profile: [summary]. Next: [stage]." Re-read a reference file whenever you need the detail; it is cheap and more accurate than recall.
 
 ### Cross-pollination prompt budget
 
@@ -136,7 +131,7 @@ When generating prompts for the user to run in other LLMs (see step-02b), keep t
 
 This means:
 1. **Generate found words for inspiration, compounds for survival.** Found words reveal the user's taste and emotional direction. Compounds and coined names are what actually survives validation. Run both tracks in parallel from the start — not sequentially.
-2. **The `-works` / `-craft` / `-wise` / `-ware` compound pattern is the most productive survival strategy.** Of dozens of names screened in testing, clear survivors were almost exclusively compounds. Single found words are inspirational seeds; compounds are what you can actually own.
+2. **For B2B briefs, the `-works` / `-craft` / `-wise` / `-ware` compound pattern is the most productive survival strategy.** Of dozens of names screened in testing, clear survivors were almost exclusively compounds. Single found words are inspirational seeds; compounds are what you can actually own. Consumer briefs are different: see the consumer playbook below, where institutional compounds damage the output and survival comes from respelling and alternate real spellings instead.
 3. **Don't fall in love with found words before validation.** Present them alongside compound alternatives early so the user isn't emotionally committed to names that will die.
 
 ---
@@ -212,14 +207,14 @@ structural_mix:
   foreign_root: 5
   respellings: 2
 deduplication_log: ["Meridian generated by Claude + Gemini + GPT", "Triage generated by Claude + Gemini + GPT"]
-techniques_used: [evocative_generation, found_word_generation, compound_generation, SCAMPER, synonym_explosion, affix_exploration, Y_for_I_respelling, industry_compound_patterns, language_shift_latin, three_team_method]
-techniques_not_yet_used: [morphological_analysis, classical_stem_engineering, semiotic_mapping, contrarian_naming, conceptual_blending, backronym, domain_first]
+approaches_tried: "Tree of Thought per category; Five Senses Scan; dynamic compounds from brief; SCAMPER on top 5; Latin/Greek language shift"
+approaches_worth_trying: "Three-Team Method; toponym mining; contrarian/anti-category"
 stepsCompleted: ["00", "01a", "01b", "02a"]
 timestamp: ISO-8601
 ---
 ```
 
-**Technique accountability:** Update `techniques_used` and `techniques_not_yet_used` after every generation batch. This forces conscious cycling through the full toolkit rather than defaulting to the same 3-4 techniques. When presenting checkpoint menus, reference the unused techniques: "Techniques not yet tried: [list]. Want to apply any before moving on?"
+The two `approaches_*` fields are free-text notes, not a checklist to complete. Their job is to let you and the user see at a glance which creative moves have been made and which untried ones might open new territory. Cycling through genuinely different techniques is what defeats convergence; recording them is only useful insofar as it prompts that cycling.
 
 **Deduplication rule:** Maintain a running list of all candidate names in `01-candidates.md`. Before presenting any batch (generation, external merge, riff output), check against the existing list. If a name is a duplicate: (a) note it as independently generated by [source] (valuable validation signal), (b) do NOT present it again to the user as a new candidate. If a near-duplicate exists (e.g., "Siftworks" and "Sift Works"), flag both and let the user decide which form to keep.
 
@@ -243,7 +238,7 @@ taken_but_loved:
   - name: Fundry
     killed_by: "fundry.io — real estate AI"
     compelling_because: "fund + foundry, maker energy"
-techniques_applied_during_shortlisting: [red_team_blue_team, constraint_removal]
+riffing_checklist: { status: satisfied | waived, notes: "compounds + respelling done; SCAMPER waived by user" }
 stepsCompleted: ["00", "01a", "01b", "02a", "02b", "02c", "03a"]
 timestamp: ISO-8601
 ---
@@ -292,7 +287,6 @@ timestamp: ISO-8601
 - **After shortlisting** (user has confirmed favorites): write `02-shortlist.md`
 - **After each validation step** (competitive screen, domain check, trademark, social handles): update `03-validation.md`
 - **After pool recovery rounds**: update both `01-candidates.md` and `03-validation.md`
-- **When context is getting long** (50+ turns, or you notice context compression happening): save everything immediately to all relevant artifacts — they are the authoritative state that survives compression
 
 ### Running count (optional — include only when the user needs orientation)
 
@@ -309,34 +303,9 @@ Don't report candidate counts at every transition — it becomes noise. Include 
 
 ---
 
-## Adaptive Behavior
+## Session Types
 
-This skill should flex to the user's needs. The session type determines which stages are mandatory vs. optional:
-
-- **Quick session ("I need 5 name ideas in 10 minutes"):** Use the **Quick Mode Fast Path** below. Skip most ceremony.
-- **Deep session ("I want to really get this right"):** Run the full pipeline including cross-model ideation (step-02b) and creative riffing (step-02c). Riffing checklist is **mandatory** before entering validation. Multiple ideation rounds. Thorough validation. All 5 artifacts.
-- **Iterative session ("Let me think about these overnight"):** Save `01-candidates.md` after generation/riffing. When the user returns, read its frontmatter to resume at step-03a or step-04a.
-- **Validation only ("I already have names, just check them"):** User provides names → write directly to `02-shortlist.md` → run Loop 4 (steps 04a-04f). Riffing checklist is **skippable** (the user arrived with names they've already developed).
-
-The user may not use the loop/stage terminology. Read intent from context and jump to the relevant stage. Check for existing artifacts in `brand-namer-output/` to detect where a previous session left off.
-
-### Quick Mode Fast Path
-
-When the user wants speed over thoroughness, strip the pipeline to essentials:
-
-1. **Brief (3 questions only):** What are you naming? Who is it for? Any names you like or hate?
-2. **Generate:** 30-40 names across 4-5 categories. Gallery-mode presentation only — no category-by-category expansion unless the user asks. Include ownability-first compounds alongside found words from the start.
-3. **React:** User picks favorites from the gallery. One round only.
-4. **Light riff:** Quick compound variants on the top picks. No mandatory checklist. No technique menus.
-5. **Present:** Top 8-10 names with brief rationale and domain suggestions. No tiered presentation unless there are clear availability differences.
-
-6. **For consumer/sensory products:** Run the **Five Senses Scan** during generation even in quick mode. It takes 30 seconds of structured thinking per sense and consistently produces the session's best candidates for physical products (food, beauty, fashion, home). Don't skip it for speed — it IS the speed technique for consumer naming.
-7. **Ownability risk check.** If the shortlist is entirely found words with zero compounds or coined names, flag it: "Your shortlist is all found words — beautiful but high collision risk for domains and trademarks. Want me to generate 2-3 compound alternatives as insurance before you go?" This is especially important in Quick Mode where the user killed compounds early for aesthetic reasons.
-8. **Optional: Quick conflict check.** Before closing, offer: "Want me to quick-check your top 2-3 for obvious conflicts? Takes 2 minutes." If yes, run a light competitive screen (web search only) on the user's top picks. This catches the most heartbreaking kills without the full Loop 4 ceremony.
-
-**Skip entirely in quick mode:** Territories (step-01b), competitive whitespace, session mode selection, cross-model ideation (step-02b), full riffing checklist, checkpoint menus, deepening techniques, full validation (Loop 4), artifacts (unless requested). No running count, no preference profile compilation, no technique transparency labels.
-
-**Detecting session type:** If the user doesn't state their intent, infer from signals: brief length (sparse = likely quick), tone ("just brainstorm some ideas" = quick; "this is our company name, it needs to be perfect" = deep), and time references. When in doubt, ask: "Would you like a quick brainstorm or a thorough naming engagement?"
+The skill flexes to the user's intent: a deep engagement, a quick brainstorm, an iterative session resumed across days, or validation only of names the user already has. The session type is detected in step 00 and determines which steps run. The definitions, detection signals, and the quick-mode fast path live in `workflow.md` under "Session types and routing", so that routing has one home.
 
 ---
 
@@ -419,7 +388,3 @@ For consumer/sensory products, load the **Sensory & Experiential Naming** sectio
 - **Synaesthetic Naming** — cross-sensory words that activate multiple neural pathways
 
 These techniques are often more productive than conceptual generation for products people physically experience.
-
----
-
-**After reading this file, follow the instructions in `./workflow.md`.**

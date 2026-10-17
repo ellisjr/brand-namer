@@ -3,28 +3,22 @@
 **Progress:** Step 2 of 13 — Next: Territories & Whitespace (step-01b)
 **Reads:** conversation context, uploaded docs | **Writes:** `brand-namer-output/00-brief.md`
 
-## MANDATORY EXECUTION RULES (READ FIRST)
+## Purpose
 
-- Read this COMPLETE file before taking any action
-- FORBIDDEN to load next step until user selects [C] Continue
-- FORBIDDEN to generate any name candidates during this step — this is intake only
-- FORBIDDEN to skip the naming target confirmation ("Just to confirm — we're naming [X], correct?")
-- Update artifact frontmatter `stepsCompleted` before loading next step
-- After handling non-menu user input, ALWAYS re-display the current menu
+Understand what is being named, for whom, and with what feel, before generating anything.
 
-## SUCCESS METRICS
+## Done when
 
-- Naming target explicitly confirmed with the user ("We're naming [the platform / the feature / the company]")
-- Primary audience is clear and captured
-- Brand personality / emotional direction captured (even if provisional)
-- Seed words gathered (or user declined)
+- Naming target explicitly confirmed ("We're naming [the platform / the feature / the company]")
+- Primary audience and brand personality captured, even if provisional
+- Seed words gathered, or the user declined
 - Save-as-you-go preference established
 
-## FAILURE MODES
+## Guardrails
 
-- CRITICAL: Generating names before the brief is complete
-- CRITICAL: Not confirming the naming target — ambiguity about WHAT is being named derails everything downstream
-- CRITICAL: Not asking about additional inputs — users often have materials that dramatically improve naming quality but don't think to share them unprompted
+- No name candidates in this step. Names shown before the brief is complete pull the user toward reacting instead of articulating what they want.
+- Confirm the naming target explicitly. Ambiguity about what is being named derails everything downstream.
+- Ask about additional inputs. Users have pitch decks, PRDs, and competitor lists that sharpen naming dramatically and rarely volunteer them.
 
 ---
 
@@ -128,12 +122,8 @@ If the user prefers just the final answer with no intermediate artifacts, skip s
 
 **My recommendation:** If you've shared a detailed brief or we've had a thorough conversation, [C] is the right move — we have enough to define strong territories. If your answers felt generic or you're unsure what you want the name to "feel like," [E] will sharpen the brief significantly.
 
-**HALT — wait for user selection before proceeding.**
+Wait for the user's selection before proceeding.
 
-IF user provides non-menu input: Respond helpfully, then re-display this menu.
+IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [E]: Run the structured facilitation techniques (rapid association, rejection test, analogical prompt) from the "Structured facilitation for latent preferences" section above. After gathering responses, update the brief summary and re-display this menu.
-IF [C]: Save to `brand-namer-output/00-brief.md` with YAML frontmatter (project, namingTarget, audience, personality, seedWords, namingArchitecture, numberOneJob, sessionType, savePreference, stepsCompleted: ["step-00", "step-01a"]), then read fully and follow: `./step-01b-territories.md`
-
-## Master Rule
-
-Skipping steps, optimizing sequences, auto-advancing past menus, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.
+IF [C]: Save to `brand-namer-output/00-brief.md` with YAML frontmatter (project, namingTarget, audience, personality, seedWords, namingArchitecture, numberOneJob, sessionType, savePreference, stepsCompleted: ["00", "01a"]), then read fully and follow: `./step-01b-territories.md`

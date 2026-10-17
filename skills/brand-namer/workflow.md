@@ -1,124 +1,95 @@
 # Brand Namer — Workflow Router
 
-Follow SKILL.md for Role, Philosophy, Reference Loading, Artifacts, and Scenario Playbooks. This file governs execution flow.
+SKILL.md holds the global context: role, philosophy, reference loading, artifacts, and scenario playbooks. This file governs how the session executes. Step files in `steps/` hold the work itself.
 
-## MANDATORY EXECUTION RULES (READ FIRST)
+## How to execute
 
-- 📖 ALWAYS read the COMPLETE step file before taking any action within it
-- 🚫 NEVER load multiple step files simultaneously — one step at a time
-- 🚫 NEVER skip steps or optimize the sequence
-- 🚫 NEVER proceed past a menu without user selection — HALT and wait
-- 🚫 NEVER create mental todo lists from future steps — focus only on the current step
-- 📖 ALWAYS halt at menus and wait for user input — silence means wait
-- 📖 ALWAYS update artifact frontmatter before loading the next step
-- 📖 ALWAYS re-display the current menu after handling any non-menu user input
+1. Start with `steps/step-00-session-start.md`. Read each step file completely before acting on it, because the menu and routing at the bottom change how the body should be run.
+2. Work one step at a time. Each step names the next one. Load the next file only when the current step's menu routes there — looking ahead tempts you to optimize the sequence, and the sequence is the method.
+3. At a checkpoint menu, present the options with your recommendation and wait for the user to choose. The user drives every convergence decision in this skill; advancing on their behalf removes the one input that makes the output theirs.
+4. Before loading the next step, save the current artifact and update its `stepsCompleted` frontmatter. Artifacts are the session's memory and the only way a later session can resume.
+5. When a checkpoint lets the user loop back to an earlier step, load that step directly and skip the ones in between.
 
-## SYSTEM FAILURE Definitions
+## Core rules and why they exist
 
-The following constitute SYSTEM FAILURE — these must never happen:
+- **Present everything, cut nothing.** Every candidate you generate reaches the user eventually, in numbered batches of at most 15. Pre-filtering substitutes your taste for theirs, and the names you would have cut are often the ones they fall for.
+- **Number every selectable list.** Users refer to names and options by number. An unnumbered list forces them to retype names and slows every reaction round.
+- **Recommend at every checkpoint.** A menu without a recommendation is paperwork. Base it on the session state: pool size, category coverage, structural mix, the user's energy.
+- **Hold the volume and diversity gates.** Shortlisting with fewer than 60 candidates in a deep session (40 in a focused one), fewer than 6 categories attempted, or a pool over 80% one structural type reliably ends in a thin, disappointing final pool after validation. The gates are defined in steps 02a and 03a. When a gate is failing and the user wants to move on anyway, say so once in plain terms with the likely consequence, recommend the fix, and proceed if they confirm. Record `gate_waived: [gate]` in the artifact frontmatter.
+- **Offer cross-model ideation at least once in a deep session.** Different models have different creative biases, and it is consistently the highest-yield round for consumer briefs. The user can decline.
+- **Load the reference file a step names before generating in that step.** The reference files are where the technique depth lives. Generating from memory produces the averaged output this skill exists to prevent.
 
-1. **Auto-advancing past menus** — proceeding without the user selecting an option
-2. **Skipping the [C] gate** — loading the next step without user selecting [C] Continue
-3. **Silent candidate filtering** — dropping or pre-filtering candidates before the user sees them
-4. **Premature shortlisting** — entering Loop 3 with fewer than 40 candidates without explicit user waiver
-5. **Skipping reference files** — generating names without reading the referenced technique file for the current stage
-6. **Batch overflow** — presenting more than 15 candidates in a single batch
-7. **Unnumbered selectables** — presenting a selectable list without reference numbers
-8. **Skipping cross-pollination offer** — not offering cross-model ideation at least once in deep sessions
-9. **Menu without recommendation** — presenting a checkpoint menu without your specific recommendation
-10. **Implicit progression** — treating "let's move on" or "what's next" as a menu selection instead of re-displaying the menu
+## Handling input that is not a menu choice
 
-## User Waiver Protocol
+Users ask questions, add context, and go on tangents mid-menu. Answer them, then bring them back to the decision: a short "Where we are: [one line]. Options: [the menu, or its short form]." Re-display the full menu when the user seems to have lost the thread, and use the short form ("Generate more, riff more, or move on?") when they clearly have not. Casual phrases like "let's move on" or "what's next" mean the user wants your recommended option: confirm it in one line and proceed.
 
-When a hard gate is blocking (e.g., <60 candidates, <6 categories attempted):
-
-1. The user must explicitly say "proceed anyway" or "skip this gate"
-2. Casual language ("let's move on", "what's next", "I think we're good") is **NOT** a valid waiver
-3. Confirm the waiver: "Just to confirm — you want to proceed with [N] candidates, below the recommended [M]? This may result in [consequence]."
-4. After confirmed waiver, note in artifact frontmatter: `gate_waived: [gate_name]`
-
-## Chat-Then-Redisplay Pattern
-
-When the user provides input that is NOT a menu selection (questions, comments, context, tangents):
-
-1. Respond helpfully to their input
-2. Then re-display the current menu: "Here are your options again:"
-3. **HALT — wait for a menu selection**
-
-This prevents users from getting "lost" in the workflow after a side conversation.
-
-## Menu Format Standard
-
-ALL menus use this bracket-letter format:
+## Menu format
 
 ```
 **[A]** Description of option A
 **[B]** Description of option B
 **[C]** Continue — save and proceed to [Next Step Name] (Step N of 13)
 
-**My recommendation:** [Specific suggestion with rationale based on current session state — pool size, technique coverage, user energy. NEVER omit this.]
-
-**HALT — wait for user selection before proceeding.**
+**My recommendation:** [Specific suggestion with rationale from the current session state.]
 ```
 
-Rules:
-- ALL selectable items MUST be numbered or lettered in brackets
-- Include progress indicator in [C] option: "(Step N of 13)"
-- Maximum 15 items per selectable batch
-- Every checkpoint menu MUST include a recommendation with brief rationale
-- After every menu presentation, include the HALT instruction
+Bracket letters for options, the progress indicator on the continue option, a recommendation on every checkpoint menu. Then wait for the user's selection.
 
-## Step Routing Table
+## Session types and routing
 
-| # | Step ID | File | Purpose | Gate Type |
-|---|---------|------|---------|-----------|
-| 1 | 00 | `steps/step-00-session-start.md` | Detect existing session, offer resume or start fresh | Auto / [C] |
-| 2 | 01a | `steps/step-01a-brief.md` | Brand brief intake — understand what we're naming | [C] Continue |
-| 3 | 01b | `steps/step-01b-territories.md` | Naming territories, competitive whitespace, session mode | [C] Continue |
-| 4 | 02a | `steps/step-02a-generation.md` | Divergent generation — core ideation across categories | Checkpoint menu |
-| 5 | 02b | `steps/step-02b-cross-pollination.md` | Cross-model ideation with other LLMs | [C] Continue |
-| 6 | 02c | `steps/step-02c-riffing.md` | Creative riffing & directional expansion | Checkpoint menu |
-| 7 | 03a | `steps/step-03a-shortlisting.md` | Convergent shortlisting + riffing checklist | Checkpoint menu |
-| 8 | 04a | `steps/step-04a-screening.md` | Competitive screening via web search | [C] Continue |
-| 9 | 04b | `steps/step-04b-domains.md` | Domain availability + pool recovery | Checkpoint menu |
-| 10 | 04c | `steps/step-04c-variations.md` | Variation generation + re-screening | [C] Continue |
-| 11 | 04d | `steps/step-04d-trademark.md` | Trademark screening | [C] Continue |
-| 12 | 04e | `steps/step-04e-social.md` | Social handles, stress tests, extended presence | [C] Continue |
-| 13 | 04f | `steps/step-04f-final.md` | Final tiered presentation + recommendations | End |
+Detect the session type in step 00 from the user's signals and record it in `00-brief.md` frontmatter. It determines which steps run.
 
-## Execution Flow
+| Type | Signals | What runs |
+|---|---|---|
+| **Deep** (default) | Detailed brief, "get this right," company or flagship product name | All 13 steps. Cross-pollination offered. Riffing checklist before validation. All artifacts. |
+| **Quick** | "Just brainstorm some ideas," "5 names in 10 minutes," sparse brief | The fast path below. |
+| **Iterative** | "Let me sleep on these," returning user | Deep pipeline, with artifacts saved so step 00 can resume at the right step. |
+| **Validation only** | "I already have names, just check them" | Names written straight to `02-shortlist.md`, then steps 04a to 04f. Riffing checklist skippable. |
 
-1. ALWAYS start with `steps/step-00-session-start.md`
-2. Each step file specifies which step to load next via its "Next Step" section
-3. Only load the NEXT step file when instructed by the current step — never look ahead
-4. At checkpoint menus, the user may choose to loop back to earlier steps — load the target step directly
-5. When looping back, do not re-run intervening steps
+When the signals are ambiguous, ask: "Quick brainstorm (about 15 minutes) or thorough engagement (45 to 60 minutes)?"
 
-## Quick Mode Routing
+### Quick mode fast path
 
-When Quick Mode is detected (user wants speed over thoroughness):
+Quick mode trades the full method for speed, so the checkpoint discipline above relaxes to a single reaction round:
 
-- Step 00 → Step 01a (abbreviated: 3 questions only) → Step 02a (30-40 names, gallery only) → Step 03a (one round) → Step 04f (light presentation)
-- **Skip:** Step 01b (territories), Step 02b (cross-pollination), most of Step 02c (riffing)
-- **Skip:** Steps 04a-04e (full validation) — offer optional quick conflict check only
-- See "Quick Mode Fast Path" in SKILL.md for full details
+1. **Brief:** three questions. What are you naming? Who is it for? Any names you like or hate?
+2. **Generate:** 30 to 40 names across 4 or 5 categories, presented as one gallery. For consumer and physical products, run the Five Senses Scan anyway. It takes seconds and consistently produces the best sensory candidates.
+3. **React:** the user picks favorites from the gallery. One round.
+4. **Light riff:** quick variants on the top picks. For B2B briefs include compound alternatives, since found words rarely survive validation.
+5. **Present:** top 8 to 10 with brief rationale and domain suggestions. If the shortlist is entirely found words, say so and offer two or three compound or coined alternatives as insurance. Offer a quick conflict check on the top two or three.
 
-## Loop Structure
+Skip in quick mode: territories (01b), cross-pollination (02b), the riffing checklist, full validation (04a to 04e), and artifacts unless the user asks for them.
 
-The 13 steps organize into 4 loops that can cycle:
+## Step routing table
+
+| # | Step | File | Purpose | Gate |
+|---|---|---|---|---|
+| 1 | 00 | `steps/step-00-session-start.md` | Detect existing session, offer resume or fresh start | Auto / [C] |
+| 2 | 01a | `steps/step-01a-brief.md` | Brand brief intake | [C] |
+| 3 | 01b | `steps/step-01b-territories.md` | Naming territories, competitive whitespace, session mode | [C] |
+| 4 | 02a | `steps/step-02a-generation.md` | Divergent generation across categories | Checkpoint menu |
+| 5 | 02b | `steps/step-02b-cross-pollination.md` | Cross-model ideation | [C] |
+| 6 | 02c | `steps/step-02c-riffing.md` | Creative riffing and directional expansion | Checkpoint menu |
+| 7 | 03a | `steps/step-03a-shortlisting.md` | Convergent shortlisting and riffing checklist | Checkpoint menus |
+| 8 | 04a | `steps/step-04a-screening.md` | Competitive screening via web search | [C] |
+| 9 | 04b | `steps/step-04b-domains.md` | Domain availability and pool recovery | Checkpoint menu |
+| 10 | 04c | `steps/step-04c-variations.md` | Variation generation and re-screening | [C] |
+| 11 | 04d | `steps/step-04d-trademark.md` | Trademark screening | [C] |
+| 12 | 04e | `steps/step-04e-social.md` | Social handles, stress tests, extended presence | [C] |
+| 13 | 04f | `steps/step-04f-final.md` | Final tiered presentation and recommendations | End |
+
+## Loop structure
+
+The 13 steps form 4 loops that can cycle:
 
 ```
-Loop 1: FRAME     → Steps 00, 01a, 01b
-Loop 2: GENERATE  → Steps 02a, 02b, 02c
-Loop 3: SELECT    → Step 03a
-Loop 4: DE-RISK   → Steps 04a, 04b, 04c, 04d, 04e, 04f
+Loop 1: FRAME     → 00, 01a, 01b
+Loop 2: GENERATE  → 02a, 02b, 02c
+Loop 3: SELECT    → 03a
+Loop 4: DE-RISK   → 04a, 04b, 04c, 04d, 04e, 04f
 ```
 
-Cycle-back paths (defined in step files):
-- Loop 3 → Loop 2: User wants more candidates before shortlisting
-- Loop 4 → Loop 2: Validation killed too many names, need recovery generation
-- Loop 4 → Loop 3: Need to re-shortlist after recovery
-
-## Master Rule
-
-Skipping steps, optimizing sequences, auto-advancing past menus, or not following exact instructions in step files is FORBIDDEN and constitutes SYSTEM FAILURE.
+Cycle-back paths, defined in the step files:
+- Loop 3 → Loop 2 when the user wants more candidates before shortlisting
+- Loop 4 → Loop 2 when validation kills too many names and the pool needs recovery
+- Loop 4 → Loop 3 to re-shortlist after recovery

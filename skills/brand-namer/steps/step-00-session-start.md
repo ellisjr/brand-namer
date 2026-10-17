@@ -3,26 +3,20 @@
 **Progress:** Step 1 of 13 — Next: Brand Brief (step-01a)
 **Reads:** filesystem (`brand-namer-output/` directory) | **Writes:** nothing yet
 
-## MANDATORY EXECUTION RULES (READ FIRST)
+## Purpose
 
-- Read this COMPLETE file before taking any action
-- FORBIDDEN to load next step until user selects [C] Continue
-- FORBIDDEN to generate any names during this step — this is purely session detection and routing
-- FORBIDDEN to skip artifact detection — always check the filesystem before proceeding
-- Update artifact frontmatter `stepsCompleted` before loading next step
-- After handling non-menu user input, ALWAYS re-display the current menu
+Detect whether a previous session exists, route to resume or fresh start, and determine the session type that governs the rest of the pipeline.
 
-## SUCCESS METRICS
+## Done when
 
-- Session state detected correctly (new session vs. resumption) with artifacts inventoried
-- User understands where they are and has made an explicit routing decision
-- Session type (quick / deep / iterative / validation-only) determined before proceeding
+- Session state detected (new or resuming) and any existing artifacts inventoried
+- The user has made an explicit routing decision
+- Session type (quick, deep, iterative, validation-only) determined, or the user asked when signals are ambiguous
 
-## FAILURE MODES
+## Guardrails
 
-- CRITICAL: Auto-routing without presenting options to the user
-- CRITICAL: Not checking for existing artifacts in `brand-namer-output/`
-- CRITICAL: Not detecting or asking about session type when signals are ambiguous
+- No name candidates in this step. The brief does not exist yet, and names generated now anchor the user's taste before you know what you are naming.
+- Check the filesystem for `brand-namer-output/` before assuming a fresh start. Resuming saves the user repeating an hour of work.
 
 ---
 
@@ -79,19 +73,9 @@ If no context yet: Welcome the user and route to step-01a (Brand Brief).
 
 ### 3. Detect session type
 
-The session type determines which stages are mandatory vs. optional throughout the pipeline. Infer the type from the user's signals:
+The session type decides which steps run; the definitions, signals, and quick-mode fast path are in `workflow.md` under "Session types and routing". Infer it from the user's signals: a detailed brief or "get this right" means deep; "just brainstorm some ideas" or a sparse brief means quick; "I already have names, just check them" means validation only; a returning user with artifacts on disk means iterative. Users rarely use this vocabulary, so read intent from context.
 
-- **Quick session** ("I need 5 name ideas in 10 minutes," "just a quick brainstorm"): Use the Quick Mode Fast Path. Skip most ceremony. Minimal brief (3 questions), 30-40 names gallery-mode, one reaction round, done.
-
-- **Deep session** ("I want to really get this right," "this is for our Series A rebrand," detailed brief with lots of context): Run the full pipeline including cross-model ideation and creative riffing. Riffing checklist is **mandatory** before entering validation. Multiple ideation rounds. Thorough validation. All 5 artifacts.
-
-- **Iterative session** ("Let me think about these overnight," "I'll come back to this"): Save artifacts after generation/riffing. When the user returns, read frontmatter to resume at the correct step.
-
-- **Validation only** ("I already have names, just check them," "can you evaluate these options?"): User provides names → write directly to `02-shortlist.md` → run Loop 4 (de-risk/validation). Riffing checklist is **skippable** (the user arrived with names they've already developed).
-
-The user may not use loop/stage terminology. Read intent from context and route to the relevant step.
-
-**If session type is ambiguous** — the user hasn't given enough signal to determine quick vs. deep — ask directly:
+If the signals are genuinely ambiguous, ask:
 
 > "Would you like a **quick brainstorm** (I'll generate a batch of names for you to react to — about 10-15 minutes) or a **thorough naming engagement** (we'll define territories, generate across categories, riff on favorites, and validate the finalists — about 45-60 minutes)?"
 
@@ -121,14 +105,10 @@ If the user prefers just the final answer with no intermediate artifacts, note t
 
 **My recommendation:** Let's get started with the brief. If you have a pitch deck, PRD, or competitive analysis, upload it now — it dramatically improves naming quality.
 
-**HALT — wait for user selection before proceeding.**
+Wait for the user's selection before proceeding.
 
-IF user provides non-menu input: Respond helpfully, then re-display this menu.
+IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [R]: Read the most advanced artifact's frontmatter, confirm the resume point with the user, then read fully and follow the detected step file.
 IF [F]: Move existing `brand-namer-output/` to `brand-namer-output-archived-[timestamp]/`, create a fresh `brand-namer-output/` directory, then read fully and follow: `./step-01a-brief.md`
 IF [V]: Display a summary of each artifact's contents (read frontmatter + first section of each), then re-display the resume menu ([R] / [F]).
 IF [C]: Read fully and follow: `./step-01a-brief.md`
-
-## Master Rule
-
-Skipping steps, optimizing sequences, auto-advancing past menus, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.

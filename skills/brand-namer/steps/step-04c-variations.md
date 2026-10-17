@@ -3,27 +3,19 @@
 **Progress:** Step 10 of 13 — Next: Trademark Screening (step-04d)
 **Reads:** `brand-namer-output/03-validation.md` | **Writes:** `brand-namer-output/03-validation.md` (update)
 
-## MANDATORY EXECUTION RULES (READ FIRST)
+## Purpose
 
-- Read this COMPLETE file before taking any action
-- FORBIDDEN to load next step until user selects [C] Continue
-- FORBIDDEN to generate variations without re-screening them through 4a+4b checks
-- FORBIDDEN to skip re-screening — every variation must be validated before joining the pool
-- Update artifact frontmatter `stepsCompleted` before loading next step
-- After handling non-menu user input, ALWAYS re-display the current menu
+Generate variations for names that are strong but whose preferred domain is taken, and re-screen them.
 
-## SUCCESS METRICS
+## Done when
 
-- 3-5 variations generated for names needing domain workarounds
-- Phonetic and emotional qualities of original names preserved in variations
-- All variations re-screened through 4a (competitive) + 4b (domain) checks
-- SCAMPER applied for creative variations beyond simple prefix/suffix patterns
+- 3-5 variations per name that needs them, preserving the original's phonetic and emotional qualities
+- SCAMPER applied beyond simple prefix and suffix patterns
+- Every variation re-screened through the competitive and domain checks
 
-## FAILURE MODES
+## Guardrails
 
-- CRITICAL: Generating variations without re-screening them through competitive and domain checks
-- CRITICAL: Only generating prefix/suffix patterns without applying creative techniques like SCAMPER
-- CRITICAL: Losing the phonetic or emotional qualities that made the original name strong
+- Re-screen every variation before it joins the pool. A variation that skips validation is a found word waiting to die later.
 
 ---
 
@@ -60,11 +52,7 @@ This can be done in a lighter pass since the root names have already been screen
 
 **My recommendation:** Review the variations table carefully before continuing. Strong variations often outperform the originals — a creative respelling or compound extension can be more ownable and distinctive than the root name.
 
-**HALT — wait for user selection before proceeding.**
+Wait for the user's selection before proceeding.
 
-IF user provides non-menu input: Respond helpfully, then re-display this menu.
+IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [C]: Update `03-validation.md` frontmatter `stepsCompleted`, load next step (`steps/step-04d-trademark.md`).
-
-## Master Rule
-
-Skipping steps, optimizing sequences, auto-advancing past menus, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.
