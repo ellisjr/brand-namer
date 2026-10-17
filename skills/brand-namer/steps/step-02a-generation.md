@@ -33,23 +33,70 @@ Let the user decide when they have enough. Some sessions need 40 names, others n
 
 **Focused Mode:** Present category-by-category as generated. Still aim for breadth — at least 50 candidates internally across all categories before the user starts cutting.
 
-### Tree of Thought: Generation branching
+### Tree of Thought: three independent teams
 
-For each naming category you attempt, don't generate a single linear list. Instead, explore multiple creative branches and expand the most productive:
+One model generating "three branches" is still one mind with one set of habits; the branches share vocabulary and drift toward the same neighborhood. Genuine divergence needs genuinely separate contexts. In a deep or focused session, when you can spawn subagents, run the first generation round as **three isolated teams working the same brief**, following Lexicon Branding's three-team method:
 
-1. **Branch:** For each category, generate 3 parallel mini-batches of 3-5 names, each from a deliberately different semantic domain or creative approach. For example, when generating Found Words:
-   - Branch A: mine textile/craft vocabulary (Weft, Nap, Selvage)
-   - Branch B: mine geological/material vocabulary (Basalt, Silt, Loam)
-   - Branch C: mine governance/measurement vocabulary (Assay, Gauge, Triage)
-2. **Evaluate internally:** Which branch produced the most distinctive, on-brief candidates? Which branch converged on the same energy as names already in the pool? Which branch opened genuinely new territory?
-3. **Expand the winners:** Go deeper on the 1-2 strongest branches (generate 5-10 more names in that semantic domain). Abandon the weakest branch — don't show the user dead-end work.
-4. **Present all survivors:** Show the user everything from the winning branches. Note which semantic domains were most productive: "Geological vocabulary was the richest vein for this brief."
+| Team | Stance | Why it widens the space |
+|---|---|---|
+| **On-brief** | Name this brand as its best self | The straightforward read of the brief |
+| **Adjacent category** | Name this as a brand in a more desirable neighboring category (spirits for a sauce, fragrance for skincare, outdoor gear for apparel, a design studio for a dev tool), then keep every name whose codes transfer | Borrows the vocabulary of a category with richer naming culture |
+| **Far-off domain** | Name this as if it were three unrelated products in turn (a perfume house, a climbing-gear company, a jazz label; pick frames far from the brief), then keep every name whose energy transfers | Produces the unexpected names, and the least overlap with the other teams |
 
-This branching approach **structurally defeats convergence** — the core problem the skill is designed to solve. Instead of generating 10 names that all come from the same mental neighborhood, you explore 3 neighborhoods simultaneously and go deep on the one with the most untapped potential.
+Distance is what buys divergence. In testing on a consumer brief, a "name a rival" team reproduced about a quarter of the on-brief team's names, while the far-off-domain team shared almost none with either. Use the rival stance instead of the adjacent-category one for B2B briefs, where breaking the category's naming conventions matters more than borrowing a neighbor's.
 
-**When to skip branching:** In Quick Mode, skip this — just generate a single strong batch per category. Branching is for deep sessions where generation quality matters more than speed.
+Spawn all three in one turn (the Agent tool, default model, `effort: "high"`), so they finish together. Each team reads the reference files itself and returns a table. Give each the same brief with only the stance line changed:
 
-**Branch in every deep or focused session.** A linear list of 10 names in a category means you explored one semantic neighborhood and stopped. Three branches of 3-5 names each, with the weakest pruned and the strongest expanded, means you explored three neighborhoods and went deep on the richest one. The output looks similar but the quality is structurally different. If you catch yourself generating a flat list, restructure into branches before presenting.
+```
+You are one of three independent naming teams working the same brief. You cannot
+see the other teams' work, and that independence is the point: do not guess at or
+avoid what they might produce.
+
+YOUR STANCE: [On-brief | Adjacent category: name this as a <neighboring category>
+brand | Far-off domain: name this as if it were a <frame 1>, then a <frame 2>, then
+a <frame 3>]. [One sentence on what to keep, from the table.]
+
+THE BRIEF: [body of 00-brief.md: naming target, one-liner, audience, personality,
+archetype, feeling spectrum, seed words, constraints, competitors]
+TERRITORIES: [each with its emotional promise and semantic field]
+BRIEF TYPE: [consumer: no institutional -works/-craft/-wise/-ware compounds |
+B2B: for every found word also give 2-3 compound or coined variants]
+
+First read these two files completely, and use their categories, techniques,
+phonesthetics, and anti-patterns:
+  <skill directory>/references/naming-categories.md
+  <skill directory>/references/[consumer-naming.md | enterprise-naming.md]
+
+Generate 40-60 candidate names:
+- at least 6 of the 11 categories, at least 5 names in each
+- spread across all the territories
+- at least 3 structural types (found word, compound, coined, blend, respelling,
+  foreign-root)
+- do not self-censor; include names that feel weird, risky, or too much
+- avoid the anti-patterns in the reference (verb+ly, tech prefix+suffix, forced
+  mythology, Latin pharma mashups, the -a suffix)
+- flag conflicts you are confident of with ⚠️ and uncertain ones with ⚠️?; never
+  invent a conflict
+- do not include any of these existing candidates: [list, or "none yet"]
+
+Return only a markdown table, one row per name:
+| Name | Category | Territory | Approach (technique or vocabulary mined) | Rationale (12 words max) | Flag |
+followed by one line: "Richest vein: <the domain or category that gave the most
+distinct on-brief names>".
+```
+
+When the teams return:
+
+1. **Merge and deduplicate.** Record each name's `source` (team-onbrief, team-adjacent, team-faroff). A name two or three teams produced independently is a convergence signal: it is probably strong and probably obvious, so flag it as such rather than dropping the duplicates silently. Expect roughly 150 unique names from three teams of 50-60.
+2. **Compare the veins.** The three "Richest vein" lines tell you which semantic domains are productive for this brief. Note them for the user and for later rounds.
+3. **Present through the gallery** exactly as below. The user still sees everything, in numbered batches, and reacts by category.
+4. **Second wave on demand.** When the user marks categories or territories Hot, spawn one or two targeted agents for those, or expand them yourself in context if the gaps are small.
+
+**Fallback, when you cannot spawn subagents:** branch in context. For each category, generate three mini-batches of 3-5 names from deliberately different semantic domains (for Found Words: textile vocabulary, then geological, then governance), judge which opened new territory, expand the one or two strongest by 5-10 names, and present everything from the surviving branches. A flat list of 10 names in a category means you explored one neighborhood and stopped.
+
+**Cost, so you can say it to the user before spawning:** each team reads about 1,400 lines of reference and thinks at high effort, so a team runs to roughly 125,000 tokens and five minutes, and the three run in parallel. That one round costs about as much as an entire in-context session through shortlisting did before this method existed. It is the right trade in a deep session, where this round is the whole point, and the wrong one in a quick brainstorm. If the user is cost-sensitive, `effort: "medium"` is the lever to pull first; keep three teams rather than dropping to two, since the far-off team is where the divergence comes from.
+
+**Quick mode:** skip branching and generate a single strong batch per category.
 
 ### Rules for this stage
 

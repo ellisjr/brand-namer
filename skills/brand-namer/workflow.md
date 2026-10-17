@@ -10,6 +10,17 @@ SKILL.md holds the global context: role, philosophy, reference loading, artifact
 4. Before loading the next step, save the current artifact and update its `stepsCompleted` frontmatter. Artifacts are the session's memory and the only way a later session can resume.
 5. When a checkpoint lets the user loop back to an earlier step, load that step directly and skip the ones in between.
 
+## Effort and subagents
+
+Creative work in this skill rewards depth; validation does not. When your harness lets you set effort, run deep sessions at high effort, and when you spawn subagents, match the effort to the job:
+
+| Work | Subagent model and effort | Why |
+|---|---|---|
+| Generation teams (step 02a), fresh-context cross-pollination (02b) | Default model, `effort: "high"` | Breadth and distinctiveness come from thinking longer |
+| Competitive screening (04a), handle checks (04e) | `model: "haiku"`, `effort: "low"` | Factual lookups; speed and cost matter, reasoning does not |
+
+Domain checks use the bundled script (`scripts/check-domains.sh`), not a model.
+
 ## Core rules and why they exist
 
 - **Present everything, cut nothing.** Every candidate you generate reaches the user eventually, in numbered batches of at most 15. Pre-filtering substitutes your taste for theirs, and the names you would have cut are often the ones they fall for.

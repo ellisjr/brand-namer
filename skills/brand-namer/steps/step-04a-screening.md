@@ -31,13 +31,14 @@ Catch the conflicts training data missed: recent companies, small competitors, n
 Validation is factual and parallelizable. It does not need the creative reasoning generation requires, so when screening 5 or more names, spawn one subagent per name in a single turn (the Agent tool, `model: "haiku"`, `effort: "low"`) rather than running sequential searches yourself. Each subagent gets a self-contained brief:
 
 ```
-Search for "[name]" as a company, brand, or software product in [industry].
-Classify: Clear (no conflicts) / Flagged (something exists, different industry) / Taken (active conflict in a related space).
-Check domain registration via WHOIS for [name].com, [name].ai, [name].co, [name].io, using the server map and parsing rules below.
-Return: name, competitive_status, conflicts_found (with URLs), domain_registration_per_tld.
+Search the web for "[name]" as a company, brand, or software product, and for
+"[name]" together with "[industry]". Use the same two queries for every name.
+Classify: Clear (no conflicts) / Flagged (something exists, different industry or
+tiny or defunct) / Taken (active company or product with this name in a related space).
+Return: name, status, conflicts_found (each with a URL and one line on what it is).
 ```
 
-Include the WHOIS server map and parsing rules from step-04b in the brief, since the subagent cannot see this skill. Twenty sequential searches become two or three minutes of parallel work; you then consolidate the results into the screening table.
+Keep domain checks out of the subagent briefs. Run them yourself in one call to the bundled script (`bash <skill directory>/scripts/check-domains.sh name1 name2 ...`, see step-04b), which checks every name across the standard TLDs in a couple of seconds. Twenty sequential searches become two or three minutes of parallel work; you then consolidate the subagent results and the domain grid into the screening table.
 
 #### Validation tools and limitations
 

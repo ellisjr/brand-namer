@@ -33,67 +33,31 @@ For each surviving name, check domain registration across key TLDs:
 - `.io` (developer/tech standard)
 - Additional ccTLDs if the brief involves domain hacks (`.ly`, `.is`, `.us`, `.me`, `.al`, `.it`, `.to`)
 
-#### Method: WHOIS via CLI (primary)
+#### Method: the bundled script
 
-Use `whois -h <server> <domain>` via bash to get definitive registration status. This is pre-installed on macOS, requires no API keys, and catches registered-but-parked domains that web searches miss.
-
-**WHOIS server map — use the `-h` flag to target the correct server:**
-
-| TLD | WHOIS Server | Command example |
-|---|---|---|
-| `.com`, `.net` | `whois.verisign-grs.com` | `whois -h whois.verisign-grs.com candidatename.com` |
-| `.org` | `whois.pir.org` | `whois -h whois.pir.org candidatename.org` |
-| `.io` | `whois.nic.io` | `whois -h whois.nic.io candidatename.io` |
-| `.ai` | `whois.nic.ai` | `whois -h whois.nic.ai candidatename.ai` |
-| `.co` | `whois.nic.co` | `whois -h whois.nic.co candidatename.co` |
-| `.ly` | `whois.nic.ly` | `whois -h whois.nic.ly candidatename.ly` |
-| `.is` | `whois.isnic.is` | `whois -h whois.isnic.is candidatename.is` |
-| `.me` | `whois.nic.me` | `whois -h whois.nic.me candidatename.me` |
-| `.so` | `whois.nic.so` | `whois -h whois.nic.so candidatename.so` |
-| `.tv` | `whois.nic.tv` | `whois -h whois.nic.tv candidatename.tv` |
-| `.sh` | `whois.nic.sh` | `whois -h whois.nic.sh candidatename.sh` |
-| `.gg` | `whois.gg` | `whois -h whois.gg candidatename.gg` |
-| `.xyz` | `whois.nic.xyz` | `whois -h whois.nic.xyz candidatename.xyz` |
-| `.app`, `.dev` | **No WHOIS** — use RDAP | See RDAP fallback below |
-
-**Parsing WHOIS results:** If the output contains any of these strings (case-insensitive), the domain is **available**: `"No match"`, `"NOT FOUND"`, `"No entries found"`, `"does not exist"`, `"No Object Found"`, `"Domain not found"`. Any other response with registration data means the domain is **registered**.
-
-**Performance:** Run checks in parallel using bash background processes. 20-50 domains can be checked in under 2 seconds. Example for batch checking:
+Run the skill's domain checker, which does registry WHOIS with the right server per TLD, falls back to RDAP, runs all lookups in parallel, and prints a markdown grid you can present directly:
 
 ```bash
-for domain in name1.com name1.ai name2.com name2.ai; do
-  (whois -h whois.verisign-grs.com "$domain" 2>/dev/null | grep -qi "no match\|not found\|no entries\|does not exist\|no object" && echo "$domain: AVAILABLE" || echo "$domain: REGISTERED") &
-done
-wait
+bash <skill directory>/scripts/check-domains.sh Brine "Slow Riot" Nettle Loam
+bash <skill directory>/scripts/check-domains.sh -t com,ai,co,io,ly,is Supply Genius   # custom TLDs
+bash <skill directory>/scripts/check-domains.sh -r Brine Nettle                        # raw TSV
 ```
 
-Adjust the WHOIS server per TLD. For mixed-TLD batches, route each domain to the correct server.
+`<skill directory>` is the base directory reported when this skill loaded. Names are normalized to domain labels (lowercase, spaces and punctuation removed). Twenty names across four TLDs return in about two seconds. The script needs `whois`, `curl`, and `perl`, all present on macOS and most Linux, and no API keys.
 
-#### Fallback: RDAP (for .app, .dev, or when WHOIS fails)
+Status values and what to do with them:
 
-RDAP is the modern replacement for WHOIS. It returns JSON over HTTP — HTTP 404 means available, HTTP 200 means registered.
-
-```bash
-curl -s -o /dev/null -w "%{http_code}" "https://rdap.org/domain/candidatename.app"
-```
-
-The `rdap.org` bootstrap service auto-routes to the correct registry. For direct endpoints:
-- `.app`, `.dev` → `https://pubapi.registry.google/rdap/domain/{name}`
-- `.com` → `https://rdap.verisign.com/com/v1/domain/{name}`
-- `.ly` → `https://rdap.nic.ly/domain/{name}`
-- `.is` → `https://rdap.isnic.is/rdap/domain/{name}`
-
-#### Categorize results
-
-| Status | What it means | How detected |
+| Status | What it means | Next step |
 |---|---|---|
-| **Available** | Domain is not registered | WHOIS returns "no match" / RDAP returns 404 |
-| **Registered** | Domain is registered (may be parked, for sale, or active) | WHOIS returns registration data / RDAP returns 200 |
-| **Active** | Domain has a live website | Supplementary web search confirms active use |
+| **✅ available** | Not registered: WHOIS said no match, or the TLD's RDAP registry returned 404 | Candidate for the user to register |
+| **❌ registered** | Registered, which may mean parked, for sale, or active | Optionally web-search `site:[name].[tld]` to tell a live site from a parked one, since a parked domain may be purchasable |
+| **❓ unknown** | No authoritative answer: timeout, rate limit, or a TLD with no WHOIS or RDAP route | Re-run, or check manually. Never treat unknown as available |
 
-**Important:** "Registered" does NOT mean "has a website." Many registered domains are parked, for sale, or have no DNS configured. If a domain is registered, optionally do a supplementary web search (`site:[name].[tld]`) to determine if it has an active website — this helps the user assess whether purchase might be possible.
+Rate limits are the usual cause of unknowns on a large batch; re-running the unknowns a minute later normally resolves them.
 
-Present results as a quick-reference table.
+**If the script cannot run** (no shell, or a locked-down environment), do the lookups by hand with the same logic: `whois -h <registry server> <domain>` using the server map in the script (`whois.verisign-grs.com` for `.com`, `whois.nic.io`, `whois.nic.ai`, `whois.registry.co`, `whois.nic.ly`, `whois.isnic.is`), reading "no match / not found / no entries" as available and a record with `Domain Name:` or `Registrar:` as registered. For `.app` and `.dev`, which have no public WHOIS, use RDAP: `curl -sL -o /dev/null -w '%{http_code}' https://rdap.org/domain/<domain>`, where 404 is available and 200 is registered. Only trust a 404 when the request was redirected to a registry; a 404 from rdap.org itself means no route, not availability.
+
+Present the grid to the user as returned, with any notes on parked-but-purchasable domains.
 
 ### Validation log
 

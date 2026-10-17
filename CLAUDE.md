@@ -35,6 +35,8 @@ skills/brand-namer/
     enterprise-naming.md            — B2B techniques, evaluation/testing, compliance (enterprise briefs only)
     brand-psychology.md             — Aaker dimensions, archetypes, cognitive science, SMILE/SCRATCH
     elicitation-techniques.md       — 10 deepening techniques (SCAMPER, Inversion, Pre-Mortem, etc.)
+  scripts/
+    check-domains.sh                — WHOIS/RDAP domain availability checker; prints a markdown grid (steps 04a-04c)
 README.md                           — Overview, installation, usage examples
 CLAUDE.md                           — This file (project conventions)
 ```
@@ -54,6 +56,8 @@ CLAUDE.md                           — This file (project conventions)
 - **Plugin structure:** `.claude-plugin/plugin.json` is the manifest. Skill files live under `skills/brand-namer/`. Relative paths within skill files (e.g., `./workflow.md`, `./steps/step-01a-brief.md`) resolve from the skill directory.
 - When editing step files, preserve the template structure: Purpose, Done when, Guardrails, Execution, Menu (with recommendation and IF handlers). Write instructions as plain statements with their reasons; the skill targets Opus 5.5 and later, which follow explained instructions better than ALL-CAPS emphasis. Add a guardrail only for a failure that reproduces, and attach its why.
 - Technique variety is tracked as free text (`approaches_tried` / `approaches_worth_trying` in `01-candidates.md` frontmatter), not as a canonical-name checklist. Gates are about the pool (count, categories, structural mix, shortlist size, riffing checklist), not about technique counts.
+- **Subagents do the parallel work.** Step 02a runs the first generation round as three isolated subagents (on-brief, competitor, unrelated-domain stances) at high effort; step 04a screens names with low-effort Haiku subagents; domain checks run through `scripts/check-domains.sh`, never through a model. Effort guidance lives in workflow.md under "Effort and subagents".
+- `scripts/check-domains.sh` is deterministic code with a test-by-hand contract: a known-registered name (google) must come back registered and a nonsense label available on every supported TLD, and an unroutable TLD must come back unknown, never available. Re-run that check after editing the server map or the parsing patterns.
 - When editing SKILL.md, preserve the loop structure references (Loops 1-4) and the Artifact Chain section.
 - Reference files are self-contained reference material — edit them independently.
 - The `description` field in SKILL.md frontmatter controls when Claude Code triggers the skill — keep it comprehensive.

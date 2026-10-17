@@ -170,9 +170,9 @@ Understand what you're naming. Define the strategic space before generating anyt
 Produce candidates across many naming categories. Breadth before depth.
 
 - **Divergent generation** across 11 naming categories, with ownability-first compound generation running in parallel for B2B briefs (30% compound minimum before gallery presentation) and suppressed for consumer briefs
-- **Tree of Thought branching** in deep and focused sessions. Every category generates 3 parallel branches from different semantic domains, evaluates internally, expands the strongest, and prunes the weakest. Prevents the convergence trap where all names come from the same mental neighborhood.
+- **Three independent generation teams** in deep and focused sessions. The first round runs as three isolated subagents in the spirit of Lexicon's three-team method: one names the brand on-brief, one names it as a brand in a more desirable adjacent category and keeps what transfers, one names it as three far-off products (a perfume house, a climbing-gear company, a jazz label) and keeps what transfers. Separate contexts produce genuinely different vocabularies, which one model pretending to branch cannot: in a prototype on a hot-sauce brief, three teams returned 158 unique names, 91% of them absent from a 248-name in-context run of the same brief, and the far-off team overlapped only 3-7% with the others. Names two teams produce independently are flagged as a convergence signal. Falls back to in-context branching when subagents are unavailable.
 - **Hard generation gates** — minimum 60 candidates, 6+ categories, 3+ structural types. The skill holds these before shortlisting; the user can waive them after hearing the consequence.
-- **Cross-pollination** — generates paste-ready prompts for ChatGPT/Gemini/Grok, merges results back into the candidate pool. Offered at least once per deep session (user can decline).
+- **Cross-pollination** — generates paste-ready prompts for ChatGPT/Gemini/Grok, merges results back into the candidate pool. Offered at least once per deep session (user can decline). When no other model is to hand, offers to run the prompt through any multi-model tool in the session, or in a fresh Claude context with a different stance.
 - **Creative riffing** with labeled techniques — the user sees WHY each name was generated. Every riff carries a specific technique tag ("language shift: Latin", not just "riff"). Riff counts verify 10+ new unique riffs per direction (duplicates of existing candidates don't count).
 - **Untried approaches surfaced at each checkpoint** — the skill tracks which creative moves it has made in free-text frontmatter and names the one or two untried approaches most likely to open new territory for this brief, rather than walking a fixed checklist.
 - **User idea capture** — after each batch and at every checkpoint menu, the user is invited to contribute their own names or fragments sparked by the generated candidates. User-contributed names enter the same pipeline (riffing, validation) as AI-generated ones.
@@ -193,7 +193,7 @@ User-directed convergence. The user makes all cuts.
 Validate what survives. Riff on what doesn't.
 
 - **Competitive screening** — web search + technical registries (GitHub, npm, PyPI, MCP), run as parallel low-effort Haiku subagents when screening 5+ names
-- **Domain availability** — definitive registration checks via WHOIS CLI (14-TLD server map, pre-installed on macOS, zero setup) with RDAP fallback for .app/.dev. Catches registered-but-parked domains that web searches miss. Parallel batch checking for 20-50 domains in under 2 seconds. Three-tier status: Available / Registered (parked/for-sale) / Active (live website).
+- **Domain availability** — one call to the bundled `scripts/check-domains.sh`: registry WHOIS with the right server per TLD (16 TLDs mapped), RDAP fallback for .app/.dev and anything unmapped, every lookup in parallel, and a markdown grid back in about a second. Catches registered-but-parked domains that web searches miss. Reports Available / Registered / Unknown, and never reads an ambiguous answer as available.
 - **Batched death trigger** — when names die, present them in one table and offer riffing options
 - **Pool recovery** — killed names become creative seeds, not dead ends (max 3 recovery rounds)
 - **Trademark screening, social handles, stress tests** — tiered by available tooling
@@ -498,6 +498,8 @@ brand-namer/
 │       ├── enterprise-naming.md           (427 lines — B2B techniques, evaluation, compliance)
 │       ├── brand-psychology.md            (431 lines — archetypes, personality, cognitive science)
 │       └── elicitation-techniques.md      (324 lines — 10 deepening techniques)
+│   └── scripts/
+│       └── check-domains.sh               (WHOIS/RDAP domain availability grid)
 ├── README.md                               (this file)
 └── CLAUDE.md                               (project conventions)
 ```

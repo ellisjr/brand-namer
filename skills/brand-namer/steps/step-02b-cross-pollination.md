@@ -43,6 +43,13 @@ When the user says yes, generate a **self-contained prompt** that includes:
 
 Format the prompt so it works as a direct paste — no setup, no preamble needed from the user.
 
+### When the user has no other model to hand
+
+Two fallbacks, in order of value:
+
+1. **A tool in this session that reaches another model.** If an MCP server or CLI that can run a prompt on another provider's model is available (a sidecar or multi-model tool, for example), offer to run the cross-pollination prompt through it directly and merge the results, so the user does not have to copy and paste. This is still true cross-model ideation.
+2. **A fresh Claude context.** If nothing reaches another model, offer to run the same prompt in a subagent (the Agent tool, `effort: "high"`), with the stance changed to something the main session has not taken: name it as a rival would, or as if it were a product in a far-off category. A fresh context with a different stance breaks some of the session's accumulated habits, though not the model's own biases, so say plainly that this is weaker than a different model and worth doing only if the pool looks homogeneous. Merge the results through the paste-in pipeline below with the source recorded as `claude-fresh-context`.
+
 ### When to offer cross-pollination
 
 Include cross-pollination as an option at these checkpoints:
