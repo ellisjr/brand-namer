@@ -568,16 +568,19 @@ Tested across 6 diverse briefs (3 consumer: hot sauce, streetwear, men's skincar
 | **Iter-2** (first full eval) | 83.8% (109/130) | Added baselines + stricter assertions. Exposed technique coverage gaps + eval design issues |
 | **Iter-3** (technique toolkit) | 93.3% (126/135) | Added technique toolkit with [A] all option. Legaltech: 52% → 100%. Streetwear: 85% → 95% |
 | **Iter-4** (naming precision) | 91.2% (124/136) | Fixed compound leakage, conflict flagging, visible enterprise output. Remaining failures are technique naming precision |
+| **Iter-5** (1.1 rework, Opus executors) | 84.9% (135/159) vs 1.0.0 at 94.3% | Register trim, three-team generation, and removal of the technique toolkit. Lost the blind shortlist comparison 0/6 to 1.0.0; the gap was deliverable structure the toolkit had forced |
+| **Iter-6** (shortlist contract + must-runs) | 95.6% (152/159) vs 1.0.0 at 94.3% | Restored the shortlist deliverable shape and six must-run moves per brief type as positive contracts. Won the blind comparison 6/6 (mean 8.67 vs 7.07); content 4.20 vs 4.03, structure 4.46 vs 3.02 |
 
-**What the skill produces** (average across iter-3/4 with-skill runs):
-- ~230 unique candidate names per session
-- 9-11 of 11 naming categories attempted
-- 30-44 techniques applied per session
-- 60-70 riffs across 6-8 directions with specific technique labels
-- 15-30 shortlisted names with evaluation scoring
+From iteration 5 the eval runs on Opus at high effort for both arms, with a 1.0.0 snapshot as the baseline, Sonnet graders, and Opus blind comparators judging each pair of shortlists under a fresh random A/B mapping. The blind comparison is the quality measure; assertions check process.
+
+**What the skill produces** (iteration-6 with-skill runs):
+- 360-555 unique candidate names per deep session, from three isolated generation teams, a second wave on the user's Hot directions, the must-run passes, riffing, and the riffing checklist
+- 8-10 of 11 naming categories attempted
+- 60-70 riffs across 5-6 directions with specific technique labels
+- A 20-direction shortlist in the deliverable shape: ranked top five with case and risk, definition and reason per name, variants collapsed, SMILE/SCRATCH scorecard, pre-mortem, per-brief-type evaluations
 - Full YAML-frontmatter artifacts for session resumption
 
-**Baseline comparison** (no skill): ~111 names in ~142s using ~16k tokens. With skill: ~230 names in ~750s using ~140k tokens. The skill adds 2x name volume but the real value is methodology depth — technique diversity, structural tracking, domain-specific evaluation, consumer/enterprise pathway selection, and artifacts.
+**Cost:** a deep session through shortlisting runs about 1.0-1.1M tokens and 22-29 minutes on Opus, roughly a third in the main session and the rest in the generation teams and second wave. The skill optimizes for thoroughness and divergence, not speed; economize only on request, by lowering effort rather than dropping a team.
 
 ## License
 
