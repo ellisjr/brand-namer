@@ -38,11 +38,13 @@ The same prompt serves all three routes below, so build it once and save it to `
 
    ```
    Return only a markdown table, one row per name, no preamble and no code fence:
-   | Name | Category | Territory | Approach (technique or vocabulary mined) | Rationale (12 words max) |
+   | Name | Category | Territory | Approach (technique or vocabulary mined) | Rationale (12 words max) | Flag |
    Category is exactly one of: Evocative, Coined, Blend, Metaphorical, Descriptive,
    Found Word, Foreign-Root, Acronymic, Compound, Sound-Symbolic, Institutional Compound.
    Angles such as personified, toponym, phrase, numeric, or sensory belong in the
    Approach column, not in Category.
+   Flag names a specific conflict you know of (a company, product or common term in the
+   category) or is left blank.
    Finish with one line: "Richest vein: <the domain or category that gave the most
    distinct on-brief names>".
    ```
@@ -104,7 +106,7 @@ Include cross-pollination as an option at these checkpoints:
 
 Whether the table came back from Codex, from the subagent, or was pasted in by the user, process it the same way:
 
-1. **Parse:** Read the table rows, skipping the header row, the `|---|` separator, any code fence, and any preamble or closing line the model added. Keep Name, Category, Territory, Approach, and Rationale. For a free-text paste-in with no table, fall back to one name per line and ask the user for the model's category labels only if the names are many. Strip bold markers and numbering from names.
+1. **Parse:** Read the table rows, skipping the header row, the `|---|` separator, any code fence, and any preamble or closing line the model added. Keep Name, Category, Territory, Approach, Rationale and Flag. For a free-text paste-in with no table, fall back to one name per line and ask the user for the model's category labels only if the names are many. Strip bold markers and numbering from names.
 2. **Deduplicate:** Check against existing `01-candidates.md`. Flag exact matches as cross-model validation (a name generated independently by two models is a strong signal). Flag near-matches (e.g., "SiftWorks" vs "Sift Works") and let the user choose which form to keep.
 3. **Classify:** Record the source (`codex`, `gemini`, `grok`, `chatgpt`, `claude-fresh-context`). Map any Category outside the eleven names to the nearest one and note the original in Approach. Add a conflict flag where you know one: external models return names unflagged, and the main session knows the competitors and category terms from the brief.
 4. **Present:** Show the new unique names in the standard reaction-batch format from workflow.md, in the same form used for your own candidates, so the user sees exactly what the other model contributed.

@@ -38,7 +38,7 @@ tiny or defunct) / Taken (active company or product with this name in a related 
 Return: name, status, conflicts_found (each with a URL and one line on what it is).
 ```
 
-Keep domain checks out of the subagent briefs. Run them yourself in one call to the bundled script (`bash <skill directory>/scripts/check-domains.sh name1 name2 ...`, see step-04b), which checks every name across the standard TLDs in a couple of seconds. Twenty sequential searches become two or three minutes of parallel work; you then consolidate the subagent results and the domain grid into the screening table.
+Keep domain checks out of the subagent briefs and out of this step: step 04b runs them in one call to the bundled script, which covers every name across the standard TLDs in a couple of seconds. Here, twenty sequential searches become two or three minutes of parallel work, and you consolidate the subagent results into the screening table.
 
 #### Validation tools and limitations
 

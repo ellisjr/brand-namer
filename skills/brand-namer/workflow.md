@@ -31,6 +31,7 @@ Domain checks use the bundled script (`scripts/check-domains.sh`), not a model.
 - **Offer cross-model ideation at least once in a deep session.** Different models have different creative biases, and it is consistently the highest-yield round for consumer briefs. The user can decline.
 - **Load the reference file a step names before generating in that step.** The reference files are where the technique depth lives. Generating from memory produces the averaged output this skill exists to prevent.
 - **Loop-backs return to the caller.** Several handlers send you to an earlier step for one round (03a to 02a, 02b or 02c; 04b, 04d and 04e to generation) and expect you back at the same menu. Before you go, write `return_to: <step and menu>` in the frontmatter of the artifact you are updating (for example `return_to: "03a entry menu"`). The forward handlers in 02a, 02b and 02c check that key before following their default route: when it is set, save, clear it, re-validate only the new names if the caller was a 04 step, and go back to the caller's menu. Without this the session re-enters shortlisting from the top and the user loses their place.
+- **`stepsCompleted` records finished steps.** A step is appended when its continue handler fires, not when its menu appears. If the session ends while a step's menu is showing, leave that step out and write `checkpoint_pending: "<step> <menu>"` in the artifact, so step 00 resumes at that menu instead of re-running the step or skipping it.
 
 ## Handling input that is not a menu choice
 

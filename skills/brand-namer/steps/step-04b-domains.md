@@ -11,7 +11,7 @@ Get definitive domain registration status for every survivor, and recover the po
 
 - All survivors checked on `.com`, `.ai`, `.co`, and `.io`
 - A validation log records which checks each name has passed
-- Pool recovery offered when fewer than about 5 strong candidates remain
+- Pool recovery offered when fewer than about 5 strong candidates remain (strong: clear in 04a and holding an open `.com`, or an open TLD the brief type can carry, such as `.ai` or `.io` for B2B or `.co` for consumer)
 - Recovery capped at 3 rounds, with a decision checkpoint after each
 
 ## Guardrails
@@ -79,7 +79,7 @@ If the user wants more: loop back to Loop 2 (riffing on taken seeds or fresh gen
 
 ### Pool recovery checkpoint
 
-After the domain check, assess the surviving pool. If validation (4a-4b) has reduced the pool below ~5 strong candidates, or if the user's favorites were disproportionately killed, proactively offer to resurrect earlier names:
+After the domain check, assess the surviving pool. If validation (4a-4b) has reduced the pool below about 5 strong candidates (clear in 04a with an open `.com`, or an open TLD the brief type can carry: `.ai` or `.io` for B2B, `.co` for consumer), or if the user's favorites were disproportionately killed, proactively offer to resurrect earlier names:
 
 "The validation pipeline was aggressive — we're down to [N] survivors. But several names that got killed had strong energy. Want me to bring any of these back for riffing and deepening? I won't use the taken names directly, but I can use them as starting points to generate available alternatives that carry the same feeling."
 
@@ -119,7 +119,7 @@ Recovery loops can amplify churn — each round generates new candidates that ne
 - **[R]** Recover — run pool recovery on taken-but-loved names
 - **[C]** Continue — proceed to Variation Generation (Step 10 of 13)
 
-**My recommendation:** If the surviving pool is below 5 strong candidates, use [R] to recover before continuing. Pool recovery often produces the session's best names. If the pool is healthy (5+), proceed with [C].
+**My recommendation:** If fewer than 5 candidates are clear with a TLD the brief can carry, use [R] to recover before continuing. Pool recovery often produces the session's best names. If the pool is healthy (5+), proceed with [C].
 
 Wait for the user's selection before proceeding.
 
