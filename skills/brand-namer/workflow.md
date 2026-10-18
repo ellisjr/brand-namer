@@ -17,6 +17,7 @@ Creative work in this skill rewards depth; validation does not. When your harnes
 | Work | Subagent model and effort | Why |
 |---|---|---|
 | Generation teams (step 02a), fresh-context cross-pollination (02b) | Default model, `effort: "high"` | Breadth and distinctiveness come from thinking longer |
+| Cross-model round (02b) | Codex CLI via `scripts/cross-pollinate.sh`; the user's Codex config sets model and effort | A different model's biases are the point, which no Claude subagent can supply; ask before the first run since it spends the user's OpenAI credit |
 | Competitive screening (04a), handle checks (04e) | `model: "haiku"`, `effort: "low"` | Factual lookups; speed and cost matter, reasoning does not |
 
 Domain checks use the bundled script (`scripts/check-domains.sh`), not a model.

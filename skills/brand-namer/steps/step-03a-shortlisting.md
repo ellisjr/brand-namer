@@ -46,7 +46,7 @@ Display the full status summary, then present the menu:
 **Approaches tried:** [from frontmatter]. **Worth trying:** [one or two that fit the gaps].
 
 **[G]** Generate more — fresh round in specific directions, an untried category, or one of the approaches above
-**[X]** Cross-pollinate — I'll generate a prompt you can paste into another LLM for fresh perspectives
+**[X]** Cross-pollinate — a round from another model, run through Codex or pasted from another LLM
 **[R]** Riff more — apply riffing or deepening techniques to favorites before converging
 **[S]** Start shortlisting — review all candidates, pick favorites for validation
 **[O]** Other — tell me what you need
@@ -57,7 +57,7 @@ Wait for the user's selection before proceeding.
 
 IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [G]: Route back to step-02a for a fresh generation round in user-specified directions, then return to this checkpoint.
-IF [X]: Generate a cross-pollination prompt for the user to paste into another LLM, then re-display this menu after they return with results.
+IF [X]: Read fully and follow `./step-02b-cross-pollination.md` for one round (Codex when installed, otherwise a paste-in prompt), merge the results, then return to this checkpoint and re-display this menu.
 IF [R]: Route back to step-02c to apply the specified riffing or deepening techniques, then return to this checkpoint.
 IF [S]: Proceed to Phase 2 (Shortlisting Process) below.
 IF [O]: Address the user's request, then re-display this menu.

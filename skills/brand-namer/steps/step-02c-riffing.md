@@ -152,7 +152,7 @@ Before the menu, update `approaches_tried` and `approaches_worth_trying` in `01-
 
 **[R]** Riff more — pick more names to riff on, or apply one of the untried approaches above
 **[G]** Generate more — go back to fresh generation (loop to step-02a)
-**[X]** Cross-pollinate — get riff ideas from other models (loop to step-02b)
+**[X]** Cross-pollinate — riff ideas from another model via Codex or a paste-in (loop to step-02b)
 **[A]** Add your own — contribute names or fragments the riffing sparked
 **[C]** Continue — proceed to Shortlisting (Step 7 of 13)
 

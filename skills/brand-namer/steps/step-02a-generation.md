@@ -308,7 +308,7 @@ Alongside the gate status, name the two or three untried approaches most likely 
 ## Menu
 
 **[G]** Generate more — fresh round in specific directions, untried categories, or the approaches suggested above
-**[X]** Cross-pollinate — generate prompt for other LLMs (proceeds to step-02b)
+**[X]** Cross-pollinate — a round from another model, run through Codex or pasted from another LLM (proceeds to step-02b)
 **[R]** Riff — apply riffing techniques to favorites (proceeds to step-02c)
 **[S]** Shortlist — review all candidates, pick favorites (proceeds to step-03a)
 **[A]** Add your own — contribute names or fragments that came to mind
