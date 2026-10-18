@@ -102,7 +102,7 @@ If the user gave you a sparse brief ("I need a name for my AI startup"), work wi
 **[R]** Revise — adjust a territory's definition
 **[C]** Continue — save territories and proceed to Divergent Generation (Step 4 of 13)
 
-**My recommendation:** Review the territories carefully — they're the creative lanes for all name generation. If a territory feels off or you want to explore a direction I didn't include, now is the time. Once you're satisfied with 3-5 strong territories, [C] locks them in and we start generating.
+**My recommendation:** [From the territories and whitespace you just presented: name the territory you expect to be richest for this brief and why, the one you are least sure of, and any dropped territory worth rescuing given the user's seed words or admired names. Recommend [C] when the set spans at least two distinct emotional registers and occupies the whitespace; recommend [A] or [R] when the territories cluster in one register or all sit near the competitors' pattern.]
 
 Wait for the user's selection before proceeding.
 

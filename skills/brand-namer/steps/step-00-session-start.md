@@ -97,13 +97,13 @@ If the user prefers just the final answer with no intermediate artifacts, note t
 **[F]** Fresh start — archive old artifacts and begin a new session
 **[V]** View — show me the existing artifacts before I decide
 
-**My recommendation:** If the artifacts look current and the project is the same, resuming saves significant time. Choose [V] if you're not sure what's in them.
+**My recommendation:** [From the artifacts you just read, not a stock line: name the project and the step they stopped at, say how much work resuming saves ("the brief and 180 candidates are already here"), and recommend [R] if the project matches what the user is describing now, [F] if the brief names a different target, [V] if the frontmatter is sparse or the timestamp is old enough that the user may not remember the session.]
 
 ### If no existing artifacts (new session):
 
 **[C]** Continue — proceed to Brand Brief (Step 2 of 13)
 
-**My recommendation:** Let's get started with the brief. If you have a pitch deck, PRD, or competitive analysis, upload it now — it dramatically improves naming quality.
+**My recommendation:** [From what the user has already said: if their opening message carried a target, audience, and competitors, say the brief is half-written and recommend [C] to confirm it; if it was a sentence, say what the brief still needs (audience, personality, competitors) and that a pitch deck or PRD would answer most of it; if they attached documents, name what you took from them.]
 
 Wait for the user's selection before proceeding.
 
