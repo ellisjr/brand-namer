@@ -108,6 +108,8 @@ Before the exit checkpoint, offer the user the deepening and evaluation techniqu
 - **Deepening:** SCAMPER on the brief itself, Inversion, Constraint Removal, Six Thinking Hats, Red Team vs Blue Team, First Principles, Analogical Reasoning, TRIZ, Three-Team Method, Pre-Mortem
 - **Evaluation:** Semantic Differential Scaling, Morphological Productivity, Brand Architecture test, Speech & Channel Robustness
 
+**My recommendation:** [Name one or two, grounded in this shortlist: a deepening move when the user's picks cluster in one register (Inversion, Constraint Removal), a riffing move when a favorite root has only one form (synonym explosion, language shift), an evaluation when the shortlist is heading to a committee or a product family (Semantic Differential Scaling, Brand Architecture). If the shortlist already carries the brief type's evaluations below and the user's picks are varied, say so and recommend moving on.]
+
 Which would you like to try?"
 
 If the user asks about any technique, explain it briefly. The full library is in `references/elicitation-techniques.md`, `references/naming-techniques.md`, and `references/consumer-naming.md` or `references/enterprise-naming.md` depending on brief type.

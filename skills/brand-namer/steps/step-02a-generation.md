@@ -24,7 +24,7 @@ Fill the possibility space. Generate broadly across naming categories and struct
 
 ## Execution
 
-Read `references/naming-categories.md` and `references/brand-psychology.md` now.
+Read `references/naming-categories.md`, `references/brand-psychology.md`, and the brief type's file now: `references/consumer-naming.md` for consumer, fashion, food, and beauty briefs, or `references/enterprise-naming.md` for B2B, enterprise, and developer tools. The must-run moves below come from the brief type's file, and you run them in this step.
 
 Use the brand archetype, personality dimensions, and feeling spectrum from the psychology reference to ensure names don't just sound good but *feel right* for the brand's emotional territory.
 
@@ -63,7 +63,8 @@ TERRITORIES: [each with its emotional promise and semantic field; for the adjace
 far-off stances add: "these orient you; name from your stance's own vocabulary"]
 BRIEF TYPE: [consumer: no institutional -works/-craft/-wise/-ware compounds; include a
 Sensory section from a Five Senses Scan (sight, smell, touch, taste, sound) |
-B2B: for every found word also give 2-3 compound or coined variants]
+B2B: for every found word also give 2-3 compound or coined variants, each as its own
+row with Category "Compound" or "Coined" and Approach "variant of <root>"]
 
 First read these two files completely, and use their categories, techniques,
 phonesthetics, and anti-patterns:
@@ -94,7 +95,7 @@ When the teams return:
 2. **Compare the veins.** The three "Richest vein" lines tell you which semantic domains are productive for this brief. Note them for the user and for later rounds.
 3. **Run the must-run moves yourself.** The team prompt does not ask for them, so the main session owns the brief type's must-run moves (below). Before each one, look at the teams' Approach columns: a move a team already ran as a labeled pass counts as done and is not repeated. The rest run in context as their own labeled batches, with the merged pool as the exclusion list, before the gallery is built, so the gallery shows them as rows of their own.
 4. **Present through the gallery** exactly as below. The user still sees everything, in numbered batches, and reacts by category.
-5. **Translate Hot rows into directions, then run the second wave.** Gallery rows are presentation units; the second wave is aimed at directions. Group the Hot rows that share a vein (a found-word row and the compound row built on the same vocabulary are one direction), give each direction a name, and list the names already in it. Six Hot rows usually become three or four directions. Then spawn one targeted agent per direction (same brief, the far-off stance, a brief that names the direction and the names already in it, 20-30 new names). Fresh contexts aimed at a direction the user has already chosen are where sessions find the name they end up with. Expand in context only when a direction has fewer than ten names and a handful more will do.
+5. **Translate Hot rows into directions, then run the second wave.** Gallery rows are presentation units; the second wave is aimed at directions. Group the Hot rows that share a vein (a found-word row and the compound row built on the same vocabulary are one direction), give each direction a name, and list the names already in it. Six Hot rows usually become three or four directions. Then spawn one targeted agent per direction, in the foreground as before: the same brief and reference files as the first round, the far-off stance, a paragraph that names the direction and lists every name already in it as the exclusion list, and a request for 20-30 new names in the same table format as the first round with the Territory column holding the direction's name. Record each returned name's `source` as `wave2-<direction>`. Fresh contexts aimed at a direction the user has already chosen are where sessions find the name they end up with. Expand in context only when a direction has fewer than ten names and a handful more will do.
 
 **Fallback, when you cannot spawn subagents:** branch in context. For each category, generate three mini-batches of 3-5 names from deliberately different semantic domains (for Found Words: textile vocabulary, then geological, then governance), judge which opened new territory, expand the one or two strongest by 5-10 names, and present everything from the surviving branches. A flat list of 10 names in a category means you explored one neighborhood and stopped.
 
@@ -218,13 +219,13 @@ Then expand the categories the user picks, showing the full numbered list with r
 
 ### Presentation order and pacing
 
-**Two-step presentation: gallery overview first, then category-by-category expansion.** In Explorer Mode, start with the gallery grid (top 3-5 per category, H/W/C reactions). Then expand the Hot categories one at a time as numbered lists with brief rationale. In Focused Mode, skip the gallery and go straight to category-by-category.
+**Three-step presentation: gallery, Hot rows, then Warm and Cold.** In Explorer Mode, start with the gallery grid (top 3-5 per category, H/W/C reactions). Expand the Hot categories one at a time as numbered lists with brief rationale, and run the second wave on the Hot directions. Then the **Warm and Cold step**, which has a fixed shape so those rows are never silently dropped: present each Warm row as its own numbered batch of up to 15 for reactions; then show the Cold rows' names in one numbered list of up to 15 per row with a single line each, asking only whether anything is worth rescuing. Everything the teams and must-run passes produced has now been seen once. Record in `01-candidates.md` which rows were expanded, which were shown as Cold, and which names the user rescued. In Focused Mode, skip the gallery and go straight to category-by-category.
 
 After the user reacts to each category, build their preference profile incrementally: "You consistently picked [patterns]. You consistently skipped [patterns]. This tells me you gravitate toward [summary]." Use this profile to sharpen all subsequent generation and riffing.
 
 **User idea capture:** After presenting each batch, ask: "Did any of these spark your own ideas? If a name made you think of something — even a fragment, a vibe, a word — tell me and I'll add it to the pool." Users often have their best naming ideas when reacting to generated candidates, but won't volunteer them unless explicitly invited. Any user-contributed names go into the candidate pool with source labeled as "user-generated" and get the same treatment as AI-generated candidates (riffing, validation, etc.).
 
-**Transparency rule:** After presenting all categories the user asked to see, note what's remaining: "You've seen [M] candidates across [N] categories. [K] more are available in [remaining categories]. Want to see those too, or move on?" Nothing is hidden — but the user controls the pace.
+**Transparency rule:** After the Warm and Cold step, confirm the count: "You've now seen all [M] candidates across [N] categories; [R] were rescued from Cold rows." If the user chose to stop before the Warm and Cold step, say exactly what remains unseen: "[K] names in [rows] have not been shown. Want to see them now, or move on?" Nothing is hidden, and the user controls the pace.
 
 **Category-by-category presentation:**
 Present names **ONE CATEGORY AT A TIME**. For each category:

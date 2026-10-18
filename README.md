@@ -177,7 +177,7 @@ Produce candidates across many naming categories. Breadth before depth.
 - **Must-run moves per brief type** — six generation moves each for consumer and enterprise briefs (Five Senses Scan, Emotional Temperature, Cultural Tension, Desired-Self, Adjacent-Category codes, Arbitrary/Absurd; Vertical Code Calibration, Category Creation, Trust-Without-Claims, integration topology, the compound track, personified names) run as labeled passes in every deep session. Everything else in the reference files is optional.
 - **Untried approaches surfaced at each checkpoint** — the skill tracks which creative moves it has made in free-text frontmatter and names the one or two untried approaches most likely to open new territory for this brief, rather than walking a 40-item checklist.
 - **User idea capture** — after each batch and at every checkpoint menu, the user is invited to contribute their own names or fragments sparked by the generated candidates. User-contributed names enter the same pipeline (riffing, validation) as AI-generated ones.
-- **Gallery mode** — scannable H/W/C grid before diving into category-by-category expansion
+- **Gallery mode** — scannable H/W/C grid, then Hot rows expanded and sent to the second wave, then a fixed Warm-and-Cold step so every generated name is seen once and rescues are recorded
 
 ### Loop 3: Select
 User-directed convergence. The user makes all cuts.
