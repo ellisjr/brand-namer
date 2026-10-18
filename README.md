@@ -413,7 +413,7 @@ Mine specialized vocabularies where nobody in tech is looking. 18 domains covere
 | **Semiotic Territory Mapping** | Map meaning-system quadrants before generation |
 | **Conceptual Blending** | Blend mental models, not just syllables (Fauconnier & Turner) |
 | **Morphological Analysis (Zwicky)** | Systematic combinatorial generation across dimensions |
-| **Lexicon Three-Team Method** | On-brief, competitor, unrelated-domain teams generating simultaneously |
+| **Lexicon Three-Team Method** | On-brief, adjacent-category, far-off-domain teams generating simultaneously in separate contexts |
 | **Truncation / Clipping** | Clip a real word to create shorter, ownable variant — preserves phonetic connection to source | Brex, Deel, Navan, Phenom, Pendo |
 | **[Brand] AI Suffix** | Append " AI" to a strong base name — clarifies positioning for AI products (distinct from AI-embedded naming) | Scale AI, Mistral AI, Together AI |
 | **Lowercase / Casing Strategy** | Typographic casing as naming decision — all-lowercase, camelCase, CLI-native. Signals "built by engineers." | dbt, vercel, mParticle, nCino |

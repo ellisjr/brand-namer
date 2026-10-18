@@ -17,7 +17,6 @@ Fill the possibility space. Generate broadly across naming categories and struct
 
 ## Guardrails
 
-- Present every candidate, in numbered batches of at most 15. Curating "the strongest" substitutes your taste for the user's, and the names you would cut are often the ones they fall for.
 - Run the hard gate check before presenting the menu, so the user sees pool health before deciding whether to move on.
 
 ---
@@ -30,7 +29,7 @@ Use the brand archetype, personality dimensions, and feeling spectrum from the p
 
 ### Running count
 
-Let the user decide when they have enough. Some sessions need 40 names, others need 150. Your job is to keep generating with breadth and quality until the user says stop — not to hit a fixed number. Include a candidate count only when the user needs orientation (e.g., after a large round or when asked) — don't report after every batch.
+Let the user decide when they have enough. Some sessions need 40 names, others need 150. Above the gates, the user decides when there are enough; keep generating with breadth and quality for as long as they want more. Include a candidate count only when the user needs orientation (e.g., after a large round or when asked) — don't report after every batch.
 
 **Focused Mode:** Present category-by-category as generated. Still aim for breadth — at least 50 candidates internally across all categories before the user starts cutting.
 
@@ -196,7 +195,7 @@ Do NOT default to a static suffix list — **generate the compound vocabulary dy
 
 5. **Blended meaning compounds:** Words where both halves contribute meaning and the combination creates a third meaning greater than the sum. Salesforce (sales + force = power behind sales), Workday (work + day = the daily work experience).
 
-6. **Three-team compound outputs:** Apply the Lexicon Three-Team Method to compound generation too — one team generates on-brief compounds, one generates as-if-competitor compounds, one generates compounds as if the product were in a completely different category.
+6. **Three-team compound outputs:** Apply the Lexicon Three-Team Method to compound generation too — one team generates on-brief compounds, one generates compounds as if the brand sat in the most desirable adjacent category, one generates compounds as if the product were in a far-off category (the same three stances as the first round).
 
 See `references/naming-techniques.md` for tech/SaaS-specific affix tables (useful when the brief IS tech), creative respelling patterns, and the Prefix x Suffix Matrix methodology. But treat those tables as examples of what dynamic generation produces for one specific context, not as the universal compound toolkit.
 
@@ -235,7 +234,7 @@ After the user reacts to each category, build their preference profile increment
 **Transparency rule:** After the Warm and Cold step, confirm the count: "You've now seen all [M] candidates across [N] categories; [R] were rescued from Cold rows." If the user chose to stop before the Warm and Cold step, say exactly what remains unseen: "[K] names in [rows] have not been shown. Want to see them now, or move on?" Nothing is hidden, and the user controls the pace.
 
 **Category-by-category presentation:**
-Present names **ONE CATEGORY AT A TIME**. For each category:
+Present names one category at a time. For each category:
 1. Show a numbered list of candidates (with inline warning flags where applicable) and a brief rationale in parentheses
 2. Ask the user: which numbers do you like, dislike, or feel neutral about?
 3. Move to the next category

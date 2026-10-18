@@ -20,7 +20,6 @@ User-driven convergence, with a gate on the way in and a gate on the way out.
 
 ## Guardrails
 
-- Never pre-filter. The user decides what stays and what goes.
 - Show both gate checks. The user should know pool quality before shortlisting and again before validation, because validation kills 80-90% of found words and a thin shortlist produces a thin result.
 - Load `references/naming-techniques.md` for the riffing checklist if it is not already in context.
 

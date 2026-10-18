@@ -64,7 +64,7 @@ If any of these metrics are weak (< 60 candidates, < 6 categories, > 80% one str
 - Top 3 recommendation with brief justification
 - Suggested next steps (trademark attorney consultation, domain registration, social handle reservation)
 - Offer to do another round if the user wants to explore further
-- If the user expresses lukewarm sentiment ("these are fine," "good enough"), **do not accept it passively.** Acknowledge it: "I hear you — 'good enough' isn't the goal. We under-explored [specific areas]. Want to do one more round focused on [specific techniques] before closing?"
+- If the user expresses lukewarm sentiment ("these are fine," "good enough"), acknowledge it: "I hear you — 'good enough' isn't the goal. We under-explored [specific areas]. Want to do one more round focused on [specific techniques] before closing?"
 
 ### Cycle-back
 
@@ -83,7 +83,7 @@ If the De-risk loop has reduced the pool below ~5 strong candidates, or the user
 Wait for the user's selection before proceeding.
 
 IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
-IF user expresses lukewarm sentiment: Do NOT accept passively. Challenge it: "I hear you — 'good enough' isn't the goal. We under-explored [specific areas]. Want to do one more round focused on [specific techniques] before closing?" Then re-display this menu.
+IF user expresses lukewarm sentiment: Challenge it, as the guardrail says: "I hear you — 'good enough' isn't the goal. We under-explored [specific areas]. Want to do one more round focused on [specific techniques] before closing?" Then re-display this menu.
 IF [A]: Save `04-final.md`, then loop back to generation (step-02a or step-02c) with dead names as seeds.
 IF [R]: Save `04-final.md`, then loop back to brief revision (step-01a).
 IF [D]: Save `04-final.md` with final frontmatter, mark session complete.

@@ -29,7 +29,7 @@ This stage is about creative expansion while the possibility space is still wide
 
 ### Which names to riff on — the user decides
 
-Do NOT select "the strongest 5-6" for riffing yourself. Present the full shortlist and ask the user: "Which of these do you want me to riff on? Pick as many or as few as you like." The user may choose names you wouldn't have selected — their taste is the compass, not your assessment of "strength."
+Do not select "the strongest 5-6" for riffing yourself. Present the full shortlist and ask the user: "Which of these do you want me to riff on? Pick as many or as few as you like." The user may choose names you wouldn't have selected — their taste is the compass, not your assessment of "strength."
 
 If the user asks you to pick, explain: "I can suggest names that seem most riffable (words with rich etymologies, multiple meanings, or strong phonetic roots), but the names that matter most are the ones YOU feel drawn to — even if you can't articulate why." Then offer your suggestions as a starting point, not a final selection.
 
@@ -96,14 +96,14 @@ See the full affix reference table in `references/naming-techniques.md` for a co
 
 Inspired by Lexicon Branding's actual process: approach the same brief from three angles simultaneously:
 1. **On-brief team**: Generate names directly responding to the brand brief
-2. **Competitor team**: Generate names as if you're naming a competitor (breaks assumptions about what "works" in the category)
+2. **Adjacent-category team**: Generate names as if the brand sat in the most desirable adjacent category and keep what transfers (a "name a rival" stance was tried and dropped: it reproduced a quarter of the on-brief names)
 3. **Unrelated domain team**: Generate names as if the product were in a completely different category (e.g., "if this were a bike brand, what would it be called?")
 
 The third team often produces the most unexpected — and ultimately strongest — candidates.
 
 ### Output format for riffs
 
-**Numbering:** Do NOT use a separate numbering scheme (e.g., "R1, R2"). Continue the category numbering from 2a. If Evocative was items 1-14, riffs on Evocative names become 15, 16, 17, etc. within the same category.
+**Numbering:** Do not use a separate numbering scheme (e.g., "R1, R2"). Continue the category numbering from 2a. If Evocative was items 1-14, riffs on Evocative names become 15, 16, 17, etc. within the same category.
 
 **Presentation:** Present riff families ONE AT A TIME. For each family:
 1. State which original name is the seed

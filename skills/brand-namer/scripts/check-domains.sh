@@ -47,9 +47,12 @@ if [ ${#NAMES[@]} -eq 0 ]; then
   exit 2
 fi
 
-# Normalize a brand name to a domain label: lowercase, strip everything but a-z 0-9 and hyphen.
+# Normalize a brand name to a domain label: transliterate accents (Café → cafe, Søren → soren), lowercase,
+# strip everything but a-z 0-9 and hyphen. The grid shows the label beside the name when they differ.
 normalize() {
-  printf '%s' "$1" | tr '[:upper:]' '[:lower:]' | sed -e 's/[^a-z0-9-]//g' -e 's/^-*//' -e 's/-*$//'
+  printf '%s' "$1" \
+    | perl -CS -MUnicode::Normalize -pe '$_ = NFD($_); s/\p{Mn}//g; tr/\x{d8}\x{f8}\x{c6}\x{e6}\x{df}\x{141}\x{142}/OoAasLl/' \
+    | tr '[:upper:]' '[:lower:]' | sed -e 's/[^a-z0-9-]//g' -e 's/^-*//' -e 's/-*$//'
 }
 
 # Registry WHOIS servers. Empty means "no WHOIS; go straight to RDAP".
@@ -81,10 +84,10 @@ whois_server() {
 # server's record for a TLD (which the whois client prints before following a referral) has
 # "domain:", "nserver:", "status: ACTIVE" and "created:" lines, so none of those may count.
 classify_whois() {
-  if printf '%s' "$1" | grep -qiE 'no match|not found|no entries found|does not exist|no object found|domain not found|no data found|status: free|is available|not been registered'; then
+  if printf '%s' "$1" | grep -qiE 'no match|not found|no entries found|does not exist|no object found|domain not found|no data found|status: free|status: +available|is available|not been registered'; then
     echo AVAILABLE; return
   fi
-  if printf '%s' "$1" | grep -qiE 'domain name:|registry domain id|creation date:|^registrar:|registrant:|registered on'; then
+  if printf '%s' "$1" | grep -qiE 'domain name:|registry domain id|creation date:|expire date:|^registrar:|registrant:|registered on'; then
     echo REGISTERED; return
   fi
 }
@@ -141,7 +144,8 @@ for raw in "${NAMES[@]}"; do
   done
 done
 
-RESULTS="$(printf '%s\n' "${DOMAINS[@]}" | xargs -P "$JOBS" -I{} bash -c 'check_one "$1"' _ {} | sort)"
+# Two names that normalize to the same label ("Sift Works", "SiftWorks") are looked up once; the grid maps the result back to both.
+RESULTS="$(printf '%s\n' "${DOMAINS[@]}" | sort -u | xargs -P "$JOBS" -I{} bash -c 'check_one "$1"' _ {} | sort)"
 
 if [ "$RAW" -eq 1 ]; then
   printf '%s\n' "$RESULTS"
@@ -158,7 +162,9 @@ fi
   for raw in "${NAMES[@]}"; do
     label="$(normalize "$raw")"
     [ -z "$label" ] && continue
-    printf '| %s |' "$raw"
+    shown="$raw"
+    if [ "$(printf '%s' "$raw" | tr '[:upper:]' '[:lower:]' | tr -d ' ')" != "$label" ]; then shown="$raw ($label)"; fi
+    printf '| %s |' "$shown"
     for tld in "${TLD_ARR[@]}"; do
       status="$(printf '%s\n' "$RESULTS" | awk -F'\t' -v d="${label}.${tld}" '$1==d {print $2}')"
       case "$status" in

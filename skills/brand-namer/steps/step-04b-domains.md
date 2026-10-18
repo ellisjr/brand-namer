@@ -88,18 +88,15 @@ Present the taken-but-loved bucket from `02-shortlist.md` frontmatter, plus any 
 - What made it compelling (the emotional territory, the phonetic quality, the story type)
 
 Let the user select which (if any) to bring back into the mix. Then:
-1. **Apply the core riffing techniques** to each taken-but-loved direction (grouped by theme, not individual names):
-   - SCAMPER (all 7 lenses)
-   - Compound creation (each root x 5+ second words)
-   - Creative respelling (Y-for-I, K-for-C, dropped vowels)
+1. **Apply the core riffing techniques** to each taken-but-loved direction (grouped by theme, not individual names). The recovery track depends on the brief type, because the move that saves a B2B name (an institutional compound) is the move that kills a consumer one on a shelf:
+   - All briefs: SCAMPER (all 7 lenses); synonym explosion (5-10 synonyms per root); zoom in/out and adjacent metaphor
+   - B2B briefs: compound creation (each root x 5+ second words); creative respelling (Y-for-I, K-for-C, dropped vowels); tech branding patterns (-OS, -ware, -wise, -er, -base, -box) when the brief is tech
+   - Consumer briefs: alternate real spellings and creative respelling; sensory vocabulary from the Five Senses Scan in the same emotional territory; language shift (French, Italian, Spanish, Japanese); arbitrary and absurd associations. No institutional compounds.
 
    Then ask: "Want me to go deeper with additional techniques?" If yes, escalate to:
-   - Synonym explosion (5-10 synonyms per root)
-   - Language shift (Latin, Greek, French at minimum)
-   - Systematic affix exploration (prefix AND suffix positions)
-   - Tech branding patterns (-OS, -ware, -wise, -er, -base, -box)
-   - Zoom in/out and adjacent metaphor
-   - Lexicon Three-Team method (on-brief, competitor, unrelated domain)
+   - Language shift (Latin, Greek for B2B; add the consumer languages above for consumer)
+   - Systematic affix exploration (prefix AND suffix positions; for consumer briefs, playful affixes only)
+   - Lexicon Three-Team stances (on-brief, adjacent category, far-off domain)
    - Conceptual riffing (TRIZ, First Principles, Analogical Reasoning)
 2. **Present riff results to the user for reaction** before validating — let them pick favorites
 3. **Re-validate the new candidates before they rejoin the pool:** run them through 4a (competitive screen — including technical project screening if applicable) and 4b (domain check, with explicit TLD searches) then update `03-validation.md`. Only candidates that pass re-enter the active pool alongside the original survivors.

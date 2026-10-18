@@ -9,23 +9,23 @@ Social handle checks, optional stress tests, and an extended presence check for 
 
 ## Done when
 
-- Social handles checked for Tier 1 names only
+- Social handles checked for the names still clear after competitive, domain and trademark screening
 - Pre-Mortem and System 1 / System 2 tests offered
 - Extended presence check offered for the top 1-3
 - Generate-more checkpoint offered if the pool feels thin
 
 ## Guardrails
 
-- Tier 1 names only. Handle checks on names already flagged waste the user's time.
+- Check handles only for names still clear after the competitive, domain and trademark screens. Tiers are assigned in 04f, partly from this check, and handle checks on names already flagged waste the user's time.
 - The System 1 test is the user's gut, not yours. An LLM can only do analytical evaluation; the split-second reaction that decides how a name lands in the world belongs to the user.
 
 ---
 
 ## Execution
 
-### Social handle check (Tier 1 names only)
+### Social handle check (names still clear)
 
-For names that have reached Tier 1 (Available & Clear), do a final check on social media handle availability. This applies only to the strongest candidates — don't waste time checking names that have already been flagged.
+For names still clear after the competitive, domain and trademark checks, do a final check on social media handle availability. This applies only to the strongest candidates — don't waste time checking names that have already been flagged.
 
 Search for handle availability on the platforms most relevant to the brand:
 - **Twitter/X** — search `x.com/[name]` or `twitter.com/[name]`
