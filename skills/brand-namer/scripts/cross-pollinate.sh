@@ -4,24 +4,34 @@
 #
 # Usage:
 #   bash cross-pollinate.sh [-o output-file] [-m model] prompt-file
-#   bash cross-pollinate.sh prompt.md > codex-round-1.md
+#   bash cross-pollinate.sh -o codex-round-1.md prompt.md 2> codex-round-1.log
 #
 # Options:
-#   -o FILE   also write the final answer to FILE (default: print to stdout only)
+#   -o FILE   also write the final answer to FILE; written only after a successful run, so a failed
+#             run never leaves an empty or truncated file behind
 #   -m MODEL  override the model in the user's Codex config (default: whatever ~/.codex/config.toml says)
 #
 # Behaviour:
-#   - Runs `codex exec` non-interactively with a read-only sandbox and no persisted session, so the
+#   - Runs `codex exec` non-interactively in a read-only sandbox with no persisted session, so the
 #     run cannot touch files and leaves nothing behind in ~/.codex/sessions.
-#   - Works from any directory: the Git-repository check is skipped because brand-namer-output/ is
-#     often outside a repository.
+#   - Runs in a fresh empty directory with project-document loading disabled, so Codex sees only the
+#     prompt: no AGENTS.md, no project files, no .codex config from the caller's directory. The round
+#     is meant to be an independent model's take, and anything else in context would colour it.
 #   - Model and reasoning effort come from the user's own Codex config unless -m is given; the skill
 #     does not pick a model for them.
-#   - Codex's own transcript (model, token count, session id) goes to stderr; only the final answer
-#     goes to stdout, so `> file` captures exactly what the model returned.
+#   - Codex's own transcript (model, token count, session id, and an echo of the prompt) goes to
+#     stderr; only the final answer goes to stdout. Redirect stderr to a log file and read its tail
+#     only when the run fails.
 #
-# Exit codes: 0 answer written; 2 usage error; 3 codex not installed; other: codex's own exit code
-# (most often a sign-in problem — run `codex login` once in a terminal).
+# Exit codes:
+#   0        answer delivered
+#   2        usage error (missing or unreadable prompt file, bad option)
+#   3        codex not installed
+#   4        could not create a temporary file or directory
+#   5        codex exited 0 but returned no final message
+#   6        answer produced but could not be written to -o FILE
+#   10 + N   codex itself exited with status N (read the stderr log: most often a sign-in problem,
+#            a network or sandbox denial, or quota)
 #
 # Test by hand after editing: a prompt file reading "Reply with exactly the three words: codex test ok"
 # must print those three words and exit 0; a missing prompt file must exit 2; with codex absent from
@@ -52,30 +62,46 @@ if ! command -v codex >/dev/null 2>&1; then
   exit 3
 fi
 
-TMP_OUT="$(mktemp "${TMPDIR:-/tmp}/cross-pollinate.XXXXXX")"
-trap 'rm -f "$TMP_OUT"' EXIT
+# Resolve the prompt path before changing directory: codex runs with -C in a scratch directory.
+case "$PROMPT" in
+  /*) PROMPT_ABS="$PROMPT" ;;
+  *)  PROMPT_ABS="$PWD/$PROMPT" ;;
+esac
 
-ARGS=(exec --skip-git-repo-check --ephemeral -s read-only --color never -o "$TMP_OUT")
+TMP_OUT="$(mktemp "${TMPDIR:-/tmp}/cross-pollinate.XXXXXX")" || { echo "could not create a temporary file" >&2; exit 4; }
+WORKDIR="$(mktemp -d "${TMPDIR:-/tmp}/cross-pollinate-work.XXXXXX")" || { rm -f "$TMP_OUT"; echo "could not create a temporary directory" >&2; exit 4; }
+trap 'rm -rf "$TMP_OUT" "$WORKDIR"' EXIT
+
+ARGS=(exec --skip-git-repo-check --ephemeral -s read-only --color never
+      -C "$WORKDIR" -c 'project_doc_max_bytes=0'
+      -o "$TMP_OUT")
 if [ -n "$MODEL" ]; then
   ARGS+=(-m "$MODEL")
 fi
 ARGS+=(-)
 
 # Codex prints its running transcript to stdout; send that to stderr so stdout holds only the answer.
-codex "${ARGS[@]}" < "$PROMPT" 1>&2
+codex "${ARGS[@]}" < "$PROMPT_ABS" 1>&2
 STATUS=$?
 
 if [ "$STATUS" -ne 0 ]; then
-  echo "codex exec exited with status $STATUS (not signed in? run: codex login)" >&2
-  exit "$STATUS"
+  echo "codex exec exited with status $STATUS; see the messages above (sign-in: codex login; network or sandbox denial; quota)" >&2
+  exit $((10 + STATUS))
 fi
 
 if [ ! -s "$TMP_OUT" ]; then
-  echo "codex returned no final message" >&2
-  exit 1
+  echo "codex exited 0 but returned no final message" >&2
+  exit 5
 fi
 
-cat "$TMP_OUT"
-if [ -n "$OUT" ]; then
-  cp "$TMP_OUT" "$OUT"
+if ! cat "$TMP_OUT"; then
+  echo "answer produced but could not be written to stdout" >&2
+  exit 6
 fi
+if [ -n "$OUT" ]; then
+  if ! cp "$TMP_OUT" "$OUT"; then
+    echo "answer printed above but could not be written to $OUT" >&2
+    exit 6
+  fi
+fi
+exit 0
