@@ -127,6 +127,6 @@ Recovery loops can amplify churn — each round generates new candidates that ne
 Wait for the user's selection before proceeding.
 
 IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
-IF [G]: Loop back to generation step (step-02c for riffing, step-02a for fresh generation). Re-validate only new names on return.
+IF [G]: Write `return_to: "04b menu"` in `01-candidates.md` frontmatter, then read fully and follow `steps/step-02c-riffing.md` to riff on dead names or `steps/step-02a-generation.md` for fresh generation. Its continue handler brings you back here; run 4a and 4b on the new names only, then re-display this menu.
 IF [R]: Run pool recovery process described above, then re-display this menu.
 IF [C]: Update `03-validation.md` frontmatter `stepsCompleted`, load next step (`steps/step-04c-variations.md`).

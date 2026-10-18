@@ -27,9 +27,10 @@ Domain checks use the bundled script (`scripts/check-domains.sh`), not a model.
 - **Present everything, cut nothing.** Every candidate you generate reaches the user eventually, in numbered batches of at most 15 (the gallery overview grid, which asks only Hot, Warm, or Cold per category, is the one display that shows more). Pre-filtering substitutes your taste for theirs, and the names you would have cut are often the ones they fall for.
 - **Number every selectable list.** Users refer to names and options by number. An unnumbered list forces them to retype names and slows every reaction round.
 - **Recommend at every checkpoint.** A menu without a recommendation is paperwork. Base it on the session state: pool size, category coverage, structural mix, the user's energy.
-- **Hold the volume and diversity gates.** Shortlisting with fewer than 60 candidates in a deep session (40 in a focused one), fewer than 6 categories attempted, or a pool over 80% one structural type reliably ends in a thin, disappointing final pool after validation. The gates are defined in steps 02a and 03a. When a gate is failing and the user wants to move on anyway, say so once in plain terms with the likely consequence, recommend the fix, and proceed if they confirm. Record `gate_waived: [gate]` in the artifact frontmatter.
+- **Hold the volume and diversity gates.** Shortlisting with fewer than 60 candidates (40 when `session_mode` in `00-brief.md` is Focused, since that mode narrows generation to the categories the user reacts to), fewer than 6 categories attempted, or a pool over 80% one structural type reliably ends in a thin, disappointing final pool after validation. The gates are defined in steps 02a and 03a. When a gate is failing and the user wants to move on anyway, say so once in plain terms with the likely consequence, recommend the fix, and proceed if they confirm. Record `gate_waived: [gate]` in the artifact frontmatter.
 - **Offer cross-model ideation at least once in a deep session.** Different models have different creative biases, and it is consistently the highest-yield round for consumer briefs. The user can decline.
 - **Load the reference file a step names before generating in that step.** The reference files are where the technique depth lives. Generating from memory produces the averaged output this skill exists to prevent.
+- **Loop-backs return to the caller.** Several handlers send you to an earlier step for one round (03a to 02a, 02b or 02c; 04b, 04d and 04e to generation) and expect you back at the same menu. Before you go, write `return_to: <step and menu>` in the frontmatter of the artifact you are updating (for example `return_to: "03a entry menu"`). The forward handlers in 02a, 02b and 02c check that key before following their default route: when it is set, save, clear it, re-validate only the new names if the caller was a 04 step, and go back to the caller's menu. Without this the session re-enters shortlisting from the top and the user loses their place.
 
 ## Handling input that is not a menu choice
 
@@ -54,9 +55,9 @@ Detect the session type in step 00 from the user's signals and record it in `00-
 | Type | Signals | What runs |
 |---|---|---|
 | **Deep** (default) | Detailed brief, "get this right," company or flagship product name | All 13 steps. Cross-pollination offered. Riffing checklist before validation. All artifacts. |
-| **Quick** | "Just brainstorm some ideas," "5 names in 10 minutes," sparse brief | The fast path below. |
+| **Quick** | "Just brainstorm some ideas," "5 names in 10 minutes," sparse brief | The fast path below, run in place from step 00 ([Q]); no further step files. |
 | **Iterative** | "Let me sleep on these," returning user | Deep pipeline, with artifacts saved so step 00 can resume at the right step. |
-| **Validation only** | "I already have names, just check them" | Names written straight to `02-shortlist.md`, then steps 04a to 04f. Riffing checklist skippable. |
+| **Validation only** | "I already have names, just check them" | Step 00 ([N]) takes a three-question brief and the names, writes `00-brief.md` and `02-shortlist.md`, then routes to 04a. Steps 04a to 04f run; the riffing checklist is skipped. |
 
 When the signals are ambiguous, ask: "Quick brainstorm (about 15 minutes) or thorough engagement (45 to 60 minutes)?"
 

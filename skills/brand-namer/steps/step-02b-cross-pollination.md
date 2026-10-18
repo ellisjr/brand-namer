@@ -135,4 +135,4 @@ IF [K]: Build and save the prompt, confirm the spend and the data sent if this i
 IF [P]: Build and save the prompt, present it to the user for copying with the recommended model, then re-display this menu (user will return with paste-in results or choose [C]).
 IF [M]: Process the paste-in results using the merge pipeline above, then re-display this menu.
 IF [F]: Build and save the prompt with the changed stance, run it in a foreground subagent at high effort, merge with source `claude-fresh-context`, then re-display this menu.
-IF [C]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02b"]`, then read fully and follow: `./step-02c-riffing.md`
+IF [C]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02b"]`, then, if `return_to` is set, clear it and go back to that menu (see workflow.md); otherwise read fully and follow: `steps/step-02c-riffing.md`

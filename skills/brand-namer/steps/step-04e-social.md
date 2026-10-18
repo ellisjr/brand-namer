@@ -91,5 +91,5 @@ IF user provides non-menu input: Respond, then bring them back to this menu (see
 IF [P]: Run Pre-Mortem on top 3-5, record results in `03-validation.md`, then re-display this menu.
 IF [T]: Run System 1/System 2 test (user-driven), record results in `03-validation.md`, then re-display this menu.
 IF [X]: Run extended presence check on top 1-3, record results in `03-validation.md`, then re-display this menu.
-IF [G]: Loop back to generation, re-validate new names through full chain (4a+4b+4d+4e), then re-display this menu.
+IF [G]: Write `return_to: "04e menu"` in `01-candidates.md` frontmatter, then read fully and follow `steps/step-02c-riffing.md` (or `steps/step-02a-generation.md` for fresh generation). Its continue handler brings you back here; run 4a, 4b, 4d and 4e on the new names only, then re-display this menu.
 IF [C]: Update `03-validation.md` frontmatter `stepsCompleted`, load next step (`steps/step-04f-final.md`).

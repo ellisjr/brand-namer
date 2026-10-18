@@ -9,7 +9,7 @@ Fill the possibility space. Generate broadly across naming categories and struct
 
 ## Done when
 
-- 60+ unique candidates (deep session) or 40+ (focused session)
+- 60+ unique candidates (40+ when `session_mode` is Focused)
 - 6+ of the 11 naming categories attempted, with at least 5 candidates each
 - 3+ structural types represented (found words, compounds, coined, blends, respellings, foreign-root)
 - For B2B briefs, compounds and coined names make up at least 30% of the pool
@@ -139,8 +139,8 @@ Everything else in the reference files stays optional and surfaces through "untr
 Hold these gates before Loop 3 (shortlisting). Proceed past a failing gate only after the user has heard the consequence and confirmed.
 
 **1. Minimum candidate count:**
-- **Deep sessions:** Generate at least **60 unique candidates** before entering shortlisting.
-- **Focused sessions:** At least **40 unique candidates**.
+- **Explorer mode:** Generate at least **60 unique candidates** before entering shortlisting.
+- **Focused mode** (`session_mode: focused` in `00-brief.md`): At least **40 unique candidates**, because Focused mode generates only in the categories the user reacts to.
 - If you have fewer, continue generating — try categories you haven't used, apply techniques from `references/naming-techniques.md`, or run cross-model ideation. Tell the user: "We have [N] candidates. The skill recommends at least [60/40] for a strong shortlist. Want me to generate more, or proceed with what we have?"
 
 **2. Category coverage:**
@@ -295,7 +295,7 @@ Cross the dimensions: "2-syllable Latin-origin noun with crisp phonetics from th
 After presenting the initial pool, run the three hard gate checks and display the status:
 
 **Hard Gate Status:**
-- **Candidate count:** [N] candidates ([pass/fail] — minimum [40/60] for [focused/deep] session)
+- **Candidate count:** [N] candidates ([pass/fail] — minimum [60 in Explorer mode / 40 in Focused mode])
 - **Category coverage:** [N] of 11 categories attempted ([pass/fail] — minimum 6)
 - **Structural mix:** [breakdown by type] ([pass/fail] — minimum 3 types, no type >80%)
 
@@ -321,6 +321,7 @@ Wait for the user's selection before proceeding.
 IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [A]: Capture user-contributed names/fragments, add to candidate pool with source "user-generated," offer to riff on them, then re-display this menu.
 IF [G]: Run another generation round within this step, then re-display this menu with updated gate status.
-IF [X]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02a"]`, then read fully and follow: `./step-02b-cross-pollination.md`
-IF [R]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02a"]`, then read fully and follow: `./step-02c-riffing.md`
-IF [S]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02a"]`, then read fully and follow: `./step-03a-shortlisting.md`
+IF [O]: Address the user's request, then re-display this menu.
+IF [X]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02a"]`, then read fully and follow: `steps/step-02b-cross-pollination.md`
+IF [R]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02a"]`, then read fully and follow: `steps/step-02c-riffing.md`
+IF [S]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02a"]`, then, if `return_to` is set, clear it and go back to that menu (see workflow.md); otherwise read fully and follow: `steps/step-03a-shortlisting.md`

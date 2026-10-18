@@ -1,7 +1,7 @@
 # Step 04a: Competitive Screening
 
 **Progress:** Step 8 of 13 — Next: Domains & Pool Recovery (step-04b)
-**Reads:** `brand-namer-output/02-shortlist.md` | **Writes:** `brand-namer-output/03-validation.md` (created here)
+**Reads:** `brand-namer-output/02-shortlist.md` | **Writes:** `brand-namer-output/03-validation.md` (created here), `brand-namer-output/02-shortlist.md` (`taken_but_loved`, recovery survivors)
 
 ## Purpose
 
@@ -109,13 +109,7 @@ When names die in competitive screening, don't fire a recovery prompt for each o
 | [Name 2] | [conflict] | [energy/quality] |
 | ... | ... | ... |
 
-**Which (if any) do you want to riff on?** Pick by number, or:
-- **[A]** Riff on selected — generate available alternatives with the same energy
-- **[B]** Riff on all — full recovery pass on every dead name
-- **[C]** Note for later — add to taken-but-loved bucket for pool recovery
-- **[D]** Move on — work with survivors only"
-
-This turns validation failures into generation triggers while keeping the session flowing.
+Then present this step's menu, whose [R] and [N] options act on this table. The user picks dead names by number, or says "all". This turns validation failures into generation triggers while keeping the session flowing.
 
 #### Technical project screening (for dev tools, open source, skills, MCPs, plugins)
 When naming a technical project, add these sources to the competitive screen:
@@ -135,11 +129,15 @@ Categorize technical conflicts the same way (Clear / Flagged / Taken). A 50-star
 
 ## Menu
 
-- **[C]** Continue — proceed to Domain Checks (Step 9 of 13)
+**[R]** Riff on dead names — pick by number or "all"; I generate available alternatives with the same energy and screen them here
+**[N]** Note for later — add the picked dead names to the taken-but-loved bucket for pool recovery in 04b
+**[C]** Continue — proceed to Domain Checks (Step 9 of 13)
 
-**My recommendation:** If names died during screening, use the validation-death trigger menu above before continuing. Taken names with strong energy are your best creative seeds — riff on them now rather than losing that signal.
+**My recommendation:** [If names died: name the one or two with the strongest user energy and recommend [R] on them now, since a taken name with the right feeling is the best seed for an available one; recommend [N] for the rest. If nothing died, or the survivors are plentiful: [C].]
 
 Wait for the user's selection before proceeding.
 
 IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
+IF [R]: For the picked names, grouped by what made them compelling, load `references/naming-techniques.md` and generate 5-10 alternatives per group using the recovery techniques above (SCAMPER, etymological mining, adjacent metaphors, structural shifts; compounds for B2B briefs, respellings and alternate real spellings for consumer briefs). Screen the new names with this step's search templates, add the survivors to `02-shortlist.md` with source `recovery-04a`, record the dead originals under `taken_but_loved`, then re-display this menu.
+IF [N]: Add the picked names to `taken_but_loved` in `02-shortlist.md` frontmatter with `killed_by` and `compelling_because`, then re-display this menu.
 IF [C]: Save `03-validation.md`, update frontmatter `stepsCompleted`, load next step (`steps/step-04b-domains.md`).

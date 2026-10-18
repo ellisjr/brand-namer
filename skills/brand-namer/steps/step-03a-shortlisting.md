@@ -32,7 +32,7 @@ User-driven convergence, with a gate on the way in and a gate on the way out.
 
 Before presenting the entry menu, run the three hard gate checks by reading `01-candidates.md` frontmatter:
 
-1. **Candidate count gate:** If < 60 candidates (deep session) or < 40 (focused session), warn: "We have [N] candidates — below the [60/40] minimum for a strong shortlist." Recommend [G] or [X] before [S].
+1. **Candidate count gate:** If < 60 candidates (< 40 when `session_mode` is Focused), warn: "We have [N] candidates — below the [60/40] minimum for a strong shortlist." Recommend [G] or [X] before [S].
 2. **Category coverage gate:** Display the coverage table. If < 6 categories attempted, recommend trying missing categories.
 3. **Structural diversity gate:** If > 80% of candidates are one type (found words, compounds, or coined), flag it and recommend generating alternatives.
 
@@ -56,9 +56,9 @@ Display the full status summary, then present the menu:
 Wait for the user's selection before proceeding.
 
 IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
-IF [G]: Route back to step-02a for a fresh generation round in user-specified directions, then return to this checkpoint.
-IF [X]: Read fully and follow `./step-02b-cross-pollination.md` for one round (Codex when installed, otherwise a paste-in prompt), merge the results, then return to this checkpoint and re-display this menu.
-IF [R]: Route back to step-02c to apply the specified riffing or deepening techniques, then return to this checkpoint.
+IF [G]: Write `return_to: "03a entry menu"` in `01-candidates.md` frontmatter, then read fully and follow `steps/step-02a-generation.md` for a fresh generation round in user-specified directions. Its [S] handler brings you back here.
+IF [X]: Write `return_to: "03a entry menu"` in `01-candidates.md` frontmatter, then read fully and follow `steps/step-02b-cross-pollination.md` for one round (Codex when installed, otherwise a paste-in prompt). Its [C] handler brings you back here.
+IF [R]: Write `return_to: "03a entry menu"` in `01-candidates.md` frontmatter, then read fully and follow `steps/step-02c-riffing.md` to apply the specified riffing or deepening techniques. Its [C] handler brings you back here.
 IF [S]: Proceed to Phase 2 (Shortlisting Process) below.
 IF [O]: Address the user's request, then re-display this menu.
 
@@ -217,8 +217,8 @@ Wait for the user's selection before proceeding.
 IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [A]: Apply the specified riffing techniques to the shortlist names, update `02-shortlist.md`, then re-display this exit checkpoint menu with updated gate status.
 IF [K]: Display the riffing checklist (below) with current status and work through the uncompleted items. Record the alternates beside their root in `02-shortlist.md` (variants stay collapsed into the root's entry) and add them to `01-candidates.md`. Then re-display this exit checkpoint menu with updated gate status.
-IF [G]: Route back to step-02a for additional generation, then return to the Phase 1 entry checkpoint of this file.
-IF [C]: Proceed if the riffing checklist is satisfied or the user has waived it. If gaps remain, display the checklist status and ask once: "The riffing checklist has gaps. Proceed anyway? This will likely leave a thin final pool." If the user confirms, record `riffing_checklist: waived` in `02-shortlist.md` and proceed. Route to: `./step-04a-screening.md`
+IF [G]: Write `return_to: "03a Phase 3 exit menu"` in `01-candidates.md` frontmatter, then read fully and follow `steps/step-02a-generation.md`. Its [S] handler brings you back here; re-run the Phase 1 gate checks on the enlarged pool before re-displaying this menu.
+IF [C]: Proceed if the riffing checklist is satisfied or the user has waived it. If gaps remain, display the checklist status and ask once: "The riffing checklist has gaps. Proceed anyway? This will likely leave a thin final pool." If the user confirms, record `riffing_checklist: { status: waived, notes: "<what was skipped>" }` in `02-shortlist.md` and proceed. Route to: `steps/step-04a-screening.md`
 
 ### Riffing checklist (before entering Loop 4)
 
@@ -282,4 +282,4 @@ This step has three menus (Phase 1 Entry Checkpoint, Phase 2 Technique Menu, and
 Wait for the user's selection at each menu before proceeding.
 
 IF user provides non-menu input: Respond, then bring them back to the current phase's menu (see workflow.md).
-IF Phase 3 [C] with riffing checklist satisfied or waived: Update `02-shortlist.md` frontmatter `stepsCompleted`, then read fully and follow: `./step-04a-screening.md`
+IF Phase 3 [C] with riffing checklist satisfied or waived: Update `02-shortlist.md` frontmatter `stepsCompleted`, then read fully and follow: `steps/step-04a-screening.md`

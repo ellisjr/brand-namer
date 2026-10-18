@@ -110,4 +110,4 @@ IF user provides non-menu input: Respond, then bring them back to this menu (see
 IF [A]: Ask the user to describe the new territory (or propose one based on their input). Define it with the full structure (name, emotional promise, semantic field, phonetic profile, anti-patterns). Add it to the territory list and re-display this menu.
 IF [D]: Ask which territory to drop (or confirm if they've named one). Remove it and re-display this menu.
 IF [R]: Ask which territory to revise and what to change. Update the definition and re-display this menu.
-IF [C]: Update `brand-namer-output/00-brief.md` — add territories (with full definitions), competitive whitespace summary, and session mode to the YAML frontmatter. Update `stepsCompleted: ["00", "01a", "01b"]`. Then read fully and follow: `./step-02a-generation.md`
+IF [C]: Update `brand-namer-output/00-brief.md` — add territories (with full definitions), competitive whitespace summary, and session mode to the YAML frontmatter. Update `stepsCompleted: ["00", "01a", "01b"]`. Then read fully and follow: `steps/step-02a-generation.md`

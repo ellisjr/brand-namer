@@ -163,6 +163,6 @@ Wait for the user's selection before proceeding.
 IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [A]: Capture user-contributed names/fragments, add to candidate pool with source "user-generated," offer to riff on them, then re-display this menu.
 IF [R]: Run another riffing round within this step (ask user which names to riff on), then re-display this menu.
-IF [G]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02c"]`, then read fully and follow: `./step-02a-generation.md`
-IF [X]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02c"]`, then read fully and follow: `./step-02b-cross-pollination.md`
-IF [C]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02c"]`, then read fully and follow: `./step-03a-shortlisting.md`
+IF [G]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02c"]`, then read fully and follow: `steps/step-02a-generation.md`
+IF [X]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02c"]`, then read fully and follow: `steps/step-02b-cross-pollination.md`
+IF [C]: Save to `brand-namer-output/01-candidates.md`, update frontmatter `stepsCompleted: [..., "02c"]`, then, if `return_to` is set, clear it and go back to that menu (see workflow.md); otherwise read fully and follow: `steps/step-03a-shortlisting.md`

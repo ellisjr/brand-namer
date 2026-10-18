@@ -57,12 +57,7 @@ Summarize what was found to the user. Be specific:
 
 Then present resume options (see Menu below).
 
-Artifact-to-step resume mapping:
-- Only `00-brief.md` exists → resume at step-02a (Divergent Generation)
-- `01-candidates.md` exists → read its frontmatter; resume at step-03a (Convergent Selection), or step-02c if riffing wasn't completed
-- `02-shortlist.md` exists → resume at step-04a (De-risk / Validation)
-- `03-validation.md` exists → resume at step-04f (Final Recommendation)
-- All exist → present `04-final.md` or offer to do another round
+Resume point: read `stepsCompleted` from the most advanced artifact and resume at the step after its last entry, using the routing table in workflow.md (after "02a" go to 02b, after "03a" to 04a, after "04b" to 04c, and so on). Which files exist is not enough: `03-validation.md` is created in 04a and updated by every 04 step, so its presence alone says nothing about how far validation got. If a `return_to` key is set, the previous session stopped mid-loop-back; resume at the step it names. If `04-final.md` exists with "04f" completed, present it and offer another round. Only when an artifact has no `stepsCompleted` at all, fall back to the file: brief only → 02a, candidates → 03a, shortlist → 04a, validation → 04b, and confirm the guess with the user.
 
 #### If no artifacts exist
 
@@ -101,14 +96,18 @@ If the user prefers just the final answer with no intermediate artifacts, note t
 
 ### If no existing artifacts (new session):
 
-**[C]** Continue — proceed to Brand Brief (Step 2 of 13)
+**[C]** Continue — full engagement, proceed to Brand Brief (Step 2 of 13)
+**[Q]** Quick brainstorm — three brief questions, one gallery, light riff, top 8-10 with domains; about 15 minutes
+**[N]** Validate names I already have — a three-question brief, then competitive, domain, trademark and handle checks on your list
 
-**My recommendation:** [From what the user has already said: if their opening message carried a target, audience, and competitors, say the brief is half-written and recommend [C] to confirm it; if it was a sentence, say what the brief still needs (audience, personality, competitors) and that a pitch deck or PRD would answer most of it; if they attached documents, name what you took from them.]
+**My recommendation:** [From the session type you detected and what the user has already said. Deep or iterative signals: if their opening message carried a target, audience, and competitors, say the brief is half-written and recommend [C] to confirm it; if it was a sentence, say what the brief still needs (audience, personality, competitors) and that a pitch deck or PRD would answer most of it; if they attached documents, name what you took from them. Quick signals: recommend [Q] and say what it skips (territories, cross-model round, full validation). A list of names in the opening message: recommend [N].]
 
 Wait for the user's selection before proceeding.
 
 IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
 IF [R]: Read the most advanced artifact's frontmatter, confirm the resume point with the user, then read fully and follow the detected step file.
-IF [F]: Move existing `brand-namer-output/` to `brand-namer-output-archived-[timestamp]/`, create a fresh `brand-namer-output/` directory, then read fully and follow: `./step-01a-brief.md`
+IF [F]: Move existing `brand-namer-output/` to `brand-namer-output-archived-[timestamp]/`, create a fresh `brand-namer-output/` directory, then read fully and follow: `steps/step-01a-brief.md`
 IF [V]: Display a summary of each artifact's contents (read frontmatter + first section of each), then re-display the resume menu ([R] / [F]).
-IF [C]: Read fully and follow: `./step-01a-brief.md`
+IF [C]: Read fully and follow: `steps/step-01a-brief.md`
+IF [Q]: Run the quick mode fast path from workflow.md in place: three brief questions, 30-40 names across 4-5 categories as one gallery (Five Senses Scan for consumer and physical products), one reaction round, light riff with compound alternatives for B2B, then the top 8-10 with rationale and domain suggestions from `scripts/check-domains.sh`. Load `references/naming-categories.md` before generating. Write artifacts only if the user asks. End by offering the full engagement if they want to go deeper.
+IF [N]: Ask three questions (what is being named and what it does; the category and the main competitors; anything the names must avoid), then take the user's list. Write `00-brief.md` with `session_type: validation-only` and the answers, and `02-shortlist.md` with the names as the shortlist, `riffing_checklist: { status: waived, notes: "validation-only session" }`, and `stepsCompleted: ["00", "01a", "03a"]`. Then read fully and follow: `steps/step-04a-screening.md`.

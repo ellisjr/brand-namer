@@ -55,5 +55,5 @@ After trademark results, if any strong candidates were killed, ask: "Trademark s
 Wait for the user's selection before proceeding.
 
 IF user provides non-menu input: Respond, then bring them back to this menu (see workflow.md).
-IF [G]: Loop back to generation, then re-validate new names through 4a+4b+4d (check the validation log — skip already-screened names). Return to this menu after.
+IF [G]: Write `return_to: "04d menu"` in `01-candidates.md` frontmatter, then read fully and follow `steps/step-02c-riffing.md` (or `steps/step-02a-generation.md` for fresh generation). Its continue handler brings you back here; run 4a, 4b and 4d on the new names only (skip names already in the validation log), then re-display this menu.
 IF [C]: Update `03-validation.md` frontmatter `stepsCompleted`, load next step (`steps/step-04e-social.md`).
