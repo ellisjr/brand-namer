@@ -119,7 +119,7 @@ Recovery loops can amplify churn — each round generates new candidates that ne
 - **[R]** Recover — run pool recovery on taken-but-loved names
 - **[C]** Continue — proceed to Variation Generation (Step 10 of 13)
 
-**My recommendation:** If fewer than 5 candidates are clear with a TLD the brief can carry, use [R] to recover before continuing. Pool recovery often produces the session's best names. If the pool is healthy (5+), proceed with [C].
+**My recommendation:** If fewer than 5 candidates are clear in 04a and hold an open `.com` or a TLD the brief type can carry (flagged names do not count, even with an open domain), use [R] to recover before continuing. Pool recovery often produces the session's best names. If the pool is healthy (5+), proceed with [C].
 
 Wait for the user's selection before proceeding.
 

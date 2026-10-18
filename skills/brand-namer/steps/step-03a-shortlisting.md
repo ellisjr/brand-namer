@@ -192,7 +192,7 @@ The user has a shortlist of 15 to 20 directions they want validated. Confirm the
 Before presenting the exit menu, run the three hard gate checks:
 
 1. **Shortlist size gate:** If fewer than **15 names** are entering validation, warn: "Your shortlist has [N] names. With an 80-90% kill rate for found words, you'll likely end up with [1-3] survivors. I recommend expanding to 15-20 before validating." Recommend [A], [K], or [G].
-2. **Structural diversity gate:** If the shortlist is >80% found words (or any single type), flag it: "Your shortlist is [N]% found words. Compound or coined alternates for each found-word root are the insurance." Recommend [K], whose alternates item is that insurance.
+2. **Structural diversity gate:** Count roots, one per direction with alternates excluded, since the alternates are the insurance this gate measures the need for. If more than 80% of roots are found words (or any single type), flag it: "Your shortlist is [N]% found words. Compound or coined alternates for each found-word root are the insurance." Recommend [K], whose alternates item is that insurance.
 3. **Riffing checklist gate:** Check whether the riffing checklist (below) has been satisfied. If not, recommend [K] before [C].
 
 The checklist is the one home for compound and coined alternates. An earlier menu offered them as a separate option beside the checklist, and for B2B briefs the two did the same work, so sessions ran it twice.
