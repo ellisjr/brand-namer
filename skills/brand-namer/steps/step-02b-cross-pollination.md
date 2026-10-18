@@ -50,6 +50,8 @@ Two fallbacks, in order of value:
 1. **A tool in this session that reaches another model.** If an MCP server or CLI that can run a prompt on another provider's model is available (a sidecar or multi-model tool, for example), recommend running the cross-pollination prompt through it and merging the results, so the user does not have to copy and paste. This is still true cross-model ideation, and for consumer briefs it is the highest-yield round in the pipeline. It spends the user's credit with another provider, so ask before the first run and then proceed for the rest of the session.
 2. **A fresh Claude context.** If nothing reaches another model, offer to run the same prompt in a subagent (the Agent tool, `effort: "high"`), with the stance changed to something the main session has not taken: name it as a rival would, or as if it were a product in a far-off category. A fresh context with a different stance breaks some of the session's accumulated habits, though not the model's own biases, so say plainly that this is weaker than a different model and worth doing only if the pool looks homogeneous. Merge the results through the paste-in pipeline below with the source recorded as `claude-fresh-context`.
 
+A note on evidence: the claim that cross-model rounds are the highest-yield stage for consumer briefs comes from one early live session, and no automated eval has exercised this step, because a simulated user declines to spend credit with another provider. Treat the recommendation as experience, not measurement, and tell the user that when they ask.
+
 ### When to offer cross-pollination
 
 Include cross-pollination as an option at these checkpoints:

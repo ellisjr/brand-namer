@@ -79,13 +79,18 @@ Generate 40-60 candidate names:
 - do not self-censor; include names that feel weird, risky, or too much
 - avoid the anti-patterns in the reference (verb+ly, tech prefix+suffix, forced
   mythology, Latin pharma mashups, the -a suffix)
-- flag conflicts you are confident of with ⚠️ and uncertain ones with ⚠️?; never
-  invent a conflict
+- flag conflicts you are confident of with "⚠️ <the company or product>" and ones you
+  half-remember with "⚠️? <what you recall>"; a flag with no conflict named is noise,
+  so give a reason or no flag, and never invent a conflict
 - do not include any of these existing candidates: [list, or "none yet"]
 
 Return only a markdown table, one row per name:
 | Name | Category | Territory | Approach (technique or vocabulary mined) | Rationale (12 words max) | Flag |
-followed by one line: "Richest vein: <the domain or category that gave the most
+Category is exactly one of: Evocative, Coined, Blend, Metaphorical, Descriptive,
+Found Word, Foreign-Root, Acronymic, Compound, Sound-Symbolic, Institutional
+Compound. Angles such as personified, toponym, phrase, numeric, or sensory belong
+in the Approach column, not in Category.
+Finish with one line: "Richest vein: <the domain or category that gave the most
 distinct on-brief names>".
 ```
 
@@ -222,6 +227,8 @@ Then expand the categories the user picks, showing the full numbered list with r
 **Three-step presentation: gallery, Hot rows, then Warm and Cold.** In Explorer Mode, start with the gallery grid (top 3-5 per category, H/W/C reactions). Expand the Hot categories one at a time as numbered lists with brief rationale, and run the second wave on the Hot directions. Then the **Warm and Cold step**, which has a fixed shape so those rows are never silently dropped: present each Warm row as its own numbered batch of up to 15 for reactions; then show the Cold rows' names in one numbered list of up to 15 per row with a single line each, asking only whether anything is worth rescuing. Everything the teams and must-run passes produced has now been seen once. Record in `01-candidates.md` which rows were expanded, which were shown as Cold, and which names the user rescued. In Focused Mode, skip the gallery and go straight to category-by-category.
 
 After the user reacts to each category, build their preference profile incrementally: "You consistently picked [patterns]. You consistently skipped [patterns]. This tells me you gravitate toward [summary]." Use this profile to sharpen all subsequent generation and riffing.
+
+**Pacing and what a round is.** A reaction round is one numbered batch of up to 15 names followed by the user's picks; they choose as many or as few as they like, and the preference profile updates after each round. A deep consumer session with three teams, must-run passes, and a second wave reaches 400 or more names, which is 25 to 30 rounds before shortlisting if every row is expanded. Keep that bearable: merge categories with fewer than six names into one batch, lead each round with a one-line read of what the user has been picking so far, and offer at every third round to jump to the Warm-and-Cold step or straight to shortlisting. Say the count out loud when you reach it: "About 12 rounds to go if we expand everything; happy to keep going or to skip ahead."
 
 **User idea capture:** After presenting each batch, ask: "Did any of these spark your own ideas? If a name made you think of something — even a fragment, a vibe, a word — tell me and I'll add it to the pool." Users often have their best naming ideas when reacting to generated candidates, but won't volunteer them unless explicitly invited. Any user-contributed names go into the candidate pool with source labeled as "user-generated" and get the same treatment as AI-generated candidates (riffing, validation, etc.).
 

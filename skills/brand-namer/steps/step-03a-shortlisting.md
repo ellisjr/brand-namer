@@ -256,10 +256,12 @@ Session testing shows the B2B riffing toolkit (compounds, affixes, tech patterns
 - [ ] **Adjacent metaphor** — each shortlisted direction explored via neighboring metaphorical domains (e.g., "collector" -> which animals collect? which natural processes gather?)
 - [ ] **Sensory expansion** — Five Senses Scan applied to shortlisted directions not yet explored sensorially
 - [ ] **Nature mining** — creatures, plants, natural phenomena, geological features explored for each direction
-- [ ] **French naturalized vocabulary** — naturalized French words tested across shortlisted directions (see `references/consumer-naming.md`)
+- [ ] **French naturalized vocabulary** — naturalized French words tested across shortlisted directions (see `references/consumer-naming.md`). Skip this item, and say so in the checklist status, when the user has rejected French or foreign-root names earlier in the session, or when the brief's register makes them wrong (a streetwear label, a hot sauce with Oregon terroir at its center); it then produces names nobody will choose.
 - [ ] **Shelf / Gift / Social-native tests** — run on all shortlisted names: Shelf Test (visualize between competitors on a physical shelf), Gift Test (would someone feel proud giving this?), Social-Native Test (hashtag clean? handle available? caption-ready? verbal sharing test?). These are evaluation tests, not generation techniques — but they must be completed before entering validation because they frequently kill names that look good on paper. If the brief mentions retail placement, DTC, or social media, these tests are non-negotiable.
 
-The consumer goal: for every shortlisted direction, you should have 3-5 alternatives from adjacent metaphorical or sensory territory. Consumer names survive validation through distinctiveness and cultural resonance, not through compound construction.
+The consumer goal: for every shortlisted direction, 3-5 alternatives from adjacent metaphorical or sensory territory. Consumer names survive validation through distinctiveness and cultural resonance, not through compound construction.
+
+What this checklist adds beyond step 02c: 02c riffed the directions the user chose at the time; the shortlist usually contains directions that were never riffed, and others whose riffs the user cut. Run the checklist on shortlisted directions with fewer than three surviving alternates, and record "covered in 02c" against the rest instead of riffing them again. In testing, re-riffing already-riffed directions produced near-duplicates of the 02c output and nothing the user picked.
 
 **Extended checklist (offer to the user — "Want me to go deeper with additional techniques?"):**
 - [ ] **Synonym explosion** — 5-10 synonyms tested for each key root
